@@ -1249,11 +1249,10 @@ a { color: inherit; text-decoration: none; }
 button.cta-btn { border: none; cursor: pointer; font-family: inherit; }
 .step-next-wrap { margin-top: 24px; padding-bottom: 8px; }
 button[data-start][aria-pressed="true"] { font-weight: 700; background: var(--accent); color: var(--bg); }
-.start-steplist { display: flex; flex-direction: column; gap: 6px; }
-.start-step-pill { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; width: 100%; text-align: left; height: auto; padding: 8px 12px; white-space: normal; }
-.start-pill-label { font-weight: 600; font-size: 14px; }
-.start-pill-desc { font-size: 12px; line-height: 1.4; opacity: .72; }
-.start-step-pill[aria-pressed="true"] .start-pill-desc { opacity: .9; }
+.start-steplist { display: flex; flex-direction: column; gap: 12px; }
+.start-step-item { display: flex; flex-direction: column; gap: 3px; }
+.start-step-item .start-link { align-self: flex-start; }
+.start-pill-desc { margin: 0; font-size: 12px; line-height: 1.4; color: var(--text-dim); }
 .step-return-hint { margin-top: 12px; font-size: 13px; color: var(--text-muted, var(--text)); opacity: .75; }
 .start-picker-next { margin-top: 20px; }
 .start-picker-next-hint { margin: 0 0 8px; font-size: 14px; line-height: 1.5; }
