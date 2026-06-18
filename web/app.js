@@ -168,7 +168,7 @@
       about_menu_howto_desc: 'Několik tipů, jak co nejlépe využít možností, které Fedík.online poskytuje pro práci s:',
       about_nav_about: 'O Fedíku', about_nav_search: 'Vyhledáváním', about_nav_instance: 'Instancemi', about_nav_apps: 'Aplikacemi', about_nav_tools: 'Nástroji',
       about_nav_accounts: 'Účty', about_nav_posts: 'Posty', about_nav_links_howto: 'Odkazy',
-      about_nav_tech: 'Technické řešení', about_nav_author: 'O autorovi', about_nav_faq: 'FAQ',
+      about_nav_tech: 'Technické řešení', about_nav_author: 'O autorovi', about_nav_faq: 'FAQ', about_nav_faq_novacci: 'FAQ pro nováčky',
       prisers_ratio: 'Poměrem', prisers_abs: 'Dosahem',
       label_bot: 'Automat', label_bot_title: 'Automatizovaný účet (bot)',
       psort_engagement: 'Nejvíce boostů + favů', psort_reblogs: 'Nejvíce boostů',
@@ -334,7 +334,7 @@
       about_menu_howto_desc: 'A few tips on how to get the most out of what Fedík.online offers for working with:',
       about_nav_about: 'About Fedík', about_nav_search: 'Search', about_nav_instance: 'Instances', about_nav_apps: 'Apps', about_nav_tools: 'Tools',
       about_nav_accounts: 'Accounts', about_nav_posts: 'Posts', about_nav_links_howto: 'Links',
-      about_nav_tech: 'Technical details', about_nav_author: 'About the author', about_nav_faq: 'FAQ',
+      about_nav_tech: 'Technical details', about_nav_author: 'About the author', about_nav_faq: 'FAQ', about_nav_faq_novacci: 'FAQ for beginners',
       prisers_ratio: 'By ratio', prisers_abs: 'By reach',
       label_bot: 'Bot', label_bot_title: 'Automated account (bot)',
       psort_engagement: 'Most boosts + favs', psort_reblogs: 'Most boosts',
@@ -4058,7 +4058,7 @@
         case 'lth': splitList(val).forEach(function (v) { linkThemes.add(v); }); break;
         case 'lsort': if (/^(recommended|alpha|lang)$/.test(val)) linksSort = val; break;
         case 'stab': if (/^(all|10|50|risers_ratio|risers_abs)$/.test(val)) searchTab = val; break;
-        case 'asec': if (/^(about|search|instance|apps|tools|links|tech|author|faq)$/.test(val)) aboutSection = val; break;
+        case 'asec': if (/^(about|search|instance|apps|tools|links|tech|author|faq|faq-novacci)$/.test(val)) aboutSection = val; break;
         case 'ssec': if (/^[a-z0-9_]+$/.test(val)) startSection = val; break;
         case 'asort': if (/^(name|users|instances)$/.test(val)) appsSort = val; break;
         case 'atab': if (/^(all|users|instances|risers|new)$/.test(val)) appsTab = val; break;

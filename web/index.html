@@ -367,6 +367,7 @@
           <p class="search-nav-desc" data-i18n="about_menu_other_desc">A nakonec několik závěrečných informací — časté dotazy, technické pozadí, o autorovi a jak projekt podpořit.</p>
           <div class="filter-buttons">
             <button class="filter-chip about-link" data-about="faq" data-i18n="about_nav_faq">FAQ</button>
+            <button class="filter-chip about-link" data-about="faq-novacci" data-i18n="about_nav_faq_novacci">FAQ pro nováčky</button>
             <button class="filter-chip about-link" data-about="tech" data-i18n="about_nav_tech">Technické řešení</button>
             <button class="filter-chip about-link" data-about="author" data-i18n="about_nav_author">O autorovi</button>
           </div>
@@ -1116,6 +1117,32 @@
           <figure class="about-figure qr">
             <img src="img/qr.jpg" alt="Payment QR code" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
+        </div>
+      </article>
+
+      <!-- FAQ PRO NOVÁČKY -->
+      <article class="about-content" data-about-section="faq-novacci" hidden>
+        <div data-lang-block="cs">
+          <h2>FAQ pro nováčky</h2>
+          <h3>Schválení registrace trvá dlouho — co teď?</h3>
+          <p>Správce instance schvaluje žádosti ručně, obvykle do několika hodin. Mezitím si projdi kroky 5 a 6 v průvodci — čas nepřijde nazmar. Pokud do druhého dne nic nepřišlo, zkus napsat správci instance přes web nebo zvol jinou instanci s otevřenou registrací.</p>
+          <h3>Nemůžu najít kamaráda — jak ho vyhledat?</h3>
+          <p>Stačí znát celý handle ve tvaru <code>@jmeno@server.cz</code>. Vlož ho do vyhledávacího pole přímo ve svém Mastodon klientovi nebo webovém rozhraní — server si účet dohledá (tzv. WebFinger). Pak ho můžeš sledovat bez ohledu na to, na které instanci je.</p>
+          <h3>Jak se přestěhuju na jiný server?</h3>
+          <p>Mastodon podporuje <strong>migraci účtu</strong>: na novém serveru si vytvoříš účet, nastavíš alias na starý účet a spustíš přesun. Sledující se přenesou automaticky; příspěvky zůstanou na starém serveru (nebo si je exportuješ). Detaily: <a href="#view=slovnicek&amp;heslo=migrace-uctu">Migrace účtu</a> ve Slovníčku.</p>
+          <h3>Timeline je prázdná — co s tím?</h3>
+          <p>Na začátku je to normální — algorithmus tě tu neplní obsahem sám od sebe. Vyřeš to rychle: koukni do <a href="#view=start">kroku 6 průvodce</a> — dva kurátorované katalogy CZ/SK účtů a botů, které stojí za to sledovat.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>FAQ for beginners</h2>
+          <h3>Registration approval is taking a long time — what now?</h3>
+          <p>Instance admins approve requests manually, usually within a few hours. In the meantime go through steps 5 and 6 of the guide — the time won't be wasted. If nothing arrives by the next day, try contacting the instance admin through their website, or choose a different instance with open registration.</p>
+          <h3>I can't find my friend — how do I search for them?</h3>
+          <p>You just need their full handle in the format <code>@name@server.social</code>. Paste it into the search field in your Mastodon client or web interface — the server will look up the account (via WebFinger). You can then follow them regardless of which instance they're on.</p>
+          <h3>How do I move to a different server?</h3>
+          <p>Mastodon supports <strong>account migration</strong>: create an account on the new server, set an alias pointing to your old account, then trigger the move. Your followers transfer automatically; posts stay on the old server (or you can export them). Details: <a href="#view=slovnicek&amp;heslo=migrace-uctu">Account migration</a> in the Glossary.</p>
+          <h3>My timeline is empty — what do I do?</h3>
+          <p>That's normal at the start — there's no algorithm filling your feed for you. Fix it quickly: check <a href="#view=start" onclick="event.preventDefault();document.querySelector('button[data-start=&quot;6&quot;]').click();history.pushState(null,'','#view=start')">step 6 of the guide</a> — two curated directories of CZ/SK accounts and bots worth following.</p>
         </div>
       </article>
 
