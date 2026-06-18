@@ -1191,6 +1191,16 @@ a { color: inherit; text-decoration: none; }
 }
 @media (prefers-color-scheme: dark) { .stats-view .stat-caveat { background: #33270f; border-color: #6b531a; } }
 
+/* Upozorňovací boxík (převzato ze .stat-caveat) — sdílený, používá i onboarding „normy". */
+.caveat-box {
+  color: var(--text-strong);
+  background: #fff4e0; border: 1px solid #e6b860; border-radius: 10px; padding: 14px 16px; margin: 24px 0 8px;
+}
+.caveat-box > :first-child { margin-top: 0; }
+.caveat-box > :last-child { margin-bottom: 0; }
+.caveat-box h3::before { content: "\26A0\FE0E  "; }
+@media (prefers-color-scheme: dark) { .caveat-box { background: #33270f; border-color: #6b531a; } }
+
 /* Sloupce „Podle aplikací" */
 .stat-bars { display: flex; flex-direction: column; gap: 10px; }
 .stat-bar { display: grid; grid-template-columns: 130px 1fr auto; align-items: center; gap: 12px; }
