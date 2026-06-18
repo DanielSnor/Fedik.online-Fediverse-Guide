@@ -1250,6 +1250,8 @@ button.cta-btn { border: none; cursor: pointer; font-family: inherit; }
 .step-next-wrap { margin-top: 24px; padding-bottom: 8px; }
 button[data-start][aria-pressed="true"] { font-weight: 700; background: var(--accent); color: var(--bg); }
 .step-return-hint { margin-top: 12px; font-size: 13px; color: var(--text-muted, var(--text)); opacity: .75; }
+.start-picker-next { margin-top: 20px; }
+.start-picker-next-hint { margin: 0 0 8px; font-size: 14px; line-height: 1.5; }
 .onboarding-checklist, .onboarding-norms { margin: 12px 0 20px; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
 .onboarding-checklist li, .onboarding-norms li { line-height: 1.55; }
 .onboarding-step h3 { margin: 24px 0 4px; font-size: 16px; }

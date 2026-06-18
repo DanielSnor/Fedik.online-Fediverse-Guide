@@ -39,6 +39,7 @@
       start_rec_from: 'Pokud přicházíš z „%s", doporučuji ti:',
       start_rec_do: 'Chceš „%s"? Doporučuji se podívat na:',
       start_picker_catalog: 'Zobrazit vše v katalogu →',
+      start_picker_next_hint: 'Spokojen s naším doporučením? Pokračuj dalším krokem. Chceš víc možností?',
       start_step1: 'Pochop, co to je',
       start_step2: 'Vyber aplikaci',
       start_step3: 'Vyber instanci',
@@ -205,6 +206,7 @@
       start_rec_from: 'Coming from “%s”? I’d recommend:',
       start_rec_do: 'Want “%s”? Take a look at:',
       start_picker_catalog: 'See all in the catalog →',
+      start_picker_next_hint: 'Happy with our recommendation? Continue to the next step. Want more options?',
       start_step1: 'Understand what it is',
       start_step2: 'Choose an app',
       start_step3: 'Choose an instance',
@@ -2411,11 +2413,12 @@
     if (!sel || !results) return;
     var hint = document.getElementById('start-picker-hint');
     var catalog = document.getElementById('start-picker-catalog');
+    var nextBox = document.getElementById('start-picker-next');
     results.innerHTML = '';
     var opt = startPickerMap[sel.value];
     if (!opt) {   // prázdný stav před výběrem
       if (hint) hint.hidden = false;
-      if (catalog) catalog.hidden = true;
+      if (nextBox) nextBox.hidden = true;
       return;
     }
     if (hint) hint.hidden = true;
@@ -2435,8 +2438,8 @@
       var cts = {};
       recs.forEach(function (r) { if (r.contentType) cts[r.contentType] = 1; });
       catalog._cts = Object.keys(cts);
-      catalog.hidden = !recs.length;
     }
+    if (nextBox) nextBox.hidden = !recs.length;
   }
 
   function bindStartPicker() {
