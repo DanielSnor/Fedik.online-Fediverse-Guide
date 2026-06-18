@@ -40,11 +40,19 @@
       start_rec_do: 'Chceš „%s"? Doporučuji se podívat na:',
       start_picker_catalog: 'Zobrazit vše v katalogu →',
       start_picker_next_hint: 'Spokojen s naším doporučením? Pokračuj dalším krokem. Chceš víc možností?',
-      start_cta_instances: 'Vyber instanci →',
       start_cta_external: 'Otevřít oficiální stránku →',
       start_cta_starter: 'Přejít na %s →',
       start_starter_lead: 'Česká instance pro %s:',
       start_starter_note: 'Klikni, založ si účet a vrať se sem na krok 4.',
+      start_inst_heading: 'Vyber si instanci — ukazujeme jen ty s otevřenou registrací nebo se schválením:',
+      start_inst_choose: 'Vybrat tuhle →',
+      start_inst_more: 'Zobrazit všechny instance v katalogu →',
+      start_inst_empty: 'Pro tuhle aplikaci teď nemáme instanci s otevřenou registrací. Zkus oficiální katalog:',
+      start_inst_hint_pick: 'Vyber instanci výše a posuneme tě na krok 4 ↑',
+      start_inst_hint_external: 'Až si vybereš a založíš účet, vrať se sem a pokračuj krokem 4 ↓',
+      start_step4_chosen_lead: 'Zakládáš účet na instanci %s:',
+      start_step4_chosen_cta: 'Otevřít registraci na %s →',
+      start_step4_chosen_change: 'Změnit instanci',
       start_step1: 'Pochop, co to je',
       start_step2: 'Vyber aplikaci',
       start_step3: 'Vyber instanci',
@@ -212,11 +220,19 @@
       start_rec_do: 'Want “%s”? Take a look at:',
       start_picker_catalog: 'See all in the catalog →',
       start_picker_next_hint: 'Happy with our recommendation? Continue to the next step. Want more options?',
-      start_cta_instances: 'Choose an instance →',
       start_cta_external: 'Open the official site →',
       start_cta_starter: 'Go to %s →',
       start_starter_lead: 'A Czech instance for %s:',
       start_starter_note: 'Click, create your account and come back for step 4.',
+      start_inst_heading: 'Pick an instance — we only show ones with open or approval-based registration:',
+      start_inst_choose: 'Choose this →',
+      start_inst_more: 'See all instances in the catalog →',
+      start_inst_empty: 'We don’t have an instance with open registration for this app right now. Try the official catalog:',
+      start_inst_hint_pick: 'Pick an instance above and we’ll move you to step 4 ↑',
+      start_inst_hint_external: 'Once you’ve chosen and created your account, come back here and continue with step 4 ↓',
+      start_step4_chosen_lead: 'You’re creating your account on %s:',
+      start_step4_chosen_cta: 'Open registration on %s →',
+      start_step4_chosen_change: 'Change instance',
       start_step1: 'Understand what it is',
       start_step2: 'Choose an app',
       start_step3: 'Choose an instance',
@@ -673,22 +689,108 @@
       box.innerHTML = ''; box.appendChild(p);
     });
 
-    // CTA: katalog → filtrovaný pohled (hash, bez reloadu); starter → ven na konkrétní instanci;
-    // jinak → oficiální join stránka.
-    var url, label, isExternal;
+    var listEl = document.getElementById('start-step3-instances');
+    var ctaEl = document.getElementById('start-step3-cta');
+    var hintEl = document.getElementById('start-step3-hint');
+
     if (hasCatalog) {
-      // &step=4 → po výběru instance (parseHash/reload) přistaneš zpět na kroku „Založ účet".
-      url = (app ? app.internalUrl : '#view=instance') + '&step=4'; label = t('start_cta_instances'); isExternal = false;
-    } else if (starter) {
-      url = starter.url; label = t('start_cta_starter').replace('%s', starter.host); isExternal = true;
+      // Inline seznam instancí přímo v kroku 3 — uživatel neopouští onboarding.
+      if (ctaEl) ctaEl.hidden = true;
+      if (hintEl) hintEl.textContent = t('start_inst_hint_pick');
+      renderStep3Instances(app);
     } else {
-      url = app.joinUrl; label = t('start_cta_external'); isExternal = true;
+      // Appka bez katalogu → odkaz ven (starter instance, nebo oficiální join stránka).
+      if (listEl) { listEl.hidden = true; listEl.innerHTML = ''; }
+      var url, label;
+      if (starter) { url = starter.url; label = t('start_cta_starter').replace('%s', starter.host); }
+      else { url = app.joinUrl; label = t('start_cta_external'); }
+      if (ctaEl) {
+        ctaEl.hidden = false; ctaEl.href = url; ctaEl.textContent = label;
+        ctaEl.target = '_blank'; ctaEl.rel = 'noopener noreferrer';
+      }
+      if (hintEl) hintEl.textContent = t('start_inst_hint_external');
     }
-    document.querySelectorAll('#start-step-3 a.cta-btn').forEach(function (a) {
-      a.href = url; a.textContent = label;
-      if (isExternal) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
-      else { a.removeAttribute('target'); a.removeAttribute('rel'); }
+  }
+
+  // Inline seznam instancí v kroku 3 — jen pro vybranou appku a jen s reálně otevřenou
+  // registrací (open/approval). Klik „Vybrat" uloží volbu a posune na krok 4 (bez odchodu ven).
+  function renderStep3Instances(app) {
+    var listEl = document.getElementById('start-step3-instances');
+    if (!listEl) return;
+    var appId = (app && app.id) || 'mastodon';
+    listEl.hidden = false;
+    listEl.innerHTML = '<p class="start-inst-loading">…</p>';
+    ensureInstancesLoaded().then(function () {
+      // Jiná appka se mezitím mohla vybrat — nevykresluj zastaralý seznam.
+      if (startStep !== 3 || ((startPickedApp && startPickedApp.id) || 'mastodon') !== appId) return;
+      var list = instanceList.filter(function (i) {
+        return i.appId === appId && (i.registration === 'open' || i.registration === 'approval');
+      });
+      // Pořadí: výchozí doporučení → pro začátečníky → otevřená registrace → víc uživatelů.
+      list.sort(function (a, b) {
+        return (b.beginnerDefault ? 1 : 0) - (a.beginnerDefault ? 1 : 0) ||
+               (b.beginnerFriendly ? 1 : 0) - (a.beginnerFriendly ? 1 : 0) ||
+               (a.registration === 'open' ? 0 : 1) - (b.registration === 'open' ? 0 : 1) ||
+               (b.users || 0) - (a.users || 0);
+      });
+      listEl.innerHTML = '';
+      if (!list.length) {
+        var empty = document.createElement('p');
+        empty.className = 'start-inst-empty';
+        empty.textContent = t('start_inst_empty') + ' ';
+        var a = document.createElement('a');
+        a.href = (app && app.joinUrl) || 'https://joinfediverse.wiki';
+        a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = (app && app.joinUrl) || 'joinfediverse.wiki';
+        empty.appendChild(a); listEl.appendChild(empty);
+        return;
+      }
+      var head = document.createElement('p');
+      head.className = 'start-inst-heading'; head.textContent = t('start_inst_heading');
+      listEl.appendChild(head);
+      var max = 8;
+      list.slice(0, max).forEach(function (i) { listEl.appendChild(buildStep3InstanceItem(i)); });
+      if (list.length > max && app && app.internalUrl) {
+        var more = document.createElement('a');
+        more.className = 'start-inst-more'; more.href = app.internalUrl + '&step=4';
+        more.textContent = t('start_inst_more');
+        listEl.appendChild(more);
+      }
     });
+  }
+
+  function buildStep3InstanceItem(i) {
+    var row = document.createElement('div');
+    row.className = 'start-inst-item';
+    var body = document.createElement('div'); body.className = 'start-inst-item__body';
+    var top = document.createElement('div'); top.className = 'start-inst-item__top';
+    var nm = document.createElement('strong'); nm.textContent = i.name || i.domain; top.appendChild(nm);
+    var host = document.createElement('span'); host.className = 'start-inst-item__host'; host.textContent = i.domain; top.appendChild(host);
+    body.appendChild(top);
+    var meta = document.createElement('div'); meta.className = 'start-inst-item__meta';
+    var reg = document.createElement('span');
+    reg.className = 'inst-reg inst-reg-' + i.registration; reg.textContent = t('instance_reg_' + i.registration);
+    meta.appendChild(reg);
+    if (i.users != null) {
+      var u = document.createElement('span'); u.className = 'start-inst-item__users';
+      u.textContent = appNum(i.users) + ' ' + t('instance_users'); meta.appendChild(u);
+    }
+    if (i.beginnerDefault) {
+      var bd = document.createElement('span'); bd.className = 'start-inst-item__beg';
+      bd.textContent = '★ ' + t('instance_beginner'); meta.appendChild(bd);
+    }
+    body.appendChild(meta);
+    row.appendChild(body);
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'cta-btn start-inst-item__choose';
+    btn.textContent = t('start_inst_choose');
+    btn.addEventListener('click', function () {
+      startChosenInstance = i;
+      if (window.umami) window.umami.track('onboarding-instance', { host: i.domain, app: i.appId });
+      showStartStep(4);
+    });
+    row.appendChild(btn);
+    return row;
   }
 
   function showStartStep(n) {
@@ -703,6 +805,7 @@
       if (picked) startPickedApp = picked;
       updateStep3ForApp(startPickedApp);
     }
+    if (n === 4) updateStep4ForInstance();
     if (startNavEl) {
       startNavEl.querySelectorAll('button[data-start]').forEach(function (btn) {
         btn.setAttribute('aria-pressed', btn.getAttribute('data-start') === String(n) ? 'true' : 'false');
@@ -710,6 +813,39 @@
     }
     if (view === 'start') writeHash();   // krok drž v URL (přežije reload/sdílení)
     if (window.umami) window.umami.track('onboarding-step', { step: n });
+  }
+
+  // Krok 4: pokud uživatel vybral instanci v kroku 3, naservíruj přímý odkaz na registraci.
+  function updateStep4ForInstance() {
+    var box = document.getElementById('start-step4-chosen');
+    if (!box) return;
+    // Reload/deep-link: instanci máme jen jako host v hashi → dořeš po načtení katalogu.
+    if (!startChosenInstance && pendingChosenInstHost) {
+      var host = pendingChosenInstHost;
+      ensureInstancesLoaded().then(function () {
+        var found = instanceList.filter(function (x) { return x.domain === host; })[0];
+        if (found && pendingChosenInstHost === host) {
+          startChosenInstance = found; pendingChosenInstHost = '';
+          if (startStep === 4) updateStep4ForInstance();
+        }
+      });
+    }
+    var i = startChosenInstance;
+    if (!i) { box.hidden = true; box.innerHTML = ''; return; }
+    box.hidden = false; box.innerHTML = '';
+    var lead = document.createElement('p'); lead.className = 'start-chosen-lead';
+    lead.innerHTML = t('start_step4_chosen_lead').replace('%s', '<strong>' + (i.name || i.domain) + '</strong> (' + i.domain + ')');
+    box.appendChild(lead);
+    var cta = document.createElement('a');
+    cta.className = 'cta-btn'; cta.href = i.signupUrl || ('https://' + i.domain);
+    cta.target = '_blank'; cta.rel = 'noopener noreferrer';
+    cta.setAttribute('data-umami-event', 'signup-' + i.domain);
+    cta.textContent = t('start_step4_chosen_cta').replace('%s', i.domain);
+    box.appendChild(cta);
+    var change = document.createElement('button');
+    change.type = 'button'; change.className = 'start-chosen-change'; change.textContent = t('start_step4_chosen_change');
+    change.addEventListener('click', function () { startChosenInstance = null; showStartStep(3); });
+    box.appendChild(change);
   }
 
   function applyStartSection() {
@@ -1022,6 +1158,7 @@
       if (ov.appId) inst.appId = ov.appId;
       // Ne-Mastodon instance mají jinou cestu k registraci než /auth/sign_up.
       if (ov.signupUrl) inst.signupUrl = ov.signupUrl;
+      if (ov.beginnerDefault) inst.beginnerDefault = true;   // výchozí doporučení v onboardingu
     }
     return inst;
   }
@@ -2940,6 +3077,8 @@
   var startSection = 'intro';    // pohled „Začínáme": 'intro' | 'apps' (volatilní, bude se měnit)
   var startStep = 1;             // aktivní krok onboardingu (persistuje při přechodu mezi pohledy)
   var startPickedApp = null;     // App objekt z kroku 2 pickeru → předá se do kroku 3
+  var startChosenInstance = null; // Instance vybraná inline v kroku 3 → odkaz na registraci v kroku 4
+  var pendingChosenInstHost = ''; // deep-link/reload: host z hashe (inst=), dořeší se po načtení instancí
   // ---------- Stav pohledu Aplikace (Pohled 2) ----------
   var appsSort = 'users';        // 'name' | 'users' | 'instances' (řazení v záložce „Vše"); výchozí „Nejvíc uživatelů"
   var appsTab = 'all';           // žebříček: 'all' | 'users' | 'instances' | 'risers' | 'new'
@@ -4026,6 +4165,7 @@
       // Začínáme je výchozí pohled → jinak čistá landing URL bez hashe.
       // Krok onboardingu drž v hashi, ať přežije reload i sdílení URL (krok 1 = default, vynech).
       if (startStep > 1) parts.push('step=' + startStep);
+      if (startChosenInstance) parts.push('inst=' + enc(startChosenInstance.domain));
     } else if (view === 'aplikace') {
       parts.push('view=aplikace');
       if (appsTab !== 'all') parts.push('atab=' + appsTab);
@@ -4098,7 +4238,7 @@
     filters.family.clear(); filters.type.clear();
     filters.language.clear(); filters.tag.clear();
     searchQuery = ''; sortKey = 'name'; slice = { kind: 'all' };
-    view = 'start'; postsSort = 'engagement'; postsTab = 'all'; aboutSection = 'about'; startSection = 'intro'; startStep = 1; postHashtags.clear();
+    view = 'start'; postsSort = 'engagement'; postsTab = 'all'; aboutSection = 'about'; startSection = 'intro'; startStep = 1; pendingChosenInstHost = ''; postHashtags.clear();
     appsSort = 'users'; appsTab = 'all'; appsFacets.type.clear(); appsFacets.equiv.clear(); appsFacets.czech.clear(); appsFacets.managed.clear(); appsFacets.dev.clear();
     instanceTab = 'all'; searchTab = 'all'; instanceSort = 'users'; pendingSearchQ = '';
     instanceFacets.region.clear(); instanceFacets.app.clear(); instanceFacets.focus.clear(); instanceFacets.reg.clear(); instanceFacets.size.clear();
@@ -4143,6 +4283,7 @@
         case 'asec': if (/^(about|search|instance|apps|tools|links|tech|author|faq|faq-novacci)$/.test(val)) aboutSection = val; break;
         case 'ssec': if (/^[a-z0-9_]+$/.test(val)) startSection = val; break;
         case 'step': if (/^[1-6]$/.test(val)) startStep = Number(val); break;
+        case 'inst': if (/^[a-z0-9.-]+$/i.test(val)) pendingChosenInstHost = val; break;
         case 'asort': if (/^(name|users|instances)$/.test(val)) appsSort = val; break;
         case 'atab': if (/^(all|users|instances|risers|new)$/.test(val)) appsTab = val; break;
         case 'atype': splitList(val).forEach(function (v) { appsFacets.type.add(v); }); break;

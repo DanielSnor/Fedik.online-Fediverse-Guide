@@ -637,8 +637,6 @@
             <p><strong>Nevíš, kde začít?</strong> Nabízíme výchozí bod: <a href="#view=instance&amp;iapp=mastodon&amp;step=4" data-umami-event="mamutovo-instances"><strong>mamutovo.cz</strong></a> — česká komunitní instance na Mastodonu. Příspěvky mají limit 2 500 znaků místo běžných 500, takže se vejde i delší myšlenka. Registrace je po schválení správce — chodí do pár hodin a server si přitom udrží charakter.</p>
           </div>
           <div class="start-default-box start-starter-box" hidden data-lang="cs"></div>
-          <a class="cta-btn" href="#view=instance" data-umami-event="instances-view">Vyber instanci →</a>
-          <p class="step-return-hint">Až si instanci vybereš, vrať se sem a pokračuj krokem 4 ↓</p>
         </div>
         <div data-lang-block="en" hidden>
           <h2>3. Choose an instance</h2>
@@ -649,10 +647,14 @@
             <p><strong>Not sure where to start?</strong> We suggest <a href="#view=instance&amp;iapp=mastodon&amp;step=4" data-umami-event="mamutovo-instances"><strong>mamutovo.cz</strong></a> — a Czech community Mastodon instance with a 2 500-character post limit (vs. the usual 500). Registration is by approval — the admin typically responds within a few hours.</p>
           </div>
           <div class="start-default-box start-starter-box" hidden data-lang="en"></div>
-          <a class="cta-btn" href="#view=instance" data-umami-event="instances-view">Choose an instance →</a>
-          <p class="step-return-hint">Once you’ve chosen an instance, come back here and continue with step 4 ↓</p>
         </div>
       </article>
+      <!-- Interaktivní výběr instance — jazykově neutrální, plní JS (updateStep3ForApp). -->
+      <div id="start-step3-pick" class="start-step3-pick">
+        <div id="start-step3-instances" class="start-inst-list" aria-live="polite" hidden></div>
+        <a class="cta-btn" id="start-step3-cta" hidden></a>
+        <p class="step-return-hint" id="start-step3-hint"></p>
+      </div>
       <div class="step-next-wrap">
         <button class="cta-btn step-next-btn" data-start-next="4" data-i18n="start_next_step">Dalsi krok</button>
       </div>
@@ -674,6 +676,8 @@
           <p>Your handle will look like <code>@name@server.social</code> — that’s how anyone in the Fediverse can find you.</p>
         </div>
       </article>
+      <!-- Vybraná instance z kroku 3 → přímý odkaz na registraci. Plní JS (updateStep4ForInstance). -->
+      <div id="start-step4-chosen" class="start-default-box start-chosen-box" hidden></div>
       <div class="step-next-wrap">
         <button class="cta-btn step-next-btn" data-start-next="5" data-i18n="start_next_step">Dalsi krok</button>
       </div>

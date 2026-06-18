@@ -1253,6 +1253,32 @@ button[data-start][aria-pressed="true"] { font-weight: 700; background: var(--ac
 .start-picker-next { margin-top: 20px; }
 .start-picker-next-hint { margin: 0 0 8px; font-size: 14px; line-height: 1.5; }
 .start-starter-box p { margin: 0; line-height: 1.55; }
+
+/* Inline výběr instance v kroku 3 */
+.start-step3-pick { margin-top: 8px; }
+.start-inst-list { display: flex; flex-direction: column; gap: 10px; margin: 8px 0 4px; }
+.start-inst-heading { margin: 0 0 4px; font-size: 14px; font-weight: 600; }
+.start-inst-empty, .start-inst-loading { margin: 4px 0; font-size: 14px; color: var(--text); }
+.start-inst-item { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card); }
+.start-inst-item__body { flex: 1 1 auto; min-width: 0; }
+.start-inst-item__top { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.start-inst-item__host { font-size: 13px; color: var(--text-dim); }
+.start-inst-item__meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 5px; font-size: 12px; }
+.start-inst-item__users { color: var(--text-dim); }
+.start-inst-item__beg { color: var(--accent); font-weight: 600; }
+.start-inst-item__choose { flex: 0 0 auto; margin-top: 0; padding: 8px 14px; font-size: 13px; cursor: pointer; border: none; }
+.start-inst-more { display: inline-block; margin-top: 6px; font-size: 14px; }
+
+/* Vybraná instance v kroku 4 */
+.start-chosen-box { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.start-chosen-lead { margin: 0; line-height: 1.55; }
+.start-chosen-box .cta-btn { margin-top: 0; }
+.start-chosen-change { background: none; border: none; padding: 0; color: var(--text-dim); font-size: 13px; text-decoration: underline; cursor: pointer; font-family: inherit; }
+
+@media (max-width: 560px) {
+  .start-inst-item { flex-direction: column; align-items: stretch; }
+  .start-inst-item__choose { width: 100%; }
+}
 .onboarding-checklist, .onboarding-norms { margin: 12px 0 20px; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
 .onboarding-checklist li, .onboarding-norms li { line-height: 1.55; }
 .onboarding-step h3 { margin: 24px 0 4px; font-size: 16px; }
