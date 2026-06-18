@@ -1249,6 +1249,7 @@ a { color: inherit; text-decoration: none; }
 button.cta-btn { border: none; cursor: pointer; font-family: inherit; }
 .step-next-wrap { margin-top: 24px; padding-bottom: 8px; }
 button[data-start][aria-pressed="true"] { font-weight: 700; background: var(--accent); color: var(--bg); }
+.step-return-hint { margin-top: 12px; font-size: 13px; color: var(--text-muted, var(--text)); opacity: .75; }
 .onboarding-checklist, .onboarding-norms { margin: 12px 0 20px; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
 .onboarding-checklist li, .onboarding-norms li { line-height: 1.55; }
 .onboarding-step h3 { margin: 24px 0 4px; font-size: 16px; }

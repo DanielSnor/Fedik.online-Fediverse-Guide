@@ -621,12 +621,38 @@
     }
   }
 
-  // Pohled „Začínáme": všechny kroky jsou vždy viditelné (scroll), levé menu
-  // slouží jako obsah — kliknutí scrolluje na příslušný krok.
+  // Vrátí App objekt z taxonomie pro první appId vybraný v pickeru kroku 2 (nebo null).
+  function getPickerSelectedApp() {
+    var sel = document.getElementById('start-picker');
+    if (!sel || !sel.value || !startPickerMap[sel.value]) return null;
+    var appIds = startPickerMap[sel.value].appIds;
+    if (!appIds || !appIds.length) return null;
+    return startTaxApps()[appIds[0]] || null;
+  }
+
+  // Aktualizuje CTA a mamutovo box v kroku 3 podle zvolené aplikace z kroku 2.
+  function updateStep3ForApp(app) {
+    var isMastodon = !app || app.id === 'mastodon';
+    // Mamutovo.cz doporučení — jen pro Mastodon.
+    document.querySelectorAll('#start-step-3 .start-default-box').forEach(function (b) {
+      b.hidden = !isMastodon;
+    });
+    // CTA „Přejít na Instance": použij internalUrl (filtrovaný pohled) nebo joinUrl ven.
+    var url = app ? (app.internalUrl || app.joinUrl) : '#view=instance';
+    var isExternal = app && !app.internalUrl;
+    document.querySelectorAll('#start-step-3 a.cta-btn').forEach(function (a) {
+      a.href = url;
+      if (isExternal) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+      else { a.removeAttribute('target'); a.removeAttribute('rel'); }
+    });
+  }
+
   function showStartStep(n) {
+    startStep = n;
     document.querySelectorAll('.onboarding-step').forEach(function (el) { el.hidden = true; });
     var step = document.getElementById('start-step-' + n);
     if (step) step.hidden = false;
+    if (n === 3) updateStep3ForApp(startPickedApp);
     if (startNavEl) {
       startNavEl.querySelectorAll('button[data-start]').forEach(function (btn) {
         btn.setAttribute('aria-pressed', btn.getAttribute('data-start') === String(n) ? 'true' : 'false');
@@ -637,7 +663,7 @@
 
   function applyStartSection() {
     loadStartVideo();
-    showStartStep(1);
+    showStartStep(startStep);
   }
 
   function bindStartNav() {
@@ -649,7 +675,9 @@
     });
     document.querySelectorAll('button[data-start-next]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        showStartStep(Number(btn.getAttribute('data-start-next')));
+        var next = Number(btn.getAttribute('data-start-next'));
+        if (next === 3) startPickedApp = getPickerSelectedApp();
+        showStartStep(next);
       });
     });
   }
@@ -2860,6 +2888,8 @@
   var postsTab = 'all';          // 'all' | '10' | '50' | 'risers_ratio' | 'risers_abs'
   var aboutSection = 'about';    // 'about' | 'accounts' | 'posts'
   var startSection = 'intro';    // pohled „Začínáme": 'intro' | 'apps' (volatilní, bude se měnit)
+  var startStep = 1;             // aktivní krok onboardingu (persistuje při přechodu mezi pohledy)
+  var startPickedApp = null;     // App objekt z kroku 2 pickeru → předá se do kroku 3
   // ---------- Stav pohledu Aplikace (Pohled 2) ----------
   var appsSort = 'users';        // 'name' | 'users' | 'instances' (řazení v záložce „Vše"); výchozí „Nejvíc uživatelů"
   var appsTab = 'all';           // žebříček: 'all' | 'users' | 'instances' | 'risers' | 'new'
