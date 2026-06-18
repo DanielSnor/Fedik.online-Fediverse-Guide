@@ -338,15 +338,33 @@
 
         <nav class="filter-group start-nav" id="start-nav" data-filter="start" hidden aria-label="Začínáme">
           <h2 data-i18n="start_menu_heading">Začínáme s Fediverse</h2>
-          <p class="search-nav-desc" data-i18n="start_menu_intro1">Fediverse je svět propojený nezávislými sociálními sítěmi. Není to pouze „velká platforma“ ovládaná jedinou firmou – systém tvoří tisíce serverů, které navzájem komunikují.</p>
-          <p class="search-nav-desc" data-i18n="start_menu_intro2">Je to obrovský prostor, téměř jako ten mezihvězdný, a aby ses v něm neztratil, nech se námi navigovat – provést tě následujícími kroky, které ti pomohou přistát přesně na té planetě – aplikaci, kde si to přeješ, a založit tam svou základnu – účet.</p>
-          <div class="filter-buttons">
-            <button class="filter-chip start-link" data-start="1" data-i18n="start_step1">Co ten Fediverse vlastně je?</button>
-            <button class="filter-chip start-link" data-start="2" data-i18n="start_step2">Vyber aplikaci</button>
-            <button class="filter-chip start-link" data-start="3" data-i18n="start_step3">Vyber instanci</button>
-            <button class="filter-chip start-link" data-start="4" data-i18n="start_step4">Založ si účet</button>
-            <button class="filter-chip start-link" data-start="5" data-i18n="start_step5">První den</button>
-            <button class="filter-chip start-link" data-start="6" data-i18n="start_step6">Najdi lidi</button>
+          <p class="search-nav-desc" data-i18n="start_intro_p1">Fediverse je vesmír propojených nezávislých sociálních sítí — místo jedné velké firmy ho tvoří tisíce serverů, které si spolu povídají.</p>
+          <p class="search-nav-desc" data-i18n="start_intro_p2">Je to obrovský prostor, skoro jako ten mezihvězdný. Aby ses v něm neztratil, provedu tě jako navigátor: vybereš si loď (aplikaci), přistaneš na správné planetě (instanci) a založíš si na ní základnu (účet). Pak sestavíš posádku — lidi, které chceš sledovat.</p>
+          <div class="filter-buttons start-steplist">
+            <button class="filter-chip start-link start-step-pill" data-start="1">
+              <span class="start-pill-label" data-i18n="start_step1">Co je Fediverse?</span>
+              <span class="start-pill-desc" data-i18n="step1_desc">Síť propojených serverů — jeden účet, žádné reklamy, žádný algoritmus.</span>
+            </button>
+            <button class="filter-chip start-link start-step-pill" data-start="2">
+              <span class="start-pill-label" data-i18n="start_step2">Vyber aplikaci</span>
+              <span class="start-pill-desc" data-i18n="step2_desc">Podle toho, co chceš dělat: mikroblog, fotky, video, fórum…</span>
+            </button>
+            <button class="filter-chip start-link start-step-pill" data-start="3">
+              <span class="start-pill-label" data-i18n="start_step3">Vyber instanci</span>
+              <span class="start-pill-desc" data-i18n="step3_desc">Server, kde budeš mít účet. Měnit ho jde kdykoli, sledující jdou s tebou.</span>
+            </button>
+            <button class="filter-chip start-link start-step-pill" data-start="4">
+              <span class="start-pill-label" data-i18n="start_step4">Založ účet</span>
+              <span class="start-pill-desc" data-i18n="step4_desc">Pár minut: e-mail, potvrzení, někdy krátké schválení.</span>
+            </button>
+            <button class="filter-chip start-link start-step-pill" data-start="5">
+              <span class="start-pill-label" data-i18n="start_step5">První den</span>
+              <span class="start-pill-desc" data-i18n="step5_desc">Šest věcí, co udělat hned, ať tě to chytne.</span>
+            </button>
+            <button class="filter-chip start-link start-step-pill" data-start="6">
+              <span class="start-pill-label" data-i18n="start_step6">Najdi lidi</span>
+              <span class="start-pill-desc" data-i18n="step6_desc">Ať doma není prázdno — odkud nabrat první účty.</span>
+            </button>
           </div>
         </nav>
 
@@ -512,7 +530,7 @@
         <div class="start-figrow">
           <div class="start-figrow__text">
             <div data-lang-block="cs">
-              <h2>Co je Fediverse a jak v něm začít</h2>
+              <h2 data-i18n="step1_label">Co je Fediverse?</h2>
               <p><strong>Fediverse</strong> je svět propojený nezávislými sociálními sítěmi. Není to pouze
                 „velká platforma" ovládaná jedinou firmou – systém tvoří tisíce serverů, které komunikují
                 navzájem.</p>
@@ -522,7 +540,7 @@
               <p>Podívej se na krátké video, které princip fediverse přehledně vysvětlí.</p>
             </div>
             <div data-lang-block="en" hidden>
-              <h2>What the Fediverse is and how to start</h2>
+              <h2 data-i18n="step1_label">What is the Fediverse?</h2>
               <p><strong>The Fediverse</strong> is a connected network of independent social platforms — instead
                 of one big company, it's built from thousands of servers that talk to each other. From a single
                 account you follow people across the whole network: microblogging, photos, video, music and
@@ -600,13 +618,12 @@
            Jeden select nad taxonomií (window.FEDIK_TAXONOMY) nahrazuje původní matici i průvodce. -->
       <article class="about-content start-block start-picker-block">
         <div data-lang-block="cs">
-          <h2>Odkud přicházíš, nebo co chceš dělat?</h2>
-          <p>Vyber síť, kterou znáš, nebo typ obsahu — ukážu ti odpovídající aplikaci ve Fediverse.
-            Odkaz „Začít" tě zatím vezme na oficiální stránku aplikace, později povede přímo k nám.</p>
+          <h2 data-i18n="step2_label">Vyber si loď (aplikaci)</h2>
+          <p data-i18n="step2_sub">Vyber síť, kterou znáš, nebo typ obsahu — ukážu ti odpovídající loď (aplikaci). Tlačítko „Začít“ tě pošle dál: u hlavních aplikací rovnou na výběr planety (instance), u ostatních na jejich oficiální stránku.</p>
         </div>
         <div data-lang-block="en" hidden>
-          <h2>Where are you coming from, or what do you want to do?</h2>
-          <p>Pick a network you know or a content type — I’ll show you the matching Fediverse app.</p>
+          <h2 data-i18n="step2_label">Pick your ship (an app)</h2>
+          <p data-i18n="step2_sub">Pick a network you know, or a type of content — I’ll show you the matching ship (app). “Start” takes you onward: for the main apps straight to picking a planet (instance), for the rest to their official page.</p>
         </div>
         <img class="start-fig start-fig--big" src="img/fedik-odkud-prichazis.png"
              alt="Fedík: odkud přicházíš?" width="1254" height="1254" loading="lazy">
@@ -631,22 +648,24 @@
       <div id="start-step-3" class="onboarding-step">
       <article class="about-content start-block">
         <div data-lang-block="cs">
-          <h2>3. Vyber si instanci</h2>
-          <p>Instance je tvůj domovský server. Záleží jen na tom, kde jsi přihlášený — sledovat a komunikovat můžeš s kýmkoli v celém Fediverse.</p>
-          <p class="step3-when-catalog">Tlačítko níže tě vezme do přehledu instancí filtrovaného pro tvou aplikaci. Filtruj podle zaměření nebo regionu a koukni na žebříček <em>„pro začátečníky"</em> — stojí na prověřenosti, ne na počtu uživatelů.</p>
+          <h2 data-i18n="step3_label">Vyber si planetu (instanci)</h2>
+          <p class="step3-when-catalog" data-i18n="step3_intro">Planeta (instance) je tvůj domovský server — místo, kde budeš přihlášený. Sledovat a povídat si můžeš s kýmkoli v celém Fediverse, ať přistaneš kdekoli. Níže ukazujeme jen planety s otevřenou registrací nebo registrací po schválení. Dej „Vybrat tuhle“ a posuneme tě na krok 4.</p>
           <p class="step3-when-external" hidden>Pro tuhle aplikaci zatím nemáme český katalog instancí. Tlačítko níže tě vezme na oficiální stránku, kde si vybereš server a založíš účet. Pak se vrať sem na krok 4.</p>
           <div class="start-default-box">
-            <p><strong>Nevíš, kde začít?</strong> Nabízíme výchozí bod: <a href="#view=instance&amp;iapp=mastodon&amp;step=4" data-umami-event="mamutovo-instances"><strong>mamutovo.cz</strong></a> — česká komunitní instance na Mastodonu. Příspěvky mají limit 2 500 znaků místo běžných 500, takže se vejde i delší myšlenka. Registrace je po schválení správce — chodí do pár hodin a server si přitom udrží charakter.</p>
+            <p><strong data-i18n="start_default_q">Nevíš, kam?</strong> <span data-i18n="start_default_rec">Začni třeba na mamutovo.cz — dobře udržovaný český server s rozšířeným limitem 2500 znaků na příspěvek.</span></p>
+            <p data-i18n="start_default_note">Registrace je „po schválení“, takže tě správce pustí ručně — chvilka strpení, zato klidnější start. Není to jediná dobrá volba: v Instancích si můžeš vybrat jinou a kdykoli se přestěhovat.</p>
+            <a class="cta-btn" href="https://mamutovo.cz/auth/sign_up" target="_blank" rel="noopener noreferrer" data-umami-event="mamutovo-signup" data-i18n="start_default_cta">Založit účet na mamutovo.cz</a>
           </div>
           <div class="start-default-box start-starter-box" hidden data-lang="cs"></div>
         </div>
         <div data-lang-block="en" hidden>
-          <h2>3. Choose an instance</h2>
-          <p>An instance is your home server. It only matters where you’re signed in — you can follow and talk to anyone across the whole Fediverse.</p>
-          <p class="step3-when-catalog">The button below takes you to the instance list filtered for your app. Filter by focus or region and use the <em>"for beginners"</em> ranking — it’s based on vetting, not user count.</p>
+          <h2 data-i18n="step3_label">Pick your planet (an instance)</h2>
+          <p class="step3-when-catalog" data-i18n="step3_intro">A planet (instance) is your home server — the place you’ll be signed in. You can follow and talk to anyone across the whole Fediverse, wherever you land. Below we show only planets with open or approval-based sign-up. Hit “Choose this one” and we’ll move you to step 4.</p>
           <p class="step3-when-external" hidden>We don’t have a Czech instance catalog for this app yet. The button below takes you to the official site, where you pick a server and create your account. Then come back here for step 4.</p>
           <div class="start-default-box">
-            <p><strong>Not sure where to start?</strong> We suggest <a href="#view=instance&amp;iapp=mastodon&amp;step=4" data-umami-event="mamutovo-instances"><strong>mamutovo.cz</strong></a> — a Czech community Mastodon instance with a 2 500-character post limit (vs. the usual 500). Registration is by approval — the admin typically responds within a few hours.</p>
+            <p><strong data-i18n="start_default_q">Not sure where?</strong> <span data-i18n="start_default_rec">You could start on mamutovo.cz — a well-maintained Czech server with an extended 2500-character post limit.</span></p>
+            <p data-i18n="start_default_note">Sign-up is approval-based, so an admin lets you in by hand — a short wait, but a calmer start. It’s not the only good choice: pick another in Instances and move anytime.</p>
+            <a class="cta-btn" href="https://mamutovo.cz/auth/sign_up" target="_blank" rel="noopener noreferrer" data-umami-event="mamutovo-signup" data-i18n="start_default_cta">Create an account on mamutovo.cz</a>
           </div>
           <div class="start-default-box start-starter-box" hidden data-lang="en"></div>
         </div>
@@ -666,16 +685,14 @@
       <div id="start-step-4" class="onboarding-step">
       <article class="about-content start-block">
         <div data-lang-block="cs">
-          <h2>4. Založ si účet</h2>
-          <p>Na kartě instance klikni na <strong>Založ účet</strong> a projdi registraci přímo na serveru. Zvolíš si uživatelské jméno, e-mail a heslo — nic se neplatí, žádná karta.</p>
-          <p><strong>Registrace čeká na schválení?</strong> Správce serveru musí žádost odsouhlasit. Přijde ti e-mail, obvykle do pár hodin. Zatím si v klidu projdi kroky 5 a 6 — čas nepřijde nazmar.</p>
-          <p>Tvůj výsledný handle bude ve tvaru <code>@jmeno@server.cz</code> — tak tě najdou ostatní z celého Fediverse.</p>
+          <h2 data-i18n="step4_label">Postav si základnu (založ účet)</h2>
+          <h3 data-i18n="reg_head">Co tě při registraci čeká</h3>
+          <p data-i18n="reg_body">Vyplníš uživatelské jméno, e-mail a heslo. Přijde ti potvrzovací e-mail — klikni na odkaz v něm. U serverů „po schválení“ chvíli počkej, než tě správce pustí dovnitř (většinou pár hodin). A jsi uvnitř.</p>
         </div>
         <div data-lang-block="en" hidden>
-          <h2>4. Create your account</h2>
-          <p>On the instance card click <strong>Sign up</strong> and complete registration directly on the server. You’ll pick a username, email and password — no payment, no card.</p>
-          <p><strong>Registration pending approval?</strong> The server admin needs to approve your request. You’ll get an email, usually within a few hours. In the meantime, read through steps 5 and 6 — the time won’t be wasted.</p>
-          <p>Your handle will look like <code>@name@server.social</code> — that’s how anyone in the Fediverse can find you.</p>
+          <h2 data-i18n="step4_label">Build your base (create an account)</h2>
+          <h3 data-i18n="reg_head">What to expect when you sign up</h3>
+          <p data-i18n="reg_body">You’ll fill in a username, email and password. A confirmation email arrives — click the link in it. On “approval” servers, wait a moment for the admin to let you in (usually a few hours). And you’re in.</p>
         </div>
       </article>
       <!-- Vybraná instance z kroku 3 → přímý odkaz na registraci. Plní JS (updateStep4ForInstance). -->
@@ -689,43 +706,47 @@
       <div id="start-step-5" class="onboarding-step">
       <article class="about-content start-block">
         <div data-lang-block="cs">
-          <h2>5. První den</h2>
-          <p>Máš účet — tady je šest věcí, které stojí za to udělat hned na začátku:</p>
+          <h2 data-i18n="step5_label">První den na základně</h2>
+          <h3 data-i18n="fday_head">Hotovo, máš účet — prvních šest kroků</h3>
+          <p data-i18n="fday_intro">Projdi je popořadě a Fediverse tě chytne hned první den.</p>
           <ol class="onboarding-checklist">
-            <li><strong>Nastav profil</strong> — avatar, bio a hlavičku. Lidé na základě profilu rozhodují, koho sledovat.</li>
-            <li><strong>Ověř svůj web</strong> přes <code>rel=me</code> — přidáš odkaz na svůj web do profilu a na webu odkaz zpátky. Detaily: <a href="#view=slovnicek&amp;heslo=overeni-profilu">Ověření profilu</a>.</li>
-            <li><strong>Napiš úvodní příspěvek</strong> s hastagem <code>#nazdar</code> nebo <code>#introductions</code> — řekni, co tě zajímá, a připni ho na profil.</li>
-            <li><strong>Nainstaluj klienta</strong> — webové rozhraní stačí, ale nativní aplikace je pohodlnější. Koukni do <a href="#view=nastroje">Nástrojů</a>.</li>
-            <li><strong>Najdi lidi</strong> — <a href="#view=start" data-start-next-step="6">krok 6 níže</a> ti dá dva katalogy CZ/SK účtů.</li>
-            <li><strong>Rozklikni domácí / lokální / federovanou osu</strong> — domácí jsou jen tví sledovaní, lokální jsou všichni z tvé instance, federovaná je mix všeho co instance zná.</li>
+            <li data-i18n="fday_1">Vyplň profil — avatar, krátké bio a hlavičku. Účty, co nevypadají prázdně, lidi spíš sledují.</li>
+            <li data-i18n="fday_2">Ověř svůj web odkazem rel=me — u profilu pak svítí, že web je fakt tvůj.</li>
+            <li data-i18n="fday_3">Napiš úvodní příspěvek s #nazdar nebo #introductions a připni ho — lidé tě podle něj najdou.</li>
+            <li><span data-i18n="fday_4">Nainstaluj si aplikaci do telefonu — vyber si v Nástrojích podle své platformy.</span> <a class="onb-link" href="#view=nastroje"><span data-i18n="view_tools">Nástroje</span> ↗</a></li>
+            <li><span data-i18n="fday_5">Najdi, koho sledovat — začni Sloníkem a katalogem Zprávobota výše.</span> <a class="onb-link" href="#step=6"><span data-i18n="start_step6">Najdi lidi</span> ↓</a></li>
+            <li><span data-i18n="fday_6">Mrkni na tři osy: Domácí (koho sleduješ), Lokální (tvůj server) a Federovaná (širý Fediverse).</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=casove-osy"><span data-i18n="view_glossary">Slovníček</span> ↗</a></li>
           </ol>
-          <h3>5 věcí, co tu chodí jinak</h3>
+          <h3 data-i18n="norms_head">Pět věcí, co tu chodí jinak</h3>
+          <p data-i18n="norms_intro">Žádná pravidla na krev, jen drobné zvyky, díky kterým tě komunita líp přijme.</p>
           <ul class="onboarding-norms">
-            <li><strong><a href="#view=slovnicek&amp;heslo=cw">CW (Content Warning)</a></strong> — citlivá témata, politiku nebo spoilery schováš za varování. Ostatní si sami zvolí, jestli chtějí číst.</li>
-            <li><strong><a href="#view=slovnicek&amp;heslo=alt-text">Alt text</a></strong> — ke každému obrázku přidej popis. Je to norma, ne výjimka.</li>
-            <li><strong><a href="#view=slovnicek&amp;heslo=hashtag">Hashtagy</a></strong> — full-text vyhledávání přes instance nefunguje; hashtagy jsou hlavní způsob, jak tě lidé najdou.</li>
-            <li><strong><a href="#view=slovnicek&amp;heslo=boost">Boost místo citace</a></strong> — sdílíš příspěvek beze změny. Citační příspěvky se teprve postupně zavádějí.</li>
-            <li><strong><a href="#view=slovnicek&amp;heslo=viditelnost">Viditelnost</a></strong> — každý příspěvek má nastavení (veřejný, jen sledující, zmínka). Výchozí je veřejný.</li>
+            <li><span data-i18n="norms_1">Citlivá témata schovej pod CW (varování obsahu) — čtenář si rozklikne, co chce.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=cw"><span data-i18n="view_glossary">Slovníček</span> ↗</a></li>
+            <li><span data-i18n="norms_2">K obrázkům přidávej alt text — popis pro lidi, co obrázek nevidí. Tady je to slušnost.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=alt-text"><span data-i18n="view_glossary">Slovníček</span> ↗</a></li>
+            <li><span data-i18n="norms_3">Používej hashtagy — vyhledávání jede hlavně přes ně, ne přes plný text.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=hashtag"><span data-i18n="view_glossary">Slovníček</span> ↗</a></li>
+            <li><span data-i18n="norms_4">Sdílej boostem (jako repost). Citování s komentářem tu skoro není — schválně, kvůli klidu.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=boost"><span data-i18n="view_glossary">Slovníček</span> ↗</a></li>
+            <li><span data-i18n="norms_5">Před odesláním zkontroluj viditelnost příspěvku (veřejný / jen sledující / přímý) — vybíráš ji u každého postu.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=viditelnost"><span data-i18n="view_glossary">Slovníček</span> ↗</a></li>
           </ul>
         </div>
         <div data-lang-block="en" hidden>
-          <h2>5. Day one</h2>
-          <p>You have an account — here are six things worth doing right away:</p>
+          <h2 data-i18n="step5_label">Your first day at the base</h2>
+          <h3 data-i18n="fday_head">You’ve got an account — your first six steps</h3>
+          <p data-i18n="fday_intro">Go through them in order and the Fediverse will click on day one.</p>
           <ol class="onboarding-checklist">
-            <li><strong>Set up your profile</strong> — avatar, bio and header. People decide who to follow based on your profile.</li>
-            <li><strong>Verify your website</strong> via <code>rel=me</code> — add a link to your site in your profile and a link back on your site. Details: <a href="#view=slovnicek&amp;heslo=overeni-profilu">Profile verification</a>.</li>
-            <li><strong>Write an intro post</strong> with <code>#introductions</code> — say what you're into and pin it to your profile.</li>
-            <li><strong>Install a client</strong> — the web UI is fine, but a native app is more comfortable. Check out <a href="#view=nastroje">Tools</a>.</li>
-            <li><strong>Find people</strong> — <a href="#view=start" data-start-next-step="6">step 6 below</a> gives you two CZ/SK account directories.</li>
-            <li><strong>Explore your home / local / federated feeds</strong> — home is just who you follow, local is everyone on your instance, federated is everything your instance knows about.</li>
+            <li data-i18n="fday_1">Fill in your profile — avatar, a short bio and a header. People follow accounts that don’t look empty.</li>
+            <li data-i18n="fday_2">Verify your website with a rel=me link — your profile then shows the site is really yours.</li>
+            <li data-i18n="fday_3">Post an intro with #introductions and pin it — that’s how people find you.</li>
+            <li><span data-i18n="fday_4">Install a phone app — pick one in Tools for your platform.</span> <a class="onb-link" href="#view=nastroje"><span data-i18n="view_tools">Tools</span> ↗</a></li>
+            <li><span data-i18n="fday_5">Find people to follow — start with Sloník and the Zprávobot catalog above.</span> <a class="onb-link" href="#step=6"><span data-i18n="start_step6">Find people</span> ↓</a></li>
+            <li><span data-i18n="fday_6">Check the three timelines: Home (who you follow), Local (your server) and Federated (the wider Fediverse).</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=casove-osy"><span data-i18n="view_glossary">Glossary</span> ↗</a></li>
           </ol>
-          <h3>5 things that work differently here</h3>
+          <h3 data-i18n="norms_head">Five things that work differently here</h3>
+          <p data-i18n="norms_intro">No strict rules — just small habits that help the community welcome you.</p>
           <ul class="onboarding-norms">
-            <li><strong><a href="#view=slovnicek&amp;heslo=cw">CW (Content Warning)</a></strong> — hide sensitive topics, politics or spoilers behind a warning. Others decide whether to read.</li>
-            <li><strong><a href="#view=slovnicek&amp;heslo=alt-text">Alt text</a></strong> — add a description to every image. It's the norm, not the exception.</li>
-            <li><strong><a href="#view=slovnicek&amp;heslo=hashtag">Hashtags</a></strong> — full-text search across instances doesn't work well; hashtags are the main way people discover you.</li>
-            <li><strong><a href="#view=slovnicek&amp;heslo=boost">Boost instead of quote</a></strong> — you share a post as-is. Quote posts are only gradually being introduced.</li>
-            <li><strong><a href="#view=slovnicek&amp;heslo=viditelnost">Visibility</a></strong> — every post has a setting (public, followers-only, mention). Default is public.</li>
+            <li><span data-i18n="norms_1">Put sensitive topics behind a CW (content warning) — readers open what they want.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=cw"><span data-i18n="view_glossary">Glossary</span> ↗</a></li>
+            <li><span data-i18n="norms_2">Add alt text to images — a description for people who can’t see them. Here it’s basic courtesy.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=alt-text"><span data-i18n="view_glossary">Glossary</span> ↗</a></li>
+            <li><span data-i18n="norms_3">Use hashtags — discovery runs mostly through them, not full-text search.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=hashtag"><span data-i18n="view_glossary">Glossary</span> ↗</a></li>
+            <li><span data-i18n="norms_4">Share with a boost (like a repost). Quote-posting is rare here — deliberately, to keep things calm.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=boost"><span data-i18n="view_glossary">Glossary</span> ↗</a></li>
+            <li><span data-i18n="norms_5">Before sending, check the post visibility (public / followers / direct) — you choose it per post.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=viditelnost"><span data-i18n="view_glossary">Glossary</span> ↗</a></li>
           </ul>
         </div>
       </article>
@@ -738,30 +759,36 @@
       <div id="start-step-6" class="onboarding-step">
       <article class="about-content start-block">
         <div data-lang-block="cs">
-          <h2>6. Najdi lidi a komunity</h2>
-          <p>Prázdná timeline je nejčastější důvod, proč lidé Fediverse opustí po prvním dni. Vyřeš to hned — tady jsou dvě kurátorované kotvy:</p>
+          <h2 data-i18n="step6_label">Sestav posádku (najdi lidi)</h2>
+          <h3 data-i18n="follow_head">Ať doma není prázdno: koho sledovat</h3>
+          <p data-i18n="follow_intro">Nový účet je jako prázdná nástěnka. Tady najdeš první lidi a zdroje, které stojí za sledování.</p>
           <div class="cards-grid start-cards">
             <a class="start-card start-card-link" href="https://slonik.online" target="_blank" rel="noopener" data-umami-event="follow-slonik">
-              <strong class="start-card-title">Sloník.online — živé účty</strong>
-              <p>Katalog českých a slovenských lidí na Mastodonu. Filtruj podle tématu, najdi konkrétní účty a rovnou je sleduj z vlastní instance.</p>
+              <strong class="start-card-title" data-i18n="follow_slonik_title">Živé účty → Sloník.online</strong>
+              <p data-i18n="follow_slonik_desc">Katalog českých a slovenských účtů a instancí. Najdeš lidi podle zájmů a hned je můžeš sledovat.</p>
+              <span class="onb-link" data-i18n="follow_slonik_cta">Otevřít Sloník.online</span>
             </a>
             <a class="start-card start-card-link" href="https://katalog.zpravobot.news" target="_blank" rel="noopener" data-umami-event="follow-zpravobot">
-              <strong class="start-card-title">katalog.zpravobot.news — boti a zprávy</strong>
-              <p>Sledovatelné bot účty s českými zprávami, počasím a obsahem. Vyber si, co tě zajímá, a timeline se rychle oživí.</p>
+              <strong class="start-card-title" data-i18n="follow_zbot_title">Zprávy a boti → katalog.zpravobot.news</strong>
+              <p data-i18n="follow_zbot_desc">Sledovatelné účty, které zrcadlí české zpravodajství a weby přímo do Fediverse. Hned máš o čem číst.</p>
+              <span class="onb-link" data-i18n="follow_zbot_cta">Otevřít katalog Zprávobota</span>
             </a>
           </div>
         </div>
         <div data-lang-block="en" hidden>
-          <h2>6. Find people and communities</h2>
-          <p>An empty timeline is the most common reason people leave the Fediverse after day one. Fix it now — here are two curated starting points:</p>
+          <h2 data-i18n="step6_label">Assemble your crew (find people)</h2>
+          <h3 data-i18n="follow_head">So your home feed isn’t empty: who to follow</h3>
+          <p data-i18n="follow_intro">A new account is like an empty board. Here’s where to find your first people and sources worth following.</p>
           <div class="cards-grid start-cards">
             <a class="start-card start-card-link" href="https://slonik.online" target="_blank" rel="noopener" data-umami-event="follow-slonik">
-              <strong class="start-card-title">Sloník.online — real accounts</strong>
-              <p>A catalog of Czech and Slovak people on Mastodon. Filter by topic, find specific accounts and follow them directly from your instance.</p>
+              <strong class="start-card-title" data-i18n="follow_slonik_title">Live accounts → Sloník.online</strong>
+              <p data-i18n="follow_slonik_desc">A catalog of Czech and Slovak accounts and instances. Find people by interest and follow them right away.</p>
+              <span class="onb-link" data-i18n="follow_slonik_cta">Open Sloník.online</span>
             </a>
             <a class="start-card start-card-link" href="https://katalog.zpravobot.news" target="_blank" rel="noopener" data-umami-event="follow-zpravobot">
-              <strong class="start-card-title">katalog.zpravobot.news — bots &amp; news</strong>
-              <p>Followable bot accounts with Czech news, weather and content. Pick what interests you and your timeline will come alive quickly.</p>
+              <strong class="start-card-title" data-i18n="follow_zbot_title">News & bots → katalog.zpravobot.news</strong>
+              <p data-i18n="follow_zbot_desc">Followable accounts that mirror Czech news and websites straight into the Fediverse. Something to read from day one.</p>
+              <span class="onb-link" data-i18n="follow_zbot_cta">Open the Zprávobot catalog</span>
             </a>
           </div>
         </div>
@@ -1138,26 +1165,26 @@
       <!-- FAQ PRO NOVÁČKY -->
       <article class="about-content" data-about-section="faq-novacci" hidden>
         <div data-lang-block="cs">
-          <h2>FAQ pro nováčky</h2>
-          <h3>Schválení registrace trvá dlouho — co teď?</h3>
-          <p>Správce instance schvaluje žádosti ručně, obvykle do několika hodin. Mezitím si projdi kroky 5 a 6 v průvodci — čas nepřijde nazmar. Pokud do druhého dne nic nepřišlo, zkus napsat správci instance přes web nebo zvol jinou instanci s otevřenou registrací.</p>
-          <h3>Nemůžu najít kamaráda — jak ho vyhledat?</h3>
-          <p>Stačí znát celý handle ve tvaru <code>@jmeno@server.cz</code>. Vlož ho do vyhledávacího pole přímo ve svém Mastodon klientovi nebo webovém rozhraní — server si účet dohledá (tzv. WebFinger). Pak ho můžeš sledovat bez ohledu na to, na které instanci je.</p>
-          <h3>Jak se přestěhuju na jiný server?</h3>
-          <p>Mastodon podporuje <strong>migraci účtu</strong>: na novém serveru si vytvoříš účet, nastavíš alias na starý účet a spustíš přesun. Sledující se přenesou automaticky; příspěvky zůstanou na starém serveru (nebo si je exportuješ). Detaily: <a href="#view=slovnicek&amp;heslo=migrace-uctu">Migrace účtu</a> ve Slovníčku.</p>
-          <h3>Timeline je prázdná — co s tím?</h3>
-          <p>Na začátku je to normální — algorithmus tě tu neplní obsahem sám od sebe. Vyřeš to rychle: koukni do <a href="#view=start">kroku 6 průvodce</a> — dva kurátorované katalogy CZ/SK účtů a botů, které stojí za to sledovat.</p>
+          <h2 data-i18n="faqn_head">Časté první otázky</h2>
+          <h3 data-i18n="faqn_q1">Registrace čeká na schválení — co teď?</h3>
+          <p data-i18n="faqn_a1">U serverů „po schválení“ tě musí pustit správce. Většinou to trvá pár hodin, někdy do druhého dne. Přijde ti e-mail. Zatím můžeš v klidu projít zbytek tipů tady.</p>
+          <h3 data-i18n="faqn_q2">Nemůžu najít kamaráda — jak ho najdu?</h3>
+          <p data-i18n="faqn_a2">Potřebuješ jeho celou adresu ve tvaru @jmeno@server.cz. Vlož ji do vyhledávání ve své aplikaci a dej Sledovat. Samotné „@jmeno“ nestačí — server je důležitý.</p>
+          <h3 data-i18n="faqn_q3">Jak se přestěhuju na jiný server?</h3>
+          <p><span data-i18n="faqn_a3">Mastodon to umí vestavěně: na novém účtu nastavíš alias na starý, na starém spustíš přesun a sledující se přenesou automaticky. Příspěvky se nepřenášejí, profil a sledující ano.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=migrace-uctu"><span data-i18n="view_glossary">Slovníček</span> ↗</a></p>
+          <h3 data-i18n="faqn_q4">Domácí timeline je prázdná, je to normální?</h3>
+          <p data-i18n="faqn_a4">Úplně. Domácí osa ukazuje jen lidi, které sleduješ — na začátku tam nikdo není. Začni sledovat účty přes Sloník.online a katalog.zpravobot.news a hned se zaplní.</p>
         </div>
         <div data-lang-block="en" hidden>
-          <h2>FAQ for beginners</h2>
-          <h3>Registration approval is taking a long time — what now?</h3>
-          <p>Instance admins approve requests manually, usually within a few hours. In the meantime go through steps 5 and 6 of the guide — the time won't be wasted. If nothing arrives by the next day, try contacting the instance admin through their website, or choose a different instance with open registration.</p>
-          <h3>I can't find my friend — how do I search for them?</h3>
-          <p>You just need their full handle in the format <code>@name@server.social</code>. Paste it into the search field in your Mastodon client or web interface — the server will look up the account (via WebFinger). You can then follow them regardless of which instance they're on.</p>
-          <h3>How do I move to a different server?</h3>
-          <p>Mastodon supports <strong>account migration</strong>: create an account on the new server, set an alias pointing to your old account, then trigger the move. Your followers transfer automatically; posts stay on the old server (or you can export them). Details: <a href="#view=slovnicek&amp;heslo=migrace-uctu">Account migration</a> in the Glossary.</p>
-          <h3>My timeline is empty — what do I do?</h3>
-          <p>That's normal at the start — there's no algorithm filling your feed for you. Fix it quickly: check <a href="#view=start" onclick="event.preventDefault();document.querySelector('button[data-start=&quot;6&quot;]').click();history.pushState(null,'','#view=start')">step 6 of the guide</a> — two curated directories of CZ/SK accounts and bots worth following.</p>
+          <h2 data-i18n="faqn_head">Common first questions</h2>
+          <h3 data-i18n="faqn_q1">My sign-up is waiting for approval — now what?</h3>
+          <p data-i18n="faqn_a1">On “approval” servers an admin has to let you in. It usually takes a few hours, sometimes by the next day. You’ll get an email. Meanwhile, feel free to go through the rest of the tips here.</p>
+          <h3 data-i18n="faqn_q2">I can’t find my friend — how do I find them?</h3>
+          <p data-i18n="faqn_a2">You need their full address as @name@server.com. Paste it into your app’s search and hit Follow. Just “@name” isn’t enough — the server matters.</p>
+          <h3 data-i18n="faqn_q3">How do I move to another server?</h3>
+          <p><span data-i18n="faqn_a3">Mastodon does this built-in: set an alias on the new account pointing to the old one, start the move on the old one, and your followers transfer automatically. Posts don’t move, but your profile and followers do.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=migrace-uctu"><span data-i18n="view_glossary">Glossary</span> ↗</a></p>
+          <h3 data-i18n="faqn_q4">My home timeline is empty — is that normal?</h3>
+          <p data-i18n="faqn_a4">Totally. The home timeline only shows people you follow — at the start there’s no one. Start following accounts via Sloník.online and katalog.zpravobot.news and it fills up fast.</p>
         </div>
       </article>
 
