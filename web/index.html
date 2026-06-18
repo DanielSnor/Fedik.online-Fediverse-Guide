@@ -631,21 +631,25 @@
         <div data-lang-block="cs">
           <h2>3. Vyber si instanci</h2>
           <p>Instance je tvůj domovský server. Záleží jen na tom, kde jsi přihlášený — sledovat a komunikovat můžeš s kýmkoli v celém Fediverse.</p>
-          <p>Po kliknutí na <strong>Připojit se</strong> u své aplikace (krok 2) se ocitneš v přehledu instancí filtrovaném pro tu appku. Filtruj podle zaměření nebo regionu a koukni na žebříček <em>„pro začátečníky"</em> — stojí na prověřenosti, ne na počtu uživatelů.</p>
+          <p class="step3-when-catalog">Tlačítko níže tě vezme do přehledu instancí filtrovaného pro tvou aplikaci. Filtruj podle zaměření nebo regionu a koukni na žebříček <em>„pro začátečníky"</em> — stojí na prověřenosti, ne na počtu uživatelů.</p>
+          <p class="step3-when-external" hidden>Pro tuhle aplikaci zatím nemáme český katalog instancí. Tlačítko níže tě vezme na oficiální stránku, kde si vybereš server a založíš účet. Pak se vrať sem na krok 4.</p>
           <div class="start-default-box">
-            <p><strong>Nevíš, kde začít?</strong> Nabízíme výchozí bod: <a href="?app=mastodon" data-umami-event="mamutovo-instances"><strong>mamutovo.cz</strong></a> — česká komunitní instance na Mastodonu. Příspěvky mají limit 2 500 znaků místo běžných 500, takže se vejde i delší myšlenka. Registrace je po schválení správce — chodí do pár hodin a server si přitom udrží charakter.</p>
+            <p><strong>Nevíš, kde začít?</strong> Nabízíme výchozí bod: <a href="#view=instance&amp;iapp=mastodon&amp;step=4" data-umami-event="mamutovo-instances"><strong>mamutovo.cz</strong></a> — česká komunitní instance na Mastodonu. Příspěvky mají limit 2 500 znaků místo běžných 500, takže se vejde i delší myšlenka. Registrace je po schválení správce — chodí do pár hodin a server si přitom udrží charakter.</p>
           </div>
-          <a class="cta-btn" href="#view=instance" data-umami-event="instances-view">Přejít na Instance →</a>
+          <div class="start-default-box start-starter-box" hidden data-lang="cs"></div>
+          <a class="cta-btn" href="#view=instance" data-umami-event="instances-view">Vyber instanci →</a>
           <p class="step-return-hint">Až si instanci vybereš, vrať se sem a pokračuj krokem 4 ↓</p>
         </div>
         <div data-lang-block="en" hidden>
           <h2>3. Choose an instance</h2>
           <p>An instance is your home server. It only matters where you’re signed in — you can follow and talk to anyone across the whole Fediverse.</p>
-          <p>After clicking <strong>Join</strong> on your chosen app (step 2) you’ll land in the instance list filtered for that app. Use the <em>"for beginners"</em> ranking — it’s based on vetting, not user count.</p>
+          <p class="step3-when-catalog">The button below takes you to the instance list filtered for your app. Filter by focus or region and use the <em>"for beginners"</em> ranking — it’s based on vetting, not user count.</p>
+          <p class="step3-when-external" hidden>We don’t have a Czech instance catalog for this app yet. The button below takes you to the official site, where you pick a server and create your account. Then come back here for step 4.</p>
           <div class="start-default-box">
-            <p><strong>Not sure where to start?</strong> We suggest <a href="?app=mastodon" data-umami-event="mamutovo-instances"><strong>mamutovo.cz</strong></a> — a Czech community Mastodon instance with a 2 500-character post limit (vs. the usual 500). Registration is by approval — the admin typically responds within a few hours.</p>
+            <p><strong>Not sure where to start?</strong> We suggest <a href="#view=instance&amp;iapp=mastodon&amp;step=4" data-umami-event="mamutovo-instances"><strong>mamutovo.cz</strong></a> — a Czech community Mastodon instance with a 2 500-character post limit (vs. the usual 500). Registration is by approval — the admin typically responds within a few hours.</p>
           </div>
-          <a class="cta-btn" href="#view=instance" data-umami-event="instances-view">Go to Instances →</a>
+          <div class="start-default-box start-starter-box" hidden data-lang="en"></div>
+          <a class="cta-btn" href="#view=instance" data-umami-event="instances-view">Choose an instance →</a>
           <p class="step-return-hint">Once you’ve chosen an instance, come back here and continue with step 4 ↓</p>
         </div>
       </article>
