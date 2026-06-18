@@ -1,0 +1,822 @@
+/* web/glossary.js — Slovníček (Pohled 4). GENEROVÁNO z data/glossary/glossary.seed.ts
+   skriptem scripts/build_glossary.mjs. RUČNĚ NEEDITUJ — uprav seed a přegeneruj.
+   Typ: data/glossary/types.ts (GlossaryEntry). `id` (slug) = stabilní kontrakt
+   pro hloubkové odkazy z Pohledů 1–3 i pro cíl vyhledávání uvnitř Fedíku. */
+window.FEDIK_GLOSSARY_BUILT = "2026-06-16T20:24:12.875Z";
+window.FEDIK_GLOSSARY = [
+  {
+    "id": "fediverse",
+    "term": "Fediverse",
+    "aliases": [
+      "fedivesmír",
+      "federovaný web",
+      "the fediverse"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "federace"
+    ],
+    "order": 1,
+    "short": "Síť nezávislých serverů, které spolu mluví jedním jazykem. Z jednoho účtu vidíš a sleduješ lidi napříč celou sítí, i když jsou jinde a v jiné aplikaci.",
+    "seeAlso": [
+      "instance",
+      "federace",
+      "activitypub"
+    ]
+  },
+  {
+    "id": "instance",
+    "term": "Instance (server)",
+    "aliases": [
+      "server",
+      "instance",
+      "node",
+      "nod"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "federace",
+      "ucty"
+    ],
+    "order": 2,
+    "short": "Konkrétní server, kde máš účet. Provozuje ho někdo (spolek, firma, jednotlivec), má svá pravidla a moderování. Instanci si můžeš později změnit.",
+    "seeAlso": [
+      "handle",
+      "federace",
+      "pravidla-instance",
+      "migrace-uctu"
+    ]
+  },
+  {
+    "id": "handle",
+    "term": "@jméno@server",
+    "aliases": [
+      "handle",
+      "adresa účtu",
+      "fediverse adresa",
+      "username"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "ucty"
+    ],
+    "order": 3,
+    "short": "Tvoje úplná adresa ve Fediverse. První část je přezdívka, druhá je instance — podobně jako u e-mailu. Podle ní tě kdokoli najde a může sledovat.",
+    "seeAlso": [
+      "instance",
+      "sledovani",
+      "webfinger"
+    ]
+  },
+  {
+    "id": "vytvoreni-uctu",
+    "term": "Jak si vytvořit účet",
+    "aliases": [
+      "registrace",
+      "začít",
+      "sign up",
+      "onboarding"
+    ],
+    "type": "postup",
+    "level": "zakladni",
+    "themes": [
+      "ucty"
+    ],
+    "order": 4,
+    "short": "Vyber si instanci, založ na ní účet a nastav profil. Instanci nevybíráš napořád — kdykoli se dá přejít jinam i se sledujícími.",
+    "body": "Princip: 1) vyber instanci podle jazyka/zaměření, 2) zaregistruj se (někde hned, jinde po schválení), 3) vyplň profil a popis, 4) najdi první lidi ke sledování.",
+    "steps": [
+      {
+        "text": "Na Fedíku v sekci Instance vyber server podle jazyka a zaměření.",
+        "image": ""
+      },
+      {
+        "text": "Na instanci klikni na registraci a vyplň údaje.",
+        "image": ""
+      },
+      {
+        "text": "Doplň jméno, avatar a pár vět o sobě (lidé podle toho schvalují sledování).",
+        "image": ""
+      }
+    ],
+    "seeAlso": [
+      "instance",
+      "pravidla-instance",
+      "sledovani"
+    ]
+  },
+  {
+    "id": "federace",
+    "term": "Federace",
+    "aliases": [
+      "federation",
+      "propojení serverů"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "federace"
+    ],
+    "order": 5,
+    "short": "Schopnost serverů sdílet obsah mezi sebou. Díky federaci může uživatel z jednoho serveru sledovat a komentovat příspěvky z jiného.",
+    "seeAlso": [
+      "fediverse",
+      "activitypub",
+      "defederace"
+    ]
+  },
+  {
+    "id": "casove-osy",
+    "term": "Domovská, lokální a federovaná osa",
+    "aliases": [
+      "timeline",
+      "časová osa",
+      "local timeline",
+      "federated timeline",
+      "feed"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "obsah"
+    ],
+    "order": 6,
+    "short": "Tři pohledy na příspěvky: domovská = lidé, které sleduješ; lokální = veřejné příspěvky z tvé instance; federovaná = vše, co tvá instance odjinud zná.",
+    "seeAlso": [
+      "instance",
+      "prispevek"
+    ]
+  },
+  {
+    "id": "sledovani",
+    "term": "Sledování napříč instancemi",
+    "aliases": [
+      "follow",
+      "sledovat",
+      "odběr"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "ucty",
+      "federace"
+    ],
+    "order": 7,
+    "short": "Sledovat můžeš kohokoli ve Fediverse bez ohledu na jeho instanci. Stačí jeho adresa @jméno@server. Není potřeba zakládat nový účet jinde.",
+    "seeAlso": [
+      "handle",
+      "federace"
+    ]
+  },
+  {
+    "id": "prispevek",
+    "term": "Příspěvek",
+    "aliases": [
+      "post",
+      "toot",
+      "tut",
+      "status"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "obsah"
+    ],
+    "order": 8,
+    "short": "Jednotlivý příspěvek. Na Mastodonu se mu dřív říkalo „toot“. Může mít text, obrázky, anketu, odkaz a nastavitelnou viditelnost.",
+    "seeAlso": [
+      "boost",
+      "viditelnost",
+      "alt-text"
+    ]
+  },
+  {
+    "id": "boost",
+    "term": "Boost (sdílení)",
+    "aliases": [
+      "boost",
+      "reblog",
+      "repost",
+      "sdílení",
+      "přesdílení"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "obsah"
+    ],
+    "order": 9,
+    "short": "Přeposlání cizího příspěvku svým sledujícím beze změny. Obdoba retweetu. Hlavní způsob, jak se obsah ve Fediverse šíří.",
+    "seeAlso": [
+      "prispevek",
+      "oblibit"
+    ]
+  },
+  {
+    "id": "oblibit",
+    "term": "Oblíbit (hvězda)",
+    "aliases": [
+      "favorite",
+      "fav",
+      "like",
+      "lajk",
+      "to se mi líbí"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "obsah"
+    ],
+    "order": 10,
+    "short": "Označení příspěvku hvězdičkou. Na rozdíl od boostu ho dál nešíří — je to spíš poděkování nebo záložka. Algoritmus z toho nic nestaví.",
+    "seeAlso": [
+      "boost"
+    ]
+  },
+  {
+    "id": "vlakno",
+    "term": "Odpověď a vlákno",
+    "aliases": [
+      "reply",
+      "thread",
+      "vlákno",
+      "odpověď",
+      "diskuse"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "obsah"
+    ],
+    "order": 11,
+    "short": "Odpovědi na příspěvek tvoří vlákno. Konverzace se může táhnout přes víc instancí; tvá instance ale nemusí vidět úplně všechny odpovědi z cizích serverů.",
+    "seeAlso": [
+      "prispevek",
+      "zminka"
+    ]
+  },
+  {
+    "id": "cw",
+    "term": "CW — varování obsahu",
+    "aliases": [
+      "CW",
+      "content warning",
+      "varování obsahu",
+      "spoiler",
+      "obsahové varování"
+    ],
+    "type": "zkratka",
+    "level": "zakladni",
+    "themes": [
+      "obsah",
+      "moderovani"
+    ],
+    "order": 12,
+    "short": "Content Warning. Schová příspěvek za krátký popisek a čtenář si ho rozklikne sám. Používá se na spoilery, citlivá témata i delší texty. Ve Fediverse je to běžná zdvořilost.",
+    "seeAlso": [
+      "prispevek",
+      "alt-text"
+    ]
+  },
+  {
+    "id": "hashtag",
+    "term": "Hashtag",
+    "aliases": [
+      "hashtag",
+      "#",
+      "štítek"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "obsah"
+    ],
+    "order": 13,
+    "short": "Slovo s mřížkou, podle kterého se obsah dá hledat a sledovat. Ve Fediverse je obzvlášť důležitý — bez něj tě v jiných tématech těžko někdo objeví. Piš VelbloudíPísmo kvůli čtečkám.",
+    "seeAlso": [
+      "sledovani",
+      "trendy"
+    ]
+  },
+  {
+    "id": "zminka",
+    "term": "Zmínka (mention)",
+    "aliases": [
+      "mention",
+      "zmínka",
+      "@",
+      "tag"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "obsah"
+    ],
+    "order": 14,
+    "short": "Označení uživatele přes @jméno@server v příspěvku. Dotyčný dostane upozornění. Pozor: zmínění lidé vidí příspěvek bez ohledu na jeho viditelnost.",
+    "seeAlso": [
+      "handle",
+      "viditelnost"
+    ]
+  },
+  {
+    "id": "viditelnost",
+    "term": "Viditelnost příspěvku",
+    "aliases": [
+      "visibility",
+      "veřejný",
+      "neuvedený",
+      "jen pro sledující",
+      "přímý",
+      "soukromá zpráva",
+      "DM"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "soukromi",
+      "obsah"
+    ],
+    "order": 15,
+    "short": "Kdo příspěvek uvidí: veřejný (všichni), neuvedený (veřejný, ale ne v osách), jen pro sledující, nebo přímý (jen zmínění). Přímé zprávy nejsou skutečně šifrované soukromí.",
+    "seeAlso": [
+      "zminka",
+      "soukromi-profilu"
+    ]
+  },
+  {
+    "id": "migrace-uctu",
+    "term": "Migrace účtu",
+    "aliases": [
+      "migrace",
+      "move account",
+      "přesun účtu",
+      "stěhování",
+      "redirect"
+    ],
+    "type": "postup",
+    "level": "zakladni",
+    "themes": [
+      "ucty"
+    ],
+    "order": 16,
+    "short": "Přesun na jinou instanci, při kterém si vezmeš sledující s sebou. Sledující se přenesou automaticky; staré příspěvky se ale nepřesouvají.",
+    "body": "Princip: na novém účtu nastavíš „alias“ odkazující na starý účet, pak na starém účtu spustíš „přesunout sledující“ s cílem na nový. Sledující se automaticky přesměrují. Příspěvky a oblíbené se nepřenášejí — ty si můžeš jen zazálohovat exportem.",
+    "steps": [
+      {
+        "text": "Na NOVÉ instanci přidej alias odkazující na starý účet.",
+        "image": ""
+      },
+      {
+        "text": "Na STARÉ instanci spusť „Přesunout sledující na nový účet“ a zadej novou adresu.",
+        "image": ""
+      },
+      {
+        "text": "Počkej — sledující se přesměrují automaticky. Starý profil zůstane jako rozcestník.",
+        "image": ""
+      }
+    ],
+    "externalUrl": "https://fedi.tips/moving-your-mastodon-account-to-another-server/",
+    "seeAlso": [
+      "instance",
+      "alias-uctu",
+      "export-dat"
+    ]
+  },
+  {
+    "id": "alias-uctu",
+    "term": "Alias účtu",
+    "aliases": [
+      "account alias",
+      "alias",
+      "also known as",
+      "alsoKnownAs"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "ucty"
+    ],
+    "short": "Záznam „tenhle účet je taky já“, který musí existovat, aby fungovala migrace sledujících mezi instancemi.",
+    "seeAlso": [
+      "migrace-uctu"
+    ]
+  },
+  {
+    "id": "overeni-profilu",
+    "term": "Ověření profilu (rel=me)",
+    "aliases": [
+      "verifikace",
+      "rel me",
+      "verified link",
+      "zelená fajfka",
+      "ověřený odkaz"
+    ],
+    "type": "postup",
+    "level": "pokrocile",
+    "themes": [
+      "ucty",
+      "technika"
+    ],
+    "short": "Zelené zvýraznění odkazu na profilu, které dokazuje, že web a účet patří stejné osobě. Nejde o modrý odznak — je to vzájemné potvrzení odkazem.",
+    "body": "Na svůj web vložíš odkaz na svůj profil s atributem rel=\"me\" a do profilu dáš odkaz na ten web. Když si sedí navzájem, odkaz v profilu zezelená.",
+    "externalUrl": "https://fedi.tips/verifying-your-website-on-mastodon/",
+    "seeAlso": [
+      "handle"
+    ]
+  },
+  {
+    "id": "export-dat",
+    "term": "Export a zálohování dat",
+    "aliases": [
+      "export",
+      "backup",
+      "záloha",
+      "data export",
+      "stažení dat"
+    ],
+    "type": "postup",
+    "level": "pokrocile",
+    "themes": [
+      "ucty",
+      "soukromi"
+    ],
+    "short": "Stažení vlastních dat — seznam sledujících, příspěvky, oblíbené, blokace. Hodí se před migrací i jako pojistka.",
+    "seeAlso": [
+      "migrace-uctu"
+    ]
+  },
+  {
+    "id": "activitypub",
+    "term": "ActivityPub",
+    "aliases": [
+      "ActivityPub",
+      "AP",
+      "protokol"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "technika",
+      "federace"
+    ],
+    "short": "Společný protokol (standard W3C), kterým si servery Fediverse vyměňují obsah. Díky němu spolu mluví i různé aplikace — Mastodon, Pixelfed, PeerTube a další.",
+    "seeAlso": [
+      "federace",
+      "nodeinfo",
+      "webfinger"
+    ]
+  },
+  {
+    "id": "webfinger",
+    "term": "WebFinger",
+    "aliases": [
+      "WebFinger",
+      "vyhledání účtu"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "technika"
+    ],
+    "short": "Mechanismus, který z adresy @jméno@server zjistí, kde účet skutečně žije, aby ho šlo sledovat z jiné instance.",
+    "seeAlso": [
+      "handle",
+      "activitypub"
+    ]
+  },
+  {
+    "id": "nodeinfo",
+    "term": "NodeInfo",
+    "aliases": [
+      "NodeInfo",
+      "nodeinfo",
+      "statistiky serveru"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "technika"
+    ],
+    "short": "Standardní adresa na každém serveru, která veřejně hlásí, jaký software a verzi běží a kolik má uživatelů. Z toho čerpají statistické weby o Fediverse.",
+    "seeAlso": [
+      "activitypub",
+      "instance"
+    ]
+  },
+  {
+    "id": "defederace",
+    "term": "Defederace (blokace instance)",
+    "aliases": [
+      "defederation",
+      "blokace serveru",
+      "suspend",
+      "domain block",
+      "blokace domény"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "moderovani",
+      "federace"
+    ],
+    "short": "Když instance přeruší spojení s jinou instancí — typicky kvůli spamu nebo toxickému obsahu. Uživatelé pak přes tuhle hranici nevidí. Je to klíčový nástroj moderování ve Fediverse.",
+    "seeAlso": [
+      "federace",
+      "moderovani",
+      "pravidla-instance"
+    ]
+  },
+  {
+    "id": "relay",
+    "term": "Relay (fronta)",
+    "aliases": [
+      "relay",
+      "fronta",
+      "relé"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "technika",
+      "federace"
+    ],
+    "short": "Služba, k níž se instance připojí, aby k sobě dostala víc veřejných příspěvků. Pomáhá hlavně malým serverům, kde by jinak byly osy poloprázdné.",
+    "seeAlso": [
+      "casove-osy",
+      "defederace"
+    ]
+  },
+  {
+    "id": "most",
+    "term": "Most (bridge)",
+    "aliases": [
+      "bridge",
+      "most",
+      "Bridgy Fed",
+      "Mostr",
+      "propojení sítí"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "technika",
+      "federace"
+    ],
+    "short": "Služba, která propojí Fediverse s jinou sítí — třeba Bluesky (Bridgy Fed) nebo Nostr (Mostr). Umožní sledovat účty napříč protokoly.",
+    "seeAlso": [
+      "activitypub",
+      "fediverse"
+    ]
+  },
+  {
+    "id": "alt-text",
+    "term": "Alt text (popis obrázku)",
+    "aliases": [
+      "alt text",
+      "alt",
+      "popis obrázku",
+      "image description",
+      "přístupnost",
+      "accessibility"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "obsah",
+      "soukromi"
+    ],
+    "short": "Textový popis obrázku pro lidi se zrakovým postižením a čtečky. Ve Fediverse je psaní alt textů silně zažitá norma slušnosti.",
+    "seeAlso": [
+      "prispevek",
+      "cw"
+    ]
+  },
+  {
+    "id": "trendy",
+    "term": "Trendy",
+    "aliases": [
+      "trending",
+      "trendy",
+      "populární"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "obsah"
+    ],
+    "short": "Hashtagy a příspěvky, které jsou zrovna populární. Na rozdíl od komerčních sítí bývají kurátorované moderátory, ne čistě algoritmem.",
+    "seeAlso": [
+      "hashtag"
+    ]
+  },
+  {
+    "id": "pravidla-instance",
+    "term": "Pravidla instance",
+    "aliases": [
+      "rules",
+      "pravidla",
+      "kodex",
+      "code of conduct",
+      "ToS"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "moderovani"
+    ],
+    "short": "Soupis toho, co se na serveru smí a nesmí. Liší se instanci od instance — proto se vyplatí přečíst je při výběru, kam se zaregistrovat.",
+    "seeAlso": [
+      "instance",
+      "moderovani"
+    ]
+  },
+  {
+    "id": "moderovani",
+    "term": "Moderování",
+    "aliases": [
+      "moderation",
+      "moderování",
+      "správa"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "moderovani"
+    ],
+    "short": "Správci instance řeší porušení pravidel — od skrytí příspěvku po zablokování účtu nebo celé cizí instance. Kvalita moderování je hlavní důvod, proč si instanci vybírat pečlivě.",
+    "seeAlso": [
+      "pravidla-instance",
+      "nahlaseni",
+      "defederace"
+    ]
+  },
+  {
+    "id": "nahlaseni",
+    "term": "Nahlášení (report)",
+    "aliases": [
+      "report",
+      "nahlásit",
+      "hlášení"
+    ],
+    "type": "postup",
+    "level": "zakladni",
+    "themes": [
+      "moderovani"
+    ],
+    "short": "Když narazíš na obsah porušující pravidla, nahlásíš ho moderátorům. Můžeš přidat i kontext a poslat hlášení i domovské instanci původce.",
+    "seeAlso": [
+      "moderovani",
+      "blokovani-uzivatele"
+    ]
+  },
+  {
+    "id": "blokovani-uzivatele",
+    "term": "Blokování a ztlumení",
+    "aliases": [
+      "block",
+      "mute",
+      "blokovat",
+      "ztlumit",
+      "blokace uživatele"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "moderovani",
+      "soukromi"
+    ],
+    "short": "Blok přeruší veškerý kontakt s daným účtem, ztlumení ho jen schová z tvého pohledu (on o tom neví). Můžeš blokovat i celou cizí instanci pro sebe.",
+    "seeAlso": [
+      "nahlaseni",
+      "defederace"
+    ]
+  },
+  {
+    "id": "soukromi-profilu",
+    "term": "Soukromý vs veřejný profil",
+    "aliases": [
+      "locked account",
+      "zamčený účet",
+      "soukromý profil",
+      "schvalování sledujících"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "soukromi",
+      "ucty"
+    ],
+    "short": "Zamčený účet schvaluje každého sledujícího ručně a jeho příspěvky pro sledující se dál nešíří boostem. Veřejný účet může sledovat kdokoli.",
+    "seeAlso": [
+      "viditelnost",
+      "sledovani"
+    ]
+  },
+  {
+    "id": "neindexovat",
+    "term": "Skrytí před vyhledávači",
+    "aliases": [
+      "noindex",
+      "opt-out",
+      "neindexovat",
+      "discoverable",
+      "search opt-out"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "soukromi"
+    ],
+    "short": "Nastavení, kterým profil a příspěvky vyřadíš z vyhledávačů a z plnotextového hledání. Důležité, protože veřejné příspěvky jsou jinak skutečně veřejné.",
+    "seeAlso": [
+      "viditelnost",
+      "soukromi-profilu"
+    ]
+  },
+  {
+    "id": "authorized-fetch",
+    "term": "Authorized fetch (secure mode)",
+    "aliases": [
+      "authorized fetch",
+      "secure mode",
+      "zabezpečený režim"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "soukromi",
+      "technika"
+    ],
+    "short": "Režim, kdy server vydá obsah cizí instanci jen po ověření podpisem. Ztěžuje plošné stahování dat a obcházení blokací, za cenu mírně horší federace.",
+    "seeAlso": [
+      "defederace",
+      "activitypub"
+    ]
+  },
+  {
+    "id": "open-source",
+    "term": "Open source / svobodný software",
+    "aliases": [
+      "open source",
+      "FOSS",
+      "svobodný software",
+      "otevřený zdroják",
+      "licence"
+    ],
+    "type": "pojem",
+    "level": "zakladni",
+    "themes": [
+      "technika"
+    ],
+    "short": "Software s veřejně dostupným kódem, který smí kdokoli provozovat a upravovat. Skoro celý Fediverse na něm stojí — proto neexistuje jeden vlastník, který by ho mohl vypnout.",
+    "seeAlso": [
+      "activitypub",
+      "self-hosting"
+    ]
+  },
+  {
+    "id": "self-hosting",
+    "term": "Vlastní instance (self-hosting)",
+    "aliases": [
+      "self-hosting",
+      "provoz instance",
+      "vlastní server",
+      "hosting"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "technika"
+    ],
+    "short": "Provoz vlastního serveru Fediverse. Dá se zvládnout svépomocí, nebo přes řízený hosting, kde server spravuje poskytovatel. Náročnost se liší aplikaci od aplikace.",
+    "seeAlso": [
+      "instance",
+      "nodeinfo"
+    ]
+  },
+  {
+    "id": "rss-fediverse",
+    "term": "RSS ve Fediverse",
+    "aliases": [
+      "RSS",
+      "feed",
+      "kanál",
+      "atom"
+    ],
+    "type": "pojem",
+    "level": "pokrocile",
+    "themes": [
+      "technika",
+      "obsah"
+    ],
+    "short": "Většina veřejných profilů Fediverse nabízí i RSS kanál (stačí přidat .rss k adrese profilu). Hodí se na sledování bez účtu nebo do botů a automatizací.",
+    "seeAlso": [
+      "handle",
+      "sledovani"
+    ]
+  }
+];

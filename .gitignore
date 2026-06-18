@@ -1,0 +1,22 @@
+# Tajemství a lokální konfigurace
+config.env
+scripts/deploy.env
+
+# Runtime logy
+logs/
+
+# Data generovaná na serveru (nesynchronizují se přes git)
+web/data/
+data/app-stats-snapshot.json
+
+# Generovaná/stažená pomocná data (nejsou zdrojem pravdy)
+web/apps.generated.js
+data/tools/upstream-report.json
+
+# Systémové soubory
+.DS_Store
+*.bak
+node_modules/
+
+# Claude Code
+.claude/

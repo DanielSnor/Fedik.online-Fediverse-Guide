@@ -1,0 +1,17 @@
+# ==================================
+# Fedík.online — Cloudron crontab
+# ==================================
+#
+# Vlož tyto řádky do Cloudron crontabu dané appky (NE klasický `crontab -e`).
+#
+# LOGOVÁNÍ: skripty si přesměrování řeší samy — když běží z cronu (bez terminálu),
+# zapisují do logs/<jméno>.log; spuštěné ručně píšou na obrazovku.
+#
+# Na cronu běží POUZE PROD. Test se nebuilduje paralelně — data se do něj kopírují
+# z produkce ručně:  ./scripts/sync_data_to_test.sh
+
+# ───────────────────────── DENNĚ ─────────────────────────
+
+# Statistiky aplikací + snímky pro grafy → upload na Surfer (test i prod).
+30 7 * * *    /app/data/fedik/refresh-stats.sh
+

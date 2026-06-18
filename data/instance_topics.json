@@ -1,0 +1,205 @@
+{
+  "mastodonczech.cz": {
+    "categories": [
+      "regional"
+    ],
+    "source": "ai",
+    "desc_hash": "ecc0e4347d9a3d0b847e97580c224176bf5b0e4a"
+  },
+  "witter.cz": {
+    "categories": [
+      "regional"
+    ],
+    "source": "joinmastodon",
+    "desc_hash": null
+  },
+  "pixelfed.cz": {
+    "categories": [
+      "art"
+    ],
+    "source": "ai",
+    "desc_hash": "069b3b470b711e8b451d24219c76c490a97b9eeb"
+  },
+  "cztwitter.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "5995ada69fade67a04e6704b7686cad82f9e7670"
+  },
+  "mastodon.pirati.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "91d9b2cc54e4dcc1af934e324a68915469fa592c"
+  },
+  "mastodon.sk": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "d8951096e3eedf7e3a438281a15f522b2bdee0f9"
+  },
+  "f.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "8e190f6a65cd9772a2ae2ce486b18b79dd5fc50a"
+  },
+  "mamutovo.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "e937481abf58600a06d93992c4027e8ad711ddda"
+  },
+  "toot.whatever.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "fe375a6267dac8cfb450877df6d61c8d90011713"
+  },
+  "mastodon.macsnet.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "bf4b43b0f9332ec5e1802cd3f436a8b6ad15e559"
+  },
+  "kompost.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "716c871c3e28af67389af638ee784308e2971df2"
+  },
+  "boskovice.social": {
+    "categories": [
+      "regional"
+    ],
+    "source": "ai",
+    "desc_hash": "02b2167a6c9fee95820b6abf8b39bb99d22152fa"
+  },
+  "mastodon.starnet.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "8e57064d3114b82f43034cd98be390df707e9b93"
+  },
+  "onqasarch.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "590c4075bfcc2d6dd10db7ef9c28a2a3206b12ab"
+  },
+  "mastodon.morwud.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "2bd7edce432b58684f81a82968844e983acf444d"
+  },
+  "rodina-sucha.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "d8951096e3eedf7e3a438281a15f522b2bdee0f9"
+  },
+  "snac.lab8.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "e4ae4ebca850d27c7d514657a4059880e7b8ee90"
+  },
+  "mastodon.social": {
+    "categories": [
+      "general"
+    ],
+    "source": "joinmastodon",
+    "desc_hash": null
+  },
+  "mstdn.social": {
+    "categories": [
+      "general"
+    ],
+    "source": "joinmastodon",
+    "desc_hash": null
+  },
+  "mas.to": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "78bb9e4bc69b7b9e0230ef7f8bc3e4db0f60232a"
+  },
+  "mastodon.online": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "9a8d07b5fe5ca8a566dfb27d9308f83187a45eed"
+  },
+  "infosec.exchange": {
+    "categories": [
+      "tech"
+    ],
+    "source": "joinmastodon",
+    "desc_hash": null
+  },
+  "fosstodon.org": {
+    "categories": [
+      "tech"
+    ],
+    "source": "ai",
+    "desc_hash": "1f08614785067350fe7eaf9f27f9f69308b44133"
+  },
+  "mastodon.world": {
+    "categories": [
+      "general"
+    ],
+    "source": "joinmastodon",
+    "desc_hash": null
+  },
+  "masto.ai": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "8ee5d8af37326777b0691a629b1bc1f3fd408a19"
+  },
+  "ohai.social": {
+    "categories": [
+      "general"
+    ],
+    "source": "joinmastodon",
+    "desc_hash": null
+  },
+  "hachyderm.io": {
+    "categories": [
+      "tech"
+    ],
+    "source": "joinmastodon",
+    "desc_hash": null
+  },
+  "mastodon.rozhlas.cz": {
+    "categories": [
+      "journalism"
+    ],
+    "source": "ai",
+    "desc_hash": "db012d41858132884bf695621ba7c444687cc966"
+  },
+  "mastodon.skorpil.cz": {
+    "categories": [
+      "general"
+    ],
+    "source": "ai",
+    "desc_hash": "59372798c922c1ba62358b557e63724df66fca6e"
+  }
+}
