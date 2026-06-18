@@ -337,22 +337,14 @@
         </section>
 
         <nav class="filter-group start-nav" id="start-nav" data-filter="start" hidden aria-label="Začínáme">
-          <h2>Co je Fediverse a jak v něm začít</h2>
-          <p class="search-nav-desc">Fediverse je propojená síť nezávislých sociálních sítí — místo jedné velké firmy ji tvoří tisíce serverů, které si spolu povídají.</p>
+          <p class="search-nav-desc">Šest kroků od nuly k fungujícímu Fediverse účtu.</p>
           <div class="filter-buttons">
-            <button class="filter-chip start-link active" data-start="intro">Co je Fediverse?</button>
-          </div>
-
-          <h2>Odkud přicházíš?</h2>
-          <p class="search-nav-desc">Najdi síť, kterou znáš, a podívej se na její obdobu ve Fediverse.</p>
-          <div class="filter-buttons">
-            <button class="filter-chip start-link" data-start="apps">Odkud přicházíš?</button>
-          </div>
-
-          <h2>5 tipů na dobrý start</h2>
-          <p class="search-nav-desc">Podle čeho vybrat správnou aplikaci a instanci, ať tě první kroky baví.</p>
-          <div class="filter-buttons">
-            <button class="filter-chip start-link" data-start="tipy">5 tipů na dobrý start</button>
+            <button class="filter-chip start-link" data-start="1" data-i18n="start_step1">Pochop, co to je</button>
+            <button class="filter-chip start-link" data-start="2" data-i18n="start_step2">Vyber aplikaci</button>
+            <button class="filter-chip start-link" data-start="3" data-i18n="start_step3">Vyber instanci</button>
+            <button class="filter-chip start-link" data-start="4" data-i18n="start_step4">Založ si účet</button>
+            <button class="filter-chip start-link" data-start="5" data-i18n="start_step5">První den</button>
+            <button class="filter-chip start-link" data-start="6" data-i18n="start_step6">Najdi lidi</button>
           </div>
         </nav>
 
@@ -509,8 +501,8 @@
     <!-- ===================== POHLED: ZAČNI TADY ===================== -->
     <section class="start-view" id="start-view" hidden>
 
-      <!-- Sekce „Co je Fediverse?" (intro) — přepíná se z levého menu (#start-nav). -->
-      <div data-start-section="intro">
+      <!-- ═══ Krok 1: Pochop, co to je ═══ -->
+      <div id="start-step-1" class="onboarding-step">
 
       <!-- BLOK 1 — Hero + úvodní video -->
       <article class="about-content start-block">
@@ -592,11 +584,14 @@
         </div><!-- /figrow__text -->
         </div><!-- /figrow -->
       </article>
+      <div class="step-next-wrap">
+        <button class="cta-btn step-next-btn" data-start-next="2" data-i18n="start_next_step">Dalsi krok</button>
+      </div>
 
-      </div><!-- /intro -->
+      </div><!-- /step-1 -->
 
-      <!-- Sekce „Odkud přicházíš?" (apps) — Blok 3 + 4 + 5. -->
-      <div data-start-section="apps" hidden>
+      <!-- ═══ Krok 2: Vyber aplikaci ═══ -->
+      <div id="start-step-2" class="onboarding-step">
 
       <!-- BLOK 3+4 — Odkud přicházíš / Co chci dělat → reálná karta aplikace (Pohled 2).
            Jeden select nad taxonomií (window.FEDIK_TAXONOMY) nahrazuje původní matici i průvodce. -->
@@ -620,122 +615,114 @@
         <div id="start-picker-results" class="apps-grid start-picker-results" aria-live="polite"></div>
         <a href="#view=aplikace" id="start-picker-catalog" class="start-picker-catalog" hidden data-i18n="start_picker_catalog">Zobrazit vše v katalogu →</a>
       </article>
+      <div class="step-next-wrap">
+        <button class="cta-btn step-next-btn" data-start-next="3" data-i18n="start_next_step">Dalsi krok</button>
+      </div>
 
-      </div><!-- /apps -->
+      </div><!-- /step-2 -->
 
-      <!-- Sekce „5 tipů na dobrý start" — rady, podle čeho vybrat aplikaci a instanci. -->
-      <div data-start-section="tipy" hidden>
-        <article class="about-content start-block">
-          <div data-lang-block="cs"><h2>5 tipů na dobrý start</h2></div>
-          <div data-lang-block="en" hidden><h2>5 tips for a good start</h2></div>
-          <div class="start-figrow start-figrow--left">
-          <img class="start-fig" src="img/fedik-na-tohle-se-podivej-dolu.png"
-               alt="Fedík: pár tipů na začátek" width="1254" height="1254" loading="lazy">
-          <div class="start-figrow__text">
-          <div data-lang-block="cs">
-            <div class="cards-grid start-cards">
-              <div class="start-card">
-                <strong class="start-card-title">1. Vyber appku podle obsahu, ne podle hype</strong>
-                <p>Začni od toho, co chceš dělat: mikroblog (Mastodon), fotky (Pixelfed), video (PeerTube), fórum (Lemmy)… V pohledu <strong>Aplikace</strong> filtruj podle typu obsahu a obdoby sítě, kterou už znáš.</p>
-              </div>
-              <div class="start-card">
-                <strong class="start-card-title">2. Chceš česky? Koukni na odznak „čeština"</strong>
-                <p>U každé aplikace je vidět, jestli má rozhraní v češtině (<em>ano / částečně / ne</em>). Ve filtru <strong>Aplikací</strong> si rovnou nech zobrazit jen ty s českým rozhraním.</p>
-              </div>
-              <div class="start-card">
-                <strong class="start-card-title">3. Instanci vybírej podle prověřenosti, ne velikosti</strong>
-                <p>Menší komunitní server bývá lepší start než ten největší. V <strong>Instancích</strong> použij žebříček <em>„pro začátečníky"</em> — stojí na prověřenosti, ne na počtu uživatelů.</p>
-              </div>
-              <div class="start-card">
-                <strong class="start-card-title">4. Mrkni na registrace a zaměření serveru</strong>
-                <p>Otevřené registrace = hned dovnitř; „po schválení" = chvilka strpení. Ať region a zaměření instance sedí k tomu, co tě baví — budeš mezi svými.</p>
-              </div>
-              <div class="start-card">
-                <strong class="start-card-title">5. Neboj se začít — účet se dá přestěhovat</strong>
-                <p>Špatná volba se nepočítá: migrace účtu na jiný server je v Mastodonu vestavěná a sledující jdou s tebou. Hlavní je udělat první krok.</p>
-              </div>
-            </div>
+      <!-- ═══ Krok 3: Vyber instanci ═══ -->
+      <div id="start-step-3" class="onboarding-step">
+      <article class="about-content start-block">
+        <div data-lang-block="cs">
+          <h2>3. Vyber si instanci</h2>
+          <p>Instance je tvůj domovský server. Záleží jen na tom, kde jsi přihlášený — sledovat a komunikovat můžeš s kýmkoli v celém Fediverse.</p>
+          <p>Po kliknutí na <strong>Připojit se</strong> u své aplikace (krok 2) se ocitneš v přehledu instancí filtrovaném pro tu appku. Filtruj podle zaměření nebo regionu a koukni na žebříček <em>„pro začátečníky"</em> — stojí na prověřenosti, ne na počtu uživatelů.</p>
+          <div class="start-default-box">
+            <p><strong>Nevíš, kde začít?</strong> Nabízíme výchozí bod: <a href="?app=mastodon" data-umami-event="mamutovo-instances"><strong>mamutovo.cz</strong></a> — česká komunitní instance na Mastodonu. Příspěvky mají limit 2 500 znaků místo běžných 500, takže se vejde i delší myšlenka. Registrace je po schválení správce — chodí do pár hodin a server si přitom udrží charakter.</p>
           </div>
-          <div data-lang-block="en" hidden>
-            <div class="cards-grid start-cards">
-              <div class="start-card">
-                <strong class="start-card-title">1. Pick an app by content, not hype</strong>
-                <p>Start from what you want to do: microblogging (Mastodon), photos (Pixelfed), video (PeerTube), forums (Lemmy)… In the <strong>Apps</strong> view, filter by content type and by the network you already know.</p>
-              </div>
-              <div class="start-card">
-                <strong class="start-card-title">2. Want Czech? Check the “Czech UI” badge</strong>
-                <p>Each app shows whether its interface is in Czech (<em>yes / partial / no</em>). In the <strong>Apps</strong> filter you can show only the ones with a Czech UI.</p>
-              </div>
-              <div class="start-card">
-                <strong class="start-card-title">3. Pick an instance by vetting, not size</strong>
-                <p>A smaller community server is often a better start than the biggest one. In <strong>Instances</strong>, use the <em>“for beginners”</em> ranking — it’s based on vetting, not user count.</p>
-              </div>
-              <div class="start-card">
-                <strong class="start-card-title">4. Check sign-ups and the server’s focus</strong>
-                <p>Open registration = straight in; “by approval” = a short wait. Make sure the instance’s region and focus match what you enjoy — you’ll be among your people.</p>
-              </div>
-              <div class="start-card">
-                <strong class="start-card-title">5. Don’t be afraid to start — you can move later</strong>
-                <p>A wrong pick isn’t final: account migration to another server is built into Mastodon and your followers come with you. The main thing is to take the first step.</p>
-              </div>
-            </div>
+          <a class="cta-btn" href="#view=instance" data-umami-event="instances-view">Přejít na Instance →</a>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>3. Choose an instance</h2>
+          <p>An instance is your home server. It only matters where you’re signed in — you can follow and talk to anyone across the whole Fediverse.</p>
+          <p>After clicking <strong>Join</strong> on your chosen app (step 2) you’ll land in the instance list filtered for that app. Use the <em>"for beginners"</em> ranking — it’s based on vetting, not user count.</p>
+          <div class="start-default-box">
+            <p><strong>Not sure where to start?</strong> We suggest <a href="?app=mastodon" data-umami-event="mamutovo-instances"><strong>mamutovo.cz</strong></a> — a Czech community Mastodon instance with a 2 500-character post limit (vs. the usual 500). Registration is by approval — the admin typically responds within a few hours.</p>
           </div>
-          </div><!-- /figrow__text -->
-          </div><!-- /figrow -->
-        </article>
+          <a class="cta-btn" href="#view=instance" data-umami-event="instances-view">Go to Instances →</a>
+        </div>
+      </article>
+      <div class="step-next-wrap">
+        <button class="cta-btn step-next-btn" data-start-next="4" data-i18n="start_next_step">Dalsi krok</button>
+      </div>
+      </div><!-- /step-3 -->
 
-        <!-- Co dál — přesunuto sem z „Odkud přicházíš". -->
-        <article class="about-content start-block">
-          <div data-lang-block="cs"><h2>Co dál</h2></div>
-          <div data-lang-block="en" hidden><h2>What next</h2></div>
-          <div class="start-figrow start-figrow--left">
-          <img class="start-fig" src="img/fedik-nevim-co-dal.png"
-               alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
-          <div class="start-figrow__text">
-          <div data-lang-block="cs">
-            <div class="cards-grid start-cards">
-              <a class="start-card start-card-link" href="#view=aplikace">
-                <strong class="start-card-title">Projdi aplikace</strong>
-                <p>Najdi appku podle obsahu — mikroblog, fotky, video, fórum…</p>
-              </a>
-              <a class="start-card start-card-link" href="#view=instance">
-                <strong class="start-card-title">Vyber si instanci</strong>
-                <p>Kde si reálně založit účet — české a slovenské i prověřené globální servery.</p>
-              </a>
-              <a class="start-card start-card-link" href="#view=slovnicek">
-                <strong class="start-card-title">Slovníček pojmů</strong>
-                <p>Instance, federace, boost, CW… pojmy a postupy Fediverse vysvětlené česky.</p>
-              </a>
-              <a class="start-card start-card-link" href="https://slonik.online" target="_blank" rel="noopener">
-                <strong class="start-card-title">Sloník</strong>
-                <p>Koho sledovat — katalog českých a slovenských účtů na Mastodonu.</p>
-              </a>
-            </div>
+      <!-- ═══ Krok 4: Založ si účet ═══ -->
+      <div id="start-step-4" class="onboarding-step">
+      <article class="about-content start-block">
+        <div data-lang-block="cs">
+          <h2>4. Založ si účet</h2>
+          <p>Na kartě instance klikni na <strong>Založ účet</strong> a projdi registraci přímo na serveru. Zvolíš si uživatelské jméno, e-mail a heslo — nic se neplatí, žádná karta.</p>
+          <p><strong>Registrace čeká na schválení?</strong> Správce serveru musí žádost odsouhlasit. Přijde ti e-mail, obvykle do pár hodin. Zatím si v klidu projdi kroky 5 a 6 — čas nepřijde nazmar.</p>
+          <p>Tvůj výsledný handle bude ve tvaru <code>@jmeno@server.cz</code> — tak tě najdou ostatní z celého Fediverse.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>4. Create your account</h2>
+          <p>On the instance card click <strong>Sign up</strong> and complete registration directly on the server. You’ll pick a username, email and password — no payment, no card.</p>
+          <p><strong>Registration pending approval?</strong> The server admin needs to approve your request. You’ll get an email, usually within a few hours. In the meantime, read through steps 5 and 6 — the time won’t be wasted.</p>
+          <p>Your handle will look like <code>@name@server.social</code> — that’s how anyone in the Fediverse can find you.</p>
+        </div>
+      </article>
+      <div class="step-next-wrap">
+        <button class="cta-btn step-next-btn" data-start-next="5" data-i18n="start_next_step">Dalsi krok</button>
+      </div>
+      </div><!-- /step-4 -->
+
+      <!-- ═══ Krok 5: První den (placeholder → P3) ═══ -->
+      <div id="start-step-5" class="onboarding-step">
+      <article class="about-content start-block">
+        <div data-lang-block="cs">
+          <h2>5. První den</h2>
+          <p>Jak nastavit profil, vybrat klientskou aplikaci, napsat úvodní příspěvek a nepokazit to s normami komunity (CW, alt text, hashtagy) — <em>připravujeme</em>.</p>
+          <p>Zatím pomůže <a href="#view=slovnicek">Slovníček pojmů</a> — CW, alt text, federovaná osa a další základní pojmy jsou tam vysvětlené.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>5. Day one</h2>
+          <p>How to set up your profile, pick a client app, write your first post, and get community norms right (CW, alt text, hashtags) — <em>coming soon</em>.</p>
+          <p>In the meantime the <a href="#view=slovnicek">Glossary</a> covers CW, alt text, the federated timeline and other basics.</p>
+        </div>
+      </article>
+      <div class="step-next-wrap">
+        <button class="cta-btn step-next-btn" data-start-next="6" data-i18n="start_next_step">Dalsi krok</button>
+      </div>
+      </div><!-- /step-5 -->
+
+      <!-- ═══ Krok 6: Najdi lidi (placeholder → P2) ═══ -->
+      <div id="start-step-6" class="onboarding-step">
+      <article class="about-content start-block">
+        <div data-lang-block="cs">
+          <h2>6. Najdi lidi a komunity</h2>
+          <p>Koho sledovat na Mastodonu a kde jsou čeští a slovenští uživatelé — <em>připravujeme</em>.</p>
+          <p>Zatím prozkoumej tyto dva katalogy:</p>
+          <div class="cards-grid start-cards">
+            <a class="start-card start-card-link" href="https://slonik.online" target="_blank" rel="noopener" data-umami-event="follow-slonik">
+              <strong class="start-card-title">Sloník.online</strong>
+              <p>Katalog českých a slovenských účtů na Mastodonu — živé profily, filtruj podle tématu.</p>
+            </a>
+            <a class="start-card start-card-link" href="https://katalog.zpravobot.news" target="_blank" rel="noopener" data-umami-event="follow-zpravobot">
+              <strong class="start-card-title">katalog.zpravobot.news</strong>
+              <p>Boti s českými zprávami a obsahem — přidej si, které tě zajímají.</p>
+            </a>
           </div>
-          <div data-lang-block="en" hidden>
-            <div class="cards-grid start-cards">
-              <a class="start-card start-card-link" href="#view=aplikace">
-                <strong class="start-card-title">Browse apps</strong>
-                <p>Find an app by content — microblogging, photos, video, forums…</p>
-              </a>
-              <a class="start-card start-card-link" href="#view=instance">
-                <strong class="start-card-title">Pick an instance</strong>
-                <p>Where to actually sign up — Czech/Slovak and vetted global servers.</p>
-              </a>
-              <a class="start-card start-card-link" href="#view=slovnicek">
-                <strong class="start-card-title">Glossary</strong>
-                <p>Instance, federation, boost, CW… Fediverse terms and how-tos, explained (in Czech).</p>
-              </a>
-              <a class="start-card start-card-link" href="https://slonik.online" target="_blank" rel="noopener">
-                <strong class="start-card-title">Sloník</strong>
-                <p>Who to follow — a catalog of Czech and Slovak Mastodon accounts.</p>
-              </a>
-            </div>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>6. Find people and communities</h2>
+          <p>Who to follow on Mastodon and where to find Czech and Slovak users — <em>coming soon</em>.</p>
+          <p>For now explore these two directories:</p>
+          <div class="cards-grid start-cards">
+            <a class="start-card start-card-link" href="https://slonik.online" target="_blank" rel="noopener" data-umami-event="follow-slonik">
+              <strong class="start-card-title">Sloník.online</strong>
+              <p>A catalog of Czech and Slovak Mastodon accounts — live profiles, filter by topic.</p>
+            </a>
+            <a class="start-card start-card-link" href="https://katalog.zpravobot.news" target="_blank" rel="noopener" data-umami-event="follow-zpravobot">
+              <strong class="start-card-title">katalog.zpravobot.news</strong>
+              <p>Bots with Czech news and content — add the ones that interest you.</p>
+            </a>
           </div>
-          </div><!-- /figrow__text -->
-          </div><!-- /figrow -->
-        </article>
-      </div><!-- /tipy -->
+        </div>
+      </article>
+      </div><!-- /step-6 -->
 
     </section>
 
@@ -946,8 +933,8 @@
             <strong>platforms</strong> (Android, iOS, web, desktop), price and badges (official /
             featured). For single-platform apps the <strong>Open</strong> link goes straight to the
             <strong>App Store / Google Play / F-Droid</strong>; “Source” to the repository.</p>
-          <figure class=”about-figure”>
-            <img src=”img/card-tools.png” alt=”Tool card preview” loading=”lazy” onerror=”this.closest('figure').remove()”>
+          <figure class="about-figure">
+            <img src="img/card-tools.png" alt="Tool card preview" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Filters and rankings</h3>
           <ul>

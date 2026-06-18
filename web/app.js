@@ -39,6 +39,13 @@
       start_rec_from: 'Pokud přicházíš z „%s", doporučuji ti:',
       start_rec_do: 'Chceš „%s"? Doporučuji se podívat na:',
       start_picker_catalog: 'Zobrazit vše v katalogu →',
+      start_step1: 'Pochop, co to je',
+      start_step2: 'Vyber aplikaci',
+      start_step3: 'Vyber instanci',
+      start_step4: 'Založ si účet',
+      start_step5: 'První den',
+      start_step6: 'Najdi lidi',
+      start_next_step: 'Dalsi krok',
       count_of: 'z', count_sources: 'zdrojů',
       nav_platform: 'Platforma', nav_charts: 'Žebříčky', nav_risers: 'Skokani týdne', nav_new: 'Novinky',
       nav_all: 'Vše', nav_top10_foll: 'Top 10 sledovaných', nav_top10_active: 'Top 10 aktivních',
@@ -198,6 +205,13 @@
       start_rec_from: 'Coming from “%s”? I’d recommend:',
       start_rec_do: 'Want “%s”? Take a look at:',
       start_picker_catalog: 'See all in the catalog →',
+      start_step1: 'Understand what it is',
+      start_step2: 'Choose an app',
+      start_step3: 'Choose an instance',
+      start_step4: 'Create your account',
+      start_step5: 'Day one',
+      start_step6: 'Find people',
+      start_next_step: 'Next step',
       count_of: 'of', count_sources: 'sources',
       nav_platform: 'Platform', nav_charts: 'Charts', nav_risers: 'Weekly risers', nav_new: 'New',
       nav_all: 'All', nav_top10_foll: 'Top 10 followed', nav_top10_active: 'Top 10 active',
@@ -607,27 +621,35 @@
     }
   }
 
-  // Pohled „Začínáme": levé menu analogicky k „O Sloníku" — přepíná
-  // [data-start-section] v #start-view a zvýrazňuje aktivní položku.
-  function applyStartSection() {
-    document.querySelectorAll('#start-view [data-start-section]').forEach(function (el) {
-      el.hidden = el.getAttribute('data-start-section') !== startSection;
-    });
+  // Pohled „Začínáme": všechny kroky jsou vždy viditelné (scroll), levé menu
+  // slouží jako obsah — kliknutí scrolluje na příslušný krok.
+  function showStartStep(n) {
+    document.querySelectorAll('.onboarding-step').forEach(function (el) { el.hidden = true; });
+    var step = document.getElementById('start-step-' + n);
+    if (step) step.hidden = false;
     if (startNavEl) {
       startNavEl.querySelectorAll('button[data-start]').forEach(function (btn) {
-        btn.classList.toggle('active', btn.getAttribute('data-start') === startSection);
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-start') === String(n) ? 'true' : 'false');
       });
     }
-    loadStartVideo();   // sekce „intro" se mohla právě zviditelnit → teď má šířku
+    if (window.umami) window.umami.track('onboarding-step', { step: n });
+  }
+
+  function applyStartSection() {
+    loadStartVideo();
+    showStartStep(1);
   }
 
   function bindStartNav() {
     if (!startNavEl) return;
     startNavEl.querySelectorAll('button[data-start]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        startSection = btn.getAttribute('data-start');
-        applyStartSection();
-        writeHash();
+        showStartStep(Number(btn.getAttribute('data-start')));
+      });
+    });
+    document.querySelectorAll('button[data-start-next]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        showStartStep(Number(btn.getAttribute('data-start-next')));
       });
     });
   }
@@ -1354,12 +1376,13 @@
     card.appendChild(sec);
 
     var links = document.createElement('div'); links.className = 'app-card__links';
-    function lk(url, label) {
+    function lk(url, label, isInternal) {
       if (!url) return;
-      var a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      var a = document.createElement('a'); a.href = url;
+      if (!isInternal) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
       a.textContent = label; links.appendChild(a);
     }
-    lk(startLinkUrl(app), t('apps_link_join'));   // interim joinUrl; přepne na internalUrl, až bude
+    lk(startLinkUrl(app), t('apps_link_join'), startIsInternal(app));
     lk(app.website, t('apps_link_web'));
     lk(app.sourceCode, t('apps_link_src'));
     card.appendChild(links);
@@ -3038,6 +3061,17 @@
     renderSearchIndexed();
 
     parseHash();
+    // ?app=<id> → předfiltruj pohled Instance (jen při úvodním načtení stránky,
+    // ne na hashchange). Aktivní jen pokud hash neurčil jiný pohled.
+    (function () {
+      var appId = new URLSearchParams(location.search).get('app');
+      if (!appId || view !== 'start') return;
+      var taxApps = (window.FEDIK_TAXONOMY && window.FEDIK_TAXONOMY.apps) || {};
+      if (!taxApps[appId]) return;
+      instanceFacets.app.clear();
+      instanceFacets.app.add(appId);
+      view = 'instance';
+    }());
     applyStateToControls();
     window.addEventListener('hashchange', onHashChange);
 
@@ -3909,8 +3943,7 @@
       parts.push('view=about');
       if (aboutSection !== 'about') parts.push('asec=' + aboutSection);
     } else if (view === 'start') {
-      // Default (intro) → bez hashe (čistá landing URL). Jiná sekce → deep-link.
-      if (startSection !== 'intro') { parts.push('view=start'); parts.push('ssec=' + startSection); }
+      // Začínáme je výchozí pohled → čistá landing URL bez hashe.
     } else if (view === 'aplikace') {
       parts.push('view=aplikace');
       if (appsTab !== 'all') parts.push('atab=' + appsTab);

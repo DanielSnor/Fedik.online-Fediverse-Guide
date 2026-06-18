@@ -7,10 +7,14 @@
      App         { id, name, contentType, centralizedEquivalent, joinUrl, internalUrl? }
      ContentType { id, label, labelEn, apps: [App.id] }
 
-   joinUrl = interim cíl ven (oficiální join stránka aplikace). Až vzniknou
-   Pohledy 2 (Aplikace) a 3 (Instance), doplníme `internalUrl` a render
-   v app.js (startLinkUrl) přepne na interní cíl jedinou změnou. Proto NIKDY
-   neodkazuj na joinUrl natvrdo v šabloně — vždy přes data.
+   joinUrl = cíl ven (oficiální join stránka). internalUrl = interní cíl v rámci
+   Fedíka (pohled Instance předfiltrovaný přes ?app=<id>). startLinkUrl(app)
+   v app.js vrací internalUrl || joinUrl — stačí tady přepnout pole. NIKDY
+   neodkazuj na joinUrl natvrdo v šabloně.
+
+   internalUrl mají jen 4 appky s instancemi v katalogu: mastodon, pixelfed,
+   lemmy, piefed. Zbytek zůstává na joinUrl — jinak nováček spadne na prázdný
+   filtrovaný seznam.
 
    POZN.: oficiální URL ověř při nasazení (zvlášť PieFed/Mbin/Loops). */
 
@@ -35,12 +39,11 @@
   ];
 
   // App.id → App. centralizedEquivalent = známá centralizovaná služba (Blok 3).
-  // internalUrl zatím záměrně chybí (interim odkazy míří na joinUrl).
   var APPS = {
-    mastodon:    { id: 'mastodon',    name: 'Mastodon',    contentType: 'microblog',  centralizedEquivalent: 'Twitter / X',          joinUrl: 'https://joinmastodon.org' },
-    pixelfed:    { id: 'pixelfed',    name: 'Pixelfed',    contentType: 'photos',     centralizedEquivalent: 'Instagram',            joinUrl: 'https://pixelfed.org' },
-    lemmy:       { id: 'lemmy',       name: 'Lemmy',       contentType: 'forum',      centralizedEquivalent: 'Reddit',               joinUrl: 'https://join-lemmy.org' },
-    piefed:      { id: 'piefed',      name: 'PieFed',      contentType: 'forum',      centralizedEquivalent: 'Reddit',               joinUrl: 'https://piefed.social' },
+    mastodon:    { id: 'mastodon',    name: 'Mastodon',    contentType: 'microblog',  centralizedEquivalent: 'Twitter / X',          joinUrl: 'https://joinmastodon.org', internalUrl: '?app=mastodon' },
+    pixelfed:    { id: 'pixelfed',    name: 'Pixelfed',    contentType: 'photos',     centralizedEquivalent: 'Instagram',            joinUrl: 'https://pixelfed.org',     internalUrl: '?app=pixelfed' },
+    lemmy:       { id: 'lemmy',       name: 'Lemmy',       contentType: 'forum',      centralizedEquivalent: 'Reddit',               joinUrl: 'https://join-lemmy.org',   internalUrl: '?app=lemmy' },
+    piefed:      { id: 'piefed',      name: 'PieFed',      contentType: 'forum',      centralizedEquivalent: 'Reddit',               joinUrl: 'https://piefed.social',    internalUrl: '?app=piefed' },
     mbin:        { id: 'mbin',        name: 'Mbin',        contentType: 'forum',      centralizedEquivalent: 'Reddit',               joinUrl: 'https://joinmbin.org' },
     peertube:    { id: 'peertube',    name: 'PeerTube',    contentType: 'video',      centralizedEquivalent: 'YouTube',              joinUrl: 'https://joinpeertube.org' },
     loops:       { id: 'loops',       name: 'Loops',       contentType: 'shortvideo', centralizedEquivalent: 'TikTok',               joinUrl: 'https://loops.video' },

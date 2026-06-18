@@ -21,6 +21,11 @@ window.FEDIK_INSTANCES_CURATED = {
   "pixelfed.cz":  { appId: "pixelfed", signupUrl: "https://pixelfed.cz/register" },
   "snac.lab8.cz": { appId: "snac", signupUrl: "https://snac.lab8.cz" },   // registrace zavřená → homepage místo mastodoní /auth/sign_up (404)
 
+  // Výchozí doporučená instance pro nováčky. Je ve Sloník feedu → adaptér dodá
+  // beginnerFriendly (approval), focus (obecna), signupUrl (/auth/sign_up).
+  // beginnerDefault = zobrazit ji jako doporučení v kroku 3 onboardingu.
+  "mamutovo.cz":  { beginnerDefault: true },
+
   // Příklad dalšího přepisu (odkomentuj/uprav podle reálných domén ze Sloníka):
   // "mastodonczech.cz": { beginnerFriendly: true,  focus: ["obecna", "region"] },
   // "vutbr.social":     { beginnerFriendly: false, focus: ["akademicka"] },
