@@ -1087,6 +1087,9 @@ a { color: inherit; text-decoration: none; }
 .app-card__links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: auto; padding-top: 4px; }
 .app-card__links a { color: var(--accent); font-weight: 600; font-size: 13px; }
 .app-card__links a:hover { text-decoration: underline; }
+/* Tlačítko „Vybrat" v kartě aplikace (picker kroku 2 i wizard mód katalogu). */
+.start-pick-app, .app-card__wizard { display: block; width: 100%; margin-top: 12px; cursor: pointer; border: none; text-align: center; }
+#apps-wizard-banner { margin: 0 0 16px; }
 /* Pokročilé fasety (sbalené) */
 .filter-group-apps__adv-summary { cursor: pointer; font-weight: 600; color: var(--text); list-style: none;
   display: flex; align-items: center; gap: 6px; }

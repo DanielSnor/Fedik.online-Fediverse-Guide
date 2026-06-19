@@ -40,6 +40,9 @@
       start_rec_do: 'Chceš „%s"? Doporučuji se podívat na:',
       start_picker_catalog: 'Zobrazit vše v katalogu →',
       start_picker_next_hint: 'Spokojen s naším doporučením? Pokračuj dalším krokem. Chceš víc možností?',
+      start_pick_app: 'Vybrat tuhle loď →',
+      start_wizard_pick: 'Vybrat pro průvodce →',
+      start_wizard_banner: 'Vybíráš loď (aplikaci) pro průvodce Začínáme — klikni u vybrané aplikace na „Vybrat pro průvodce" a vrátíme tě zpátky do průvodce.',
       start_cta_external: 'Otevřít oficiální stránku →',
       start_cta_starter: 'Vybrat %s',
       start_starter_lead: 'Česká instance pro %s:',
@@ -277,6 +280,9 @@
       start_rec_do: 'Want “%s”? Take a look at:',
       start_picker_catalog: 'See all in the catalog →',
       start_picker_next_hint: 'Happy with our recommendation? Continue to the next step. Want more options?',
+      start_pick_app: 'Choose this ship →',
+      start_wizard_pick: 'Use in the guide →',
+      start_wizard_banner: 'You’re choosing a ship (app) for the Getting-started guide — hit “Use in the guide” on the app you want and we’ll take you back to the guide.',
       start_cta_external: 'Open the official site →',
       start_cta_starter: 'Choose %s',
       start_starter_lead: 'A Czech instance for %s:',
@@ -630,6 +636,7 @@
     var isGlossary = view === 'slovnicek';
     var isTools = view === 'nastroje';
     var isStats = view === 'statistiky';
+    if (!isApps) appsWizardMode = false;   // wizard mód platí jen po dobu pobytu v katalogu z průvodce
     if (appsViewEl) appsViewEl.hidden = !isApps;
     if (glossaryViewEl) glossaryViewEl.hidden = !isGlossary;
     if (toolsViewEl) toolsViewEl.hidden = !isTools;
@@ -763,13 +770,18 @@
     }
   }
 
-  // Vrátí App objekt z taxonomie pro první appId vybraný v pickeru kroku 2 (nebo null).
+  // Vrátí App objekt z taxonomie podle volby v pickeru kroku 2: explicitně vybraná karta
+  // (startPickerChosenId), jinak první doporučená. (null, když nic nevybráno.)
   function getPickerSelectedApp() {
     var sel = document.getElementById('start-picker');
     if (!sel || !sel.value || !startPickerMap[sel.value]) return null;
     var appIds = startPickerMap[sel.value].appIds;
     if (!appIds || !appIds.length) return null;
-    return startTaxApps()[appIds[0]] || null;
+    var taxApps = startTaxApps();
+    if (startPickerChosenId && appIds.indexOf(startPickerChosenId) !== -1 && taxApps[startPickerChosenId]) {
+      return taxApps[startPickerChosenId];
+    }
+    return taxApps[appIds[0]] || null;
   }
 
   // Aktualizuje CTA a mamutovo box v kroku 3 podle zvolené aplikace z kroku 2.
@@ -937,10 +949,15 @@
     var step = document.getElementById('start-step-' + n);
     if (step) step.hidden = false;
     if (n === 3) {
-      // Vždy odvoď appku z aktuálního výběru v pickeru — ať se sem dostaneš „Dalším krokem"
-      // nebo levým menu „Vyber instanci". Bez tohohle by levé menu spadlo na default Mastodon.
-      var picked = getPickerSelectedApp();
-      if (picked) startPickedApp = picked;
+      if (startPickedLocked) {
+        // Explicitní volba (per-card v pickeru / „Vybrat pro průvodce" z katalogu) → neodvozuj.
+        startPickedLocked = false;
+      } else {
+        // Jinak odvoď appku z aktuálního výběru v pickeru — ať levé menu „Vyber instanci"
+        // nebo „Další krok" nespadne na default Mastodon.
+        var picked = getPickerSelectedApp();
+        if (picked) startPickedApp = picked;
+      }
       updateStep3ForApp(startPickedApp);
     }
     if (n === 4) updateStep4ForInstance();
@@ -1745,6 +1762,21 @@
     lk(app.website, t('apps_link_web'));
     lk(app.sourceCode, t('apps_link_src'));
     card.appendChild(links);
+
+    // Wizard mód (katalog otevřen z průvodce) → tlačítko „Vybrat pro průvodce" vrátí
+    // do Začínáme krok 3 s touhle appkou. Jen pro appky, co jsou v taxonomii (mají guided cestu).
+    if (appsWizardMode && startTaxApps()[app.id]) {
+      var wbtn = document.createElement('button');
+      wbtn.type = 'button'; wbtn.className = 'cta-btn app-card__wizard';
+      wbtn.setAttribute('data-umami-event', 'onboarding-pick-app-catalog');
+      wbtn.textContent = t('start_wizard_pick');
+      wbtn.addEventListener('click', function () {
+        startPickedApp = startTaxApps()[app.id];
+        startPickedLocked = true; startStep = 3; appsWizardMode = false;
+        setView('start');
+      });
+      card.appendChild(wbtn);
+    }
     return card;
   }
 
@@ -1787,6 +1819,16 @@
     }
     var emptyEl = document.getElementById('apps-empty');
     resultsEl.innerHTML = '';
+    // Banner wizard módu (katalog z průvodce) — sourozenec mřížky, ať ho innerHTML nesmaže.
+    var banner = document.getElementById('apps-wizard-banner');
+    if (appsWizardMode) {
+      if (!banner) {
+        banner = document.createElement('p');
+        banner.id = 'apps-wizard-banner'; banner.className = 'caveat-box';
+        resultsEl.parentNode.insertBefore(banner, resultsEl);
+      }
+      banner.textContent = t('start_wizard_banner'); banner.hidden = false;
+    } else if (banner) { banner.hidden = true; }
     if (!data.length) { if (emptyEl) emptyEl.hidden = false; return; }
     if (emptyEl) emptyEl.hidden = true;
     data.forEach(function (a) { resultsEl.appendChild(buildAppCard(a)); });
@@ -2762,7 +2804,23 @@
       head.textContent = t(key).replace('%s', opt.label);
       results.appendChild(head);
     }
-    recs.forEach(function (rec) { results.appendChild(buildAppCard(rec)); });
+    // Každá doporučená appka = vlastní karta s tlačítkem „Vybrat" → vybere TUHLE appku
+    // (ne vždy první) a posune na krok 3. Řeší výběr u typů s víc aplikacemi (fórum, blog…).
+    recs.forEach(function (rec) {
+      var card = buildAppCard(rec);
+      var pick = document.createElement('button');
+      pick.type = 'button'; pick.className = 'cta-btn start-pick-app';
+      pick.setAttribute('data-umami-event', 'onboarding-pick-app');
+      pick.textContent = t('start_pick_app');
+      pick.addEventListener('click', function () {
+        startPickedApp = startTaxApps()[rec.id] || startPickedApp;
+        startPickerChosenId = rec.id;   // ať „Další krok"/re-render odpovídá vybrané kartě
+        startPickedLocked = true;       // showStartStep(3) nepřepíše na první doporučenou
+        showStartStep(3);
+      });
+      card.appendChild(pick);
+      results.appendChild(card);
+    });
     if (catalog) {
       var cts = {};
       recs.forEach(function (r) { if (r.contentType) cts[r.contentType] = 1; });
@@ -2773,7 +2831,7 @@
 
   function bindStartPicker() {
     var sel = document.getElementById('start-picker');
-    if (sel) sel.addEventListener('change', renderStartPickerResults);
+    if (sel) sel.addEventListener('change', function () { startPickerChosenId = ''; renderStartPickerResults(); });
     var catalog = document.getElementById('start-picker-catalog');
     if (catalog) catalog.addEventListener('click', function (e) {
       e.preventDefault();
@@ -2782,6 +2840,7 @@
       appsFacets.managed.clear(); appsFacets.dev.clear();
       appsTab = 'all'; appsSort = 'users';
       (catalog._cts || []).forEach(function (c) { appsFacets.type.add(c); });
+      appsWizardMode = true;   // katalog otevřen z průvodce → karty dostanou „Vybrat pro průvodce"
       setView('aplikace');
     });
   }
@@ -3222,6 +3281,9 @@
   var startSection = 'intro';    // pohled „Začínáme": 'intro' | 'apps' (volatilní, bude se měnit)
   var startStep = 1;             // aktivní krok onboardingu (persistuje při přechodu mezi pohledy)
   var startPickedApp = null;     // App objekt z kroku 2 pickeru → předá se do kroku 3
+  var startPickerChosenId = '';  // app.id explicitně vybraný v pickeru (jinak první doporučený)
+  var startPickedLocked = false; // jednorázový zámek: appka už vybraná explicitně → showStartStep(3) neodvozuje
+  var appsWizardMode = false;    // katalog Aplikace otevřen z průvodce → karty mají „Vybrat pro průvodce"
   var startChosenInstance = null; // Instance vybraná inline v kroku 3 → odkaz na registraci v kroku 4
   var pendingChosenInstHost = ''; // deep-link/reload: host z hashe (inst=), dořeší se po načtení instancí
   // ---------- Stav pohledu Aplikace (Pohled 2) ----------
