@@ -41,9 +41,9 @@
       start_picker_catalog: 'Zobrazit vše v katalogu →',
       start_picker_next_hint: 'Spokojen s naším doporučením? Pokračuj dalším krokem. Chceš víc možností?',
       start_cta_external: 'Otevřít oficiální stránku →',
-      start_cta_starter: 'Přejít na %s →',
+      start_cta_starter: 'Vybrat %s',
       start_starter_lead: 'Česká instance pro %s:',
-      start_starter_note: 'Klikni, založ si účet a vrať se sem na krok 4.',
+      start_starter_note: 'Vyber ji a posuneme tě na krok 4.',
       start_inst_heading: 'Vyber si instanci — ukazujeme jen ty s otevřenou registrací nebo se schválením:',
       start_inst_choose: 'Vybrat tuhle →',
       start_inst_more: 'Zobrazit všechny instance v katalogu →',
@@ -78,10 +78,11 @@
       step3_intro: 'Planeta (instance) je tvůj domovský server — místo, kde budeš přihlášený. Sledovat a povídat si můžeš s kýmkoli v celém Fediverse, ať přistaneš kdekoli. Níže ukazujeme jen planety s otevřenou registrací nebo registrací po schválení. Dej „Vybrat tuhle“ a posuneme tě na krok 4.',
       reg_head: 'Co tě při registraci čeká',
       reg_body: 'Vyplníš uživatelské jméno, e-mail a heslo. Přijde ti potvrzovací e-mail — klikni na odkaz v něm. U serverů „po schválení“ chvíli počkej, než tě správce pustí dovnitř (většinou pár hodin). A jsi uvnitř.',
+      reg_return: 'Až budeš mít účet, vrať se sem na Fedíka — dokončíme onboarding: projdeme první den (krok 5) a sestavíme ti posádku, koho sledovat (krok 6).',
       start_default_q: 'Nevíš, kam?',
       start_default_rec: 'Začni třeba na mamutovo.cz — dobře udržovaný český server s rozšířeným limitem 2500 znaků na příspěvek.',
       start_default_note: 'Registrace je „po schválení“, takže tě správce pustí ručně — chvilka strpení, zato klidnější start. Není to jediná dobrá volba: v Instancích si můžeš vybrat jinou a kdykoli se přestěhovat.',
-      start_default_cta: 'Založit účet na mamutovo.cz',
+      start_default_cta: 'Vybrat mamutovo.cz',
       follow_head: 'Ať doma není prázdno: koho sledovat',
       follow_intro: 'Nový účet je jako prázdná nástěnka. Tady najdeš první lidi a zdroje, které stojí za sledování.',
       follow_slonik_title: 'Živé účty → Sloník.online',
@@ -276,9 +277,9 @@
       start_picker_catalog: 'See all in the catalog →',
       start_picker_next_hint: 'Happy with our recommendation? Continue to the next step. Want more options?',
       start_cta_external: 'Open the official site →',
-      start_cta_starter: 'Go to %s →',
+      start_cta_starter: 'Choose %s',
       start_starter_lead: 'A Czech instance for %s:',
-      start_starter_note: 'Click, create your account and come back for step 4.',
+      start_starter_note: 'Choose it and we’ll move you to step 4.',
       start_inst_heading: 'Pick an instance — we only show ones with open or approval-based registration:',
       start_inst_choose: 'Choose this →',
       start_inst_more: 'See all instances in the catalog →',
@@ -313,10 +314,11 @@
       step3_intro: 'A planet (instance) is your home server — the place you’ll be signed in. You can follow and talk to anyone across the whole Fediverse, wherever you land. Below we show only planets with open or approval-based sign-up. Hit “Choose this one” and we’ll move you to step 4.',
       reg_head: 'What to expect when you sign up',
       reg_body: 'You’ll fill in a username, email and password. A confirmation email arrives — click the link in it. On “approval” servers, wait a moment for the admin to let you in (usually a few hours). And you’re in.',
+      reg_return: 'Once your account is ready, come back here to Fedík — we’ll finish onboarding: walk through your first day (step 5) and assemble your crew to follow (step 6).',
       start_default_q: 'Not sure where?',
       start_default_rec: 'You could start on mamutovo.cz — a well-maintained Czech server with an extended 2500-character post limit.',
       start_default_note: 'Sign-up is approval-based, so an admin lets you in by hand — a short wait, but a calmer start. It’s not the only good choice: pick another in Instances and move anytime.',
-      start_default_cta: 'Create an account on mamutovo.cz',
+      start_default_cta: 'Choose mamutovo.cz',
       follow_head: 'So your home feed isn’t empty: who to follow',
       follow_intro: 'A new account is like an empty board. Here’s where to find your first people and sources worth following.',
       follow_slonik_title: 'Live accounts → Sloník.online',
@@ -779,24 +781,26 @@
       b.hidden = !isMastodon;
     });
 
-    // Podmíněná copy: katalog vs. „odejdeš na oficiální stránku".
-    document.querySelectorAll('#start-step-3 .step3-when-catalog').forEach(function (p) { p.hidden = !hasCatalog; });
-    document.querySelectorAll('#start-step-3 .step3-when-external').forEach(function (p) { p.hidden = hasCatalog; });
+    // Podmíněná copy: výběr v aplikaci (katalog NEBO doporučená instance) vs. „odejdeš na oficiální stránku".
+    var inApp = hasCatalog || !!starter;
+    document.querySelectorAll('#start-step-3 .step3-when-catalog').forEach(function (p) { p.hidden = !inApp; });
+    document.querySelectorAll('#start-step-3 .step3-when-external').forEach(function (p) { p.hidden = inApp; });
 
-    // Starter-instance box (např. PeerTube → vhsky.cz) — vyplň dynamicky podle jazyka bloku.
+    // Starter-instance box (např. PeerTube → vhsky.cz) — doporučení + tlačítko „Vybrat",
+    // které se chová stejně jako „Vybrat tuhle" v seznamu (vybere → krok 4). Vyplň podle jazyka bloku.
     document.querySelectorAll('#start-step-3 .start-starter-box').forEach(function (box) {
       if (!starter) { box.hidden = true; box.innerHTML = ''; return; }
-      box.hidden = false;
+      box.hidden = false; box.innerHTML = '';
       var p = document.createElement('p');
-      var lead = document.createElement('span');
-      lead.innerHTML = t('start_starter_lead').replace('%s', '<strong>' + app.name + '</strong>') + ' ';
-      var a = document.createElement('a');
-      a.href = starter.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
-      a.setAttribute('data-umami-event', 'starter-' + starter.host);
-      var aStrong = document.createElement('strong'); aStrong.textContent = starter.host; a.appendChild(aStrong);
-      var note = document.createTextNode(' — ' + t('start_starter_note'));
-      p.appendChild(lead); p.appendChild(a); p.appendChild(note);
-      box.innerHTML = ''; box.appendChild(p);
+      p.innerHTML = t('start_starter_lead').replace('%s', '<strong>' + app.name + '</strong>') +
+                    ' <strong>' + starter.host + '</strong> — ' + t('start_starter_note');
+      box.appendChild(p);
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'cta-btn';
+      btn.setAttribute('data-pick-instance', starter.host);
+      btn.setAttribute('data-umami-event', 'starter-' + starter.host);
+      btn.textContent = t('start_cta_starter').replace('%s', starter.host);
+      box.appendChild(btn);
     });
 
     var listEl = document.getElementById('start-step3-instances');
@@ -808,14 +812,16 @@
       if (ctaEl) ctaEl.hidden = true;
       if (hintEl) hintEl.textContent = t('start_inst_hint_pick');
       renderStep3Instances(app);
-    } else {
-      // Appka bez katalogu → odkaz ven (starter instance, nebo oficiální join stránka).
+    } else if (starter) {
+      // Doporučená instance se vybírá v boxu výše (tlačítko Vybrat) → žádný odkaz ven.
       if (listEl) { listEl.hidden = true; listEl.innerHTML = ''; }
-      var url, label;
-      if (starter) { url = starter.url; label = t('start_cta_starter').replace('%s', starter.host); }
-      else { url = app.joinUrl; label = t('start_cta_external'); }
+      if (ctaEl) ctaEl.hidden = true;
+      if (hintEl) hintEl.textContent = t('start_inst_hint_pick');
+    } else {
+      // Žádný katalog ani doporučení → oficiální join stránka ven.
+      if (listEl) { listEl.hidden = true; listEl.innerHTML = ''; }
       if (ctaEl) {
-        ctaEl.hidden = false; ctaEl.href = url; ctaEl.textContent = label;
+        ctaEl.hidden = false; ctaEl.href = app.joinUrl; ctaEl.textContent = t('start_cta_external');
         ctaEl.target = '_blank'; ctaEl.rel = 'noopener noreferrer';
       }
       if (hintEl) hintEl.textContent = t('start_inst_hint_external');
@@ -894,13 +900,24 @@
     var btn = document.createElement('button');
     btn.type = 'button'; btn.className = 'cta-btn start-inst-item__choose';
     btn.textContent = t('start_inst_choose');
-    btn.addEventListener('click', function () {
-      startChosenInstance = i;
-      if (window.umami) window.umami.track('onboarding-instance', { host: i.domain, app: i.appId });
-      showStartStep(4);
-    });
+    btn.addEventListener('click', function () { pickInstance(i); });
     row.appendChild(btn);
     return row;
+  }
+
+  // Vybere instanci (objekt) → uloží volbu a posune na krok 4 (registrace probíhá tam).
+  function pickInstance(inst) {
+    if (!inst) return;
+    startChosenInstance = inst;
+    if (window.umami) window.umami.track('onboarding-instance', { host: inst.domain, app: inst.appId });
+    showStartStep(4);
+  }
+  // Doporučovací tlačítka (mamutovo, starter) znají jen host → dořeš instanci z katalogu, pak vyber.
+  function pickInstanceByHost(host) {
+    if (!host) return;
+    ensureInstancesLoaded().then(function () {
+      pickInstance(instanceList.filter(function (x) { return x.domain === host; })[0]);
+    });
   }
 
   function showStartStep(n) {
@@ -974,6 +991,13 @@
       btn.addEventListener('click', function () {
         showStartStep(Number(btn.getAttribute('data-start-next')));
       });
+    });
+    // Doporučovací tlačítka „Vybrat <host>" (mamutovo statické v HTML, starter dynamické) —
+    // delegovaně, ať fungují i pro prvky vyrobené později v updateStep3ForApp.
+    var step3 = document.getElementById('start-step-3');
+    if (step3) step3.addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-pick-instance]');
+      if (b) { ev.preventDefault(); pickInstanceByHost(b.getAttribute('data-pick-instance')); }
     });
   }
 

@@ -656,7 +656,7 @@
           <div class="start-default-box">
             <p><strong data-i18n="start_default_q">Nevíš, kam?</strong> <span data-i18n="start_default_rec">Začni třeba na mamutovo.cz — dobře udržovaný český server s rozšířeným limitem 2500 znaků na příspěvek.</span></p>
             <p data-i18n="start_default_note">Registrace je „po schválení“, takže tě správce pustí ručně — chvilka strpení, zato klidnější start. Není to jediná dobrá volba: v Instancích si můžeš vybrat jinou a kdykoli se přestěhovat.</p>
-            <a class="cta-btn" href="https://mamutovo.cz/auth/sign_up" target="_blank" rel="noopener noreferrer" data-umami-event="mamutovo-signup" data-i18n="start_default_cta">Založit účet na mamutovo.cz</a>
+            <button type="button" class="cta-btn" data-pick-instance="mamutovo.cz" data-umami-event="mamutovo-pick" data-i18n="start_default_cta">Vybrat mamutovo.cz</button>
           </div>
           <div class="start-default-box start-starter-box" hidden data-lang="cs"></div>
         </div>
@@ -667,7 +667,7 @@
           <div class="start-default-box">
             <p><strong data-i18n="start_default_q">Not sure where?</strong> <span data-i18n="start_default_rec">You could start on mamutovo.cz — a well-maintained Czech server with an extended 2500-character post limit.</span></p>
             <p data-i18n="start_default_note">Sign-up is approval-based, so an admin lets you in by hand — a short wait, but a calmer start. It’s not the only good choice: pick another in Instances and move anytime.</p>
-            <a class="cta-btn" href="https://mamutovo.cz/auth/sign_up" target="_blank" rel="noopener noreferrer" data-umami-event="mamutovo-signup" data-i18n="start_default_cta">Create an account on mamutovo.cz</a>
+            <button type="button" class="cta-btn" data-pick-instance="mamutovo.cz" data-umami-event="mamutovo-pick" data-i18n="start_default_cta">Choose mamutovo.cz</button>
           </div>
           <div class="start-default-box start-starter-box" hidden data-lang="en"></div>
         </div>
@@ -692,11 +692,13 @@
           <h2 data-i18n="step4_label">Postav si základnu (založ účet)</h2>
           <h3 data-i18n="reg_head">Co tě při registraci čeká</h3>
           <p data-i18n="reg_body">Vyplníš uživatelské jméno, e-mail a heslo. Přijde ti potvrzovací e-mail — klikni na odkaz v něm. U serverů „po schválení“ chvíli počkej, než tě správce pustí dovnitř (většinou pár hodin). A jsi uvnitř.</p>
+          <div class="caveat-box"><p data-i18n="reg_return">Až budeš mít účet, vrať se sem na Fedíka — dokončíme onboarding: projdeme první den (krok 5) a sestavíme ti posádku, koho sledovat (krok 6).</p></div>
         </div>
         <div data-lang-block="en" hidden>
           <h2 data-i18n="step4_label">Build your base (create an account)</h2>
           <h3 data-i18n="reg_head">What to expect when you sign up</h3>
           <p data-i18n="reg_body">You’ll fill in a username, email and password. A confirmation email arrives — click the link in it. On “approval” servers, wait a moment for the admin to let you in (usually a few hours). And you’re in.</p>
+          <div class="caveat-box"><p data-i18n="reg_return">Once your account is ready, come back here to Fedík — we’ll finish onboarding: walk through your first day (step 5) and assemble your crew to follow (step 6).</p></div>
         </div>
       </article>
       <!-- Vybraná instance z kroku 3 → přímý odkaz na registraci. Plní JS (updateStep4ForInstance). -->
