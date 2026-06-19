@@ -38,11 +38,11 @@
       start_picker_hint: 'Vyber síť, kterou znáš, nebo co chceš dělat — ukážu ti odpovídající aplikaci ve Fediverse.',
       start_rec_from: 'Pokud přicházíš z „%s", doporučuji ti:',
       start_rec_do: 'Chceš „%s"? Doporučuji se podívat na:',
-      start_picker_catalog: 'Zobrazit vše v katalogu →',
+      start_picker_catalog: 'Projít všechny aplikace průvodce →',
       start_picker_next_hint: 'Spokojen s naším doporučením? Pokračuj dalším krokem. Chceš víc možností?',
       start_pick_app: 'Vybrat tuhle loď →',
       start_wizard_pick: 'Vybrat pro průvodce →',
-      start_wizard_banner: 'Vybíráš loď (aplikaci) pro průvodce Začínáme — klikni u vybrané aplikace na „Vybrat pro průvodce" a vrátíme tě zpátky do průvodce.',
+      start_wizard_banner: 'Fediverse zná přes 60 aplikací, ale nováčka provedeme jen prověřeným výběrem — tady jsou, napříč typy obsahu. Vyber si loď (aplikaci) tlačítkem „Vybrat pro průvodce" a vrátíme tě do průvodce. (Kompletní katalog všech aplikací najdeš v horním menu Aplikace.)',
       start_cta_external: 'Otevřít oficiální stránku →',
       start_cta_starter: 'Vybrat %s',
       start_starter_lead: 'Česká instance pro %s:',
@@ -278,11 +278,11 @@
       start_picker_hint: 'Pick a network you know or what you want to do — I’ll show the matching Fediverse app.',
       start_rec_from: 'Coming from “%s”? I’d recommend:',
       start_rec_do: 'Want “%s”? Take a look at:',
-      start_picker_catalog: 'See all in the catalog →',
+      start_picker_catalog: 'Browse all guide apps →',
       start_picker_next_hint: 'Happy with our recommendation? Continue to the next step. Want more options?',
       start_pick_app: 'Choose this ship →',
       start_wizard_pick: 'Use in the guide →',
-      start_wizard_banner: 'You’re choosing a ship (app) for the Getting-started guide — hit “Use in the guide” on the app you want and we’ll take you back to the guide.',
+      start_wizard_banner: 'The Fediverse has 60+ apps, but for newcomers we guide you to a vetted selection — here they are, across content types. Pick a ship (app) with “Use in the guide” and we’ll take you back. (The full app catalog is in the top Apps menu.)',
       start_cta_external: 'Open the official site →',
       start_cta_starter: 'Choose %s',
       start_starter_lead: 'A Czech instance for %s:',
@@ -1785,6 +1785,8 @@
     if (!resultsEl) return;
     buildAppsFacetChips();
     var data = appsList().filter(function (a) {
+      // Wizard mód (procházení z průvodce) → jen guided appky z taxonomie (mají cestu kroku 3–6).
+      if (appsWizardMode && !startTaxApps()[a.id]) return false;
       if (appsFacets.type.size && !appsFacets.type.has(a.contentType)) return false;
       if (appsFacets.equiv.size && !appsFacets.equiv.has(a.centralizedEquivalent)) return false;
       if (appsFacets.czech.size && !appsFacets.czech.has(a.czechUI)) return false;
@@ -2835,11 +2837,11 @@
     var catalog = document.getElementById('start-picker-catalog');
     if (catalog) catalog.addEventListener('click', function (e) {
       e.preventDefault();
-      // Pohled 2 předfiltrovaný stejnou volbou (faseta Typ obsahu = contentType).
+      // Procházení v rámci průvodce: BEZ předfiltru na typ → ukáže všechny guided appky
+      // napříč typy (renderApps je ve wizard módu omezí na taxonomii). Řadit podle jména.
       appsFacets.type.clear(); appsFacets.equiv.clear(); appsFacets.czech.clear();
       appsFacets.managed.clear(); appsFacets.dev.clear();
-      appsTab = 'all'; appsSort = 'users';
-      (catalog._cts || []).forEach(function (c) { appsFacets.type.add(c); });
+      appsTab = 'all'; appsSort = 'name';
       appsWizardMode = true;   // katalog otevřen z průvodce → karty dostanou „Vybrat pro průvodce"
       setView('aplikace');
     });
