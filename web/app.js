@@ -100,7 +100,9 @@
       fday_1: 'Vyplň profil — avatar, krátké bio a hlavičku. Účty, co nevypadají prázdně, lidi spíš sledují.',
       fday_2: 'Ověř svůj web odkazem rel=me — u profilu pak svítí, že web je fakt tvůj.',
       fday_3: 'Napiš úvodní příspěvek s #nazdar nebo #introductions a připni ho — lidé tě podle něj najdou.',
-      fday_4: 'Nainstaluj si aplikaci do telefonu — vyber si v Nástrojích podle své platformy.',
+      fday_4: 'Vybav si základnu klientem — se svou aplikací (sítí) můžeš používat i klientské appky, pohodlnější na telefonu.',
+      fday_4_cta: 'Zobrazit klienty pro %s',
+      fday_4_webonly: 'Pro %s se většinou používá web — žádný extra klient nepotřebuješ.',
       fday_5: 'Najdi, koho sledovat — začni Sloníkem a katalogem Zprávobota výše.',
       fday_6: 'Mrkni na tři osy: Domácí (koho sleduješ), Lokální (tvůj server) a Federovaná (širý Fediverse).',
       norms_head: 'Pět věcí, co tu chodí jinak',
@@ -340,7 +342,9 @@
       fday_1: 'Fill in your profile — avatar, a short bio and a header. People follow accounts that don’t look empty.',
       fday_2: 'Verify your website with a rel=me link — your profile then shows the site is really yours.',
       fday_3: 'Post an intro with #introductions and pin it — that’s how people find you.',
-      fday_4: 'Install a phone app — pick one in Tools for your platform.',
+      fday_4: 'Kit out your base with a client — your app (network) also works through client apps, handier on a phone.',
+      fday_4_cta: 'Show clients for %s',
+      fday_4_webonly: 'For %s the web is the usual way — you don’t need a separate client.',
       fday_5: 'Find people to follow — start with Sloník and the Zprávobot catalog above.',
       fday_6: 'Check the three timelines: Home (who you follow), Local (your server) and Federated (the wider Fediverse).',
       norms_head: 'Five things that work differently here',
@@ -961,6 +965,7 @@
       updateStep3ForApp(startPickedApp);
     }
     if (n === 4) updateStep4ForInstance();
+    if (n === 5) updateStep5ForApp();
     if (startNavEl) {
       startNavEl.querySelectorAll('button[data-start]').forEach(function (btn) {
         btn.setAttribute('aria-pressed', btn.getAttribute('data-start') === String(n) ? 'true' : 'false');
@@ -1001,6 +1006,42 @@
     change.type = 'button'; change.className = 'start-chosen-change'; change.textContent = t('start_step4_chosen_change');
     change.addEventListener('click', function () { startChosenInstance = null; showStartStep(3); });
     box.appendChild(change);
+  }
+
+  // Krok 5, položka „klient": odkaz na Nástroje předfiltrované na klienty zvolené appky.
+  // Když pro appku klienta nemáme (PieFed, Mbin, Mobilizon…), místo odkazu uklidnění „stačí web".
+  function updateStep5ForApp() {
+    var slots = document.querySelectorAll('#start-step-5 .fday4-cta');
+    if (!slots.length) return;
+    var app = startPickedApp;
+    slots.forEach(function (slot) {
+      slot.innerHTML = '';
+      if (!app) {   // bez vybrané appky → obecný odkaz do Nástrojů
+        var g = document.createElement('a'); g.className = 'onb-link'; g.href = '#view=nastroje';
+        g.textContent = t('view_tools') + ' ↗'; slot.appendChild(g);
+        return;
+      }
+      var clients = (window.FEDIK_TOOLS || []).filter(function (x) {
+        return x.category === 'klient' && (x.forApps || []).indexOf(app.id) !== -1;
+      });
+      if (clients.length) {
+        var a = document.createElement('a'); a.className = 'onb-link'; a.href = '#view=nastroje';
+        a.setAttribute('data-umami-event', 'onboarding-clients-' + app.id);
+        a.textContent = t('fday_4_cta').replace('%s', app.name) + ' ↗';
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          toolsFacets.category.clear(); toolsFacets.platform.clear();
+          toolsFacets.forApp.clear(); toolsFacets.price.clear();
+          toolsFacets.category.add('klient'); toolsFacets.forApp.add(app.id); toolsTab = 'all';
+          setView('nastroje');
+        });
+        slot.appendChild(a);
+      } else {       // fallback: žádný klient → web-only uklidnění
+        var span = document.createElement('span'); span.className = 'fday4-webonly';
+        span.textContent = t('fday_4_webonly').replace('%s', app.name);
+        slot.appendChild(span);
+      }
+    });
   }
 
   function applyStartSection() {

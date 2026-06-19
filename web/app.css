@@ -1281,6 +1281,7 @@ button[data-start][aria-pressed="true"] { font-weight: 700; background: var(--ac
 .start-picker-next { margin-top: 20px; }
 .start-picker-next-hint { margin: 0 0 8px; font-size: 14px; line-height: 1.5; }
 .start-starter-box p { margin: 0; line-height: 1.55; }
+.fday4-webonly { font-size: 13px; color: var(--text-dim); font-style: italic; }
 .onb-link { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; white-space: nowrap; }
 .onb-link:hover { text-decoration: underline; }
 .start-card .onb-link { margin-top: 8px; }
