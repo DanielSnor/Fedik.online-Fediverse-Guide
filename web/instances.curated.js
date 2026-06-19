@@ -18,9 +18,9 @@
 window.FEDIK_INSTANCES_CURATED = {
   // Ne-Mastodon CZ instance — Sloníkův adaptér jim jinak natvrdo dává appId "mastodon"
   // (a mastodoní /auth/sign_up). Tady je klasifikujeme správně podle softwaru (App.id z apps.js).
-  "pixelfed.cz":  { appId: "pixelfed", signupUrl: "https://pixelfed.cz/register" },
+  "pixelfed.cz":  { appId: "pixelfed", signupUrl: "https://pixelfed.cz/register", beginnerDefault: true },
   "snac.lab8.cz": { appId: "snac", signupUrl: "https://snac.lab8.cz" },   // registrace zavřená → homepage místo mastodoní /auth/sign_up (404)
-  "vhsky.cz":     { appId: "peertube", signupUrl: "https://vhsky.cz/signup" },   // PeerTube (Sloník feed nemá software field → adaptér by dal mastodon + /auth/sign_up 404)
+  "vhsky.cz":     { appId: "peertube", signupUrl: "https://vhsky.cz/signup", beginnerDefault: true },   // PeerTube (Sloník feed nemá software field → adaptér by dal mastodon + /auth/sign_up 404)
 
   // Výchozí doporučená instance pro nováčky. Je ve Sloník feedu → adaptér dodá
   // beginnerFriendly (approval), focus (obecna), signupUrl (/auth/sign_up).

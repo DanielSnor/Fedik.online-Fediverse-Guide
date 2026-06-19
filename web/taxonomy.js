@@ -45,11 +45,11 @@
   // App.id → App. centralizedEquivalent = známá centralizovaná služba (Blok 3).
   var APPS = {
     mastodon:    { id: 'mastodon',    name: 'Mastodon',    contentType: 'microblog',  centralizedEquivalent: 'Twitter / X',          joinUrl: 'https://joinmastodon.org', internalUrl: '#view=instance&iapp=mastodon' },
-    pixelfed:    { id: 'pixelfed',    name: 'Pixelfed',    contentType: 'photos',     centralizedEquivalent: 'Instagram',            joinUrl: 'https://pixelfed.org',     internalUrl: '#view=instance&iapp=pixelfed' },
+    pixelfed:    { id: 'pixelfed',    name: 'Pixelfed',    contentType: 'photos',     centralizedEquivalent: 'Instagram',            joinUrl: 'https://pixelfed.org',     internalUrl: '#view=instance&iapp=pixelfed', starterInstance: { host: 'pixelfed.cz', url: 'https://pixelfed.cz' } },
     lemmy:       { id: 'lemmy',       name: 'Lemmy',       contentType: 'forum',      centralizedEquivalent: 'Reddit',               joinUrl: 'https://join-lemmy.org',   internalUrl: '#view=instance&iapp=lemmy' },
     piefed:      { id: 'piefed',      name: 'PieFed',      contentType: 'forum',      centralizedEquivalent: 'Reddit',               joinUrl: 'https://piefed.social',    internalUrl: '#view=instance&iapp=piefed' },
     mbin:        { id: 'mbin',        name: 'Mbin',        contentType: 'forum',      centralizedEquivalent: 'Reddit',               joinUrl: 'https://joinmbin.org' },
-    peertube:    { id: 'peertube',    name: 'PeerTube',    contentType: 'video',      centralizedEquivalent: 'YouTube',              joinUrl: 'https://joinpeertube.org', starterInstance: { host: 'vhsky.cz', url: 'https://vhsky.cz' } },
+    peertube:    { id: 'peertube',    name: 'PeerTube',    contentType: 'video',      centralizedEquivalent: 'YouTube',              joinUrl: 'https://joinpeertube.org', internalUrl: '#view=instance&iapp=peertube', starterInstance: { host: 'vhsky.cz', url: 'https://vhsky.cz' } },
     loops:       { id: 'loops',       name: 'Loops',       contentType: 'shortvideo', centralizedEquivalent: 'TikTok',               joinUrl: 'https://loops.video' },
     bookwyrm:    { id: 'bookwyrm',    name: 'BookWyrm',    contentType: 'books',      centralizedEquivalent: 'Goodreads',            joinUrl: 'https://join-bookwyrm.com' },
     funkwhale:   { id: 'funkwhale',   name: 'Funkwhale',   contentType: 'music',      centralizedEquivalent: 'Spotify / SoundCloud', joinUrl: 'https://funkwhale.audio' },

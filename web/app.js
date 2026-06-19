@@ -44,10 +44,10 @@
       start_cta_starter: 'Vybrat %s',
       start_starter_lead: 'Česká instance pro %s:',
       start_starter_note: 'Vyber ji a posuneme tě na krok 4.',
-      start_inst_heading: 'Vyber si instanci — ukazujeme jen ty s otevřenou registrací nebo se schválením:',
+      start_inst_heading: 'Vyber si instanci — ukazujeme jen ty z CZ/SK kvadrantu s otevřenou registrací nebo se schválením:',
       start_inst_choose: 'Vybrat tuhle →',
       start_inst_more: 'Zobrazit všechny instance v katalogu →',
-      start_inst_empty: 'Pro tuhle aplikaci teď nemáme instanci s otevřenou registrací. Zkus oficiální katalog:',
+      start_inst_empty: 'Pro tuhle aplikaci zatím nemáme českou ani slovenskou instanci s otevřenou registrací. Zkus oficiální katalog:',
       start_inst_hint_pick: 'Vyber instanci výše a posuneme tě na krok 4 ↑',
       start_inst_hint_external: 'Až si vybereš a založíš účet, vrať se sem a pokračuj krokem 4 ↓',
       start_step4_chosen_lead: 'Zakládáš účet na instanci %s:',
@@ -280,10 +280,10 @@
       start_cta_starter: 'Choose %s',
       start_starter_lead: 'A Czech instance for %s:',
       start_starter_note: 'Choose it and we’ll move you to step 4.',
-      start_inst_heading: 'Pick an instance — we only show ones with open or approval-based registration:',
+      start_inst_heading: 'Pick an instance — we only show ones in the CZ/SK quadrant with open or approval-based registration:',
       start_inst_choose: 'Choose this →',
       start_inst_more: 'See all instances in the catalog →',
-      start_inst_empty: 'We don’t have an instance with open registration for this app right now. Try the official catalog:',
+      start_inst_empty: 'We don’t have a Czech or Slovak instance with open registration for this app yet. Try the official catalog:',
       start_inst_hint_pick: 'Pick an instance above and we’ll move you to step 4 ↑',
       start_inst_hint_external: 'Once you’ve chosen and created your account, come back here and continue with step 4 ↓',
       start_step4_chosen_lead: 'You’re creating your account on %s:',
@@ -840,7 +840,8 @@
       // Jiná appka se mezitím mohla vybrat — nevykresluj zastaralý seznam.
       if (startStep !== 3 || ((startPickedApp && startPickedApp.id) || 'mastodon') !== appId) return;
       var list = instanceList.filter(function (i) {
-        return i.appId === appId && (i.registration === 'open' || i.registration === 'approval');
+        return i.appId === appId && (i.region === 'cz' || i.region === 'sk') &&
+               (i.registration === 'open' || i.registration === 'approval');
       });
       // Pořadí: výchozí doporučení → pro začátečníky → otevřená registrace → víc uživatelů.
       list.sort(function (a, b) {
