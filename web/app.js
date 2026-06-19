@@ -45,6 +45,7 @@
       start_starter_lead: 'Česká instance pro %s:',
       start_starter_note: 'Vyber ji a posuneme tě na krok 4.',
       start_inst_heading: 'Vyber si instanci — ukazujeme jen ty z CZ/SK kvadrantu s otevřenou registrací nebo se schválením:',
+      start_inst_heading_global: 'V CZ/SK kvadrantu zatím žádná není — nabízíme prověřené globální (s otevřenou registrací nebo se schválením):',
       start_inst_choose: 'Vybrat tuhle →',
       start_inst_more: 'Zobrazit všechny instance v katalogu →',
       start_inst_empty: 'Pro tuhle aplikaci zatím nemáme českou ani slovenskou instanci s otevřenou registrací. Zkus oficiální katalog:',
@@ -281,6 +282,7 @@
       start_starter_lead: 'A Czech instance for %s:',
       start_starter_note: 'Choose it and we’ll move you to step 4.',
       start_inst_heading: 'Pick an instance — we only show ones in the CZ/SK quadrant with open or approval-based registration:',
+      start_inst_heading_global: 'Nothing in the CZ/SK quadrant yet — here are vetted global ones (open or approval-based sign-up):',
       start_inst_choose: 'Choose this →',
       start_inst_more: 'See all instances in the catalog →',
       start_inst_empty: 'We don’t have a Czech or Slovak instance with open registration for this app yet. Try the official catalog:',
@@ -839,10 +841,16 @@
     ensureInstancesLoaded().then(function () {
       // Jiná appka se mezitím mohla vybrat — nevykresluj zastaralý seznam.
       if (startStep !== 3 || ((startPickedApp && startPickedApp.id) || 'mastodon') !== appId) return;
+      var regOk = function (i) { return i.registration === 'open' || i.registration === 'approval'; };
+      // Dvoustupňový fallback: nejdřív CZ/SK kvadrant, při prázdnu prověřené globální.
       var list = instanceList.filter(function (i) {
-        return i.appId === appId && (i.region === 'cz' || i.region === 'sk') &&
-               (i.registration === 'open' || i.registration === 'approval');
+        return i.appId === appId && (i.region === 'cz' || i.region === 'sk') && regOk(i);
       });
+      var usingGlobal = false;
+      if (!list.length) {
+        list = instanceList.filter(function (i) { return i.appId === appId && i.region === 'global' && regOk(i); });
+        usingGlobal = true;
+      }
       // Pořadí: výchozí doporučení → pro začátečníky → otevřená registrace → víc uživatelů.
       list.sort(function (a, b) {
         return (b.beginnerDefault ? 1 : 0) - (a.beginnerDefault ? 1 : 0) ||
@@ -852,6 +860,7 @@
       });
       listEl.innerHTML = '';
       if (!list.length) {
+        // Ani CZ/SK, ani globální (typicky self-host appky) → odkaz na oficiální list.
         var empty = document.createElement('p');
         empty.className = 'start-inst-empty';
         empty.textContent = t('start_inst_empty') + ' ';
@@ -863,7 +872,8 @@
         return;
       }
       var head = document.createElement('p');
-      head.className = 'start-inst-heading'; head.textContent = t('start_inst_heading');
+      head.className = 'start-inst-heading';
+      head.textContent = t(usingGlobal ? 'start_inst_heading_global' : 'start_inst_heading');
       listEl.appendChild(head);
       var max = 8;
       list.slice(0, max).forEach(function (i) { listEl.appendChild(buildStep3InstanceItem(i)); });
