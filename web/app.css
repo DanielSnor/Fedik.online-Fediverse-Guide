@@ -1281,7 +1281,7 @@ a { color: inherit; text-decoration: none; }
 }
 .cta-btn:hover { opacity: .85; }
 button.cta-btn { border: none; cursor: pointer; font-family: inherit; }
-.step-next-wrap { margin-top: 24px; padding-bottom: 8px; }
+.step-next-wrap { margin-top: 24px; padding-bottom: 8px; text-align: center; }
 button[data-start][aria-pressed="true"] { font-weight: 700; background: var(--accent); color: var(--bg); }
 .start-steplist { display: flex; flex-direction: column; gap: 12px; }
 .start-step-item { display: flex; flex-direction: column; gap: 3px; }
