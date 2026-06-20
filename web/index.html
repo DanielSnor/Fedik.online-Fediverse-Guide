@@ -14,7 +14,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fedík.online — Český Průvodce Fediverse">
   <meta property="og:title" content="Fedík.online — Český Průvodce Fediverse">
-  <meta property="og:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, slovníček, nástroje.">
+  <meta property="og:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, nástroje, slovníček, statistiky, odkazy, vyhledávání.">
   <meta property="og:url" content="https://fedik.online/">
   <meta property="og:image" content="https://fedik.online/img/header.png">
   <meta property="og:image:width" content="1536">
@@ -25,7 +25,7 @@
   <!-- Twitter / X card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fedík.online — Průvodce Fediverse">
-  <meta name="twitter:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, slovníček, nástroje.">
+  <meta name="twitter:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, nástroje, slovníček, statistiky, odkazy, vyhledávání.">
   <meta name="twitter:image" content="https://fedik.online/img/header.png">
 
   <link rel="stylesheet" href="app.css?v=20260620e">
@@ -519,7 +519,7 @@
       </div>
     </aside>
 
-    <!-- ===================== POHLED: ZAČNI TADY ===================== -->
+    <!-- ===================== POHLED: ZAČÍNÁME ===================== -->
     <section class="start-view" id="start-view" hidden>
 
       <!-- ═══ Krok 1: Pochop, co to je ═══ -->
@@ -606,7 +606,7 @@
         </div><!-- /figrow -->
       </article>
       <div class="step-next-wrap">
-        <button class="cta-btn step-next-btn" data-start-next="2" data-i18n="start_next_step">Dalsi krok</button>
+        <button class="cta-btn step-next-btn" data-start-next="2" data-i18n="start_next_step">Další krok</button>
       </div>
 
       </div><!-- /step-1 -->
@@ -641,7 +641,7 @@
         </div>
       </article>
       <div class="step-next-wrap">
-        <button class="cta-btn step-next-btn" data-start-next="3" data-i18n="start_next_step">Dalsi krok</button>
+        <button class="cta-btn step-next-btn" data-start-next="3" data-i18n="start_next_step">Další krok</button>
       </div>
 
       </div><!-- /step-2 -->
@@ -683,7 +683,7 @@
         <p class="step-return-hint" id="start-step3-hint"></p>
       </div>
       <div class="step-next-wrap">
-        <button class="cta-btn step-next-btn" data-start-next="4" data-i18n="start_next_step">Dalsi krok</button>
+        <button class="cta-btn step-next-btn" data-start-next="4" data-i18n="start_next_step">Další krok</button>
       </div>
       </div><!-- /step-3 -->
 
@@ -708,7 +708,7 @@
       <!-- Vybraná instance z kroku 3 → přímý odkaz na registraci. Plní JS (updateStep4ForInstance). -->
       <div id="start-step4-chosen" class="start-default-box start-chosen-box" hidden></div>
       <div class="step-next-wrap">
-        <button class="cta-btn step-next-btn" data-start-next="5" data-i18n="start_next_step">Dalsi krok</button>
+        <button class="cta-btn step-next-btn" data-start-next="5" data-i18n="start_next_step">Další krok</button>
       </div>
       </div><!-- /step-4 -->
 
@@ -769,7 +769,7 @@
         </div>
       </article>
       <div class="step-next-wrap">
-        <button class="cta-btn step-next-btn" data-start-next="6" data-i18n="start_next_step">Dalsi krok</button>
+        <button class="cta-btn step-next-btn" data-start-next="6" data-i18n="start_next_step">Další krok</button>
       </div>
       </div><!-- /step-5 -->
 
@@ -836,503 +836,72 @@
       </div>
     </section>
 
-    <!-- ===================== POHLED: O FEDÍKU ===================== -->
-    <section class="about-view" id="about-view" hidden>
-
-      <!-- O FEDÍKU -->
-      <article class="about-content" data-about-section="about">
-        <div data-lang-block="cs">
-          <h2>O Fedíku</h2>
-          <p><strong>Fedík.online</strong> je český rozcestník po
-            <a href="https://cs.wikipedia.org/wiki/Fediverse" target="_blank" rel="noopener">Fediverse</a> —
-            propojené síti nezávislých sociálních sítí (Mastodon, Pixelfed, PeerTube a další).
-            Není to sociální síť ani účet; je to <strong>průvodce</strong>, který Fediverse
-            vysvětlí česky a pomůže ti udělat první krok.</p>
-          <figure class="about-figure about-figure--header">
-            <img src="img/header.png" alt="Fedík.online" width="1512" height="1040" loading="lazy">
-          </figure>
-          <p>Je <strong>pro každého</strong>, kdo o Fediverse slyšel a neví, kde začít — od
-            úplných nováčků po lidi, kteří hledají konkrétní aplikaci, server nebo nástroj.
-            Všechno bez přihlášení a bez sledování.</p>
-          <p>Fedík nabízí tyto pohledy:</p>
-          <ul>
-            <li><strong>Začínáme</strong> — co je Fediverse a jak v něm začít.</li>
-            <li><strong>Aplikace</strong> — katalog fediverse aplikací podle typu obsahu.</li>
-            <li><strong>Instance</strong> — kde si založit účet (CZ/SK i prověřené globální).</li>
-            <li><strong>Nástroje</strong> — klienti, mosty, objevovače a další.</li>
-            <li><strong>Slovníček</strong> a <strong>Statistiky</strong> — pojmy a postupy + pár čísel o síti.</li>
-            <li><strong>Odkazy</strong> — články, návody a videa o Fediverse.</li>
-            <li><strong>Vyhledávání</strong> — fulltext napříč obsahem Fedíka (aplikace, instance, nástroje, slovníček, odkazy).</li>
-          </ul>
-          <h3>Kontakt</h3>
-          <p>Fedík tvoří <strong>Daniel Šnor</strong> (také
-            <a href="https://zpravobot.news" target="_blank" rel="noopener">Zprávobot.news</a> a
-            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>).
-            Něco nesedí, chybí, nebo nefunguje odkaz? Napiš na Fediverse:
-            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>.</p>
-        </div>
-        <div data-lang-block="en" hidden>
-          <h2>About Fedík</h2>
-          <p><strong>Fedík.online</strong> is a Czech guide to the
-            <a href="https://en.wikipedia.org/wiki/Fediverse" target="_blank" rel="noopener">Fediverse</a> —
-            the connected network of independent social networks (Mastodon, Pixelfed, PeerTube and more).
-            It isn't a social network or an account; it's a <strong>guide</strong> that explains
-            the Fediverse and helps you take the first step.</p>
-          <figure class="about-figure about-figure--header">
-            <img src="img/header.png" alt="Fedík.online" width="1512" height="1040" loading="lazy">
-          </figure>
-          <p>It's <strong>for anyone</strong> who has heard of the Fediverse and doesn't know
-            where to start — from complete newcomers to people looking for a specific app,
-            server or tool. No login, no tracking.</p>
-          <p>Fedík offers these views:</p>
-          <ul>
-            <li><strong>Start here</strong> — what the Fediverse is and how to begin.</li>
-            <li><strong>Apps</strong> — a catalog of fediverse apps by content type.</li>
-            <li><strong>Instances</strong> — where to create an account (CZ/SK and vetted global).</li>
-            <li><strong>Tools</strong> — clients, bridges, discovery tools and more.</li>
-            <li><strong>Glossary</strong> and <strong>Stats</strong> — terms and how-tos plus a few network numbers.</li>
-            <li><strong>Links</strong> — articles, guides and videos about the Fediverse.</li>
-            <li><strong>Search</strong> — full text across Fedík’s content (apps, instances, tools, glossary, links).</li>
-          </ul>
-          <h3>Contact</h3>
-          <p>Fedík is made by <strong>Daniel Šnor</strong> (also
-            <a href="https://zpravobot.news" target="_blank" rel="noopener">Zprávobot.news</a> and
-            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>).
-            Something off, missing, or a broken link? Reach out on the Fediverse:
-            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>.</p>
-        </div>
+    <!-- ===================== POHLED: APLIKACE ===================== -->
+    <section class="apps-view" id="apps-view" hidden>
+      <article class="about-content start-block view-intro">
+        <img class="start-fig start-fig--float" src="img/fedik-kterou-raketu.png" alt="Fedík: kterou loď?" width="1016" height="1028" loading="lazy">
+        <h2 data-i18n="cat_apps_head">Aplikace — vyber si loď</h2>
+        <p data-i18n="cat_apps_p1">Aplikace jsou lodě Fediverse — software, kterým do něj vstoupíš. Každá je dobrá na něco jiného: mikroblog, fotky, video, fórum, blog. Všechny spolu ale umí mluvit, takže ať si vybereš cokoli, neztratíš se ze sítě.</p>
+        <p data-i18n="cat_apps_p2">Najdeš tu přehled aplikací s tím, čemu se podobají z běžných sítí, počtem uživatelů a instancí a jestli mají české rozhraní. Údaje o velikosti jsou orientační z FediDB. Filtruj podle typu obsahu, obdoby známé sítě nebo češtiny v UI.</p>
       </article>
-
-      <!-- JAK PRACOVAT S VYHLEDÁVÁNÍM -->
-      <article class="about-content" data-about-section="search" hidden>
+      <div id="apps-results" class="apps-grid" aria-live="polite"></div>
+      <div id="apps-empty" class="empty-state" hidden>
+        <p data-i18n="apps_empty">Žádná aplikace neodpovídá filtrům.</p>
+      </div>
+    
+      <!-- Co dál — stejný figrow formát + maskot jako „Začínáme → Co dál". -->
+      <article class="about-content start-block view-next">
+        <div data-lang-block="cs"><h2>Vybral sis loď? Tak kam s ní zamíříš?</h2><p class="view-next-intro"> </p></div>
+        <div data-lang-block="en" hidden><h2>Picked your ship? So where will you steer it?</h2><p class="view-next-intro"> </p></div>
+        <div class="start-figrow start-figrow--left">
+        <img class="start-fig" src="img/fedik-nevim-co-dal.png"
+             alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
+        <div class="start-figrow__text">
         <div data-lang-block="cs">
-          <h2>Jak pracovat s Vyhledáváním</h2>
-          <p>Do pole napiš, co hledáš — Fedík prohledá <strong>svůj vlastní obsah</strong>: aplikace,
-            instance, nástroje, hesla Slovníčku a odkazy. Nezáleží na velikosti písmen ani diakritice
-            (napíšeš „mastodon", najde „Mastodon") a celé to běží <strong>v prohlížeči</strong>, bez přihlášení.</p>
-          <h3>Výsledky podle typu</h3>
-          <p>Nálezy jsou seskupené do sekcí podle typu — <strong>Aplikace, Instance, Nástroje,
-            Slovníček, Odkazy</strong> — a zobrazené jako plné karty, stejné jako v příslušných pohledech.
-            Záložkami nahoře (Vše / Aplikace / Instance / …) si necháš zobrazit jen jeden typ.</p>
-          <figure class="about-figure">
-            <img src="img/search-results.png" alt="Náhled výsledků vyhledávání" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-          <h3>Jak hledat</h3>
-          <p>Víc slov = musí se objevit <strong>všechna</strong> (logické „a zároveň"). Přesnou frázi
-            uzavři do <strong>uvozovek</strong> — <code>„content warning"</code> najde jen to spojení.
-            Slovo <strong>vyloučíš mínusem</strong> — <code>mastodon -klient</code>. Slovníček hledá
-            i podle <strong>aliasů</strong>, takže „CW" najde heslo „varování obsahu".</p>
+          <div class="cards-grid start-cards">
+            <a class="start-card start-card-link" href="#view=instance">
+              <strong class="start-card-title">Vyber si instanci</strong>
+              <p>Kde si reálně založit účet — české a slovenské i prověřené globální servery.</p>
+            </a>
+            <a class="start-card start-card-link" href="#view=nastroje">
+              <strong class="start-card-title">Najdi nástroje</strong>
+              <p>Klienti, mosty, objevovače a další nástroje k vybrané aplikaci.</p>
+            </a>
+            <a class="start-card start-card-link" href="#view=slovnicek">
+              <strong class="start-card-title">Slovníček pojmů</strong>
+              <p>Federace, ActivityPub, boost, CW… pojmy vysvětlené česky.</p>
+            </a>
+            <a class="start-card start-card-link" href="#view=start">
+              <strong class="start-card-title">Nevíš, co vybrat?</strong>
+              <p>„Začínáme“ tě podle toho, odkud přicházíš, navede na správnou aplikaci.</p>
+            </a>
+          </div>
         </div>
         <div data-lang-block="en" hidden>
-          <h2>Working with Search</h2>
-          <p>Type what you're looking for — Fedík searches <strong>its own content</strong>: apps,
-            instances, tools, glossary entries and links. It's case- and diacritics-insensitive
-            (type “mastodon”, it finds “Mastodon”) and runs <strong>entirely in the browser</strong>, no login.</p>
-          <h3>Results by type</h3>
-          <p>Matches are grouped into sections by type — <strong>Apps, Instances, Tools, Glossary,
-            Links</strong> — shown as full cards, the same as in the respective views. The tabs on top
-            (All / Apps / Instances / …) let you show just one type.</p>
-          <figure class="about-figure">
-            <img src="img/search-results.png" alt="Search results preview" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-          <h3>How to search</h3>
-          <p>Multiple words = <strong>all</strong> must appear (logical AND). Wrap an exact phrase in
-            <strong>quotes</strong> — <code>“content warning”</code> matches only that pairing.
-            <strong>Exclude a word with a minus</strong> — <code>mastodon -client</code>. The glossary
-            also matches <strong>aliases</strong>, so “CW” finds the entry “content warning”.</p>
+          <div class="cards-grid start-cards">
+            <a class="start-card start-card-link" href="#view=instance">
+              <strong class="start-card-title">Pick an instance</strong>
+              <p>Where to actually sign up — Czech/Slovak and vetted global servers.</p>
+            </a>
+            <a class="start-card start-card-link" href="#view=nastroje">
+              <strong class="start-card-title">Find tools</strong>
+              <p>Clients, bridges, discovery tools and more for your chosen app.</p>
+            </a>
+            <a class="start-card start-card-link" href="#view=slovnicek">
+              <strong class="start-card-title">Glossary</strong>
+              <p>Federation, ActivityPub, boost, CW… terms explained (in Czech).</p>
+            </a>
+            <a class="start-card start-card-link" href="#view=start">
+              <strong class="start-card-title">Not sure what to pick?</strong>
+              <p>“Start here” guides you to the right app based on where you’re coming from.</p>
+            </a>
+          </div>
         </div>
-      </article>
-
-      <!-- JAK PRACOVAT S APLIKACEMI -->
-      <article class="about-content" data-about-section="apps" hidden>
-        <div data-lang-block="cs">
-          <h2>Jak pracovat s Aplikacemi</h2>
-          <p>Pohled <strong>Aplikace</strong> je kurátorský katalog fediverse aplikací — co všechno
-            na Fediverse existuje a co která appka umí. Hodí se, když si vybíráš, kam si založit účet.</p>
-          <h3>Co karta ukazuje</h3>
-          <p>Logo a název, typ obsahu a <strong>obdobu známé sítě</strong> (např. „jako Twitter / X"),
-            odznak <strong>češtiny v rozhraní</strong> (ano / částečně / ne), živá čísla (uživatelé
-            a instance z FediDB), protokol a stav vývoje. Odkazy vedou na registraci, web a zdroják.</p>
-          <figure class="about-figure">
-            <img src="img/card-applications.png" alt="Náhled karty aplikace" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-          <h3>Filtry (levý panel)</h3>
-          <ul>
-            <li><strong>Typ obsahu</strong> — mikroblog, fotky, video, fórum, hudba…</li>
-            <li><strong>Obdoba</strong> — kterou komerční síť aplikace nahrazuje.</li>
-            <li><strong>Čeština</strong> — má appka české rozhraní (ano / částečně / ne).</li>
-            <li><strong>Managed hosting</strong> — jde použít bez vlastního serveru.</li>
-            <li><strong>Vývoj</strong> — aktivní / zralý / experimentální / utlumený.</li>
-          </ul>
-          <h3>Žebříčky a řazení</h3>
-          <p>Záložky nahoře: <strong>Vše</strong>, <strong>Nejvíc uživatelů</strong>,
-            <strong>Nejvíc instancí</strong>, <strong>Nejrychleji rostoucí</strong> a
-            <strong>Nové projekty</strong>. V „Vše" řadíš podle abecedy nebo počtu uživatelů/instancí
-            (výchozí je Nejvíc uživatelů). Čísla jsou orientační — z FediDB.</p>
-        </div>
-        <div data-lang-block="en" hidden>
-          <h2>Working with Apps</h2>
-          <p>The <strong>Apps</strong> view is a curated catalog of fediverse apps — what exists out
-            there and what each app does. Handy when choosing where to create an account.</p>
-          <h3>What a card shows</h3>
-          <p>Logo and name, content type and the <strong>mainstream equivalent</strong> (e.g. “like
-            Twitter / X”), the <strong>Czech UI</strong> badge (yes / partial / no), live numbers
-            (users and instances from FediDB), protocol and development status. Links go to sign-up,
-            the website and the source code.</p>
-          <figure class="about-figure">
-            <img src="img/card-applications.png" alt="App card preview" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-          <h3>Filters (left panel)</h3>
-          <ul>
-            <li><strong>Content type</strong> — microblog, photos, video, forum, music…</li>
-            <li><strong>Equivalent</strong> — which mainstream network the app replaces.</li>
-            <li><strong>Czech UI</strong> — whether the app has a Czech interface (yes / partial / no).</li>
-            <li><strong>Managed hosting</strong> — usable without running your own server.</li>
-            <li><strong>Development</strong> — active / mature / experimental / dormant.</li>
-          </ul>
-          <h3>Rankings and sorting</h3>
-          <p>Tabs on top: <strong>All</strong>, <strong>Most users</strong>, <strong>Most instances</strong>,
-            <strong>Fastest growing</strong> and <strong>New projects</strong>. In “All” you sort
-            alphabetically or by users/instances (default is Most users). Numbers are indicative — from FediDB.</p>
-        </div>
-      </article>
-
-      <!-- JAK PRACOVAT S NÁSTROJI -->
-      <article class="about-content" data-about-section="tools" hidden>
-        <div data-lang-block="cs">
-          <h2>Jak pracovat s Nástroji</h2>
-          <p>Pohled <strong>Nástroje</strong> sdružuje klienty (aplikace pro Fediverse), mosty,
-            objevovače a další pomocníky — to, čím si Fediverse osladíš.</p>
-          <h3>Co karta ukazuje</h3>
-          <p>Logo a název, <strong>kategorii</strong> (klient, most, objevování, RSS, migrace),
-            <strong>platformy</strong> (Android, iOS, web, desktop), cenu a odznaky (oficiální /
-            doporučené). Odkaz <strong>Otevřít</strong> u jednoplatformních appek vede přímo do
-            <strong>App Store / Google Play / F-Droidu</strong>; „Zdroják" na repozitář.</p>
-          <figure class="about-figure">
-            <img src="img/card-tools.png" alt="Náhled karty nástroje" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-          <h3>Filtry a žebříčky</h3>
-          <ul>
-            <li><strong>Kategorie</strong>, <strong>Platforma</strong>, <strong>Pro aplikaci</strong> a <strong>Cena</strong>.</li>
-            <li>Záložky: <strong>Vše</strong> · <strong>Doporučené</strong> · <strong>Nově přidané</strong>.</li>
-          </ul>
-        </div>
-        <div data-lang-block="en" hidden>
-          <h2>Working with Tools</h2>
-          <p>The <strong>Tools</strong> view gathers clients (apps for the Fediverse), bridges,
-            discovery tools and other helpers — the things that make the Fediverse nicer.</p>
-          <h3>What a card shows</h3>
-          <p>Logo and name, <strong>category</strong> (client, bridge, discovery, RSS, migration),
-            <strong>platforms</strong> (Android, iOS, web, desktop), price and badges (official /
-            featured). For single-platform apps the <strong>Open</strong> link goes straight to the
-            <strong>App Store / Google Play / F-Droid</strong>; “Source” to the repository.</p>
-          <figure class="about-figure">
-            <img src="img/card-tools.png" alt="Tool card preview" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-          <h3>Filters and rankings</h3>
-          <ul>
-            <li><strong>Category</strong>, <strong>Platform</strong>, <strong>For app</strong> and <strong>Price</strong>.</li>
-            <li>Tabs: <strong>All</strong> · <strong>Featured</strong> · <strong>Recently added</strong>.</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- JAK PRACOVAT S INSTANCEMI -->
-      <article class="about-content" data-about-section="instance" hidden>
-        <div data-lang-block="cs">
-          <h2>Jak pracovat s Instancemi</h2>
-          <p>Pohled <strong>Instance</strong> je adresář serverů, kde si reálně
-            <strong>založíš účet</strong> — české a slovenské (ze Sloníka) i prověřené globální.
-            Pomůže ti vybrat, kam patříš.</p>
-          <h3>Co karta ukazuje</h3>
-          <p>Logo a název, krátký popis, počet uživatelů, měsíční aktivitu, počet
-            příspěvků a stav registrací. Tlačítko <em>Založit účet</em> vede přímo na
-            registraci dané instance.</p>
-          <figure class="about-figure">
-            <img src="img/card-instance.png" alt="Náhled karty instance" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-          <h3>Žebříčky</h3>
-          <p>Nahoře přepínáš mezi <strong>Vše</strong>, <strong>Pro začátečníky</strong>
-            (stojí na prověřenosti, ne na velikosti) a <strong>Nejvíc uživatelů</strong>.</p>
-          <h3>Filtry</h3>
-          <p>Vlevo <strong>Vyhledat</strong>, <strong>Řadit</strong> a fasety
-            <strong>Region</strong>, <strong>Aplikace</strong> a <strong>Zaměření</strong> instance.</p>
-        </div>
-        <div data-lang-block="en" hidden>
-          <h2>Working with Instances</h2>
-          <p>The <strong>Instances</strong> view is a directory of servers where you can actually
-            <strong>create an account</strong> — Czech and Slovak (from Sloník) plus vetted global
-            ones. It helps you pick where you belong.</p>
-          <h3>What a card shows</h3>
-          <p>Logo and name, a short description, the user count, monthly activity, post
-            count and registration status. The <em>Create account</em> button goes straight
-            to that instance's sign-up.</p>
-          <figure class="about-figure">
-            <img src="img/card-instance.png" alt="Instance card preview" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-          <h3>Rankings</h3>
-          <p>At the top you switch between <strong>All</strong>, <strong>For beginners</strong>
-            (based on vetting, not size) and <strong>Most users</strong>.</p>
-          <h3>Filters</h3>
-          <p>On the left: <strong>Search</strong>, <strong>Sort</strong> and the
-            <strong>Region</strong>, <strong>App</strong> and <strong>Focus</strong> facets.</p>
-        </div>
-      </article>
-
-      <!-- JAK PRACOVAT S ODKAZY -->
-      <article class="about-content" data-about-section="links" hidden>
-        <div data-lang-block="cs">
-          <h2>Jak pracovat s Odkazy</h2>
-          <p>Pohled <strong>Odkazy</strong> je kurátorovaný rozcestník kvalitních článků
-            a návodů o Mastodonu a fediverse — česky i anglicky. Karty jsou seskupené
-            podle typu.</p>
-          <figure class="about-figure">
-            <img src="img/card-links.png" alt="Náhled karty odkazu" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-          <h3>Filtry (levý panel / menu)</h3>
-          <ul>
-            <li><strong>Typ</strong> — Vysvětlení, Návody, Pro provozovatele, Kontext.</li>
-            <li><strong>Jazyk</strong> — čeština, angličtina.</li>
-          </ul>
-          <h3>Karta odkazu</h3>
-          <p>Titul je <strong>odkaz na článek</strong> (otevře se v nové záložce). Pod ním
-            je jazyk, zdroj a <em>aktuálnost</em> — většina českých textů je z migrační vlny
-            2022/2023; obsahově drží, ale detaily prostředí se od té doby mohly změnit, proto
-            u každého uvádíme, jak je starý.</p>
-        </div>
-        <div data-lang-block="en" hidden>
-          <h2>Working with Links</h2>
-          <p>The <strong>Links</strong> view is a curated set of quality articles and guides
-            about Mastodon and the fediverse — Czech and English. Cards are grouped by type.</p>
-          <figure class="about-figure">
-            <img src="img/card-links.png" alt="Link card preview" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-          <h3>Filters (left panel / menu)</h3>
-          <ul>
-            <li><strong>Type</strong> — Explainers, Guides, For instance admins, Context.</li>
-            <li><strong>Language</strong> — Czech, English.</li>
-          </ul>
-          <h3>Link card</h3>
-          <p>The title is a <strong>link to the article</strong> (opens in a new tab). Below it
-            you'll find the language, source and <em>freshness</em> — most Czech texts date from
-            the 2022/2023 migration wave; the substance holds up, but UI details may have changed
-            since, so each one notes how old it is.</p>
-        </div>
-      </article>
-
-      <!-- FAQ -->
-      <article class="about-content" data-about-section="faq" hidden>
-        <div data-lang-block="cs">
-          <h2>FAQ — časté otázky</h2>
-          <h3>Proč se to jmenuje zrovna Fedík?</h3>
-          <p>Začalo to u sourozeneckého projektu <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>:
-            síť Mastodon má ve znaku mastodonta (příbuzného dnešním slonům) a katalog chtěl být tak trochu
-            <strong>slovníkem</strong> českého fediverse — <strong>slon</strong> + <strong>slovník</strong> =
-            <strong>Sloník</strong>. <strong>Fedík</strong> je jeho přirozená evoluce pro celý Fediverse:
-            <strong>Fediverse</strong> + <strong>slovník</strong> = <strong>Fedík</strong>.</p>
-          <h3>Některé aplikace, instance nebo čísla tu chybí nebo nesedí. Proč?</h3>
-          <p>Fedík ukazuje jen to, co vidí veřejné zdroje. <strong>Čísla jsou orientační</strong> —
-            síťové statistiky vidí jen instance, které crawlery znají, a počty CZ/SK uživatelů jsou
-            <strong>dolní odhad</strong> (jen účty na českých a slovenských instancích, ne Čechy a Slováky
-            na globálních serverech). Katalog aplikací, nástrojů a odkazů je navíc <strong>ručně
-            kurátorovaný</strong>, takže nemusí být úplný.</p>
-          <h3>Chybí tu aplikace, nástroj nebo odkaz — nebo něco nesedí?</h3>
-          <p>Napiš na
-            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>
-            — rád obsah doplním nebo opravím.</p>
-          <h3>To je skvělý projekt, který bych moc rád finančně podpořil. Jak to mohu udělat?</h3>
-          <p>Mockrát děkujeme! Fedík.online, stejně jako Zprávobot.news a Sloník.online, můžeš podpořit takto:</p>
-          <ul class="faq-support">
-            <li>🏦 IBAN: <strong>CZ8830300000001001612070</strong></li>
-            <li>🖥️ <a href="https://forendors.cz/zpravobot" target="_blank" rel="noopener">forendors.cz/zpravobot</a></li>
-            <li>☕️ <a href="https://ko-fi.com/zpravobot" target="_blank" rel="noopener">ko-fi.com/zpravobot</a></li>
-            <li>💳 <a href="https://revolut.me/zpravobot" target="_blank" rel="noopener">revolut.me/zpravobot</a></li>
-          </ul>
-          <figure class="about-figure qr">
-            <img src="img/qr.jpg" alt="QR kód pro platbu" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-        </div>
-        <div data-lang-block="en" hidden>
-          <h2>FAQ</h2>
-          <h3>Why is it called Fedík?</h3>
-          <p>It started with the sibling project <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>:
-            Mastodon depicts a mastodon (a relative of today's elephants) and the catalog wanted to be a bit of a
-            <strong>dictionary</strong> of the Czech fediverse — <em>slon</em> (elephant) + <em>slovník</em>
-            (dictionary) = <strong>Sloník</strong>. <strong>Fedík</strong> is its natural evolution for the whole
-            Fediverse: <strong>Fediverse</strong> + <em>slovník</em> = <strong>Fedík</strong>.</p>
-          <h3>Some apps, instances or numbers are missing or look off. Why?</h3>
-          <p>Fedík only shows what public sources can see. <strong>The numbers are indicative</strong> —
-            network stats only cover instances crawlers know about, and the CZ/SK user counts are a
-            <strong>lower bound</strong> (only accounts on Czech and Slovak instances, not Czechs and Slovaks
-            on global servers). The catalog of apps, tools and links is also <strong>hand-curated</strong>,
-            so it may not be complete.</p>
-          <h3>An app, tool or link is missing — or something's wrong?</h3>
-          <p>Write to
-            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>
-            — I'll gladly add or fix it.</p>
-          <h3>This is a great project and I'd love to support it financially. How?</h3>
-          <p>Thank you so much! You can support Fedík.online — as well as Zprávobot.news and Sloník.online — here:</p>
-          <ul class="faq-support">
-            <li>🏦 IBAN: <strong>CZ8830300000001001612070</strong></li>
-            <li>🖥️ <a href="https://forendors.cz/zpravobot" target="_blank" rel="noopener">forendors.cz/zpravobot</a></li>
-            <li>☕️ <a href="https://ko-fi.com/zpravobot" target="_blank" rel="noopener">ko-fi.com/zpravobot</a></li>
-            <li>💳 <a href="https://revolut.me/zpravobot" target="_blank" rel="noopener">revolut.me/zpravobot</a></li>
-          </ul>
-          <figure class="about-figure qr">
-            <img src="img/qr.jpg" alt="Payment QR code" loading="lazy" onerror="this.closest('figure').remove()">
-          </figure>
-        </div>
-      </article>
-
-      <!-- FAQ PRO NOVÁČKY -->
-      <article class="about-content" data-about-section="faq-novacci" hidden>
-        <div data-lang-block="cs">
-          <h2 data-i18n="faqn_head">Časté první otázky</h2>
-          <h3 data-i18n="faqn_q1">Registrace čeká na schválení — co teď?</h3>
-          <p data-i18n="faqn_a1">U serverů „po schválení“ tě musí pustit správce. Většinou to trvá pár hodin, někdy do druhého dne. Přijde ti e-mail. Zatím můžeš v klidu projít zbytek tipů tady.</p>
-          <h3 data-i18n="faqn_q2">Nemůžu najít kamaráda — jak ho najdu?</h3>
-          <p data-i18n="faqn_a2">Potřebuješ jeho celou adresu ve tvaru @jmeno@server.cz. Vlož ji do vyhledávání ve své aplikaci a dej Sledovat. Samotné „@jmeno“ nestačí — server je důležitý.</p>
-          <h3 data-i18n="faqn_q3">Jak se přestěhuju na jiný server?</h3>
-          <p><span data-i18n="faqn_a3">Mastodon to umí vestavěně: na novém účtu nastavíš alias na starý, na starém spustíš přesun a sledující se přenesou automaticky. Příspěvky se nepřenášejí, profil a sledující ano.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=migrace-uctu"><span data-i18n="view_glossary">Slovníček</span> ↗</a></p>
-          <h3 data-i18n="faqn_q4">Domácí timeline je prázdná, je to normální?</h3>
-          <p data-i18n="faqn_a4">Úplně. Domácí osa ukazuje jen lidi, které sleduješ — na začátku tam nikdo není. Začni sledovat účty přes Sloník.online a katalog.zpravobot.news a hned se zaplní.</p>
-        </div>
-        <div data-lang-block="en" hidden>
-          <h2 data-i18n="faqn_head">Common first questions</h2>
-          <h3 data-i18n="faqn_q1">My sign-up is waiting for approval — now what?</h3>
-          <p data-i18n="faqn_a1">On “approval” servers an admin has to let you in. It usually takes a few hours, sometimes by the next day. You’ll get an email. Meanwhile, feel free to go through the rest of the tips here.</p>
-          <h3 data-i18n="faqn_q2">I can’t find my friend — how do I find them?</h3>
-          <p data-i18n="faqn_a2">You need their full address as @name@server.com. Paste it into your app’s search and hit Follow. Just “@name” isn’t enough — the server matters.</p>
-          <h3 data-i18n="faqn_q3">How do I move to another server?</h3>
-          <p><span data-i18n="faqn_a3">Mastodon does this built-in: set an alias on the new account pointing to the old one, start the move on the old one, and your followers transfer automatically. Posts don’t move, but your profile and followers do.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=migrace-uctu"><span data-i18n="view_glossary">Glossary</span> ↗</a></p>
-          <h3 data-i18n="faqn_q4">My home timeline is empty — is that normal?</h3>
-          <p data-i18n="faqn_a4">Totally. The home timeline only shows people you follow — at the start there’s no one. Start following accounts via Sloník.online and katalog.zpravobot.news and it fills up fast.</p>
-        </div>
-      </article>
-
-      <!-- TECHNICKÉ ŘEŠENÍ -->
-      <article class="about-content" data-about-section="tech" hidden>
-        <div data-lang-block="cs">
-          <h2>Technické řešení</h2>
-          <p>Fedík.online je úmyslně jednoduchý: web je <strong>čistě statický</strong>
-            (HTML, CSS a trocha JavaScriptu), bez serverové aplikace, bez přihlašování
-            a bez cookies. Návštěvnost měříme jen <strong>anonymně a agregovaně</strong>
-            (self-hosted <a href="https://umami.is" target="_blank" rel="noopener">Umami</a> na OSCLOUD),
-            bez osobních údajů. Všechna data jsou připravená předem — web jen zobrazuje hotové.</p>
-          <h3>Odkud čerpá data</h3>
-          <p>Fedík <strong>nemá vlastní crawler</strong>. Katalog aplikací a živá čísla
-            (uživatelé, instance) bere z <a href="https://fedidb.com" target="_blank" rel="noopener">FediDB</a>
-            a jeho <a href="https://github.com/fedidb/communityDB" target="_blank" rel="noopener">communityDB</a>;
-            českou a slovenskou část — instance, účty i statistiky — ze
-            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>.
-            Texty a výběr aplikací, nástrojů a odkazů píše a udržuje člověk.</p>
-          <h3>Kurace a kategorizace</h3>
-          <p>Typ obsahu, „čeština v rozhraní" a stav vývoje u aplikací jsou <strong>ruční kurace</strong>;
-            loga jsou stažená lokálně (žádné hotlinky). Statistiky stojí na týchž vrstvách (FediDB +
-            Sloník) — <strong>nic se nesbírá navíc</strong> oproti pohledům Aplikace a Instance.</p>
-          <h3>Provoz a publikace</h3>
-          <p>Hotová data se nahrávají na statický hosting. Kód je oddělený od dat a přístupové
-            tokeny nikdy nejsou součástí webu. Fedík pracuje výhradně s <strong>veřejnými daty
-            a otevřenými rozhraními</strong>.</p>
-          <h3>Otevřený kód a atribuce</h3>
-          <p>Fedík je postavený na otevřených vrstvách: katalog aplikací vychází z
-            <a href="https://github.com/fedidb/communityDB" target="_blank" rel="noopener">FediDB communityDB</a>
-            (licence MIT, © Daniel Supernault), data o české a slovenské části ze
-            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>.
-            Web je statický a pracuje jen s veřejnými daty a otevřenými rozhraními.
-            Zdrojový kód najdeš na <a href="https://github.com/DanielSnor/" target="_blank" rel="noopener">GitHubu</a>.</p>
-        </div>
-        <div data-lang-block="en" hidden>
-          <h2>Technical details</h2>
-          <p>Fedík.online is deliberately simple: the site is <strong>fully static</strong>
-            (HTML, CSS and a bit of JavaScript), with no server application, no login and no
-            cookies. Traffic is measured only <strong>anonymously and in aggregate</strong>
-            (self-hosted <a href="https://umami.is" target="_blank" rel="noopener">Umami</a> on OSCLOUD),
-            with no personal data. All data is prepared in advance — the site just displays the result.</p>
-          <h3>Where the data comes from</h3>
-          <p>Fedík has <strong>no crawler of its own</strong>. The app catalog and live numbers
-            (users, instances) come from <a href="https://fedidb.com" target="_blank" rel="noopener">FediDB</a>
-            and its <a href="https://github.com/fedidb/communityDB" target="_blank" rel="noopener">communityDB</a>;
-            the Czech and Slovak part — instances, accounts and stats — from
-            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>.
-            The texts and the selection of apps, tools and links are written and maintained by a human.</p>
-          <h3>Curation and categorization</h3>
-          <p>Content type, “Czech UI” and development status for apps are <strong>hand-curated</strong>;
-            logos are downloaded locally (no hotlinks). Stats are built on the same layers (FediDB +
-            Sloník) — <strong>nothing extra is collected</strong> beyond the Apps and Instances views.</p>
-          <h3>Operation and publishing</h3>
-          <p>The finished data is uploaded to static hosting. Code is kept separate from data and
-            access tokens are never part of the website. Fedík works exclusively with <strong>public
-            data and open interfaces</strong>.</p>
-          <h3>Open source and attribution</h3>
-          <p>Fedík is built on open layers: the app catalog draws on
-            <a href="https://github.com/fedidb/communityDB" target="_blank" rel="noopener">FediDB communityDB</a>
-            (MIT, © Daniel Supernault), and the Czech/Slovak data comes from
-            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>.
-            The site is static and works only with public data and open interfaces.
-            You can find the source code on <a href="https://github.com/DanielSnor/" target="_blank" rel="noopener">GitHub</a>.</p>
-        </div>
-      </article>
-
-      <!-- O AUTOROVI -->
-      <article class="about-content" data-about-section="author" hidden>
-        <div data-lang-block="cs">
-          <h2>O autorovi</h2>
-          <img class="author-photo" src="img/daniel.jpg" alt="Daniel Šnor" loading="lazy" onerror="this.style.display='none'">
-          <p>Za Fedíkem stojí <strong>Daniel Šnor</strong> — nadšenec do Mastodonu a celé
-            sítě Fediverse z českého prostředí.</p>
-          <p>Provozuje projekt <a href="https://zpravobot.news" target="_blank" rel="noopener">Zprávobot.news</a> —
-            veřejně prospěšnou službu, která zrcadlí oblíbené primárně české a slovenské
-            X/Twitter účty a přináší na Mastodon a Bluesky jinak chybějící zprávy,
-            sport, informace o technologiích, kultuře, a někdy i humor.</p>
-          <p>A katalog <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a> —
-            mapu českého a slovenského Mastodonu (lidé, instance, příspěvky). <strong>Fedík</strong>
-            z téhle rodiny vyrostl jako přirozené rozšíření: zatímco Sloník mapuje českou
-            a slovenskou část, Fedík vysvětluje <strong>celý Fediverse česky</strong> a provede
-            tě prvními kroky.</p>
-          <p>Fediverse fandí jako otevřené a decentralizované alternativě ke komerčním sítím —
-            bez algoritmů, reklam a sledování uživatelů.</p>
-          <p>Máš nápad, připomínku, nebo něco nesedí? Napiš na
-            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>.</p>
-        </div>
-        <div data-lang-block="en" hidden>
-          <h2>About the author</h2>
-          <img class="author-photo" src="img/daniel.jpg" alt="Daniel Šnor" loading="lazy" onerror="this.style.display='none'">
-          <p>Fedík is made by <strong>Daniel Šnor</strong> — a Czech enthusiast of Mastodon
-            and the wider Fediverse.</p>
-          <p>He runs the <a href="https://zpravobot.news" target="_blank" rel="noopener">Zprávobot.news</a>
-            project — a public-benefit service that mirrors popular, primarily Czech and
-            Slovak X/Twitter accounts, bringing otherwise-missing news, sport, technology,
-            culture and sometimes humor to Mastodon and Bluesky.</p>
-          <p>And the <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>
-            catalog — a map of the Czech and Slovak Mastodon (people, instances, posts).
-            <strong>Fedík</strong> grew out of this family as a natural extension: while Sloník maps
-            the Czech and Slovak part, Fedík explains the <strong>whole Fediverse (in Czech)</strong>
-            and walks you through your first steps.</p>
-          <p>He’s a fan of the Fediverse as an open, decentralized alternative to commercial
-            networks — no algorithms, ads or user tracking.</p>
-          <p>Have an idea, feedback, or something’s off? Write to
-            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>.</p>
-        </div>
+        </div><!-- /figrow__text -->
+        </div><!-- /figrow -->
       </article>
     </section>
-
-    <!-- ===================== POHLED: VYHLEDÁVÁNÍ ===================== -->
-    <section class="search-view" id="search-view" hidden>
-      <div class="search-hero">
-        <span class="search-wordmark search-wordmark-l">Fedík</span>
-        <img class="search-logo" src="img/fedik-s-dalekohledem.png" alt="Fedík s dalekohledem" width="887" height="1071" loading="lazy">
-        <span class="search-wordmark search-wordmark-r">online</span>
-      </div>
-      <div class="search-bar">
-        <input type="search" id="search-q" autocomplete="off"
-               placeholder="Hledat v obsahu Fedíka…" data-i18n-ph="search_ph_view">
-      </div>
-      <p class="search-tagline" data-i18n="search_tagline">Prohledá aplikace, instance, nástroje, slovníček a odkazy — bez ohledu na diakritiku.</p>
-      <p class="search-tip" data-i18n="search_tip">Tip: víc slov = musí být všechna; přesnou frázi dej do uvozovek („…"), slovo vylučíš mínusem (-slovo).</p>
-      <div id="search-results" class="search-results"></div>
-    </section>
-
+    
     <!-- ===================== POHLED: INSTANCE ===================== -->
     <section class="instance-view" id="instance-view" hidden>
       <article class="about-content start-block view-intro">
@@ -1396,137 +965,10 @@
       </article>
     </section>
 
-    <section class="apps-view" id="apps-view" hidden>
-      <article class="about-content start-block view-intro">
-        <img class="start-fig start-fig--float" src="img/fedik-kterou-raketu.png" alt="Fedík: kterou loď?" width="1016" height="1028" loading="lazy">
-        <h2 data-i18n="cat_apps_head">Aplikace — vyber si loď</h2>
-        <p data-i18n="cat_apps_p1">Aplikace jsou lodě Fediverse — software, kterým do něj vstoupíš. Každá je dobrá na něco jiného: mikroblog, fotky, video, fórum, blog. Všechny spolu ale umí mluvit, takže ať si vybereš cokoli, neztratíš se ze sítě.</p>
-        <p data-i18n="cat_apps_p2">Najdeš tu přehled aplikací s tím, čemu se podobají z běžných sítí, počtem uživatelů a instancí a jestli mají české rozhraní. Údaje o velikosti jsou orientační z FediDB. Filtruj podle typu obsahu, obdoby známé sítě nebo češtiny v UI.</p>
-      </article>
-      <div id="apps-results" class="apps-grid" aria-live="polite"></div>
-      <div id="apps-empty" class="empty-state" hidden>
-        <p data-i18n="apps_empty">Žádná aplikace neodpovídá filtrům.</p>
-      </div>
-
-      <!-- Co dál — stejný figrow formát + maskot jako „Začínáme → Co dál". -->
-      <article class="about-content start-block view-next">
-        <div data-lang-block="cs"><h2>Vybral sis loď? Tak kam s ní zamíříš?</h2><p class="view-next-intro"> </p></div>
-        <div data-lang-block="en" hidden><h2>Picked your ship? So where will you steer it?</h2><p class="view-next-intro"> </p></div>
-        <div class="start-figrow start-figrow--left">
-        <img class="start-fig" src="img/fedik-nevim-co-dal.png"
-             alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
-        <div class="start-figrow__text">
-        <div data-lang-block="cs">
-          <div class="cards-grid start-cards">
-            <a class="start-card start-card-link" href="#view=instance">
-              <strong class="start-card-title">Vyber si instanci</strong>
-              <p>Kde si reálně založit účet — české a slovenské i prověřené globální servery.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=nastroje">
-              <strong class="start-card-title">Najdi nástroje</strong>
-              <p>Klienti, mosty, objevovače a další nástroje k vybrané aplikaci.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=slovnicek">
-              <strong class="start-card-title">Slovníček pojmů</strong>
-              <p>Federace, ActivityPub, boost, CW… pojmy vysvětlené česky.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=start">
-              <strong class="start-card-title">Nevíš, co vybrat?</strong>
-              <p>„Začínáme“ tě podle toho, odkud přicházíš, navede na správnou aplikaci.</p>
-            </a>
-          </div>
-        </div>
-        <div data-lang-block="en" hidden>
-          <div class="cards-grid start-cards">
-            <a class="start-card start-card-link" href="#view=instance">
-              <strong class="start-card-title">Pick an instance</strong>
-              <p>Where to actually sign up — Czech/Slovak and vetted global servers.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=nastroje">
-              <strong class="start-card-title">Find tools</strong>
-              <p>Clients, bridges, discovery tools and more for your chosen app.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=slovnicek">
-              <strong class="start-card-title">Glossary</strong>
-              <p>Federation, ActivityPub, boost, CW… terms explained (in Czech).</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=start">
-              <strong class="start-card-title">Not sure what to pick?</strong>
-              <p>“Start here” guides you to the right app based on where you’re coming from.</p>
-            </a>
-          </div>
-        </div>
-        </div><!-- /figrow__text -->
-        </div><!-- /figrow -->
-      </article>
-    </section>
-
-    <section class="instance-view" id="links-view" hidden>
-      <article class="about-content start-block view-intro">
-        <img class="start-fig start-fig--float" src="img/fedik-majak.png" alt="Fedík: maják" width="1254" height="1254" loading="lazy">
-        <h2 data-i18n="cat_links_head">Odkazy — majáky dál do vesmíru</h2>
-        <p data-i18n="cat_links_p1">Odkazy jsou majáky dál do vesmíru — když ti Fedík nestačí a chceš číst, sledovat dění nebo se zapojit hlouběji. Rozcestník ven za hranice tohohle průvodce.</p>
-        <p data-i18n="cat_links_p2">Kurátorovaný výběr českých i zahraničních zdrojů o Fediverse: weby, blogy, komunity a další průvodci. Vybíráme jen živé a smysluplné odkazy, ne všechno, co existuje.</p>
-      </article>
-      <div id="links-results"></div>
-
-      <!-- Co dál — stejný figrow formát + maskot jako „Začínáme → Co dál". -->
-      <article class="about-content start-block view-next">
-        <div data-lang-block="cs"><h2>Majáky svítí? Kterým směrem se vydáš?</h2><p class="view-next-intro"> </p></div>
-        <div data-lang-block="en" hidden><h2>Beacons lit? Which way will you go?</h2><p class="view-next-intro"> </p></div>
-        <div class="start-figrow start-figrow--left">
-        <img class="start-fig" src="img/fedik-nevim-co-dal.png"
-             alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
-        <div class="start-figrow__text">
-        <div data-lang-block="cs">
-          <div class="cards-grid start-cards">
-            <a class="start-card start-card-link" href="#view=start">
-              <strong class="start-card-title">Začínáme</strong>
-              <p>Co je Fediverse a jak v něm začít — od úplných základů.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=aplikace">
-              <strong class="start-card-title">Projdi aplikace</strong>
-              <p>Katalog Fediverse aplikací podle typu obsahu.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=instance">
-              <strong class="start-card-title">Vyber si instanci</strong>
-              <p>Kde si reálně založit účet — české a slovenské i prověřené globální servery.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=slovnicek">
-              <strong class="start-card-title">Slovníček pojmů</strong>
-              <p>Federace, ActivityPub, boost, CW… pojmy vysvětlené česky.</p>
-            </a>
-          </div>
-        </div>
-        <div data-lang-block="en" hidden>
-          <div class="cards-grid start-cards">
-            <a class="start-card start-card-link" href="#view=start">
-              <strong class="start-card-title">Start here</strong>
-              <p>What the Fediverse is and how to begin — from the very basics.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=aplikace">
-              <strong class="start-card-title">Browse apps</strong>
-              <p>The catalog of Fediverse apps by content type.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=instance">
-              <strong class="start-card-title">Pick an instance</strong>
-              <p>Where to actually sign up — Czech/Slovak and vetted global servers.</p>
-            </a>
-            <a class="start-card start-card-link" href="#view=slovnicek">
-              <strong class="start-card-title">Glossary</strong>
-              <p>Federation, ActivityPub, boost, CW… terms explained (in Czech).</p>
-            </a>
-          </div>
-        </div>
-        </div><!-- /figrow__text -->
-        </div><!-- /figrow -->
-      </article>
-    </section>
-
     <!-- ===================== POHLED: NÁSTROJE ===================== -->
     <section class="apps-view" id="tools-view" hidden>
       <article class="about-content start-block view-intro">
-        <img class="start-fig start-fig--float" src="img/fedik-aplikace.png" alt="Fedík: aplikace" width="1254" height="1254" loading="lazy">
+        <img class="start-fig start-fig--float" src="img/fedik-tools.png" alt="Fedík: aplikace" width="1254" height="1254" loading="lazy">
         <h2 data-i18n="cat_tools_head">Nástroje — vybav si základnu</h2>
         <p data-i18n="cat_tools_p1">Nástroje jsou palubní vybavení fedinauta — klienti do telefonu, mosty mezi sítěmi, objevovače účtů, crosspostery a další pomocníci, kteří ti cestu zpříjemní. Tvoje aplikace funguje i bez nich, ale s nimi je pohodlnější.</p>
         <p data-i18n="cat_tools_p2">Klienti jsou z FediDB, zbytek je kurátorský výběr živých nástrojů. Filtruj podle kategorie (klient, most, migrace, RSS…), platformy (Android, iOS, web, desktop), ceny a hlavně podle aplikace — ať vidíš jen to, co se hodí k tvé síti.</p>
@@ -1588,6 +1030,72 @@
         </div><!-- /figrow -->
       </article>
     </section>
+
+    <!-- ===================== POHLED: SLOVNÍČEK ===================== -->
+      <section class="glossary-view" id="glossary-view" hidden>
+        <article class="about-content start-block view-intro">
+          <img class="start-fig start-fig--float" src="img/fedik-se-slovnikem.png" alt="Fedík se slovníkem" width="812" height="1142" loading="lazy">
+          <h2 data-i18n="cat_glossary_head">Slovníček — palubní příručka</h2>
+          <p data-i18n="cat_glossary_p1">Slovníček je palubní příručka — Fediverse má vlastní nářečí (instance, federace, boost, CW…) a první týden v něm zní leccos cize. Tady si kterýkoli výraz v klidu dohledáš.</p>
+          <p data-i18n="cat_glossary_p2">Najdeš tu hesla od základních pojmů po praktické postupy, vysvětlená česky a bez žargonu. Hledej podle názvu nebo proklikni z výrazů v průvodci, které na Slovníček odkazují.</p>
+        </article>
+        <div id="glossary-results" aria-live="polite"></div>
+        <div id="glossary-empty" class="empty-state" hidden>
+          <p data-i18n="gloss_empty">Žádné heslo neodpovídá filtrům.</p>
+        </div>
+    
+        <!-- Co dál — stejný figrow formát + maskot jako „Začínáme → Co dál". -->
+        <article class="about-content start-block view-next">
+          <div data-lang-block="cs"><h2>Ovládáš nářečí Fediverse? Kurz na co?</h2><p class="view-next-intro"> </p></div>
+          <div data-lang-block="en" hidden><h2>Speak the Fediverse dialect? Set course for what?</h2><p class="view-next-intro"> </p></div>
+          <div class="start-figrow start-figrow--left">
+          <img class="start-fig" src="img/fedik-nevim-co-dal.png"
+               alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
+          <div class="start-figrow__text">
+          <div data-lang-block="cs">
+            <div class="cards-grid start-cards">
+              <a class="start-card start-card-link" href="#view=start">
+                <strong class="start-card-title">Začínáme</strong>
+                <p>Co je Fediverse a jak v něm začít — od úplných základů.</p>
+              </a>
+              <a class="start-card start-card-link" href="#view=aplikace">
+                <strong class="start-card-title">Projdi aplikace</strong>
+                <p>Katalog Fediverse aplikací podle typu obsahu.</p>
+              </a>
+              <a class="start-card start-card-link" href="#view=instance">
+                <strong class="start-card-title">Vyber si instanci</strong>
+                <p>Kde si reálně založit účet — české a slovenské i prověřené globální servery.</p>
+              </a>
+              <a class="start-card start-card-link" href="#view=search">
+                <strong class="start-card-title">Vyhledávání</strong>
+                <p>Najdi pojem — nebo cokoli z obsahu Fedíka: aplikace, instance, nástroje, odkazy.</p>
+              </a>
+            </div>
+          </div>
+          <div data-lang-block="en" hidden>
+            <div class="cards-grid start-cards">
+              <a class="start-card start-card-link" href="#view=start">
+                <strong class="start-card-title">Start here</strong>
+                <p>What the Fediverse is and how to begin — from the very basics.</p>
+              </a>
+              <a class="start-card start-card-link" href="#view=aplikace">
+                <strong class="start-card-title">Browse apps</strong>
+                <p>The catalog of Fediverse apps by content type.</p>
+              </a>
+              <a class="start-card start-card-link" href="#view=instance">
+                <strong class="start-card-title">Pick an instance</strong>
+                <p>Where to actually sign up — Czech/Slovak and vetted global servers.</p>
+              </a>
+              <a class="start-card start-card-link" href="#view=search">
+                <strong class="start-card-title">Search</strong>
+                <p>Find a term — or anything in Fedík’s content: apps, instances, tools, links.</p>
+              </a>
+            </div>
+          </div>
+          </div><!-- /figrow__text -->
+          </div><!-- /figrow -->
+        </article>
+      </section>
 
     <!-- ===================== POHLED: STATISTIKY ===================== -->
     <!-- Vše v jedné sekci (jako „Začínáme → Odkud přicházíš"): intro + maskot + boxy/grafy. -->
@@ -1653,23 +1161,20 @@
       </article>
     </section>
 
-    <!-- ===================== POHLED: SLOVNÍČEK ===================== -->
-    <section class="glossary-view" id="glossary-view" hidden>
+    <!-- ===================== POHLED: ODKAZY ===================== -->
+    <section class="instance-view" id="links-view" hidden>
       <article class="about-content start-block view-intro">
-        <img class="start-fig start-fig--float" src="img/fedik-se-slovnikem.png" alt="Fedík se slovníkem" width="812" height="1142" loading="lazy">
-        <h2 data-i18n="cat_glossary_head">Slovníček — palubní příručka</h2>
-        <p data-i18n="cat_glossary_p1">Slovníček je palubní příručka — Fediverse má vlastní nářečí (instance, federace, boost, CW…) a první týden v něm zní leccos cize. Tady si kterýkoli výraz v klidu dohledáš.</p>
-        <p data-i18n="cat_glossary_p2">Najdeš tu hesla od základních pojmů po praktické postupy, vysvětlená česky a bez žargonu. Hledej podle názvu nebo proklikni z výrazů v průvodci, které na Slovníček odkazují.</p>
+        <img class="start-fig start-fig--float" src="img/fedik-majak.png" alt="Fedík: maják" width="1254" height="1254" loading="lazy">
+        <h2 data-i18n="cat_links_head">Odkazy — majáky dál do vesmíru</h2>
+        <p data-i18n="cat_links_p1">Odkazy jsou majáky dál do vesmíru — když ti Fedík nestačí a chceš číst, sledovat dění nebo se zapojit hlouběji. Rozcestník ven za hranice tohohle průvodce.</p>
+        <p data-i18n="cat_links_p2">Kurátorovaný výběr českých i zahraničních zdrojů o Fediverse: weby, blogy, komunity a další průvodci. Vybíráme jen živé a smysluplné odkazy, ne všechno, co existuje.</p>
       </article>
-      <div id="glossary-results" aria-live="polite"></div>
-      <div id="glossary-empty" class="empty-state" hidden>
-        <p data-i18n="gloss_empty">Žádné heslo neodpovídá filtrům.</p>
-      </div>
-
+      <div id="links-results"></div>
+    
       <!-- Co dál — stejný figrow formát + maskot jako „Začínáme → Co dál". -->
       <article class="about-content start-block view-next">
-        <div data-lang-block="cs"><h2>Ovládáš nářečí Fediverse? Kurz na co?</h2><p class="view-next-intro"> </p></div>
-        <div data-lang-block="en" hidden><h2>Speak the Fediverse dialect? Set course for what?</h2><p class="view-next-intro"> </p></div>
+        <div data-lang-block="cs"><h2>Majáky svítí? Kterým směrem se vydáš?</h2><p class="view-next-intro"> </p></div>
+        <div data-lang-block="en" hidden><h2>Beacons lit? Which way will you go?</h2><p class="view-next-intro"> </p></div>
         <div class="start-figrow start-figrow--left">
         <img class="start-fig" src="img/fedik-nevim-co-dal.png"
              alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
@@ -1688,9 +1193,9 @@
               <strong class="start-card-title">Vyber si instanci</strong>
               <p>Kde si reálně založit účet — české a slovenské i prověřené globální servery.</p>
             </a>
-            <a class="start-card start-card-link" href="#view=search">
-              <strong class="start-card-title">Vyhledávání</strong>
-              <p>Najdi pojem — nebo cokoli z obsahu Fedíka: aplikace, instance, nástroje, odkazy.</p>
+            <a class="start-card start-card-link" href="#view=slovnicek">
+              <strong class="start-card-title">Slovníček pojmů</strong>
+              <p>Federace, ActivityPub, boost, CW… pojmy vysvětlené česky.</p>
             </a>
           </div>
         </div>
@@ -1708,9 +1213,9 @@
               <strong class="start-card-title">Pick an instance</strong>
               <p>Where to actually sign up — Czech/Slovak and vetted global servers.</p>
             </a>
-            <a class="start-card start-card-link" href="#view=search">
-              <strong class="start-card-title">Search</strong>
-              <p>Find a term — or anything in Fedík’s content: apps, instances, tools, links.</p>
+            <a class="start-card start-card-link" href="#view=slovnicek">
+              <strong class="start-card-title">Glossary</strong>
+              <p>Federation, ActivityPub, boost, CW… terms explained (in Czech).</p>
             </a>
           </div>
         </div>
@@ -1718,7 +1223,504 @@
         </div><!-- /figrow -->
       </article>
     </section>
-  </main>
+
+    <!-- ===================== POHLED: VYHLEDÁVÁNÍ ===================== -->
+    <section class="search-view" id="search-view" hidden>
+      <div class="search-hero">
+        <span class="search-wordmark search-wordmark-l">Fedík</span>
+        <img class="search-logo" src="img/fedik-s-dalekohledem.png" alt="Fedík s dalekohledem" width="887" height="1071" loading="lazy">
+        <span class="search-wordmark search-wordmark-r">online</span>
+      </div>
+      <div class="search-bar">
+        <input type="search" id="search-q" autocomplete="off"
+               placeholder="Hledat v obsahu Fedíka…" data-i18n-ph="search_ph_view">
+      </div>
+      <p class="search-tagline" data-i18n="search_tagline">Prohledá aplikace, instance, nástroje, slovníček a odkazy — bez ohledu na diakritiku.</p>
+      <p class="search-tip" data-i18n="search_tip">Tip: víc slov = musí být všechna; přesnou frázi dej do uvozovek („…"), slovo vylučíš mínusem (-slovo).</p>
+      <div id="search-results" class="search-results"></div>
+    </section>
+
+    <!-- ===================== POHLED: O FEDÍKU ===================== -->
+    <section class="about-view" id="about-view" hidden>
+    
+      <!-- O FEDÍKU -->
+      <article class="about-content" data-about-section="about">
+        <div data-lang-block="cs">
+          <h2>O Fedíku</h2>
+          <p><strong>Fedík.online</strong> je český rozcestník po
+            <a href="https://cs.wikipedia.org/wiki/Fediverse" target="_blank" rel="noopener">Fediverse</a> —
+            propojené síti nezávislých sociálních sítí (Mastodon, Pixelfed, PeerTube a další).
+            Není to sociální síť ani účet; je to <strong>průvodce</strong>, který Fediverse
+            vysvětlí česky a pomůže ti udělat první krok.</p>
+          <p>Je <strong>pro každého</strong>, kdo o Fediverse slyšel a neví, kde začít — od
+            úplných nováčků po lidi, kteří hledají konkrétní aplikaci, server nebo nástroj.
+            Všechno bez přihlášení a bez sledování.</p>
+          <figure class="about-figure about-figure--header">
+              <img src="img/header.png" alt="Fedík.online" width="1512" height="1040" loading="lazy">
+            </figure>
+          <p>Fedík nabízí tyto pohledy:</p>
+          <ul>
+            <li><strong>Začínáme</strong> — co je Fediverse a jak v něm začít.</li>
+            <li><strong>Aplikace</strong> — katalog fediverse aplikací podle typu obsahu.</li>
+            <li><strong>Instance</strong> — kde si založit účet (CZ/SK i prověřené globální).</li>
+            <li><strong>Nástroje</strong> — klienti, mosty, objevovače a další.</li>
+            <li><strong>Slovníček</strong> a <strong>Statistiky</strong> — pojmy a postupy + pár čísel o síti.</li>
+            <li><strong>Odkazy</strong> — články, návody a videa o Fediverse.</li>
+            <li><strong>Vyhledávání</strong> — fulltext napříč obsahem Fedíka (aplikace, instance, nástroje, slovníček, odkazy).</li>
+          </ul>
+          <h3>Kontakt</h3>
+          <p>Fedík tvoří <strong>Daniel Šnor</strong> (také
+            <a href="https://zpravobot.news" target="_blank" rel="noopener">Zprávobot.news</a> a
+            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>).
+            Něco nesedí, chybí, nebo nefunguje odkaz? Napiš na Fediverse:
+            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>About Fedík</h2>
+          <p><strong>Fedík.online</strong> is a Czech guide to the
+            <a href="https://en.wikipedia.org/wiki/Fediverse" target="_blank" rel="noopener">Fediverse</a> —
+            the connected network of independent social networks (Mastodon, Pixelfed, PeerTube and more).
+            It isn't a social network or an account; it's a <strong>guide</strong> that explains
+            the Fediverse and helps you take the first step.</p>
+          <figure class="about-figure about-figure--header">
+            <img src="img/header.png" alt="Fedík.online" width="1512" height="1040" loading="lazy">
+          </figure>
+          <p>It's <strong>for anyone</strong> who has heard of the Fediverse and doesn't know
+            where to start — from complete newcomers to people looking for a specific app,
+            server or tool. No login, no tracking.</p>
+          <p>Fedík offers these views:</p>
+          <ul>
+            <li><strong>Start here</strong> — what the Fediverse is and how to begin.</li>
+            <li><strong>Apps</strong> — a catalog of fediverse apps by content type.</li>
+            <li><strong>Instances</strong> — where to create an account (CZ/SK and vetted global).</li>
+            <li><strong>Tools</strong> — clients, bridges, discovery tools and more.</li>
+            <li><strong>Glossary</strong> and <strong>Stats</strong> — terms and how-tos plus a few network numbers.</li>
+            <li><strong>Links</strong> — articles, guides and videos about the Fediverse.</li>
+            <li><strong>Search</strong> — full text across Fedík’s content (apps, instances, tools, glossary, links).</li>
+          </ul>
+          <h3>Contact</h3>
+          <p>Fedík is made by <strong>Daniel Šnor</strong> (also
+            <a href="https://zpravobot.news" target="_blank" rel="noopener">Zprávobot.news</a> and
+            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>).
+            Something off, missing, or a broken link? Reach out on the Fediverse:
+            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>.</p>
+        </div>
+      </article>
+    
+      <!-- JAK PRACOVAT S VYHLEDÁVÁNÍM -->
+      <article class="about-content" data-about-section="search" hidden>
+        <div data-lang-block="cs">
+          <h2>Jak pracovat s Vyhledáváním</h2>
+          <p>Do pole napiš, co hledáš — Fedík prohledá <strong>svůj vlastní obsah</strong>: aplikace,
+            instance, nástroje, hesla Slovníčku a odkazy. Nezáleží na velikosti písmen ani diakritice
+            (napíšeš „mastodon", najde „Mastodon") a celé to běží <strong>v prohlížeči</strong>, bez přihlášení.</p>
+          <h3>Výsledky podle typu</h3>
+          <p>Nálezy jsou seskupené do sekcí podle typu — <strong>Aplikace, Instance, Nástroje,
+            Slovníček, Odkazy</strong> — a zobrazené jako plné karty, stejné jako v příslušných pohledech.
+            Záložkami nahoře (Vše / Aplikace / Instance / …) si necháš zobrazit jen jeden typ.</p>
+          <figure class="about-figure">
+            <img src="img/search-results.png" alt="Náhled výsledků vyhledávání" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+          <h3>Jak hledat</h3>
+          <p>Víc slov = musí se objevit <strong>všechna</strong> (logické „a zároveň"). Přesnou frázi
+            uzavři do <strong>uvozovek</strong> — <code>„content warning"</code> najde jen to spojení.
+            Slovo <strong>vyloučíš mínusem</strong> — <code>mastodon -klient</code>. Slovníček hledá
+            i podle <strong>aliasů</strong>, takže „CW" najde heslo „varování obsahu".</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>Working with Search</h2>
+          <p>Type what you're looking for — Fedík searches <strong>its own content</strong>: apps,
+            instances, tools, glossary entries and links. It's case- and diacritics-insensitive
+            (type “mastodon”, it finds “Mastodon”) and runs <strong>entirely in the browser</strong>, no login.</p>
+          <h3>Results by type</h3>
+          <p>Matches are grouped into sections by type — <strong>Apps, Instances, Tools, Glossary,
+            Links</strong> — shown as full cards, the same as in the respective views. The tabs on top
+            (All / Apps / Instances / …) let you show just one type.</p>
+          <figure class="about-figure">
+            <img src="img/search-results.png" alt="Search results preview" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+          <h3>How to search</h3>
+          <p>Multiple words = <strong>all</strong> must appear (logical AND). Wrap an exact phrase in
+            <strong>quotes</strong> — <code>“content warning”</code> matches only that pairing.
+            <strong>Exclude a word with a minus</strong> — <code>mastodon -client</code>. The glossary
+            also matches <strong>aliases</strong>, so “CW” finds the entry “content warning”.</p>
+        </div>
+      </article>
+    
+      <!-- JAK PRACOVAT S APLIKACEMI -->
+      <article class="about-content" data-about-section="apps" hidden>
+        <div data-lang-block="cs">
+          <h2>Jak pracovat s Aplikacemi</h2>
+          <p>Pohled <strong>Aplikace</strong> je kurátorský katalog fediverse aplikací — co všechno
+            na Fediverse existuje a co která appka umí. Hodí se, když si vybíráš, kam si založit účet.</p>
+          <h3>Co karta ukazuje</h3>
+          <p>Logo a název, typ obsahu a <strong>obdobu známé sítě</strong> (např. „jako Twitter / X"),
+            odznak <strong>češtiny v rozhraní</strong> (ano / částečně / ne), živá čísla (uživatelé
+            a instance z FediDB), protokol a stav vývoje. Odkazy vedou na registraci, web a zdroják.</p>
+          <figure class="about-figure">
+            <img src="img/card-applications.png" alt="Náhled karty aplikace" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+          <h3>Filtry (levý panel)</h3>
+          <ul>
+            <li><strong>Typ obsahu</strong> — mikroblog, fotky, video, fórum, hudba…</li>
+            <li><strong>Obdoba</strong> — kterou komerční síť aplikace nahrazuje.</li>
+            <li><strong>Čeština</strong> — má appka české rozhraní (ano / částečně / ne).</li>
+            <li><strong>Managed hosting</strong> — jde použít bez vlastního serveru.</li>
+            <li><strong>Vývoj</strong> — aktivní / zralý / experimentální / utlumený.</li>
+          </ul>
+          <h3>Žebříčky a řazení</h3>
+          <p>Záložky nahoře: <strong>Vše</strong>, <strong>Nejvíc uživatelů</strong>,
+            <strong>Nejvíc instancí</strong>, <strong>Nejrychleji rostoucí</strong> a
+            <strong>Nové projekty</strong>. V „Vše" řadíš podle abecedy nebo počtu uživatelů/instancí
+            (výchozí je Nejvíc uživatelů). Čísla jsou orientační — z FediDB.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>Working with Apps</h2>
+          <p>The <strong>Apps</strong> view is a curated catalog of fediverse apps — what exists out
+            there and what each app does. Handy when choosing where to create an account.</p>
+          <h3>What a card shows</h3>
+          <p>Logo and name, content type and the <strong>mainstream equivalent</strong> (e.g. “like
+            Twitter / X”), the <strong>Czech UI</strong> badge (yes / partial / no), live numbers
+            (users and instances from FediDB), protocol and development status. Links go to sign-up,
+            the website and the source code.</p>
+          <figure class="about-figure">
+            <img src="img/card-applications.png" alt="App card preview" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+          <h3>Filters (left panel)</h3>
+          <ul>
+            <li><strong>Content type</strong> — microblog, photos, video, forum, music…</li>
+            <li><strong>Equivalent</strong> — which mainstream network the app replaces.</li>
+            <li><strong>Czech UI</strong> — whether the app has a Czech interface (yes / partial / no).</li>
+            <li><strong>Managed hosting</strong> — usable without running your own server.</li>
+            <li><strong>Development</strong> — active / mature / experimental / dormant.</li>
+          </ul>
+          <h3>Rankings and sorting</h3>
+          <p>Tabs on top: <strong>All</strong>, <strong>Most users</strong>, <strong>Most instances</strong>,
+            <strong>Fastest growing</strong> and <strong>New projects</strong>. In “All” you sort
+            alphabetically or by users/instances (default is Most users). Numbers are indicative — from FediDB.</p>
+        </div>
+      </article>
+    
+      <!-- JAK PRACOVAT S NÁSTROJI -->
+      <article class="about-content" data-about-section="tools" hidden>
+        <div data-lang-block="cs">
+          <h2>Jak pracovat s Nástroji</h2>
+          <p>Pohled <strong>Nástroje</strong> sdružuje klienty (aplikace pro Fediverse), mosty,
+            objevovače a další pomocníky — to, čím si Fediverse osladíš.</p>
+          <h3>Co karta ukazuje</h3>
+          <p>Logo a název, <strong>kategorii</strong> (klient, most, objevování, RSS, migrace),
+            <strong>platformy</strong> (Android, iOS, web, desktop), cenu a odznaky (oficiální /
+            doporučené). Odkaz <strong>Otevřít</strong> u jednoplatformních appek vede přímo do
+            <strong>App Store / Google Play / F-Droidu</strong>; „Zdroják" na repozitář.</p>
+          <figure class="about-figure">
+            <img src="img/card-tools.png" alt="Náhled karty nástroje" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+          <h3>Filtry a žebříčky</h3>
+          <ul>
+            <li><strong>Kategorie</strong>, <strong>Platforma</strong>, <strong>Pro aplikaci</strong> a <strong>Cena</strong>.</li>
+            <li>Záložky: <strong>Vše</strong> · <strong>Doporučené</strong> · <strong>Nově přidané</strong>.</li>
+          </ul>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>Working with Tools</h2>
+          <p>The <strong>Tools</strong> view gathers clients (apps for the Fediverse), bridges,
+            discovery tools and other helpers — the things that make the Fediverse nicer.</p>
+          <h3>What a card shows</h3>
+          <p>Logo and name, <strong>category</strong> (client, bridge, discovery, RSS, migration),
+            <strong>platforms</strong> (Android, iOS, web, desktop), price and badges (official /
+            featured). For single-platform apps the <strong>Open</strong> link goes straight to the
+            <strong>App Store / Google Play / F-Droid</strong>; “Source” to the repository.</p>
+          <figure class="about-figure">
+            <img src="img/card-tools.png" alt="Tool card preview" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+          <h3>Filters and rankings</h3>
+          <ul>
+            <li><strong>Category</strong>, <strong>Platform</strong>, <strong>For app</strong> and <strong>Price</strong>.</li>
+            <li>Tabs: <strong>All</strong> · <strong>Featured</strong> · <strong>Recently added</strong>.</li>
+          </ul>
+        </div>
+      </article>
+    
+      <!-- JAK PRACOVAT S INSTANCEMI -->
+      <article class="about-content" data-about-section="instance" hidden>
+        <div data-lang-block="cs">
+          <h2>Jak pracovat s Instancemi</h2>
+          <p>Pohled <strong>Instance</strong> je adresář serverů, kde si reálně
+            <strong>založíš účet</strong> — české a slovenské (ze Sloníka) i prověřené globální.
+            Pomůže ti vybrat, kam patříš.</p>
+          <h3>Co karta ukazuje</h3>
+          <p>Logo a název, krátký popis, počet uživatelů, měsíční aktivitu, počet
+            příspěvků a stav registrací. Tlačítko <em>Založit účet</em> vede přímo na
+            registraci dané instance.</p>
+          <figure class="about-figure">
+            <img src="img/card-instance.png" alt="Náhled karty instance" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+          <h3>Žebříčky</h3>
+          <p>Nahoře přepínáš mezi <strong>Vše</strong>, <strong>Pro začátečníky</strong>
+            (stojí na prověřenosti, ne na velikosti) a <strong>Nejvíc uživatelů</strong>.</p>
+          <h3>Filtry</h3>
+          <p>Vlevo <strong>Vyhledat</strong>, <strong>Řadit</strong> a fasety
+            <strong>Region</strong>, <strong>Aplikace</strong> a <strong>Zaměření</strong> instance.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>Working with Instances</h2>
+          <p>The <strong>Instances</strong> view is a directory of servers where you can actually
+            <strong>create an account</strong> — Czech and Slovak (from Sloník) plus vetted global
+            ones. It helps you pick where you belong.</p>
+          <h3>What a card shows</h3>
+          <p>Logo and name, a short description, the user count, monthly activity, post
+            count and registration status. The <em>Create account</em> button goes straight
+            to that instance's sign-up.</p>
+          <figure class="about-figure">
+            <img src="img/card-instance.png" alt="Instance card preview" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+          <h3>Rankings</h3>
+          <p>At the top you switch between <strong>All</strong>, <strong>For beginners</strong>
+            (based on vetting, not size) and <strong>Most users</strong>.</p>
+          <h3>Filters</h3>
+          <p>On the left: <strong>Search</strong>, <strong>Sort</strong> and the
+            <strong>Region</strong>, <strong>App</strong> and <strong>Focus</strong> facets.</p>
+        </div>
+      </article>
+    
+      <!-- JAK PRACOVAT S ODKAZY -->
+      <article class="about-content" data-about-section="links" hidden>
+        <div data-lang-block="cs">
+          <h2>Jak pracovat s Odkazy</h2>
+          <p>Pohled <strong>Odkazy</strong> je kurátorovaný rozcestník kvalitních článků
+            a návodů o Mastodonu a fediverse — česky i anglicky. Karty jsou seskupené
+            podle typu.</p>
+          <figure class="about-figure">
+            <img src="img/card-links.png" alt="Náhled karty odkazu" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+          <h3>Filtry (levý panel / menu)</h3>
+          <ul>
+            <li><strong>Typ</strong> — Vysvětlení, Návody, Pro provozovatele, Kontext.</li>
+            <li><strong>Jazyk</strong> — čeština, angličtina.</li>
+          </ul>
+          <h3>Karta odkazu</h3>
+          <p>Titul je <strong>odkaz na článek</strong> (otevře se v nové záložce). Pod ním
+            je jazyk, zdroj a <em>aktuálnost</em> — většina českých textů je z migrační vlny
+            2022/2023; obsahově drží, ale detaily prostředí se od té doby mohly změnit, proto
+            u každého uvádíme, jak je starý.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>Working with Links</h2>
+          <p>The <strong>Links</strong> view is a curated set of quality articles and guides
+            about Mastodon and the fediverse — Czech and English. Cards are grouped by type.</p>
+          <figure class="about-figure">
+            <img src="img/card-links.png" alt="Link card preview" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+          <h3>Filters (left panel / menu)</h3>
+          <ul>
+            <li><strong>Type</strong> — Explainers, Guides, For instance admins, Context.</li>
+            <li><strong>Language</strong> — Czech, English.</li>
+          </ul>
+          <h3>Link card</h3>
+          <p>The title is a <strong>link to the article</strong> (opens in a new tab). Below it
+            you'll find the language, source and <em>freshness</em> — most Czech texts date from
+            the 2022/2023 migration wave; the substance holds up, but UI details may have changed
+            since, so each one notes how old it is.</p>
+        </div>
+      </article>
+    
+      <!-- FAQ -->
+      <article class="about-content" data-about-section="faq" hidden>
+        <div data-lang-block="cs">
+          <h2>FAQ — časté otázky</h2>
+          <h3>Proč se to jmenuje zrovna Fedík?</h3>
+          <p>Začalo to u sourozeneckého projektu <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>:
+            síť Mastodon má ve znaku mastodonta (příbuzného dnešním slonům) a katalog chtěl být tak trochu
+            <strong>slovníkem</strong> českého fediverse — <strong>slon</strong> + <strong>slovník</strong> =
+            <strong>Sloník</strong>. <strong>Fedík</strong> je jeho přirozená evoluce pro celý Fediverse:
+            <strong>Fediverse</strong> + <strong>slovník</strong> = <strong>Fedík</strong>.</p>
+          <h3>Některé aplikace, instance nebo čísla tu chybí nebo nesedí. Proč?</h3>
+          <p>Fedík ukazuje jen to, co vidí veřejné zdroje. <strong>Čísla jsou orientační</strong> —
+            síťové statistiky vidí jen instance, které crawlery znají, a počty CZ/SK uživatelů jsou
+            <strong>dolní odhad</strong> (jen účty na českých a slovenských instancích, ne Čechy a Slováky
+            na globálních serverech). Katalog aplikací, nástrojů a odkazů je navíc <strong>ručně
+            kurátorovaný</strong>, takže nemusí být úplný.</p>
+          <h3>Chybí tu aplikace, nástroj nebo odkaz — nebo něco nesedí?</h3>
+          <p>Napiš na
+            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>
+            — rád obsah doplním nebo opravím.</p>
+          <h3>To je skvělý projekt, který bych moc rád finančně podpořil. Jak to mohu udělat?</h3>
+          <p>Mockrát děkujeme! Fedík.online, stejně jako Zprávobot.news a Sloník.online, můžeš podpořit takto:</p>
+          <ul class="faq-support">
+            <li>🏦 IBAN: <strong>CZ8830300000001001612070</strong></li>
+            <li>🖥️ <a href="https://forendors.cz/zpravobot" target="_blank" rel="noopener">forendors.cz/zpravobot</a></li>
+            <li>☕️ <a href="https://ko-fi.com/zpravobot" target="_blank" rel="noopener">ko-fi.com/zpravobot</a></li>
+            <li>💳 <a href="https://revolut.me/zpravobot" target="_blank" rel="noopener">revolut.me/zpravobot</a></li>
+          </ul>
+          <figure class="about-figure qr">
+            <img src="img/qr.jpg" alt="QR kód pro platbu" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>FAQ</h2>
+          <h3>Why is it called Fedík?</h3>
+          <p>It started with the sibling project <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>:
+            Mastodon depicts a mastodon (a relative of today's elephants) and the catalog wanted to be a bit of a
+            <strong>dictionary</strong> of the Czech fediverse — <em>slon</em> (elephant) + <em>slovník</em>
+            (dictionary) = <strong>Sloník</strong>. <strong>Fedík</strong> is its natural evolution for the whole
+            Fediverse: <strong>Fediverse</strong> + <em>slovník</em> = <strong>Fedík</strong>.</p>
+          <h3>Some apps, instances or numbers are missing or look off. Why?</h3>
+          <p>Fedík only shows what public sources can see. <strong>The numbers are indicative</strong> —
+            network stats only cover instances crawlers know about, and the CZ/SK user counts are a
+            <strong>lower bound</strong> (only accounts on Czech and Slovak instances, not Czechs and Slovaks
+            on global servers). The catalog of apps, tools and links is also <strong>hand-curated</strong>,
+            so it may not be complete.</p>
+          <h3>An app, tool or link is missing — or something's wrong?</h3>
+          <p>Write to
+            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>
+            — I'll gladly add or fix it.</p>
+          <h3>This is a great project and I'd love to support it financially. How?</h3>
+          <p>Thank you so much! You can support Fedík.online — as well as Zprávobot.news and Sloník.online — here:</p>
+          <ul class="faq-support">
+            <li>🏦 IBAN: <strong>CZ8830300000001001612070</strong></li>
+            <li>🖥️ <a href="https://forendors.cz/zpravobot" target="_blank" rel="noopener">forendors.cz/zpravobot</a></li>
+            <li>☕️ <a href="https://ko-fi.com/zpravobot" target="_blank" rel="noopener">ko-fi.com/zpravobot</a></li>
+            <li>💳 <a href="https://revolut.me/zpravobot" target="_blank" rel="noopener">revolut.me/zpravobot</a></li>
+          </ul>
+          <figure class="about-figure qr">
+            <img src="img/qr.jpg" alt="Payment QR code" loading="lazy" onerror="this.closest('figure').remove()">
+          </figure>
+        </div>
+      </article>
+    
+      <!-- FAQ PRO NOVÁČKY -->
+      <article class="about-content" data-about-section="faq-novacci" hidden>
+        <div data-lang-block="cs">
+          <h2 data-i18n="faqn_head">Časté první otázky</h2>
+          <h3 data-i18n="faqn_q1">Registrace čeká na schválení — co teď?</h3>
+          <p data-i18n="faqn_a1">U serverů „po schválení“ tě musí pustit správce. Většinou to trvá pár hodin, někdy do druhého dne. Přijde ti e-mail. Zatím můžeš v klidu projít zbytek tipů tady.</p>
+          <h3 data-i18n="faqn_q2">Nemůžu najít kamaráda — jak ho najdu?</h3>
+          <p data-i18n="faqn_a2">Potřebuješ jeho celou adresu ve tvaru @jmeno@server.cz. Vlož ji do vyhledávání ve své aplikaci a dej Sledovat. Samotné „@jmeno“ nestačí — server je důležitý.</p>
+          <h3 data-i18n="faqn_q3">Jak se přestěhuju na jiný server?</h3>
+          <p><span data-i18n="faqn_a3">Mastodon to umí vestavěně: na novém účtu nastavíš alias na starý, na starém spustíš přesun a sledující se přenesou automaticky. Příspěvky se nepřenášejí, profil a sledující ano.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=migrace-uctu"><span data-i18n="view_glossary">Slovníček</span> ↗</a></p>
+          <h3 data-i18n="faqn_q4">Domácí timeline je prázdná, je to normální?</h3>
+          <p data-i18n="faqn_a4">Úplně. Domácí osa ukazuje jen lidi, které sleduješ — na začátku tam nikdo není. Začni sledovat účty přes Sloník.online a katalog.zpravobot.news a hned se zaplní.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2 data-i18n="faqn_head">Common first questions</h2>
+          <h3 data-i18n="faqn_q1">My sign-up is waiting for approval — now what?</h3>
+          <p data-i18n="faqn_a1">On “approval” servers an admin has to let you in. It usually takes a few hours, sometimes by the next day. You’ll get an email. Meanwhile, feel free to go through the rest of the tips here.</p>
+          <h3 data-i18n="faqn_q2">I can’t find my friend — how do I find them?</h3>
+          <p data-i18n="faqn_a2">You need their full address as @name@server.com. Paste it into your app’s search and hit Follow. Just “@name” isn’t enough — the server matters.</p>
+          <h3 data-i18n="faqn_q3">How do I move to another server?</h3>
+          <p><span data-i18n="faqn_a3">Mastodon does this built-in: set an alias on the new account pointing to the old one, start the move on the old one, and your followers transfer automatically. Posts don’t move, but your profile and followers do.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=migrace-uctu"><span data-i18n="view_glossary">Glossary</span> ↗</a></p>
+          <h3 data-i18n="faqn_q4">My home timeline is empty — is that normal?</h3>
+          <p data-i18n="faqn_a4">Totally. The home timeline only shows people you follow — at the start there’s no one. Start following accounts via Sloník.online and katalog.zpravobot.news and it fills up fast.</p>
+        </div>
+      </article>
+    
+      <!-- TECHNICKÉ ŘEŠENÍ -->
+      <article class="about-content" data-about-section="tech" hidden>
+        <div data-lang-block="cs">
+          <h2>Technické řešení</h2>
+          <p>Fedík.online je úmyslně jednoduchý: web je <strong>čistě statický</strong>
+            (HTML, CSS a trocha JavaScriptu), bez serverové aplikace, bez přihlašování
+            a bez cookies. Návštěvnost měříme jen <strong>anonymně a agregovaně</strong>
+            (self-hosted <a href="https://umami.is" target="_blank" rel="noopener">Umami</a> na OSCLOUD),
+            bez osobních údajů. Všechna data jsou připravená předem — web jen zobrazuje hotové.</p>
+          <h3>Odkud čerpá data</h3>
+          <p>Fedík <strong>nemá vlastní crawler</strong>. Katalog aplikací a živá čísla
+            (uživatelé, instance) bere z <a href="https://fedidb.com" target="_blank" rel="noopener">FediDB</a>
+            a jeho <a href="https://github.com/fedidb/communityDB" target="_blank" rel="noopener">communityDB</a>;
+            českou a slovenskou část — instance, účty i statistiky — ze
+            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>.
+            Texty a výběr aplikací, nástrojů a odkazů píše a udržuje člověk.</p>
+          <h3>Kurace a kategorizace</h3>
+          <p>Typ obsahu, „čeština v rozhraní" a stav vývoje u aplikací jsou <strong>ruční kurace</strong>;
+            loga jsou stažená lokálně (žádné hotlinky). Statistiky stojí na týchž vrstvách (FediDB +
+            Sloník) — <strong>nic se nesbírá navíc</strong> oproti pohledům Aplikace a Instance.</p>
+          <h3>Provoz a publikace</h3>
+          <p>Hotová data se nahrávají na statický hosting. Kód je oddělený od dat a přístupové
+            tokeny nikdy nejsou součástí webu. Fedík pracuje výhradně s <strong>veřejnými daty
+            a otevřenými rozhraními</strong>.</p>
+          <h3>Otevřený kód a atribuce</h3>
+          <p>Fedík je postavený na otevřených vrstvách: katalog aplikací vychází z
+            <a href="https://github.com/fedidb/communityDB" target="_blank" rel="noopener">FediDB communityDB</a>
+            (licence MIT, © Daniel Supernault), data o české a slovenské části ze
+            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>.
+            Web je statický a pracuje jen s veřejnými daty a otevřenými rozhraními.
+            Zdrojový kód najdeš na <a href="https://github.com/DanielSnor/" target="_blank" rel="noopener">GitHubu</a>.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>Technical details</h2>
+          <p>Fedík.online is deliberately simple: the site is <strong>fully static</strong>
+            (HTML, CSS and a bit of JavaScript), with no server application, no login and no
+            cookies. Traffic is measured only <strong>anonymously and in aggregate</strong>
+            (self-hosted <a href="https://umami.is" target="_blank" rel="noopener">Umami</a> on OSCLOUD),
+            with no personal data. All data is prepared in advance — the site just displays the result.</p>
+          <h3>Where the data comes from</h3>
+          <p>Fedík has <strong>no crawler of its own</strong>. The app catalog and live numbers
+            (users, instances) come from <a href="https://fedidb.com" target="_blank" rel="noopener">FediDB</a>
+            and its <a href="https://github.com/fedidb/communityDB" target="_blank" rel="noopener">communityDB</a>;
+            the Czech and Slovak part — instances, accounts and stats — from
+            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>.
+            The texts and the selection of apps, tools and links are written and maintained by a human.</p>
+          <h3>Curation and categorization</h3>
+          <p>Content type, “Czech UI” and development status for apps are <strong>hand-curated</strong>;
+            logos are downloaded locally (no hotlinks). Stats are built on the same layers (FediDB +
+            Sloník) — <strong>nothing extra is collected</strong> beyond the Apps and Instances views.</p>
+          <h3>Operation and publishing</h3>
+          <p>The finished data is uploaded to static hosting. Code is kept separate from data and
+            access tokens are never part of the website. Fedík works exclusively with <strong>public
+            data and open interfaces</strong>.</p>
+          <h3>Open source and attribution</h3>
+          <p>Fedík is built on open layers: the app catalog draws on
+            <a href="https://github.com/fedidb/communityDB" target="_blank" rel="noopener">FediDB communityDB</a>
+            (MIT, © Daniel Supernault), and the Czech/Slovak data comes from
+            <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>.
+            The site is static and works only with public data and open interfaces.
+            You can find the source code on <a href="https://github.com/DanielSnor/" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+      </article>
+    
+      <!-- O AUTOROVI -->
+      <article class="about-content" data-about-section="author" hidden>
+        <div data-lang-block="cs">
+          <h2>O autorovi</h2>
+          <img class="author-photo" src="img/daniel.jpg" alt="Daniel Šnor" loading="lazy" onerror="this.style.display='none'">
+          <p>Za Fedíkem stojí <strong>Daniel Šnor</strong> — nadšenec do Mastodonu a celé
+            sítě Fediverse z českého prostředí.</p>
+          <p>Provozuje projekt <a href="https://zpravobot.news" target="_blank" rel="noopener">Zprávobot.news</a> —
+            veřejně prospěšnou službu, která zrcadlí oblíbené primárně české a slovenské
+            X/Twitter účty a přináší na Mastodon a Bluesky jinak chybějící zprávy,
+            sport, informace o technologiích, kultuře, a někdy i humor.</p>
+          <p>A katalog <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a> —
+            mapu českého a slovenského Mastodonu (lidé, instance, příspěvky). <strong>Fedík</strong>
+            z téhle rodiny vyrostl jako přirozené rozšíření: zatímco Sloník mapuje českou
+            a slovenskou část, Fedík vysvětluje <strong>celý Fediverse česky</strong> a provede
+            tě prvními kroky.</p>
+          <p>Fediverse fandí jako otevřené a decentralizované alternativě ke komerčním sítím —
+            bez algoritmů, reklam a sledování uživatelů.</p>
+          <p>Máš nápad, připomínku, nebo něco nesedí? Napiš na
+            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>About the author</h2>
+          <img class="author-photo" src="img/daniel.jpg" alt="Daniel Šnor" loading="lazy" onerror="this.style.display='none'">
+          <p>Fedík is made by <strong>Daniel Šnor</strong> — a Czech enthusiast of Mastodon
+            and the wider Fediverse.</p>
+          <p>He runs the <a href="https://zpravobot.news" target="_blank" rel="noopener">Zprávobot.news</a>
+            project — a public-benefit service that mirrors popular, primarily Czech and
+            Slovak X/Twitter accounts, bringing otherwise-missing news, sport, technology,
+            culture and sometimes humor to Mastodon and Bluesky.</p>
+          <p>And the <a href="https://slonik.online" target="_blank" rel="noopener">Sloník.online</a>
+            catalog — a map of the Czech and Slovak Mastodon (people, instances, posts).
+            <strong>Fedík</strong> grew out of this family as a natural extension: while Sloník maps
+            the Czech and Slovak part, Fedík explains the <strong>whole Fediverse (in Czech)</strong>
+            and walks you through your first steps.</p>
+          <p>He’s a fan of the Fediverse as an open, decentralized alternative to commercial
+            networks — no algorithms, ads or user tracking.</p>
+          <p>Have an idea, feedback, or something’s off? Write to
+            <a href="https://mastodon.social/@danielsnor" target="_blank" rel="noopener">@danielsnor@mastodon.social</a>.</p>
+        </div>
+      </article>
+    </section>
+    </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
