@@ -1023,19 +1023,20 @@ a { color: inherit; text-decoration: none; }
 /* Začni tady — obrázek Fedíka vedle textu (Blok 1/2/3/5). Čtvercové ilustrace. */
 .start-figrow { display: flex; gap: 22px; align-items: flex-start; }
 .start-figrow__text { flex: 1 1 auto; min-width: 0; }   /* min-width:0 → karty se smí zúžit */
+:root { --mascot-h: clamp(140px, 15vw, 165px); }   /* jednotná výška VŠECH maskotů u textu */
 .start-fig {
   flex: 0 0 auto;
-  /* Fixní VÝŠKA, šířka proporčně sama (auto). Žádný max-width — ten by u širších
-     ilustrací výšku zkrátil a proporci rozbil. */
+  /* Fixní VÝŠKA (--mascot-h), šířka proporčně sama (auto). Žádný max-width — ten by
+     u širších ilustrací výšku zkrátil a proporci rozbil. */
   width: auto;
-  height: clamp(140px, 15vw, 165px);
+  height: var(--mascot-h);
   align-self: flex-start;
   border-radius: 12px;
 }
 @media (max-width: 760px) {
   .start-figrow, .start-figrow--left { flex-direction: column; align-items: center; }
   .start-figrow__text { width: 100%; }
-  .start-fig { width: auto; height: 160px; max-width: 60%; }
+  .start-fig { width: auto; height: 160px; }
 }
 
 /* Blok 3+4 (picker) — vycentrovaný layout; maskot ~2× větší, na střed pod odstavcem. */
@@ -1048,8 +1049,8 @@ a { color: inherit; text-decoration: none; }
 .view-intro { margin-bottom: 24px; }
 /* Maskot v intro katalogu — řízený VÝŠKOU, ať různé poměry stran nedominují (čtvercové
    vs. vysoké). Sjednocená výška místo šířky řeší „obří" dojem u vyšších ilustrací. */
-.view-intro .start-fig--float { width: auto; height: clamp(130px, 14vw, 160px); }
-@media (max-width: 760px) { .view-intro .start-fig--float { width: auto; height: 150px; max-width: 60%; } }
+.view-intro .start-fig--float { width: auto; height: var(--mascot-h); }
+@media (max-width: 760px) { .view-intro .start-fig--float { width: auto; height: 160px; } }
 .stats-results-clear { clear: both; }   /* grafy/boxy pod plovoucím maskotem na plnou šířku */
 .start-fig--float { float: right; width: auto; height: clamp(170px, 26vw, 210px); margin: 4px 0 12px 22px; border-radius: 12px; }
 .onboarding-step .caveat-box { clear: both; }   /* normy nikdy zúžené vedle plovoucího maskota */
