@@ -1335,6 +1335,12 @@
 
     <!-- ===================== POHLED: INSTANCE ===================== -->
     <section class="instance-view" id="instance-view" hidden>
+      <article class="about-content start-block view-intro">
+        <img class="start-fig start-fig--float" src="img/fedik-s-dalekohledem.png" alt="Fedík s dalekohledem" width="887" height="1071" loading="lazy">
+        <h2 data-i18n="cat_instances_head">Instance — najdi si planetu</h2>
+        <p data-i18n="cat_instances_p1">Instance jsou planety, na kterých můžeš přistát — servery, kde si založíš účet. Liší se velikostí, zaměřením i náladou, ale všechny patří do jednoho Fediverse, takže odkudkoli dosáhneš na kohokoli.</p>
+        <p data-i18n="cat_instances_p2">Ukazujeme české a slovenské Mastodon instance z katalogu Sloník.online — u každé velikost, aktivita, stav registrace a kolik z ní účtů máme v katalogu. Řadíme podle podílu aktivních uživatelů; filtruj přes Top 10/50, poměrem nebo objemem a koukni na žebříček „pro začátečníky".</p>
+      </article>
       <div id="instance-results"></div>
 
       <!-- Co dál — stejný figrow formát + maskot jako „Začínáme → Co dál". -->
@@ -1391,6 +1397,12 @@
     </section>
 
     <section class="apps-view" id="apps-view" hidden>
+      <article class="about-content start-block view-intro">
+        <img class="start-fig start-fig--float" src="img/fedik-kterou-raketu.png" alt="Fedík: kterou loď?" width="1016" height="1028" loading="lazy">
+        <h2 data-i18n="cat_apps_head">Aplikace — vyber si loď</h2>
+        <p data-i18n="cat_apps_p1">Aplikace jsou lodě Fediverse — software, kterým do něj vstoupíš. Každá je dobrá na něco jiného: mikroblog, fotky, video, fórum, blog. Všechny spolu ale umí mluvit, takže ať si vybereš cokoli, neztratíš se ze sítě.</p>
+        <p data-i18n="cat_apps_p2">Najdeš tu přehled aplikací s tím, čemu se podobají z běžných sítí, počtem uživatelů a instancí a jestli mají české rozhraní. Údaje o velikosti jsou orientační z FediDB. Filtruj podle typu obsahu, obdoby známé sítě nebo češtiny v UI.</p>
+      </article>
       <div id="apps-results" class="apps-grid" aria-live="polite"></div>
       <div id="apps-empty" class="empty-state" hidden>
         <p data-i18n="apps_empty">Žádná aplikace neodpovídá filtrům.</p>
@@ -1450,6 +1462,12 @@
     </section>
 
     <section class="instance-view" id="links-view" hidden>
+      <article class="about-content start-block view-intro">
+        <img class="start-fig start-fig--float" src="img/fedik-reference.png" alt="Fedík s referencemi" width="1254" height="1254" loading="lazy">
+        <h2 data-i18n="cat_links_head">Odkazy — majáky dál do vesmíru</h2>
+        <p data-i18n="cat_links_p1">Odkazy jsou majáky dál do vesmíru — když ti Fedík nestačí a chceš číst, sledovat dění nebo se zapojit hlouběji. Rozcestník ven za hranice tohohle průvodce.</p>
+        <p data-i18n="cat_links_p2">Kurátorovaný výběr českých i zahraničních zdrojů o Fediverse: weby, blogy, komunity a další průvodci. Vybíráme jen živé a smysluplné odkazy, ne všechno, co existuje.</p>
+      </article>
       <div id="links-results"></div>
 
       <!-- Co dál — stejný figrow formát + maskot jako „Začínáme → Co dál". -->
@@ -1507,6 +1525,12 @@
 
     <!-- ===================== POHLED: NÁSTROJE ===================== -->
     <section class="apps-view" id="tools-view" hidden>
+      <article class="about-content start-block view-intro">
+        <img class="start-fig start-fig--float" src="img/fedik-stavi-zakladnu.png" alt="Fedík vybavuje základnu" width="1135" height="1141" loading="lazy">
+        <h2 data-i18n="cat_tools_head">Nástroje — vybav si základnu</h2>
+        <p data-i18n="cat_tools_p1">Nástroje jsou palubní vybavení fedinauta — klienti do telefonu, mosty mezi sítěmi, objevovače účtů, crosspostery a další pomocníci, kteří ti cestu zpříjemní. Tvoje aplikace funguje i bez nich, ale s nimi je pohodlnější.</p>
+        <p data-i18n="cat_tools_p2">Klienti jsou z FediDB, zbytek je kurátorský výběr živých nástrojů. Filtruj podle kategorie (klient, most, migrace, RSS…), platformy (Android, iOS, web, desktop), ceny a hlavně podle aplikace — ať vidíš jen to, co se hodí k tvé síti.</p>
+      </article>
       <div id="tools-results" aria-live="polite"></div>
       <div id="tools-empty" class="empty-state" hidden>
         <p id="tools-empty-msg" data-i18n="tools_empty">Žádný nástroj neodpovídá filtrům.</p>
@@ -1569,19 +1593,9 @@
     <!-- Vše v jedné sekci (jako „Začínáme → Odkud přicházíš"): intro + maskot + boxy/grafy. -->
     <section class="stats-view" id="stats-view" hidden>
       <article class="about-content start-block">
-        <div data-lang-block="cs">
-          <h2>Statistiky</h2>
-          <p>Pár čísel a grafů o Fediverse — kolik je uživatelů, serverů a příspěvků, jak síť roste
-            a jak velká je její česká a slovenská část. Čísla jsou orientační (vidíme jen instance,
-            které crawlery znají) a čtou se z týchž zdrojů jako Aplikace a Instance — nic se nesbírá navíc.</p>
-        </div>
-        <div data-lang-block="en" hidden>
-          <h2>Stats</h2>
-          <p>A few numbers and charts about the Fediverse — how many users, servers and posts there are,
-            how the network is growing and how big its Czech and Slovak part is. The numbers are indicative
-            (we only see instances crawlers know about) and come from the same sources as Apps and Instances
-            — nothing extra is collected.</p>
-        </div>
+        <h2 data-i18n="cat_stats_head">Statistiky — pohled z oběžné dráhy</h2>
+        <p data-i18n="cat_stats_p1">Statistiky jsou pohled z oběžné dráhy — Fediverse i tenhle katalog v číslech. Kolik je aplikací, instancí a nástrojů a jak se to v čase hýbe.</p>
+        <p data-i18n="cat_stats_p2">Čísla vycházejí z dat, na kterých Fedík stojí (FediDB, Sloník.online a kurátorské seznamy), s datem poslední aktualizace u každé sady. Berou se orientačně — Fediverse se mění každý den.</p>
         <div class="start-figrow start-figrow--left stats-figrow">
           <img class="start-fig start-fig--big" src="img/fedik-grafy.png"
                alt="Fedík: grafy" width="1254" height="1254" loading="lazy">
@@ -1646,6 +1660,12 @@
 
     <!-- ===================== POHLED: SLOVNÍČEK ===================== -->
     <section class="glossary-view" id="glossary-view" hidden>
+      <article class="about-content start-block view-intro">
+        <img class="start-fig start-fig--float" src="img/fedik-se-slovnikem.png" alt="Fedík se slovníkem" width="812" height="1142" loading="lazy">
+        <h2 data-i18n="cat_glossary_head">Slovníček — palubní příručka</h2>
+        <p data-i18n="cat_glossary_p1">Slovníček je palubní příručka — Fediverse má vlastní nářečí (instance, federace, boost, CW…) a první týden v něm zní leccos cize. Tady si kterýkoli výraz v klidu dohledáš.</p>
+        <p data-i18n="cat_glossary_p2">Najdeš tu hesla od základních pojmů po praktické postupy, vysvětlená česky a bez žargonu. Hledej podle názvu nebo proklikni z výrazů v průvodci, které na Slovníček odkazují.</p>
+      </article>
       <div id="glossary-results" aria-live="polite"></div>
       <div id="glossary-empty" class="empty-state" hidden>
         <p data-i18n="gloss_empty">Žádné heslo neodpovídá filtrům.</p>

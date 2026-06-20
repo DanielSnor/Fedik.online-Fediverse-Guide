@@ -1041,7 +1041,8 @@ a { color: inherit; text-decoration: none; }
 .start-fig--step { width: auto; height: clamp(170px, 26vw, 210px); }
 @media (max-width: 760px) { .start-fig--step { width: auto; height: 180px; } }
 /* Plovoucí varianta — delší text maskota obtéká (např. „První den"). */
-.onboarding-step .start-block { display: flow-root; }   /* article obsáhne float, nepřeteče do dalšího bloku */
+.onboarding-step .start-block, .view-intro { display: flow-root; }   /* article obsáhne float, nepřeteče do dalšího bloku */
+.view-intro { margin-bottom: 24px; }
 .start-fig--float { float: right; width: auto; height: clamp(170px, 26vw, 210px); margin: 4px 0 12px 22px; border-radius: 12px; }
 .onboarding-step .caveat-box { clear: both; }   /* normy nikdy zúžené vedle plovoucího maskota */
 @media (max-width: 760px) {
