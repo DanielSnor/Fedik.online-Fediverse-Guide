@@ -257,6 +257,7 @@ a { color: inherit; text-decoration: none; }
 .about-figure figcaption { font-size: 13px; line-height: 1.55; color: var(--text-dim); margin-top: 8px; }
 .about-figure.qr img { max-width: 220px; }   /* QR kód menší */
 .about-figure--mascot img { max-width: 390px; border: none; background: none; }   /* maskot bez rámečku */
+.about-figure--header img { max-width: 560px; border: none; background: none; }   /* header.png — landscape, ~stejná výška jako maskot */
 /* Finanční podpora — odrážky bez teček, vzdušnější. */
 .faq-support { list-style: none; padding-left: 0; }
 .faq-support li { margin-bottom: 8px; }
@@ -1044,9 +1045,11 @@ a { color: inherit; text-decoration: none; }
 /* Plovoucí varianta — delší text maskota obtéká (např. „První den"). */
 .onboarding-step .start-block, .view-intro { display: flow-root; }   /* article obsáhne float, nepřeteče do dalšího bloku */
 .view-intro { margin-bottom: 24px; }
-/* Maskot v intro katalogu = stejná velikost jako „Nemusíš se bát" (.start-fig), jen plovoucí. */
-.view-intro .start-fig--float { width: clamp(140px, 22%, 190px); max-width: 190px; height: auto; }
-@media (max-width: 760px) { .view-intro .start-fig--float { width: min(220px, 55%); height: auto; } }
+/* Maskot v intro katalogu — řízený VÝŠKOU, ať různé poměry stran nedominují (čtvercové
+   vs. vysoké). Sjednocená výška místo šířky řeší „obří" dojem u vyšších ilustrací. */
+.view-intro .start-fig--float { width: auto; height: clamp(130px, 14vw, 160px); max-width: 200px; }
+@media (max-width: 760px) { .view-intro .start-fig--float { width: auto; height: 150px; max-width: 60%; } }
+.stats-results-clear { clear: both; }   /* grafy/boxy pod plovoucím maskotem na plnou šířku */
 .start-fig--float { float: right; width: auto; height: clamp(170px, 26vw, 210px); margin: 4px 0 12px 22px; border-radius: 12px; }
 .onboarding-step .caveat-box { clear: both; }   /* normy nikdy zúžené vedle plovoucího maskota */
 @media (max-width: 760px) {
