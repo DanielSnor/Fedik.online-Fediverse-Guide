@@ -28,7 +28,7 @@
   <meta name="twitter:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, nástroje, slovníček, statistiky, odkazy, vyhledávání.">
   <meta name="twitter:image" content="https://fedik.online/img/header.png">
 
-  <link rel="stylesheet" href="app.css?v=20260620f">
+  <link rel="stylesheet" href="app.css?v=20260620g">
 
   <!-- Anonymní návštěvnost (Umami, self-hosted na OSCLOUD; bez cookies, bez osobních dat) -->
   <!-- script defer src="https://analytics.oscloud.cz/script.js" data-website-id="07a16f69-8744-4034-bba3-fef3ef59b9af"></script -->
@@ -380,6 +380,7 @@
             <button class="filter-chip about-link" data-about="apps" data-i18n="about_nav_apps">Aplikacemi</button>
             <button class="filter-chip about-link" data-about="instance" data-i18n="about_nav_instance">Instancemi</button>
             <button class="filter-chip about-link" data-about="tools" data-i18n="about_nav_tools">Nástroji</button>
+            <button class="filter-chip about-link" data-about="stats" data-i18n="about_nav_stats">Statistikami</button>
             <button class="filter-chip about-link" data-about="links" data-i18n="about_nav_links_howto">Odkazy</button>
             <button class="filter-chip about-link" data-about="search" data-i18n="about_nav_search">Vyhledáváním</button>
           </div>
@@ -1523,7 +1524,55 @@
             since, so each one notes how old it is.</p>
         </div>
       </article>
-    
+
+      <!-- JAK PRACOVAT SE STATISTIKAMI -->
+      <article class="about-content" data-about-section="stats" hidden>
+        <div data-lang-block="cs">
+          <h2>Jak pracovat se Statistikami</h2>
+          <p>Pohled <strong>Statistiky</strong> ukazuje Fediverse i tenhle katalog v číslech —
+            kolik je aplikací, instancí, nástrojů a uživatelů a jak se to v čase hýbe. Slouží
+            k přehledu, ne k přesnému měření.</p>
+          <h3>Záložky</h3>
+          <ul>
+            <li><strong>Přehled</strong> — souhrnná čísla sítě a katalogu.</li>
+            <li><strong>Podle aplikací</strong> — uživatelé a instance po jednotlivých aplikacích.</li>
+            <li><strong>Růst</strong> — vývoj v čase (přibývání uživatelů a instancí).</li>
+            <li><strong>CZ/SK</strong> — česká a slovenská část sítě zvlášť.</li>
+          </ul>
+          <h3>Odkud čísla jsou</h3>
+          <p>Ze stejných zdrojů jako pohledy Aplikace a Instance — <strong>FediDB</strong>,
+            <strong>Sloník.online</strong> a kurátorské seznamy. Nic se nesbírá navíc. U každé sady
+            je <strong>datum poslední aktualizace</strong>.</p>
+          <h3>Proč jsou orientační</h3>
+          <p>Vidíme jen instance, které crawlery znají, a počty CZ/SK uživatelů jsou
+            <strong>dolní odhad</strong> — počítají jen účty <em>na</em> českých a slovenských
+            instancích, ne Čechy a Slováky na globálních serverech. Berte čísla jako řádový odhad,
+            ne přesnou hodnotu.</p>
+        </div>
+        <div data-lang-block="en" hidden>
+          <h2>Working with Statistics</h2>
+          <p>The <strong>Statistics</strong> view shows the Fediverse and this catalog in numbers —
+            how many apps, instances, tools and users there are and how it shifts over time. It’s for
+            an overview, not precise measurement.</p>
+          <h3>Tabs</h3>
+          <ul>
+            <li><strong>Overview</strong> — summary numbers for the network and the catalog.</li>
+            <li><strong>By app</strong> — users and instances per individual app.</li>
+            <li><strong>Growth</strong> — change over time (users and instances added).</li>
+            <li><strong>CZ/SK</strong> — the Czech and Slovak part of the network separately.</li>
+          </ul>
+          <h3>Where the numbers come from</h3>
+          <p>The same sources as the Apps and Instances views — <strong>FediDB</strong>,
+            <strong>Sloník.online</strong> and curated lists. Nothing extra is collected. Each set has
+            a <strong>last-updated date</strong>.</p>
+          <h3>Why they’re indicative</h3>
+          <p>We only see instances crawlers know about, and the CZ/SK user counts are a
+            <strong>lower bound</strong> — they count only accounts <em>on</em> Czech and Slovak
+            instances, not Czechs and Slovaks on global servers. Treat the numbers as a ballpark, not
+            an exact figure.</p>
+        </div>
+      </article>
+
       <!-- FAQ -->
       <article class="about-content" data-about-section="faq" hidden>
         <div data-lang-block="cs">
@@ -1591,26 +1640,50 @@
       <!-- FAQ PRO NOVÁČKY -->
       <article class="about-content" data-about-section="faq-novacci" hidden>
         <div data-lang-block="cs">
-          <h2 data-i18n="faqn_head">Časté první otázky</h2>
-          <h3 data-i18n="faqn_q1">Registrace čeká na schválení — co teď?</h3>
+          <h2 data-i18n="faqn_head">Pro nováčky</h2>
+          <h3 data-i18n="faqn_q_head">Časté otázky</h3>
+          <h4 data-i18n="faqn_q1">Registrace čeká na schválení — co teď?</h4>
           <p data-i18n="faqn_a1">U serverů „po schválení“ tě musí pustit správce. Většinou to trvá pár hodin, někdy do druhého dne. Přijde ti e-mail. Zatím můžeš v klidu projít zbytek tipů tady.</p>
-          <h3 data-i18n="faqn_q2">Nemůžu najít kamaráda — jak ho najdu?</h3>
+          <h4 data-i18n="faqn_q2">Nemůžu najít kamaráda — jak ho najdu?</h4>
           <p data-i18n="faqn_a2">Potřebuješ jeho celou adresu ve tvaru @jmeno@server.cz. Vlož ji do vyhledávání ve své aplikaci a dej Sledovat. Samotné „@jmeno“ nestačí — server je důležitý.</p>
-          <h3 data-i18n="faqn_q3">Jak se přestěhuju na jiný server?</h3>
+          <h4 data-i18n="faqn_q3">Jak se přestěhuju na jiný server?</h4>
           <p><span data-i18n="faqn_a3">Mastodon to umí vestavěně: na novém účtu nastavíš alias na starý, na starém spustíš přesun a sledující se přenesou automaticky. Příspěvky se nepřenášejí, profil a sledující ano.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=migrace-uctu"><span data-i18n="view_glossary">Slovníček</span> ↗</a></p>
-          <h3 data-i18n="faqn_q4">Domácí timeline je prázdná, je to normální?</h3>
+          <h4 data-i18n="faqn_q4">Domácí timeline je prázdná, je to normální?</h4>
           <p data-i18n="faqn_a4">Úplně. Domácí osa ukazuje jen lidi, které sleduješ — na začátku tam nikdo není. Začni sledovat účty přes Sloník.online a katalog.zpravobot.news a hned se zaplní.</p>
+          <h3 data-i18n="faqn_tips_head">Tipy pro Mastodon</h3>
+          <ul class="onboarding-norms">
+            <li><strong data-i18n="tip1_t">Hlídej si jazyk příspěvku</strong> — <span data-i18n="tip1_d">Mastodon u každého tootu nastavuje jazyk. Český příspěvek omylem poslaný jako anglický se neobjeví v české federované ose (a naopak) — před odesláním zkontroluj.</span></li>
+            <li><strong data-i18n="tip2_t">Vyplň profil hned na začátku</strong> — <span data-i18n="tip2_d">Avatar, krátké bio a pár prvních příspěvků. Prázdné účty vypadají neaktivně nebo jako spam — lidi je nesledují a správci je občas promazávají.</span></li>
+            <li><strong data-i18n="tip3_t">Citování místo boostu</strong> — <span data-i18n="tip3_d">Mastodon nemá nativní repost s komentářem. Když chceš příspěvek okomentovat, napiš nový ve tvaru „Ad @jméno@server: …“ a přidej odkaz na originál.</span></li>
+            <li><strong data-i18n="tip4_t">Číst jde i bez účtu</strong> — <span data-i18n="tip4_d">Nechceš se registrovat a jen sledovat? K profilu přidej .rss (https://server/@jméno.rss) a vlož do RSS čtečky.</span></li>
+            <li><strong data-i18n="tip5_t">Ztlum, ať máš klid</strong> — <span data-i18n="tip5_d">Zahlcená osa? Ztlum účty nebo hashtagy, které tě nezajímají (mute) — federovaná i domácí osa jsou pak hned čitelnější.</span></li>
+            <li><strong data-i18n="tip6_t">Seznamy na úklid domácí osy</strong> — <span data-i18n="tip6_d">Roztřiď sledované do seznamů a ty nedůležité skryj z domácí osy („Skrýt členy na domovském kanálu“). Specifická témata — sport, hudbu — pak čteš, když chceš.</span></li>
+            <li><strong data-i18n="tip7_t">Pozor na editaci ankety</strong> — <span data-i18n="tip7_d">Když upravíš už běžící anketu, vynuluje se a poběží od začátku. Před odesláním ji proto pečlivě zkontroluj.</span></li>
+            <li><strong data-i18n="tip8_t">Přizpůsob si vzhled</strong> — <span data-i18n="tip8_d">Nelíbí se ti webový klient? Zkus alternativní (Elk, Phanpy) nebo do prohlížeče přidej rozšíření Stylish a téma TangerineUI.</span></li>
+          </ul>
         </div>
         <div data-lang-block="en" hidden>
-          <h2 data-i18n="faqn_head">Common first questions</h2>
-          <h3 data-i18n="faqn_q1">My sign-up is waiting for approval — now what?</h3>
+          <h2 data-i18n="faqn_head">For beginners</h2>
+          <h3 data-i18n="faqn_q_head">Common questions</h3>
+          <h4 data-i18n="faqn_q1">My sign-up is waiting for approval — now what?</h4>
           <p data-i18n="faqn_a1">On “approval” servers an admin has to let you in. It usually takes a few hours, sometimes by the next day. You’ll get an email. Meanwhile, feel free to go through the rest of the tips here.</p>
-          <h3 data-i18n="faqn_q2">I can’t find my friend — how do I find them?</h3>
+          <h4 data-i18n="faqn_q2">I can’t find my friend — how do I find them?</h4>
           <p data-i18n="faqn_a2">You need their full address as @name@server.com. Paste it into your app’s search and hit Follow. Just “@name” isn’t enough — the server matters.</p>
-          <h3 data-i18n="faqn_q3">How do I move to another server?</h3>
+          <h4 data-i18n="faqn_q3">How do I move to another server?</h4>
           <p><span data-i18n="faqn_a3">Mastodon does this built-in: set an alias on the new account pointing to the old one, start the move on the old one, and your followers transfer automatically. Posts don’t move, but your profile and followers do.</span> <a class="onb-link" href="#view=slovnicek&amp;heslo=migrace-uctu"><span data-i18n="view_glossary">Glossary</span> ↗</a></p>
-          <h3 data-i18n="faqn_q4">My home timeline is empty — is that normal?</h3>
+          <h4 data-i18n="faqn_q4">My home timeline is empty — is that normal?</h4>
           <p data-i18n="faqn_a4">Totally. The home timeline only shows people you follow — at the start there’s no one. Start following accounts via Sloník.online and katalog.zpravobot.news and it fills up fast.</p>
+          <h3 data-i18n="faqn_tips_head">Mastodon tips</h3>
+          <ul class="onboarding-norms">
+            <li><strong data-i18n="tip1_t">Mind your post’s language</strong> — <span data-i18n="tip1_d">Mastodon sets a language for every post. A Czech post accidentally sent as English won’t show in the Czech federated timeline (and vice versa) — check before posting.</span></li>
+            <li><strong data-i18n="tip2_t">Fill in your profile right away</strong> — <span data-i18n="tip2_d">Avatar, a short bio and a few first posts. Empty accounts look inactive or spammy — people won’t follow them and admins sometimes prune them.</span></li>
+            <li><strong data-i18n="tip3_t">Quoting instead of boosting</strong> — <span data-i18n="tip3_d">Mastodon has no native quote-repost. To comment on a post, write a new one like “Ad @name@server: …” and add a link to the original.</span></li>
+            <li><strong data-i18n="tip4_t">You can read without an account</strong> — <span data-i18n="tip4_d">Don’t want to sign up and just want to read? Add .rss to a profile (https://server/@name.rss) and drop it into an RSS reader.</span></li>
+            <li><strong data-i18n="tip5_t">Mute for peace and quiet</strong> — <span data-i18n="tip5_d">Timeline too noisy? Mute the accounts or hashtags you don’t care about — the federated and home timelines get readable fast.</span></li>
+            <li><strong data-i18n="tip6_t">Lists to tidy your home feed</strong> — <span data-i18n="tip6_d">Sort who you follow into lists and hide the less important ones from your home feed (“Hide members from Home”). Read specific topics — sport, music — when you want.</span></li>
+            <li><strong data-i18n="tip7_t">Careful editing a running poll</strong> — <span data-i18n="tip7_d">If you edit a poll that’s already running, it resets and starts over. So check it carefully before posting.</span></li>
+            <li><strong data-i18n="tip8_t">Customize the look</strong> — <span data-i18n="tip8_d">Don’t like the web client? Try an alternative (Elk, Phanpy) or add the Stylish browser extension with a theme like TangerineUI.</span></li>
+          </ul>
         </div>
       </article>
     

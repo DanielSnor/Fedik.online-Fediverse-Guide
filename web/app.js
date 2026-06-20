@@ -116,7 +116,17 @@
       norms_3: 'Používej hashtagy — vyhledávání jede hlavně přes ně, ne přes plný text.',
       norms_4: 'Sdílej boostem (jako repost). Citování s komentářem tu skoro není — schválně, kvůli klidu.',
       norms_5: 'Před odesláním zkontroluj viditelnost příspěvku (veřejný / jen sledující / přímý) — vybíráš ji u každého postu.',
-      faqn_head: 'Časté první otázky',
+      faqn_head: 'Pro nováčky',
+      faqn_q_head: 'Časté otázky',
+      faqn_tips_head: 'Tipy pro Mastodon',
+      tip1_t: 'Hlídej si jazyk příspěvku', tip1_d: 'Mastodon u každého tootu nastavuje jazyk. Český příspěvek omylem poslaný jako anglický se neobjeví v české federované ose (a naopak) — před odesláním zkontroluj.',
+      tip2_t: 'Vyplň profil hned na začátku', tip2_d: 'Avatar, krátké bio a pár prvních příspěvků. Prázdné účty vypadají neaktivně nebo jako spam — lidi je nesledují a správci je občas promazávají.',
+      tip3_t: 'Citování místo boostu', tip3_d: 'Mastodon nemá nativní repost s komentářem. Když chceš příspěvek okomentovat, napiš nový ve tvaru „Ad @jméno@server: …“ a přidej odkaz na originál.',
+      tip4_t: 'Číst jde i bez účtu', tip4_d: 'Nechceš se registrovat a jen sledovat? K profilu přidej .rss (https://server/@jméno.rss) a vlož do RSS čtečky.',
+      tip5_t: 'Ztlum, ať máš klid', tip5_d: 'Zahlcená osa? Ztlum účty nebo hashtagy, které tě nezajímají (mute) — federovaná i domácí osa jsou pak hned čitelnější.',
+      tip6_t: 'Seznamy na úklid domácí osy', tip6_d: 'Roztřiď sledované do seznamů a ty nedůležité skryj z domácí osy („Skrýt členy na domovském kanálu“). Specifická témata — sport, hudbu — pak čteš, když chceš.',
+      tip7_t: 'Pozor na editaci ankety', tip7_d: 'Když upravíš už běžící anketu, vynuluje se a poběží od začátku. Před odesláním ji proto pečlivě zkontroluj.',
+      tip8_t: 'Přizpůsob si vzhled', tip8_d: 'Nelíbí se ti webový klient? Zkus alternativní (Elk, Phanpy) nebo do prohlížeče přidej rozšíření Stylish a téma TangerineUI.',
       faqn_q1: 'Registrace čeká na schválení — co teď?',
       faqn_a1: 'U serverů „po schválení“ tě musí pustit správce. Většinou to trvá pár hodin, někdy do druhého dne. Přijde ti e-mail. Zatím můžeš v klidu projít zbytek tipů tady.',
       faqn_q2: 'Nemůžu najít kamaráda — jak ho najdu?',
@@ -271,7 +281,7 @@
       about_menu_howto_desc: 'Několik tipů, jak co nejlépe využít možností, které Fedík.online poskytuje pro práci s:',
       about_nav_about: 'O Fedíku', about_nav_search: 'Vyhledáváním', about_nav_instance: 'Instancemi', about_nav_apps: 'Aplikacemi', about_nav_tools: 'Nástroji',
       about_nav_accounts: 'Účty', about_nav_posts: 'Posty', about_nav_links_howto: 'Odkazy',
-      about_nav_tech: 'Technické řešení', about_nav_author: 'O autorovi', about_nav_faq: 'FAQ', about_nav_faq_novacci: 'FAQ pro nováčky',
+      about_nav_tech: 'Technické řešení', about_nav_author: 'O autorovi', about_nav_faq: 'FAQ', about_nav_faq_novacci: 'Pro nováčky', about_nav_stats: 'Statistikami',
       prisers_ratio: 'Poměrem', prisers_abs: 'Dosahem',
       label_bot: 'Automat', label_bot_title: 'Automatizovaný účet (bot)',
       psort_engagement: 'Nejvíce boostů + favů', psort_reblogs: 'Nejvíce boostů',
@@ -385,7 +395,17 @@
       norms_3: 'Use hashtags — discovery runs mostly through them, not full-text search.',
       norms_4: 'Share with a boost (like a repost). Quote-posting is rare here — deliberately, to keep things calm.',
       norms_5: 'Before sending, check the post visibility (public / followers / direct) — you choose it per post.',
-      faqn_head: 'Common first questions',
+      faqn_head: 'For beginners',
+      faqn_q_head: 'Common questions',
+      faqn_tips_head: 'Mastodon tips',
+      tip1_t: 'Mind your post’s language', tip1_d: 'Mastodon sets a language for every post. A Czech post accidentally sent as English won’t show in the Czech federated timeline (and vice versa) — check before posting.',
+      tip2_t: 'Fill in your profile right away', tip2_d: 'Avatar, a short bio and a few first posts. Empty accounts look inactive or spammy — people won’t follow them and admins sometimes prune them.',
+      tip3_t: 'Quoting instead of boosting', tip3_d: 'Mastodon has no native quote-repost. To comment on a post, write a new one like “Ad @name@server: …” and add a link to the original.',
+      tip4_t: 'You can read without an account', tip4_d: 'Don’t want to sign up and just want to read? Add .rss to a profile (https://server/@name.rss) and drop it into an RSS reader.',
+      tip5_t: 'Mute for peace and quiet', tip5_d: 'Timeline too noisy? Mute the accounts or hashtags you don’t care about — the federated and home timelines get readable fast.',
+      tip6_t: 'Lists to tidy your home feed', tip6_d: 'Sort who you follow into lists and hide the less important ones from your home feed (“Hide members from Home”). Read specific topics — sport, music — when you want.',
+      tip7_t: 'Careful editing a running poll', tip7_d: 'If you edit a poll that’s already running, it resets and starts over. So check it carefully before posting.',
+      tip8_t: 'Customize the look', tip8_d: 'Don’t like the web client? Try an alternative (Elk, Phanpy) or add the Stylish browser extension with a theme like TangerineUI.',
       faqn_q1: 'My sign-up is waiting for approval — now what?',
       faqn_a1: 'On “approval” servers an admin has to let you in. It usually takes a few hours, sometimes by the next day. You’ll get an email. Meanwhile, feel free to go through the rest of the tips here.',
       faqn_q2: 'I can’t find my friend — how do I find them?',
@@ -540,7 +560,7 @@
       about_menu_howto_desc: 'A few tips on how to get the most out of what Fedík.online offers for working with:',
       about_nav_about: 'About Fedík', about_nav_search: 'Search', about_nav_instance: 'Instances', about_nav_apps: 'Apps', about_nav_tools: 'Tools',
       about_nav_accounts: 'Accounts', about_nav_posts: 'Posts', about_nav_links_howto: 'Links',
-      about_nav_tech: 'Technical details', about_nav_author: 'About the author', about_nav_faq: 'FAQ', about_nav_faq_novacci: 'FAQ for beginners',
+      about_nav_tech: 'Technical details', about_nav_author: 'About the author', about_nav_faq: 'FAQ', about_nav_faq_novacci: 'For beginners', about_nav_stats: 'Statistics',
       prisers_ratio: 'By ratio', prisers_abs: 'By reach',
       label_bot: 'Bot', label_bot_title: 'Automated account (bot)',
       psort_engagement: 'Most boosts + favs', psort_reblogs: 'Most boosts',
@@ -4584,7 +4604,7 @@
         case 'lth': splitList(val).forEach(function (v) { linkThemes.add(v); }); break;
         case 'lsort': if (/^(recommended|alpha|lang)$/.test(val)) linksSort = val; break;
         case 'stab': if (/^(all|10|50|risers_ratio|risers_abs)$/.test(val)) searchTab = val; break;
-        case 'asec': if (/^(about|search|instance|apps|tools|links|tech|author|faq|faq-novacci)$/.test(val)) aboutSection = val; break;
+        case 'asec': if (/^(about|search|instance|apps|tools|links|stats|tech|author|faq|faq-novacci)$/.test(val)) aboutSection = val; break;
         case 'ssec': if (/^[a-z0-9_]+$/.test(val)) startSection = val; break;
         case 'step': if (/^[1-6]$/.test(val)) startStep = Number(val); break;
         case 'inst': if (/^[a-z0-9.-]+$/i.test(val)) pendingChosenInstHost = val; break;
