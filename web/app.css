@@ -1025,11 +1025,10 @@ a { color: inherit; text-decoration: none; }
 .start-figrow__text { flex: 1 1 auto; min-width: 0; }   /* min-width:0 → karty se smí zúžit */
 .start-fig {
   flex: 0 0 auto;
-  /* Řízeno VÝŠKOU — portrait i čtvercové ilustrace vyjdou stejně vysoké
-     (cap na šířku by u obrázků na výšku znamenal přerostlou výšku). */
+  /* Fixní VÝŠKA, šířka proporčně sama (auto). Žádný max-width — ten by u širších
+     ilustrací výšku zkrátil a proporci rozbil. */
   width: auto;
   height: clamp(140px, 15vw, 165px);
-  max-width: 190px;
   align-self: flex-start;
   border-radius: 12px;
 }
@@ -1049,7 +1048,7 @@ a { color: inherit; text-decoration: none; }
 .view-intro { margin-bottom: 24px; }
 /* Maskot v intro katalogu — řízený VÝŠKOU, ať různé poměry stran nedominují (čtvercové
    vs. vysoké). Sjednocená výška místo šířky řeší „obří" dojem u vyšších ilustrací. */
-.view-intro .start-fig--float { width: auto; height: clamp(130px, 14vw, 160px); max-width: 200px; }
+.view-intro .start-fig--float { width: auto; height: clamp(130px, 14vw, 160px); }
 @media (max-width: 760px) { .view-intro .start-fig--float { width: auto; height: 150px; max-width: 60%; } }
 .stats-results-clear { clear: both; }   /* grafy/boxy pod plovoucím maskotem na plnou šířku */
 .start-fig--float { float: right; width: auto; height: clamp(170px, 26vw, 210px); margin: 4px 0 12px 22px; border-radius: 12px; }
