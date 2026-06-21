@@ -60,4 +60,12 @@ window.TOOL_PRICES = {
   "wafrn": "zdarma",
   "woolly": "zdarma",
   "writefreely-for-ios": "placene",
+  // ——— doplněno 2026-06 (zbylé nástroje) ———
+  "elk": "zdarma",
+  "fedica": "freemium",
+  "ghost-social-web-reader": "freemium",
+  "phanpy": "zdarma",
+  "photon": "zdarma",
+  "statuzer": "zdarma",
+  "tuba": "zdarma",
 };

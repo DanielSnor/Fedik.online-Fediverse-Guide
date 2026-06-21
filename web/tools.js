@@ -1,7 +1,7 @@
 /* web/tools.js — Nástroje (Pohled 5). GENEROVÁNO scriptem scripts/build_tools.mjs
    slitím data/tools/tools.generated.ts (klienti, communityDB) + tools.manual.ts (ostatní).
    RUČNĚ NEEDITUJ — uprav seedy a přegeneruj. Typ: data/tools/types.ts (Tool). */
-window.FEDIK_TOOLS_BUILT = "2026-06-21T10:25:44.698Z";
+window.FEDIK_TOOLS_BUILT = "2026-06-21T10:36:41.207Z";
 window.FEDIK_TOOLS = [
   {
     "id": "mastodon",
@@ -887,7 +887,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://phtn.app/",
     "official": false,
     "featured": false,
@@ -1208,7 +1208,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://elk.zone",
     "official": false,
     "featured": false,
@@ -1229,7 +1229,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "freemium",
     "url": "https://fedica.com",
     "official": false,
     "featured": false,
@@ -1250,7 +1250,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://phanpy.social",
     "official": false,
     "featured": false,
@@ -1272,7 +1272,7 @@ window.FEDIK_TOOLS = [
       "ghost",
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "freemium",
     "url": "https://activitypub.ghost.org/social-web-beta/",
     "official": true,
     "featured": false,
@@ -1318,7 +1318,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://statuzer.com",
     "official": false,
     "featured": false,
@@ -1398,7 +1398,7 @@ window.FEDIK_TOOLS = [
       "akkoma",
       "pixelfed"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://tuba.geopjr.dev/",
     "official": false,
     "featured": false,
