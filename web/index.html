@@ -28,10 +28,10 @@
   <meta name="twitter:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, nástroje, slovníček, statistiky, odkazy, vyhledávání.">
   <meta name="twitter:image" content="https://fedik.online/img/header.png">
 
-  <link rel="stylesheet" href="app.css?v=20260620j">
+  <link rel="stylesheet" href="app.css?v=20260621g">
 
   <!-- Anonymní návštěvnost (Umami, self-hosted na OSCLOUD; bez cookies, bez osobních dat) -->
-  <!-- script defer src="https://analytics.oscloud.cz/script.js" data-website-id="07a16f69-8744-4034-bba3-fef3ef59b9af"></script -->
+  <script defer src="https://analytics.oscloud.cz/script.js" data-website-id="cfcb21b6-e303-4a49-b25f-264ec4021e62"></script>
 </head>
 <body data-updated="2026-05-31">
   <header class="site-header">
@@ -523,6 +523,10 @@
     <!-- ===================== POHLED: ZAČÍNÁME ===================== -->
     <section class="start-view" id="start-view" hidden>
 
+      <!-- Resume banner: „rozdělaný onboarding" (localStorage) → návrat na první den.
+           Plní JS (renderResumeBanner); jen na holé landing URL (krok 1). -->
+      <div id="start-resume" class="start-resume" hidden></div>
+
       <!-- ═══ Krok 1: Pochop, co to je ═══ -->
       <div id="start-step-1" class="onboarding-step">
 
@@ -561,6 +565,29 @@
                   sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
         </div>
         <p class="video-attribution">Video „Úvod do Fediverse" — Elena Rossini, CC BY-NC-SA 4.0, český překlad Jan Dytrych.</p>
+      </article>
+
+      <!-- BLOK 1b — Rozcestník: nováček (průvodce) vs. už ve Fediverse (katalog).
+           Texty přes data-i18n (jeden zdroj, relabeluje se při změně jazyka, ne přes data-lang-block).
+           „Začít s průvodcem" → krok 2 (data-start-next, váže bindStartNav).
+           „Prozkoumat katalog" → #view=aplikace (hash router). -->
+      <article class="about-content start-block start-fork-block">
+        <h2 class="start-fork-title" data-i18n="fork_title">Kudy se vydáš?</h2>
+        <p class="start-fork-lead" data-i18n="fork_lead"> <br></p>
+        <div class="start-fork">
+          <div class="start-fork-card start-fork-card--primary">
+            <strong class="start-card-title" data-i18n="fork_new_title">Jsi tu poprvé?</strong>
+            <p data-i18n="fork_new_desc">Ještě se rozkoukáváš nebo nemáš účet? Provedu tě krok za krokem — od výběru aplikace až po tvůj první příspěvek.</p>
+            <button type="button" class="cta-btn" data-start-next="2" data-umami-event="fork-start-guide" data-i18n="fork_new_cta">Začít s průvodcem</button>
+          </div>
+          <img class="start-fork-mascot" src="img/fedik-nevim-co-dal.png"
+               alt="Fedík: nevím co dál" aria-hidden="true" width="1254" height="1254" loading="lazy">
+          <div class="start-fork-card">
+            <strong class="start-card-title" data-i18n="fork_known_title">Máš tu už účet?</strong>
+            <p data-i18n="fork_known_desc">Žiješ už ve Fediverse a jen chceš objevovat? Skoč rovnou do katalogu aplikací, instancí a nástrojů.</p>
+            <a class="cta-btn cta-btn--ghost" href="#view=aplikace" data-umami-event="fork-browse-catalog" data-i18n="fork_known_cta">Prozkoumat katalog</a>
+          </div>
+        </div>
       </article>
 
       <!-- BLOK 2 — Nemusíš se bát: titulek vlevo nahoře, pod ním maskot + boxíky -->
@@ -630,8 +657,10 @@
         </div>
         <img class="start-fig start-fig--big" src="img/fedik-kterou-raketu.png"
              alt="Fedík: kterou raketu?" width="1254" height="1254" loading="lazy">
+        <p class="start-quickpick-label" data-i18n="start_quickpick_label">Přicházíš z nějaké sítě? Klikni:</p>
+        <div class="start-quickpick" id="start-quickpick" aria-label="Rychlá volba podle sítě"></div>
         <div class="start-picker-row">
-          <label for="start-picker" class="start-picker-label" data-i18n="start_picker_label">Odkud přicházíš, nebo co chceš dělat?</label>
+          <label for="start-picker" class="start-picker-label" data-i18n="start_picker_label">Nebo vyber ze seznamu — i podle toho, co chceš dělat:</label>
           <select id="start-picker" class="start-picker" aria-describedby="start-picker-hint"></select>
         </div>
         <p class="start-picker-hint" id="start-picker-hint" data-i18n="start_picker_hint">Vyber síť, kterou znáš, nebo co chceš dělat — ukážu ti odpovídající aplikaci ve Fediverse.</p>
@@ -771,8 +800,11 @@
           </div>
         </div>
       </article>
-      <div class="step-next-wrap">
-        <button class="cta-btn step-next-btn" data-start-next="6" data-i18n="start_next_6">Další krok: Hledání lidí</button>
+      <!-- Prominentní můstek na krok 6 — find-people je retenčně nejdůležitější přechod,
+           proto highlight místo obyčejného „Další krok". Vede taky na krok 6. -->
+      <div class="start-crew-cta">
+        <p class="start-crew-cta-text" data-i18n="crew_cta_text">Nejdůležitější krok proti prázdné ose: sestav posádku — pár účtů, které budeš číst.</p>
+        <button type="button" class="cta-btn" data-start-next="6" data-umami-event="onboarding-crew-cta" data-i18n="crew_cta_btn">Najdi, koho sledovat →</button>
       </div>
       </div><!-- /step-5 -->
 

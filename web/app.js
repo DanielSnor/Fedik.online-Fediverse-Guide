@@ -31,7 +31,8 @@
       czui_ano: 'Ano', czui_castecne: 'Částečně', czui_ne: 'Ne', czui_unknown: 'Neznámo',
       dev_aktivni: 'Aktivní', dev_zraly: 'Zralý', dev_experimentalni: 'Experimentální', dev_utlumeny: 'Útlumený', dev_unknown: 'Neznámo',
       common_yes: 'Ano', common_no: 'Ne',
-      start_picker_label: 'Odkud přicházíš, nebo co chceš dělat?',
+      start_picker_label: 'Nebo vyber ze seznamu — i podle toho, co chceš dělat:',
+      start_quickpick_label: 'Přicházíš z nějaké sítě? Klikni:',
       start_picker_placeholder: 'Vyber z nabídky…',
       start_picker_group_from: 'Přicházím z…',
       start_picker_group_do: 'Chci dělat…',
@@ -57,6 +58,18 @@
       start_step4_chosen_lead: 'Zakládáš účet na instanci %s:',
       start_step4_chosen_cta: 'Otevřít registraci na %s →',
       start_step4_chosen_change: 'Změnit instanci',
+      reg_open_note: 'Tahle instance má otevřenou registraci — dostaneš se dovnitř hned. Registrace se otevře v nové záložce; po dokončení se vrať sem a klikni na „Pokračovat na první den".',
+      reg_approval_note: 'Registrace je „po schválení" — po odeslání ti přijde potvrzovací e-mail a správce tě pustí ručně (klidně až za pár hodin). Než tě pustí, ulož si návrat (odkaz níže). Až budeš uvnitř, vrať se sem a dokonči onboarding.',
+      start_step4_continue: 'Hotovo? Pokračuj na první den →',
+      start_step4_savelink_label: 'Ulož si návrat (pro pozdější dokončení):',
+      start_step4_savelink_copy: 'Kopírovat odkaz',
+      start_step4_savelink_copied: 'Zkopírováno ✓',
+      start_step4_savelink_hint: 'Přidej do záložek (Cmd/Ctrl+D), ať se sem vrátíš i po zavření prohlížeče.',
+      resume_text: 'Máš rozdělaný start na %s. Pokračovat?',
+      resume_continue: 'Pokračovat na první den',
+      resume_restart: 'Začít znovu',
+      crew_cta_text: 'Nejdůležitější krok proti prázdné ose: sestav posádku — pár účtů, které budeš číst.',
+      crew_cta_btn: 'Najdi, koho sledovat →',
       start_menu_heading: 'Začínáme s Fediverse',
       start_intro_p1: 'Fediverse je vesmír propojených nezávislých sociálních sítí — místo jedné velké firmy ho tvoří tisíce serverů, které si spolu povídají.',
       start_intro_p2: 'Je to obrovský prostor, skoro jako ten mezihvězdný. Aby ses v něm neztratil, provedu tě jako navigátor: vybereš si loď (aplikaci), přistaneš na správné planetě (instanci) a založíš si na ní základnu (účet). Pak sestavíš posádku — lidi, které chceš sledovat.',
@@ -160,6 +173,14 @@
       start_next_4: 'Další krok: Založení účtu',
       start_next_5: 'Další krok: První den',
       start_next_6: 'Další krok: Hledání lidí',
+      fork_title: 'Kudy se vydáš?',
+      fork_lead: ' ',
+      fork_new_title: 'Jsi tu poprvé?',
+      fork_new_desc: 'Ještě se rozkoukáváš nebo nemáš účet? Provedu tě krok za krokem — od výběru aplikace až po tvůj první příspěvek.',
+      fork_new_cta: 'Začít s průvodcem',
+      fork_known_title: 'Máš tu už účet?',
+      fork_known_desc: 'Žiješ už ve Fediverse a jen chceš objevovat? Skoč rovnou do katalogu aplikací, instancí a nástrojů.',
+      fork_known_cta: 'Prozkoumat katalog',
       count_of: 'z', count_sources: 'zdrojů',
       nav_platform: 'Platforma', nav_charts: 'Žebříčky', nav_risers: 'Skokani týdne', nav_new: 'Novinky',
       nav_all: 'Vše', nav_top10_foll: 'Top 10 sledovaných', nav_top10_active: 'Top 10 aktivních',
@@ -312,7 +333,8 @@
       czui_ano: 'Yes', czui_castecne: 'Partial', czui_ne: 'No', czui_unknown: 'Unknown',
       dev_aktivni: 'Active', dev_zraly: 'Mature', dev_experimentalni: 'Experimental', dev_utlumeny: 'Dormant', dev_unknown: 'Unknown',
       common_yes: 'Yes', common_no: 'No',
-      start_picker_label: 'Where are you coming from, or what do you want to do?',
+      start_picker_label: 'Or pick from the list — also by what you want to do:',
+      start_quickpick_label: 'Coming from another network? Tap one:',
       start_picker_placeholder: 'Pick one…',
       start_picker_group_from: 'Coming from…',
       start_picker_group_do: 'I want to…',
@@ -338,6 +360,18 @@
       start_step4_chosen_lead: 'You’re creating your account on %s:',
       start_step4_chosen_cta: 'Open registration on %s →',
       start_step4_chosen_change: 'Change instance',
+      reg_open_note: 'This instance has open registration — you’ll get in right away. Sign-up opens in a new tab; once done, come back here and hit “Continue to day one”.',
+      reg_approval_note: 'Sign-up is approval-based — after you submit, a confirmation email arrives and an admin lets you in by hand (possibly a few hours later). Save your way back (link below) in the meantime. Once you’re in, return here to finish onboarding.',
+      start_step4_continue: 'Done? Continue to day one →',
+      start_step4_savelink_label: 'Save your way back (to finish later):',
+      start_step4_savelink_copy: 'Copy link',
+      start_step4_savelink_copied: 'Copied ✓',
+      start_step4_savelink_hint: 'Bookmark it (Cmd/Ctrl+D) so you can return even after closing the browser.',
+      resume_text: 'You have an unfinished start on %s. Continue?',
+      resume_continue: 'Continue to day one',
+      resume_restart: 'Start over',
+      crew_cta_text: 'The key step against an empty feed: assemble your crew — a few accounts you’ll read.',
+      crew_cta_btn: 'Find who to follow →',
       start_menu_heading: 'Getting started with the Fediverse',
       start_intro_p1: 'The Fediverse is a universe of connected, independent social networks — instead of one big company, it’s made of thousands of servers that talk to each other.',
       start_intro_p2: 'It’s a vast space, almost interstellar. So you don’t get lost, I’ll be your navigator: you pick a ship (an app), land on the right planet (an instance) and set up a base there (your account). Then you assemble a crew — the people you want to follow.',
@@ -441,6 +475,14 @@
       start_next_4: 'Next step: Create an account',
       start_next_5: 'Next step: Day one',
       start_next_6: 'Next step: Find people',
+      fork_title: 'Which way will you go?',
+      fork_lead: 'Pick based on where you are right now.',
+      fork_new_title: 'First time here?',
+      fork_new_desc: 'Still finding your feet, or no account yet? I’ll walk you through it step by step — from picking an app to your first post.',
+      fork_new_cta: 'Start the guide',
+      fork_known_title: 'Already have an account?',
+      fork_known_desc: 'Already living in the Fediverse and just exploring? Jump straight into the catalog of apps, instances and tools.',
+      fork_known_cta: 'Browse the catalog',
       count_of: 'of', count_sources: 'sources',
       nav_platform: 'Platform', nav_charts: 'Charts', nav_risers: 'Weekly risers', nav_new: 'New',
       nav_all: 'All', nav_top10_foll: 'Top 10 followed', nav_top10_active: 'Top 10 active',
@@ -1114,8 +1156,59 @@
     });
   }
 
+  // --- Zpětný oblouk registrace: „rozdělaný onboarding" v localStorage ---
+  // Drobenka se uloží, když uživatel odejde registrovat (krok 4 → signup CTA), a
+  // umožní vrátit ho na první den i po zavření prohlížeče (resume banner na holé
+  // landing URL). Lokální, žádný tracking — konzistentní se zbnw_lang (jazyk).
+  var ONB_KEY = 'fedik_onboarding';
+  var ONB_MAX_AGE = 30 * 24 * 3600 * 1000;   // 30 dní
+  function saveOnboardingCrumb(inst) {
+    try { localStorage.setItem(ONB_KEY, JSON.stringify({ inst: inst, ts: Date.now() })); } catch (e) { /* ignore */ }
+  }
+  function readOnboardingCrumb() {
+    try {
+      var c = JSON.parse(localStorage.getItem(ONB_KEY) || 'null');
+      if (c && c.inst && c.ts && (Date.now() - c.ts) < ONB_MAX_AGE) return c;
+    } catch (e) { /* ignore */ }
+    return null;
+  }
+  function clearOnboardingCrumb() {
+    try { localStorage.removeItem(ONB_KEY); } catch (e) { /* ignore */ }
+  }
+
+  // Resume banner nahoře ve „Začínáme" — jen na holé landing (krok 1) s čerstvou
+  // drobenkou. Vrátí uživatele na první den (krok 5) s vybranou instancí.
+  function renderResumeBanner() {
+    var el = document.getElementById('start-resume');
+    if (!el) return;
+    var crumb = (startStep === 1) ? readOnboardingCrumb() : null;
+    if (!crumb) { el.hidden = true; el.innerHTML = ''; return; }
+    el.hidden = false; el.innerHTML = '';
+    var p = document.createElement('p'); p.className = 'start-resume-text';
+    p.textContent = t('resume_text').replace('%s', crumb.inst);
+    el.appendChild(p);
+    var go = document.createElement('button');
+    go.type = 'button'; go.className = 'cta-btn';
+    go.setAttribute('data-umami-event', 'onboarding-resume');
+    go.textContent = t('resume_continue');
+    go.addEventListener('click', function () {
+      pendingChosenInstHost = crumb.inst;   // kontext pro krok 4/5
+      el.hidden = true;
+      showStartStep(5);                     // zároveň vyčistí drobenku
+    });
+    el.appendChild(go);
+    var restart = document.createElement('button');
+    restart.type = 'button'; restart.className = 'start-resume-dismiss';
+    restart.textContent = t('resume_restart');
+    restart.addEventListener('click', function () { clearOnboardingCrumb(); el.hidden = true; });
+    el.appendChild(restart);
+  }
+
   function showStartStep(n) {
     startStep = n;
+    if (n >= 5) clearOnboardingCrumb();   // dostal se na první den → onboarding doveden
+    var resumeEl = document.getElementById('start-resume');
+    if (resumeEl && n !== 1) resumeEl.hidden = true;   // banner je jen pro landing
     document.querySelectorAll('.onboarding-step').forEach(function (el) { el.hidden = true; });
     var step = document.getElementById('start-step-' + n);
     if (step) step.hidden = false;
@@ -1163,12 +1256,57 @@
     var lead = document.createElement('p'); lead.className = 'start-chosen-lead';
     lead.innerHTML = t('start_step4_chosen_lead').replace('%s', '<strong>' + (i.name || i.domain) + '</strong> (' + i.domain + ')');
     box.appendChild(lead);
+
+    // Větvený copy podle typu registrace: open = jdeš dovnitř hned; jinak = po schválení (gap).
+    var note = document.createElement('p'); note.className = 'start-chosen-note';
+    note.textContent = (i.registration === 'open') ? t('reg_open_note') : t('reg_approval_note');
+    box.appendChild(note);
+
     var cta = document.createElement('a');
     cta.className = 'cta-btn'; cta.href = i.signupUrl || ('https://' + i.domain);
     cta.target = '_blank'; cta.rel = 'noopener noreferrer';
     cta.setAttribute('data-umami-event', 'signup-' + i.domain);
     cta.textContent = t('start_step4_chosen_cta').replace('%s', i.domain);
+    // Odešel registrovat → ulož drobenku (resume banner ho vrátí i po zavření prohlížeče).
+    cta.addEventListener('click', function () { saveOnboardingCrumb(i.domain); });
     box.appendChild(cta);
+
+    // Vrstva 1 — návrat do flow po registraci (sekundární akce vedle signupu).
+    var cont = document.createElement('button');
+    cont.type = 'button'; cont.className = 'cta-btn cta-btn--ghost start-chosen-continue';
+    cont.setAttribute('data-umami-event', 'onboarding-continue-day1');
+    cont.textContent = t('start_step4_continue');
+    cont.addEventListener('click', function () { showStartStep(5); });
+    box.appendChild(cont);
+
+    // Vrstva 2 — uložitelný návratový odkaz; hash obnoví krok 5 + instanci.
+    var save = document.createElement('div'); save.className = 'start-savelink';
+    var slLabel = document.createElement('p'); slLabel.className = 'start-savelink-label';
+    slLabel.textContent = t('start_step4_savelink_label'); save.appendChild(slLabel);
+    var row = document.createElement('div'); row.className = 'start-savelink-row';
+    var backUrl = location.origin + location.pathname + '#step=5&inst=' + encodeURIComponent(i.domain);
+    var inp = document.createElement('input');
+    inp.type = 'text'; inp.readOnly = true; inp.className = 'start-savelink-url'; inp.value = backUrl;
+    inp.addEventListener('focus', function () { inp.select(); });
+    row.appendChild(inp);
+    var copy = document.createElement('button');
+    copy.type = 'button'; copy.className = 'filter-chip start-savelink-copy';
+    copy.textContent = t('start_step4_savelink_copy');
+    copy.addEventListener('click', function () {
+      var done = function () {
+        copy.textContent = t('start_step4_savelink_copied');
+        setTimeout(function () { copy.textContent = t('start_step4_savelink_copy'); }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(backUrl).then(done, function () { inp.select(); done(); });
+      } else { inp.select(); try { document.execCommand('copy'); } catch (e) { /* ignore */ } done(); }
+    });
+    row.appendChild(copy);
+    save.appendChild(row);
+    var slHint = document.createElement('p'); slHint.className = 'start-savelink-hint';
+    slHint.textContent = t('start_step4_savelink_hint'); save.appendChild(slHint);
+    box.appendChild(save);
+
     var change = document.createElement('button');
     change.type = 'button'; change.className = 'start-chosen-change'; change.textContent = t('start_step4_chosen_change');
     change.addEventListener('click', function () { startChosenInstance = null; showStartStep(3); });
@@ -2915,6 +3053,7 @@
 
   function renderStart() {
     loadStartVideo();
+    renderResumeBanner();   // „rozdělaný onboarding" → nabídni návrat na první den
     buildStartPicker();
     // Karty na úvodu sdílí komponentu s Pohledem 2 → dotáhni i živá čísla (jednou).
     if (appStatsState === 'idle') ensureAppStats().then(renderStartPickerResults);
@@ -2984,7 +3123,35 @@
       sel.appendChild(og);
     });
     sel.value = (prev && startPickerMap[prev]) ? prev : '';   // přežij relabel při změně jazyka
+    buildStartQuickpick(sel);
     renderStartPickerResults();
+  }
+
+  // Rychlá volba (P3) — chipy pro „Přicházím z…" (známé sítě) nad dropdownem.
+  // Dropdown zůstává jako úplný seznam (vč. „Chci dělat…"). Klik = nastav select + render.
+  function buildStartQuickpick(sel) {
+    var qp = document.getElementById('start-quickpick');
+    if (!qp || !sel) return;
+    qp.innerHTML = '';
+    startFromOptions().forEach(function (o) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'filter-chip start-quickpick-chip';
+      b.setAttribute('data-key', o.key);
+      b.setAttribute('data-umami-event', 'onboarding-quickpick');
+      b.textContent = o.label;
+      b.addEventListener('click', function () {
+        sel.value = o.key; startPickerChosenId = '';
+        renderStartPickerResults(); syncQuickpickActive(o.key);
+      });
+      qp.appendChild(b);
+    });
+    syncQuickpickActive(sel.value);
+  }
+
+  function syncQuickpickActive(key) {
+    document.querySelectorAll('#start-quickpick .start-quickpick-chip').forEach(function (c) {
+      c.classList.toggle('active', c.getAttribute('data-key') === key);
+    });
   }
 
   // Volba → reálné karty z apps.js (Pohled 2), inline pod selectem.
@@ -3041,7 +3208,7 @@
 
   function bindStartPicker() {
     var sel = document.getElementById('start-picker');
-    if (sel) sel.addEventListener('change', function () { startPickerChosenId = ''; renderStartPickerResults(); });
+    if (sel) sel.addEventListener('change', function () { startPickerChosenId = ''; renderStartPickerResults(); syncQuickpickActive(sel.value); });
     var catalog = document.getElementById('start-picker-catalog');
     if (catalog) catalog.addEventListener('click', function (e) {
       e.preventDefault();
