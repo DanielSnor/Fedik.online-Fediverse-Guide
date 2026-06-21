@@ -41,8 +41,8 @@
              alt="Fedík.online — průvodce Fediverse">
       </button>
       <div class="hero-overlay hero-overlay-tl">
-        <h1><span class="brand-prefix"><span class="brand-name">Fedík</span><span class="brand-tld">.online</span></span> <span class="brand-domain" data-i18n="brand_domain">Fediverse onboarding</span></h1>
-        <p class="claim" data-i18n="claim">Objev český a slovenský Fediverse.</p>
+        <h1><span class="brand-prefix"><span class="brand-name">Fedík</span><span class="brand-tld">.online</span></span> <span class="brand-domain" data-i18n="brand_domain"></span></h1>
+        <p class="claim" data-i18n="claim">Český Průvodce Fediverse</p>
       </div>
       <a class="hero-overlay hero-overlay-br main-account"
          href="https://fedik.online"
@@ -175,7 +175,7 @@
           </div>
         </nav>
         <div class="filter-group slices-heading" id="slices-heading">
-          <h2 data-i18n="nav_slices">Rychlé filtry</h2>
+          <h2 data-i18n="nav_slices">Žebříčky</h2>
         </div>
         <section class="filter-group search-nav" id="accounts-nav" hidden aria-label="Účty">
           <h2 data-i18n="accounts_nav_title">Účty</h2>
@@ -189,17 +189,17 @@
 
         <section class="filter-group search-nav" id="search-nav" hidden aria-label="Vyhledávání">
           <h2 data-i18n="view_search">Vyhledávání</h2>
-          <p class="search-nav-desc" data-i18n="search_nav_desc">Hledá v účtech i příspěvcích českého a slovenského Mastodonu. Nezáleží na velikosti písmen ani diakritice (napíšeš „bouzkova", najde „Bouzková"), hledá napříč všemi instancemi naráz a bez přihlášení. Výsledky jsou z posledních týdnů.</p>
+          <p class="search-nav-desc" data-i18n="search_nav_desc">Hledá v obsahu Fedíka — aplikace, instance, nástroje, slovníček a odkazy. Nezáleží na velikosti písmen ani diakritice (napíšeš „mastodon", najde „Mastodon"). Výsledky jsou rozdělené podle typu.</p>
         </section>
 
         <section class="filter-group search-nav" id="instance-nav" hidden aria-label="Instance">
           <h2 data-i18n="instance_nav_title">Instance</h2>
-          <p class="search-nav-desc" data-i18n="instance_nav_desc">České a slovenské Mastodon instance — kde si můžeš založit účet a koho tam najdeš. U každé je velikost, aktivita, stav registrací a kolik je tam účtů z tohoto katalogu. Seřazeno podle velikosti.</p>
+          <p class="search-nav-desc" data-i18n="instance_nav_desc">Servery, kde se reálně zaregistruješ — české a slovenské (ze Sloníka) i prověřené globální. Filtruj podle aplikace, regionu a zaměření; žebříček „pro začátečníky" stojí na prověřenosti, ne na velikosti.</p>
         </section>
 
         <section class="filter-group search-nav" id="links-nav" hidden aria-label="Odkazy">
           <h2 data-i18n="links_nav_title">Odkazy</h2>
-          <p class="search-nav-desc" data-i18n="links_nav_desc">Kurátorovaný rozcestník článků, návodů, videí a oficiálních zdrojů o Fediverse — pro externí čtení a učení. Aplikace a nástroje mají vlastní pohledy. Filtruj podle typu, jazyka a tématu.</p>
+          <p class="search-nav-desc" data-i18n="links_nav_desc">Kurátorovaný rozcestník kvalitních článků a návodů o Mastodonu a fediverse — česky i anglicky. Filtruj podle typu a jazyka.</p>
         </section>
 
         <div class="filter-sort filter-sort-links" id="links-sort-wrap" hidden>
@@ -388,7 +388,7 @@
           <p class="search-nav-desc" data-i18n="about_menu_other_desc">A nakonec několik závěrečných informací — časté dotazy, technické pozadí, o autorovi a jak projekt podpořit.</p>
           <div class="filter-buttons">
             <button class="filter-chip about-link" data-about="faq" data-i18n="about_nav_faq">FAQ</button>
-            <button class="filter-chip about-link" data-about="faq-novacci" data-i18n="about_nav_faq_novacci">FAQ pro nováčky</button>
+            <button class="filter-chip about-link" data-about="faq-novacci" data-i18n="about_nav_faq_novacci">Pro nováčky</button>
             <button class="filter-chip about-link" data-about="tech" data-i18n="about_nav_tech">Technické řešení</button>
             <button class="filter-chip about-link" data-about="author" data-i18n="about_nav_author">O autorovi</button>
           </div>
@@ -634,11 +634,11 @@
           <label for="start-picker" class="start-picker-label" data-i18n="start_picker_label">Odkud přicházíš, nebo co chceš dělat?</label>
           <select id="start-picker" class="start-picker" aria-describedby="start-picker-hint"></select>
         </div>
-        <p class="start-picker-hint" id="start-picker-hint" data-i18n="start_picker_hint">Vyber z nabídky a ukážu ti odpovídající aplikaci ve Fediverse.</p>
+        <p class="start-picker-hint" id="start-picker-hint" data-i18n="start_picker_hint">Vyber síť, kterou znáš, nebo co chceš dělat — ukážu ti odpovídající aplikaci ve Fediverse.</p>
         <div id="start-picker-results" class="apps-grid start-picker-results" aria-live="polite"></div>
         <div id="start-picker-next" class="start-picker-next" hidden>
           <p class="start-picker-next-hint" data-i18n="start_picker_next_hint">Spokojen s naším doporučením? Pokračuj dalším krokem. Chceš víc možností?</p>
-          <a href="#view=aplikace" id="start-picker-catalog" class="start-picker-catalog" data-i18n="start_picker_catalog">Zobrazit vše v katalogu →</a>
+          <a href="#view=aplikace" id="start-picker-catalog" class="start-picker-catalog" data-i18n="start_picker_catalog">Projít všechny aplikace průvodce →</a>
         </div>
       </article>
       <div class="step-next-wrap">
@@ -653,7 +653,7 @@
         <img class="start-fig start-fig--float" src="img/fedik-odkud-prichazis.png"
              alt="Fedík: odkud přicházíš?" width="1254" height="1254" loading="lazy">
         <div data-lang-block="cs">
-          <h2 data-i18n="step3_label">Vyber si planetu (instanci)</h2>
+          <h2 data-i18n="step3_label">Najdi svou planetu (instanci)</h2>
           <p class="step3-when-catalog" data-i18n="step3_p1">Planeta (instance) je tvůj domovský server — místo, kde budeš přihlášený a které ti dá adresu ve tvaru @jmeno@server. Ať přistaneš kdekoli, sledovat a povídat si můžeš s kýmkoli v celém Fediverse; planeta není klec.</p>
           <p class="step3-when-catalog" data-i18n="step3_p2">Níže ukazujeme jen planety s otevřenou registrací nebo registrací po schválení, vyfiltrované pro tvou aplikaci. Dej „Vybrat tuhle“ a posuneme tě na krok 4. Nevíš, kam? Použij náš výchozí bod, nebo otevři celý katalog Instancí.</p>
           <p class="step3-when-external" hidden>Pro tuhle aplikaci zatím nemáme český katalog instancí. Tlačítko níže tě vezme na oficiální stránku, kde si vybereš server a založíš účet. Pak se vrať sem na krok 4.</p>
@@ -665,7 +665,7 @@
           <div class="start-default-box start-starter-box" hidden data-lang="cs"></div>
         </div>
         <div data-lang-block="en" hidden>
-          <h2 data-i18n="step3_label">Pick your planet (an instance)</h2>
+          <h2 data-i18n="step3_label">Find Your Planet (an instance)</h2>
           <p class="step3-when-catalog" data-i18n="step3_p1">A planet (instance) is your home server — where you’ll be signed in and which gives you an address like @name@server. Wherever you land, you can follow and talk to anyone across the whole Fediverse; a planet isn’t a cage.</p>
           <p class="step3-when-catalog" data-i18n="step3_p2">Below we show only planets with open or approval-based sign-up, filtered for your app. Hit “Choose this one” and we’ll move you to step 4. Not sure where? Use our default, or open the full Instances catalog.</p>
           <p class="step3-when-external" hidden>We don’t have a Czech instance catalog for this app yet. The button below takes you to the official site, where you pick a server and create your account. Then come back here for step 4.</p>
@@ -1239,7 +1239,9 @@
                placeholder="Hledat v obsahu Fedíka…" data-i18n-ph="search_ph_view">
       </div>
       <p class="search-tagline" data-i18n="search_tagline">Prohledá aplikace, instance, nástroje, slovníček a odkazy — bez ohledu na diakritiku.</p>
-      <p class="search-tip" data-i18n="search_tip">Tip: víc slov = musí být všechna; přesnou frázi dej do uvozovek („…"), slovo vylučíš mínusem (-slovo).</p>
+      <p class="search-tip" data-i18n="search_tip">Tip: víc slov = musí být všechna;
+přesnou frázi dej do uvozovek („…");
+slovo vylučíš mínusem (-slovo).</p>
       <div id="search-results" class="search-results"></div>
     </section>
 
