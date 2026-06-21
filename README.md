@@ -135,6 +135,17 @@ SURFER_REMOTE_DIR="" ruby bin/deploy_web.rb --data
 ./scripts/sync_data_to_test.sh
 ```
 
+### Sync dat prod → local (z Macu)
+
+Stáhne čerstvá generovaná data z **produkce** na Mac pro lokální dev. Tahá jen
+`web/data/*` a generované soubory v `data/` — chrání lokální symlink Sloníka
+i zdrojové seedy (glossary/links/tools).
+
+```bash
+./scripts/sync_data_to_local.sh             # stáhne prod data na Mac
+# nebo náhled: ./scripts/sync_data_to_local.sh --dry-run
+```
+
 ## Licence
 
 [LICENSE](LICENSE)

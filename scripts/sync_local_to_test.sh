@@ -99,10 +99,11 @@ echo -e "${CYAN}== web/img/ ==${NC}"
 rs "$LOCAL_DIR/web/img/" "$REMOTE:$DIR/web/img/"
 echo ""
 
-# 5c) web/data/ — lokálně generované stats JSONy (nejsou to serverová data)
-echo -e "${CYAN}== web/data/ ==${NC}"
-rs "$LOCAL_DIR/web/data/" "$REMOTE:$DIR/web/data/"
-echo ""
+# web/data/ se ZÁMĚRNĚ NEsynchronizuje z Macu — jsou to data GENEROVANÁ NA SERVERU
+# (viz .gitignore: app-stats.json, instances.json, czsk-stats.json, stat-snapshots.json,
+# status.json…). Lokální web/data/ je zastaralý a přepsal by čerstvá serverová data
+# (přesně to se stalo dřív). Na test se data dostávají jen z produkce přes
+# scripts/sync_data_to_test.sh. NEPŘIDÁVEJ sem zpět krok kopírující web/data/.
 
 # 6) samostatné soubory v rootu
 echo -e "${CYAN}== README.md, .gitignore, config.env.example ==${NC}"
