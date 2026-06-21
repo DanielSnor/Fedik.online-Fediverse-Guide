@@ -1293,6 +1293,18 @@ button[data-start][aria-pressed="true"] { font-weight: 700; background: var(--ac
 .start-picker-next-hint { margin: 0 0 8px; font-size: 14px; line-height: 1.5; }
 .start-starter-box p { margin: 0; line-height: 1.55; }
 .fday4-webonly { font-size: 13px; color: var(--text-dim); font-style: italic; }
+/* P5 — inline glossary termín + popover */
+.glossary-term { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: help; border-bottom: 1px dotted var(--accent); }
+.glossary-term:hover { border-bottom-style: solid; color: var(--accent); }
+.glossary-term:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.glossary-term--plain { border-bottom: 0; cursor: text; }   /* fail-safe: heslo chybí → čistý text */
+.glossary-popover { position: absolute; z-index: 1000; max-width: 320px; background: var(--bg-card); color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; box-shadow: 0 8px 24px rgba(0,0,0,.25); font-size: 13px; line-height: 1.5; }
+.glossary-popover__term { display: block; font-size: 14px; color: var(--text-strong); margin-bottom: 4px; }
+.glossary-popover__short { margin: 0 0 8px; }
+.glossary-popover__more { font: inherit; background: none; border: 0; padding: 0; cursor: pointer; color: var(--accent); font-weight: 600; }
+.glossary-popover__more:hover { text-decoration: underline; }
+@media (prefers-reduced-motion: no-preference) { .glossary-popover { animation: glossfade .12s ease; } }
+@keyframes glossfade { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: none; } }
 .onb-link { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; white-space: nowrap; }
 .onb-link:hover { text-decoration: underline; }
 .start-card .onb-link { margin-top: 8px; }

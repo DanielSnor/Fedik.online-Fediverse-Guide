@@ -78,9 +78,9 @@
       step4_desc: 'Postav základnu (účet): pár minut — e-mail, potvrzení, někdy krátké schválení.',
       step5_desc: 'Rozhlédni se po základně — šest věcí, co udělat hned.',
       step6_desc: 'Sestav posádku — ať doma není prázdno. Odkud nabrat první účty.',
-      step2_p1: 'Aplikace je síť, ve které budeš — tvoje loď ve Fediverse. Mastodon je jako Twitter/X, Pixelfed jako Instagram, PeerTube jako YouTube; všechny spolu umí mluvit, protože stojí na stejném základu.',
+      step2_p1: 'Aplikace je síť, ve které budeš — tvoje loď ve Fediverse. Mastodon je jako Twitter/X, Pixelfed jako Instagram, PeerTube jako YouTube; všechny spolu umí mluvit, protože stojí na stejném základu — protokolu <button class="glossary-term" data-glossary="activitypub">ActivityPub</button>.',
       step2_p2: 'Vyber síť, kterou znáš, nebo typ obsahu — doporučím ti odpovídající loď. Tlačítko „Začít“ tě pošle dál: u hlavních aplikací rovnou na výběr planety (instance), u ostatních na jejich oficiální stránku. Chceš brouzdat sám? Otevři celý katalog Aplikací.',
-      step3_p1: 'Planeta (instance) je tvůj domovský server — místo, kde budeš přihlášený a které ti dá adresu ve tvaru @jmeno@server. Ať přistaneš kdekoli, sledovat a povídat si můžeš s kýmkoli v celém Fediverse; planeta není klec.',
+      step3_p1: 'Planeta (<button class="glossary-term" data-glossary="instance">instance</button>) je tvůj domovský server — místo, kde budeš přihlášený a které ti dá adresu (<button class="glossary-term" data-glossary="handle">handle</button>) ve tvaru @jmeno@server. Ať přistaneš kdekoli, sledovat a povídat si můžeš s kýmkoli v celém Fediverse; planeta není klec.',
       step3_p2: 'Níže ukazujeme jen planety s otevřenou registrací nebo registrací po schválení, vyfiltrované pro tvou aplikaci. Dej „Vybrat tuhle“ a posuneme tě na krok 4. Nevíš, kam? Použij náš výchozí bod, nebo otevři celý katalog Instancí.',
       reg_head: 'Co tě při registraci čeká',
       reg_body: 'Vyplníš uživatelské jméno, e-mail a heslo. Přijde ti potvrzovací e-mail — klikni na odkaz v něm. U serverů „po schválení“ chvíli počkej, než tě správce pustí dovnitř (většinou pár hodin). A jsi uvnitř.',
@@ -109,14 +109,14 @@
       fday_4_cta: 'Zobrazit klienty pro %s',
       fday_4_webonly: 'Pro %s se většinou používá web — žádný extra klient nepotřebuješ.',
       fday_5: 'Najdi, koho sledovat — začni Sloníkem a katalogem Zprávobota výše.',
-      fday_6: 'Mrkni na tři osy: Domácí (koho sleduješ), Lokální (tvůj server) a Federovaná (širý Fediverse).',
+      fday_6: 'Mrkni na <button class="glossary-term" data-glossary="casove-osy">tři osy</button>: Domácí (koho sleduješ), Lokální (tvůj server) a <button class="glossary-term" data-glossary="federace">Federovaná</button> (širý Fediverse).',
       norms_head: 'Pět věcí, co tu chodí jinak',
       norms_intro: 'Žádná pravidla na krev, jen drobné zvyky, díky kterým tě komunita líp přijme.',
-      norms_1: 'Citlivá témata schovej pod CW (varování obsahu) — čtenář si rozklikne, co chce.',
-      norms_2: 'K obrázkům přidávej alt text — popis pro lidi, co obrázek nevidí. Tady je to slušnost.',
-      norms_3: 'Používej hashtagy — vyhledávání jede hlavně přes ně, ne přes plný text.',
-      norms_4: 'Sdílej boostem (jako repost). Citování s komentářem tu skoro není — schválně, kvůli klidu.',
-      norms_5: 'Před odesláním zkontroluj viditelnost příspěvku (veřejný / jen sledující / přímý) — vybíráš ji u každého postu.',
+      norms_1: 'Citlivá témata schovej pod <button class="glossary-term" data-glossary="cw">CW</button> (varování obsahu) — čtenář si rozklikne, co chce.',
+      norms_2: 'K obrázkům přidávej <button class="glossary-term" data-glossary="alt-text">alt text</button> — popis pro lidi, co obrázek nevidí. Tady je to slušnost.',
+      norms_3: 'Používej <button class="glossary-term" data-glossary="hashtag">hashtagy</button> — vyhledávání jede hlavně přes ně, ne přes plný text.',
+      norms_4: 'Sdílej <button class="glossary-term" data-glossary="boost">boostem</button> (jako repost). Citování s komentářem tu skoro není — schválně, kvůli klidu.',
+      norms_5: 'Před odesláním zkontroluj <button class="glossary-term" data-glossary="viditelnost">viditelnost</button> příspěvku (veřejný / jen sledující / přímý) — vybíráš ji u každého postu.',
       faqn_head: 'Pro nováčky',
       faqn_q_head: 'Časté otázky',
       faqn_tips_head: 'Tipy pro Mastodon',
@@ -151,8 +151,8 @@
       cat_stats_head: 'Statistiky — pohled z oběžné dráhy',
       cat_stats_p1: 'Statistiky jsou pohled z oběžné dráhy — Fediverse i tenhle katalog v číslech. Kolik je aplikací, instancí a nástrojů a jak se to v čase hýbe.',
       cat_stats_p2: 'Čísla vycházejí z dat, na kterých Fedík stojí (FediDB, Sloník.online a kurátorské seznamy), s datem poslední aktualizace u každé sady. Berou se orientačně — Fediverse se mění každý den.',
-      cat_links_head: 'Odkazy — majáky dáleko do vesmíru',
-      cat_links_p1: 'Odkazy jsou majáky do dalekého vesmíru — když ti Fedík nestačí a chceš číst, sledovat dění nebo se hlouběji zapojit. Rozcestník ven za hranice tohohle průvodce.',
+      cat_links_head: 'Odkazy — majáky z hlubokého vesmíru',
+      cat_links_p1: 'Odkazy jsou majáky z hlubokého vesmíru — když ti Fedík nestačí a chceš číst, sledovat dění nebo se hlouběji zapojit. Rozcestník ven za hranice tohohle průvodce.',
       cat_links_p2: 'Pečlivě vybraný přehled českých a zahraničních zdrojů o Fediversu: weby, blogy, komunity a další průvodci. Vybíráme jen živé a smysluplné odkazy, ne všechno, co existuje.',
       start_next_step: 'Další krok',
       start_next_2: 'Další krok: Výběr aplikace',
@@ -197,6 +197,7 @@
       top_phrase_followers: 'podle sledujících', top_phrase_active: 'podle aktivity',
       top_phrase_gain_followers: 'podle nárůstu sledujících', top_phrase_gain_activity: 'podle nárůstu aktivity',
       view_accounts: 'Účty', view_posts: 'Posty', view_about: 'O Fedíku', view_search: 'Vyhledávání', view_instance: 'Instance', view_links: 'Odkazy', view_glossary: 'Slovníček',
+      gloss_more: 'Více ve Slovníčku →', gloss_aria: 'Vysvětlit pojem: %s',
       glossary_nav_desc: 'Pojmy a postupy Fediverse česky. Filtruj podle úrovně, tématu a typu; řazení „pro začátečníky" tě provede od základů. Hesla najdeš i prostřednictvím Vyhledávání.',
       gloss_head_level: 'Úroveň', gloss_head_theme: 'Téma', gloss_head_type: 'Typ',
       gsort_order: 'Pro začátečníky', gsort_alpha: 'Abecedně', gsort_theme: 'Tematicky',
@@ -358,9 +359,9 @@
       step4_desc: 'Build your base (account): a few minutes — email, confirmation, sometimes a short approval.',
       step5_desc: 'Look around the base — six things to do right away.',
       step6_desc: 'Assemble your crew — so home isn’t empty. Where to grab your first accounts.',
-      step2_p1: 'An app is the network you’ll live in — your ship in the Fediverse. Mastodon is like Twitter/X, Pixelfed like Instagram, PeerTube like YouTube; they all talk to each other because they share the same foundation.',
+      step2_p1: 'An app is the network you’ll live in — your ship in the Fediverse. Mastodon is like Twitter/X, Pixelfed like Instagram, PeerTube like YouTube; they all talk to each other because they share the same foundation — the <button class="glossary-term" data-glossary="activitypub">ActivityPub</button> protocol.',
       step2_p2: 'Pick a network you know, or a type of content — I’ll suggest the matching ship. “Start” takes you onward: for the main apps straight to picking a planet (instance), for the rest to their official page. Want to browse yourself? Open the full Apps catalog.',
-      step3_p1: 'A planet (instance) is your home server — where you’ll be signed in and which gives you an address like @name@server. Wherever you land, you can follow and talk to anyone across the whole Fediverse; a planet isn’t a cage.',
+      step3_p1: 'A planet (<button class="glossary-term" data-glossary="instance">instance</button>) is your home server — where you’ll be signed in and which gives you an address (<button class="glossary-term" data-glossary="handle">handle</button>) like @name@server. Wherever you land, you can follow and talk to anyone across the whole Fediverse; a planet isn’t a cage.',
       step3_p2: 'Below we show only planets with open or approval-based sign-up, filtered for your app. Hit “Choose this one” and we’ll move you to step 4. Not sure where? Use our default, or open the full Instances catalog.',
       reg_head: 'What to expect when you sign up',
       reg_body: 'You’ll fill in a username, email and password. A confirmation email arrives — click the link in it. On “approval” servers, wait a moment for the admin to let you in (usually a few hours). And you’re in.',
@@ -389,14 +390,14 @@
       fday_4_cta: 'Show clients for %s',
       fday_4_webonly: 'For %s the web is the usual way — you don’t need a separate client.',
       fday_5: 'Find people to follow — start with Sloník and the Zprávobot catalog above.',
-      fday_6: 'Check the three timelines: Home (who you follow), Local (your server) and Federated (the wider Fediverse).',
+      fday_6: 'Check the <button class="glossary-term" data-glossary="casove-osy">three timelines</button>: Home (who you follow), Local (your server) and <button class="glossary-term" data-glossary="federace">Federated</button> (the wider Fediverse).',
       norms_head: 'Five things that work differently here',
       norms_intro: 'No strict rules — just small habits that help the community welcome you.',
-      norms_1: 'Put sensitive topics behind a CW (content warning) — readers open what they want.',
-      norms_2: 'Add alt text to images — a description for people who can’t see them. Here it’s basic courtesy.',
-      norms_3: 'Use hashtags — discovery runs mostly through them, not full-text search.',
-      norms_4: 'Share with a boost (like a repost). Quote-posting is rare here — deliberately, to keep things calm.',
-      norms_5: 'Before sending, check the post visibility (public / followers / direct) — you choose it per post.',
+      norms_1: 'Put sensitive topics behind a <button class="glossary-term" data-glossary="cw">CW</button> (content warning) — readers open what they want.',
+      norms_2: 'Add <button class="glossary-term" data-glossary="alt-text">alt text</button> to images — a description for people who can’t see them. Here it’s basic courtesy.',
+      norms_3: 'Use <button class="glossary-term" data-glossary="hashtag">hashtags</button> — discovery runs mostly through them, not full-text search.',
+      norms_4: 'Share with a <button class="glossary-term" data-glossary="boost">boost</button> (like a repost). Quote-posting is rare here — deliberately, to keep things calm.',
+      norms_5: 'Before sending, check the post <button class="glossary-term" data-glossary="viditelnost">visibility</button> (public / followers / direct) — you choose it per post.',
       faqn_head: 'For beginners',
       faqn_q_head: 'Common questions',
       faqn_tips_head: 'Mastodon tips',
@@ -477,6 +478,7 @@
       top_phrase_followers: 'by followers', top_phrase_active: 'by activity',
       top_phrase_gain_followers: 'by follower growth', top_phrase_gain_activity: 'by activity growth',
       view_accounts: 'Accounts', view_posts: 'Posts', view_about: 'About Fedík', view_search: 'Search', view_instance: 'Instances', view_links: 'Links', view_glossary: 'Glossary',
+      gloss_more: 'More in the Glossary →', gloss_aria: 'Explain term: %s',
       glossary_nav_desc: 'Fediverse terms and how-tos (in Czech). Filter by level, theme and type; the “for beginners” order walks you from the basics. Entries are searchable from Search too.',
       gloss_head_level: 'Level', gloss_head_theme: 'Theme', gloss_head_type: 'Type',
       gsort_order: 'For beginners', gsort_alpha: 'Alphabetical', gsort_theme: 'By theme',
@@ -637,6 +639,12 @@
     document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
       el.setAttribute('placeholder', t(el.getAttribute('data-i18n-ph')));
     });
+    // data-i18n-html: řetězec smí obsahovat náš statický markup (inline glossary buttons).
+    // Bezpečné — jde o vlastní finální copy, ne uživatelský vstup. Po vykreslení (re)bind popoverů.
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      el.innerHTML = t(el.getAttribute('data-i18n-html'));
+    });
+    bindGlossaryTerms();
     // Bohatý obsah (O Sloníkovi) — bloky cs/en, zobraz jen aktuální jazyk.
     document.querySelectorAll('[data-lang-block]').forEach(function (el) {
       el.hidden = el.getAttribute('data-lang-block') !== lang;
@@ -644,6 +652,89 @@
     updateLangSwitchUI();
     updateSidebarToggleLabel();
     updateFamilyHeading();
+  }
+
+  // ===== P5: inline glossary popover =====
+  // Termín v copy je <button class="glossary-term" data-glossary="id">slovo</button>.
+  // Bublina (role=tooltip) ukáže term + short z window.FEDIK_GLOSSARY + „Více ve Slovníčku".
+  // Spouštěče: hover, focus (klávesnice), klik/tap. Esc / klik mimo zavírá. Bez síťového volání.
+  var glossPop = null, glossPopBtn = null, glossHideTimer = null, glossListeners = false;
+  function glossEntry(id) {
+    var g = window.FEDIK_GLOSSARY || [];
+    for (var i = 0; i < g.length; i++) if (g[i].id === id) return g[i];
+    return null;
+  }
+  function ensureGlossPop() {
+    if (glossPop) return glossPop;
+    glossPop = document.createElement('div');
+    glossPop.className = 'glossary-popover'; glossPop.id = 'glossary-popover';
+    glossPop.setAttribute('role', 'tooltip'); glossPop.hidden = true;
+    glossPop.addEventListener('mouseenter', function () { clearTimeout(glossHideTimer); });
+    glossPop.addEventListener('mouseleave', scheduleHideGloss);
+    document.body.appendChild(glossPop);
+    return glossPop;
+  }
+  function positionGlossPop(btn) {
+    var pop = glossPop, r = btn.getBoundingClientRect();
+    pop.style.maxWidth = Math.min(320, window.innerWidth - 16) + 'px';
+    pop.hidden = false;
+    var pr = pop.getBoundingClientRect();
+    var left = Math.max(8, Math.min(r.left + r.width / 2 - pr.width / 2, window.innerWidth - pr.width - 8));
+    var top = r.bottom + 8, above = false;
+    if (top + pr.height > window.innerHeight - 8 && r.top - 8 - pr.height > 8) { top = r.top - 8 - pr.height; above = true; }
+    pop.classList.toggle('is-above', above);
+    pop.style.left = (left + window.scrollX) + 'px';
+    pop.style.top = (top + window.scrollY) + 'px';
+  }
+  function showGlossPop(btn) {
+    var id = btn.getAttribute('data-glossary'), e = glossEntry(id);
+    if (!e) return;
+    clearTimeout(glossHideTimer);
+    var pop = ensureGlossPop(); pop.innerHTML = '';
+    var h = document.createElement('strong'); h.className = 'glossary-popover__term'; h.textContent = e.term; pop.appendChild(h);
+    var p = document.createElement('p'); p.className = 'glossary-popover__short'; p.textContent = e.short || ''; pop.appendChild(p);
+    var more = document.createElement('button'); more.type = 'button'; more.className = 'glossary-popover__more';
+    more.textContent = t('gloss_more');
+    more.addEventListener('click', function () { hideGlossPop(); setView('slovnicek'); openGlossaryEntry(id, true); });
+    pop.appendChild(more);
+    glossPopBtn = btn; btn.setAttribute('aria-describedby', pop.id);
+    positionGlossPop(btn);
+    if (window.umami) window.umami.track('glossary-popover', { id: id });
+  }
+  function hideGlossPop() {
+    if (!glossPop || glossPop.hidden) { glossPopBtn = null; return; }
+    glossPop.hidden = true;
+    if (glossPopBtn) glossPopBtn.removeAttribute('aria-describedby');
+    glossPopBtn = null;
+  }
+  function scheduleHideGloss() { clearTimeout(glossHideTimer); glossHideTimer = setTimeout(hideGlossPop, 180); }
+  function bindGlossaryTerms() {
+    if (!glossListeners) {
+      glossListeners = true;
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hideGlossPop(); });
+      document.addEventListener('click', function (e) {
+        if (!glossPop || glossPop.hidden) return;
+        if (glossPop.contains(e.target) || (glossPopBtn && glossPopBtn.contains(e.target))) return;
+        hideGlossPop();
+      });
+      window.addEventListener('resize', hideGlossPop);
+      window.addEventListener('scroll', hideGlossPop, true);
+    }
+    document.querySelectorAll('button.glossary-term[data-glossary]').forEach(function (btn) {
+      if (btn._glossBound) return; btn._glossBound = true;
+      btn.type = 'button';
+      var e = glossEntry(btn.getAttribute('data-glossary'));
+      if (!e) { btn.classList.add('glossary-term--plain'); return; }   // fail-safe: chybí heslo → čistý text
+      btn.setAttribute('aria-label', t('gloss_aria').replace('%s', e.term));
+      btn.addEventListener('mouseenter', function () { showGlossPop(btn); });
+      btn.addEventListener('mouseleave', scheduleHideGloss);
+      btn.addEventListener('focus', function () { showGlossPop(btn); });
+      btn.addEventListener('blur', scheduleHideGloss);
+      btn.addEventListener('click', function (ev) {
+        ev.preventDefault(); ev.stopPropagation();
+        if (glossPopBtn === btn && glossPop && !glossPop.hidden) hideGlossPop(); else showGlossPop(btn);
+      });
+    });
   }
 
   function setLang(next) {
