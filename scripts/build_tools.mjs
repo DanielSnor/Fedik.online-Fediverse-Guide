@@ -28,6 +28,7 @@ const GLOSS = join(ROOT, "web", "glossary.js");
 const DESC = join(ROOT, "data", "tools", "descriptions.i18n.js");
 const LOGOS_F = join(ROOT, "data", "tools", "logos.js");
 const URLS_F = join(ROOT, "data", "tools", "urls.js");
+const PRICES_F = join(ROOT, "data", "tools", "prices.js");
 const OUT = join(ROOT, "web", "tools.js");
 const CHECK_ONLY = process.argv.includes("--check");
 
@@ -124,7 +125,11 @@ try {
   const urlWin = {};
   new Function("window", readFileSync(URLS_F, "utf8"))(urlWin);
   const URLS = urlWin.TOOL_URLS || {};
-  let logoCount = 0, urlCount = 0;
+  // Cena (zdarma/placene) — ruční override z data/tools/prices.js (přežije regen seedů).
+  const priceWin = {};
+  new Function("window", readFileSync(PRICES_F, "utf8"))(priceWin);
+  const PRICES = priceWin.TOOL_PRICES || {};
+  let logoCount = 0, urlCount = 0, priceCount = 0;
   let csMissing = 0, enMissing = 0;
   tools.forEach((t) => {
     t.descriptionCs = CS[t.id] || t.description;
@@ -132,10 +137,11 @@ try {
     if (LOGOS[t.id]) { t.logoUrl = LOGOS[t.id]; logoCount++; }
     var o = URLS[t.id];
     if (o) { if (o.url) { t.url = o.url; urlCount++; } if (o.sourceCode && !t.sourceCode) t.sourceCode = o.sourceCode; }
+    if (PRICES[t.id] && PRICES[t.id] !== t.price) { t.price = PRICES[t.id]; priceCount++; }
     if (t.category === "klient" && !CS[t.id]) csMissing++;
     if (t.category !== "klient" && !EN[t.id]) enMissing++;
   });
-  console.error(`· loga přiřazena: ${logoCount}/${tools.length} · store odkazy: ${urlCount}`);
+  console.error(`· loga přiřazena: ${logoCount}/${tools.length} · store odkazy: ${urlCount} · ceny: ${priceCount}`);
   if (csMissing || enMissing) console.error(`· popisy bez překladu — klienti bez CS: ${csMissing}, ruční bez EN: ${enMissing}`);
 
   const { errs, warns } = validate(tools, appIds, glossarySlugs);

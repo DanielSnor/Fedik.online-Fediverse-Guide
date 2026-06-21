@@ -15,4 +15,9 @@ window.TOOL_URLS = {
   jerboa: { url: "https://play.google.com/store/apps/details?id=com.jerboa", sourceCode: "https://github.com/LemmyNet/jerboa" },
   "subway-tooter": { url: "https://play.google.com/store/apps/details?id=jp.juggler.subwaytooter", sourceCode: "https://github.com/tateisu/SubwayTooter" },
   fread: { url: "https://play.google.com/store/apps/details?id=com.zhangke.fread", sourceCode: "https://github.com/0xZhangKe/Fread" },
+  rodent: { url: "https://play.google.com/store/apps/details?id=social.rodent" },
+
+  // ——— ostatní aktualizace odkazů (Daniel, 2026-06) ———
+  takesama: { url: "https://nikodembernat.com/apps/takesama/" },
+  voyager: { url: "https://github.com/tpkee/wefwef" },
 };

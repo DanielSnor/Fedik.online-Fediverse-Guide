@@ -1,7 +1,7 @@
 /* web/tools.js — Nástroje (Pohled 5). GENEROVÁNO scriptem scripts/build_tools.mjs
    slitím data/tools/tools.generated.ts (klienti, communityDB) + tools.manual.ts (ostatní).
    RUČNĚ NEEDITUJ — uprav seedy a přegeneruj. Typ: data/tools/types.ts (Tool). */
-window.FEDIK_TOOLS_BUILT = "2026-06-17T07:59:13.705Z";
+window.FEDIK_TOOLS_BUILT = "2026-06-21T10:25:44.698Z";
 window.FEDIK_TOOLS = [
   {
     "id": "mastodon",
@@ -15,7 +15,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://joinmastodon.org/apps",
     "official": true,
     "featured": false,
@@ -36,7 +36,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://tusky.app",
     "official": false,
     "featured": false,
@@ -57,7 +57,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://play.google.com/store/apps/details?id=jp.juggler.subwaytooter",
     "official": false,
     "featured": false,
@@ -79,7 +79,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://fedilab.app",
     "official": false,
     "featured": false,
@@ -100,7 +100,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://lucasggamerm.github.io/moshidon/",
     "official": false,
     "featured": false,
@@ -121,8 +121,8 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
-    "url": "https://mastodonrodent.app",
+    "price": "zdarma",
+    "url": "https://play.google.com/store/apps/details?id=social.rodent",
     "official": false,
     "featured": false,
     "addedAt": "",
@@ -142,7 +142,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://pachli.app",
     "official": false,
     "featured": false,
@@ -163,7 +163,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://play.google.com/store/apps/details?id=com.zhangke.fread",
     "official": false,
     "featured": false,
@@ -206,7 +206,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/app/id1229461703",
     "official": false,
     "featured": false,
@@ -228,7 +228,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "placene",
     "url": "https://apps.apple.com/us/app/ice-cubes-for-mastodon/id6444915884",
     "official": false,
     "featured": false,
@@ -270,7 +270,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/us/app/woolly-for-mastodon/id6444360628",
     "official": false,
     "featured": false,
@@ -291,7 +291,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "placene",
     "url": "https://apps.apple.com/us/app/dawn-for-mastodon/id1668645019",
     "official": false,
     "featured": false,
@@ -333,7 +333,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/app/id6444323022",
     "official": false,
     "featured": false,
@@ -354,7 +354,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/us/app/feather-for-mastodon/id6446263061",
     "official": false,
     "featured": false,
@@ -375,7 +375,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/us/app/sorasns-for-mastodon-bluesky/id6450969760",
     "official": false,
     "featured": false,
@@ -396,7 +396,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/us/app/pipilo/id1584544719",
     "official": false,
     "featured": false,
@@ -418,7 +418,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "pixelfed"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://pixelfed.org/mobile-apps",
     "official": true,
     "featured": false,
@@ -439,7 +439,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "pixelfed"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://f-droid.org/en/packages/org.pixeldroid.app/",
     "official": false,
     "featured": false,
@@ -461,7 +461,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "pixelfed"
     ],
-    "price": "unknown",
+    "price": "placene",
     "url": "https://app.pixelix.social",
     "official": false,
     "featured": false,
@@ -482,7 +482,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "pixelfed"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/us/app/impressia-for-pixelfed/id1663543216",
     "official": false,
     "featured": false,
@@ -503,7 +503,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "pleroma"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://husky.adol.pw",
     "official": false,
     "featured": false,
@@ -525,7 +525,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "pleroma"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://github.com/TwidereProject",
     "official": false,
     "featured": false,
@@ -546,7 +546,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "peertube"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://play.google.com/store/apps/details?id=org.framasoft.peertube",
     "official": true,
     "featured": false,
@@ -567,7 +567,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "peertube"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://newpipe.net",
     "official": false,
     "featured": false,
@@ -588,7 +588,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "peertube"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://grayjay.app",
     "official": false,
     "featured": false,
@@ -609,7 +609,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://play.google.com/store/apps/details?id=com.jerboa",
     "official": true,
     "featured": false,
@@ -633,8 +633,8 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
-    "url": "https://wefwef.app",
+    "price": "zdarma",
+    "url": "https://github.com/tpkee/wefwef",
     "official": false,
     "featured": false,
     "addedAt": "",
@@ -655,7 +655,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://github.com/thunder-app/thunder",
     "official": false,
     "featured": false,
@@ -677,7 +677,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://github.com/memmy-app/memmy",
     "official": false,
     "featured": false,
@@ -698,7 +698,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "placene",
     "url": "https://apps.apple.com/us/app/avelon-for-lemmy/id6450952178",
     "official": false,
     "featured": false,
@@ -719,7 +719,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://play.google.com/store/apps/details?id=com.rubenmayayo.lemmy",
     "official": false,
     "featured": false,
@@ -740,7 +740,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://play.google.com/store/apps/details?id=com.kuroneko.lemmy_connect",
     "official": false,
     "featured": false,
@@ -761,7 +761,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://play.google.com/store/apps/details?id=eu.toldi.infinityforlemmy",
     "official": false,
     "featured": false,
@@ -782,7 +782,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://play.google.com/store/apps/details?id=io.syncapps.lemmy_sync",
     "official": false,
     "featured": false,
@@ -803,7 +803,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://play.google.com/store/apps/details?id=com.idunnololz.summit",
     "official": false,
     "featured": false,
@@ -824,7 +824,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://github.com/nick-delirium/lemmy-fennec",
     "official": false,
     "featured": false,
@@ -845,7 +845,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/us/app/lemmios/id6451038204",
     "official": false,
     "featured": false,
@@ -866,7 +866,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "lemmy"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://github.com/LiveFastEatTrashRaccoon/RaccoonForLemmy?tab=readme-ov-file#want-to-try-it-out",
     "official": false,
     "featured": false,
@@ -908,7 +908,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "misskey"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://play.google.com/store/apps/details?id=jp.panta.misskeyandroidclient",
     "official": false,
     "featured": false,
@@ -931,7 +931,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "misskey"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://shiosyakeyakini.info/miria_web/index.html",
     "official": false,
     "featured": false,
@@ -952,7 +952,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "misskey"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/us/app/misscat-misskey-%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88/id1505059993",
     "official": false,
     "featured": false,
@@ -974,7 +974,7 @@ window.FEDIK_TOOLS = [
       "misskey",
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "placene",
     "url": "https://apps.apple.com/app/id1474451582",
     "official": false,
     "featured": false,
@@ -995,7 +995,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "misskey"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://github.com/poppingmoon/Aria",
     "official": false,
     "featured": false,
@@ -1017,7 +1017,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "misskey"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://github.com/Lakr233/Kimis",
     "official": false,
     "featured": false,
@@ -1040,8 +1040,8 @@ window.FEDIK_TOOLS = [
       "misskey",
       "mastodon"
     ],
-    "price": "unknown",
-    "url": "https://takesama.com/",
+    "price": "placene",
+    "url": "https://nikodembernat.com/apps/takesama/",
     "official": false,
     "featured": false,
     "addedAt": "",
@@ -1061,7 +1061,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "funkwhale"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://f-droid.org/en/packages/audio.funkwhale.ffa/",
     "official": true,
     "featured": false,
@@ -1082,7 +1082,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "funkwhale"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://f-droid.org/en/packages/github.daneren2005.dsub/",
     "official": false,
     "featured": false,
@@ -1103,7 +1103,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "funkwhale"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://f-droid.org/en/packages/org.moire.ultrasonic/",
     "official": false,
     "featured": false,
@@ -1124,7 +1124,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "funkwhale"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/us/app/substreamer/id1012991665",
     "official": false,
     "featured": false,
@@ -1145,7 +1145,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "funkwhale"
     ],
-    "price": "unknown",
+    "price": "placene",
     "url": "https://apps.apple.com/us/app/play-sub-music-streamer/id955329386",
     "official": false,
     "featured": false,
@@ -1166,7 +1166,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "funkwhale"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/us/app/amperfy-music/id1530145038",
     "official": false,
     "featured": false,
@@ -1187,7 +1187,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "writefreely"
     ],
-    "price": "unknown",
+    "price": "placene",
     "url": "https://apps.apple.com/us/app/writefreely/id1531530896",
     "official": true,
     "featured": false,
@@ -1196,29 +1196,6 @@ window.FEDIK_TOOLS = [
     "descriptionCs": "Oficiální iOS aplikace WriteFreely s editorem bez rušivých prvků pro psaní na libovolnou instanci WriteFreely či Write.as.",
     "descriptionEn": "The official iOS app for WriteFreely, featuring a distraction-free editor to write and publish to any WriteFreely instance or Write.as blog.",
     "logoUrl": "img/logos/writefreely.png"
-  },
-  {
-    "id": "indiepass",
-    "name": "IndiePass",
-    "description": "An open-source Android app supporting IndieWeb Micropub (for publishing to WriteFreely and similar) as well as Fediverse APIs (Mastodon, Pixelfed), allowing posting and reading across platforms.",
-    "category": "klient",
-    "platforms": [
-      "android"
-    ],
-    "forApps": [
-      "writefreely",
-      "mastodon",
-      "pixelfed"
-    ],
-    "price": "unknown",
-    "url": "https://indiepass.app",
-    "official": false,
-    "featured": false,
-    "addedAt": "May 2023",
-    "isOwn": false,
-    "descriptionCs": "Open-source android aplikace s podporou IndieWeb Micropub (publikování do WriteFreely ad.) i Fediverse API (Mastodon, Pixelfed).",
-    "descriptionEn": "An open-source Android app supporting IndieWeb Micropub (for publishing to WriteFreely and similar) as well as Fediverse APIs (Mastodon, Pixelfed), allowing posting and reading across platforms.",
-    "logoUrl": "img/logos/indiepass.svg"
   },
   {
     "id": "elk",
@@ -1320,7 +1297,7 @@ window.FEDIK_TOOLS = [
       "mastodon",
       "pixelfed"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://about.flipboard.com/inside-flipboard/you-can-now-connect-your-pixelfed-account-to-flipboard/",
     "official": true,
     "featured": false,
@@ -1363,7 +1340,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "wafrn"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://wafrn.net",
     "official": true,
     "featured": false,
@@ -1397,7 +1374,7 @@ window.FEDIK_TOOLS = [
       "hollo",
       "bonfire"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://fedicat.com",
     "official": false,
     "featured": false,
@@ -1443,7 +1420,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "neodb"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.apple.com/app/piecelet-for-neodb/id6739444863",
     "official": false,
     "featured": false,
@@ -1464,7 +1441,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "neodb"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://github.com/mohammadrafigh/NeoComment",
     "official": false,
     "featured": false,
@@ -1486,7 +1463,7 @@ window.FEDIK_TOOLS = [
     "forApps": [
       "mastodon"
     ],
-    "price": "unknown",
+    "price": "zdarma",
     "url": "https://apps.kde.org/tokodon/",
     "official": false,
     "featured": false,
