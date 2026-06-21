@@ -1041,7 +1041,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Blok 3+4 (picker) — vycentrovaný layout; maskot ~2× větší, na střed pod odstavcem. */
-.start-fig--big { display: block; width: clamp(220px, 44%, 380px); height: auto; margin: 18px auto; }
+.start-fig--big { display: block; width: min(264px, 48%); height: auto; margin: 18px auto; }   /* = velikost maskota na Vyhledávání (.search-logo) */
 /* Onboarding kroky — maskot vpravo vedle textu (jako Krok 1), všechny stejně vysoké. */
 .start-fig--step { width: auto; height: clamp(170px, 26vw, 210px); }
 @media (max-width: 760px) { .start-fig--step { width: auto; height: 180px; } }
