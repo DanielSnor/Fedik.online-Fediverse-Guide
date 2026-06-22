@@ -332,6 +332,8 @@ a { color: inherit; text-decoration: none; }
 .inst-head { display: flex; gap: 12px; align-items: flex-start; }
 .inst-logo { flex: 0 0 60px; width: 60px; height: 60px; border-radius: 12px; object-fit: cover; background: var(--bg-card-hover); }
 .inst-logo-fb { display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: 26px; }
+/* Fallback na logo aplikace (instance bez vlastního avataru) — logo se vejde celé, ne ořez */
+.inst-logo-app { object-fit: contain; padding: 8px; background: var(--bg-panel); }
 .inst-headbody { min-width: 0; flex: 1; }
 /* Plný název instance (max 2 řádky), ne zkrácený. */
 .inst-title { font-weight: 700; color: var(--text-strong); font-size: 17px; line-height: 1.3;
@@ -1260,7 +1262,8 @@ a { color: inherit; text-decoration: none; }
    Pohled „Začínáme" — lineární 6-krokový onboarding (P1)
    ======================================================== */
 .onboarding-step { margin-top: 36px; padding-top: 28px; border-top: 2px solid var(--border); }
-.onboarding-step:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+/* Krok 1 nemá horní oddělovač (resume banner před ním je první dítě → :first-child by selhal). */
+#start-step-1 { margin-top: 0; padding-top: 0; border-top: none; }
 
 .start-default-box {
   margin: 16px 0 20px;
@@ -1293,8 +1296,8 @@ button.cta-btn { border: none; cursor: pointer; font-family: inherit; }
 
 /* Krok 5 → 6: prominentní můstek na „najdi lidi" (retenčně nejdůležitější přechod) */
 .start-crew-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px;
-  margin-top: 20px; padding: 16px 18px; background: var(--accent-bg);
-  border: 1px solid var(--accent); border-radius: 12px; }
+  margin-top: 20px; padding: 16px 18px; background: var(--bg-panel);
+  border: 1px solid var(--border); border-radius: 12px; }
 .start-crew-cta-text { margin: 0; flex: 1 1 260px; font-weight: 600; color: var(--text); }
 .start-crew-cta .cta-btn { margin-top: 0; white-space: nowrap; }
 /* Kotvy v kroku 6 (Sloník / Zprávobot) zvýraznit — jsou to klíčové akce kroku */
@@ -1376,7 +1379,7 @@ button[data-start][aria-pressed="true"] { font-weight: 700; background: var(--ac
 
 /* Resume banner — návrat na rozdělaný onboarding (nahoře ve „Začínáme") */
 .start-resume { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
-  background: var(--accent-bg); border: 1px solid var(--accent); border-radius: 12px;
+  background: var(--bg-panel); border: 1px solid var(--border); border-radius: 12px;
   padding: 14px 16px; margin-bottom: 18px; }
 .start-resume-text { margin: 0; flex: 1 1 240px; font-weight: 600; color: var(--text); }
 .start-resume .cta-btn { margin-top: 0; }

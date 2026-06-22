@@ -59,13 +59,13 @@
       start_step4_chosen_cta: 'Otevřít registraci na %s →',
       start_step4_chosen_change: 'Změnit instanci',
       reg_open_note: 'Tahle instance má otevřenou registraci — dostaneš se dovnitř hned. Registrace se otevře v nové záložce; po dokončení se vrať sem a klikni na „Pokračovat na první den".',
-      reg_approval_note: 'Registrace je „po schválení" — po odeslání ti přijde potvrzovací e-mail a správce tě pustí ručně (klidně až za pár hodin). Než tě pustí, ulož si návrat (odkaz níže). Až budeš uvnitř, vrať se sem a dokonči onboarding.',
+      reg_approval_note: 'Registrace je „po schválení" — po odeslání ti přijde potvrzovací e-mail a správce tě ručně ověří (klidně až za pár hodin). Než tě schválí, ulož si návratové URL (odkaz níže). Až budeš mít funkční účet, vrať se sem a dokonči onboarding.',
       start_step4_continue: 'Hotovo? Pokračuj na první den →',
-      start_step4_savelink_label: 'Ulož si návrat (pro pozdější dokončení):',
+      start_step4_savelink_label: 'Ulož si návratové URL (pro pozdější dokončení):',
       start_step4_savelink_copy: 'Kopírovat odkaz',
       start_step4_savelink_copied: 'Zkopírováno ✓',
       start_step4_savelink_hint: 'Přidej do záložek (Cmd/Ctrl+D), ať se sem vrátíš i po zavření prohlížeče.',
-      resume_text: 'Máš rozdělaný start na %s. Pokračovat?',
+      resume_text: 'Stavíme novou základnu (účet) na %s. Je už dokončena?',
       resume_continue: 'Pokračovat na první den',
       resume_restart: 'Začít znovu',
       crew_cta_text: 'Nejdůležitější krok proti prázdné ose: sestav posádku — pár účtů, které budeš číst.',
@@ -361,13 +361,13 @@
       start_step4_chosen_cta: 'Open registration on %s →',
       start_step4_chosen_change: 'Change instance',
       reg_open_note: 'This instance has open registration — you’ll get in right away. Sign-up opens in a new tab; once done, come back here and hit “Continue to day one”.',
-      reg_approval_note: 'Sign-up is approval-based — after you submit, a confirmation email arrives and an admin lets you in by hand (possibly a few hours later). Save your way back (link below) in the meantime. Once you’re in, return here to finish onboarding.',
+      reg_approval_note: 'Sign-up is approval-based — after you submit, a confirmation email arrives and an admin verifies you by hand (possibly a few hours later). Until they approve you, save your return URL (link below). Once your account is working, return here to finish onboarding.',
       start_step4_continue: 'Done? Continue to day one →',
-      start_step4_savelink_label: 'Save your way back (to finish later):',
+      start_step4_savelink_label: 'Save your return URL (to finish later):',
       start_step4_savelink_copy: 'Copy link',
       start_step4_savelink_copied: 'Copied ✓',
       start_step4_savelink_hint: 'Bookmark it (Cmd/Ctrl+D) so you can return even after closing the browser.',
-      resume_text: 'You have an unfinished start on %s. Continue?',
+      resume_text: 'We’re building a new base (account) on %s. Is it ready yet?',
       resume_continue: 'Continue to day one',
       resume_restart: 'Start over',
       crew_cta_text: 'The key step against an empty feed: assemble your crew — a few accounts you’ll read.',
@@ -1271,13 +1271,11 @@
     cta.addEventListener('click', function () { saveOnboardingCrumb(i.domain); });
     box.appendChild(cta);
 
-    // Vrstva 1 — návrat do flow po registraci (sekundární akce vedle signupu).
-    var cont = document.createElement('button');
-    cont.type = 'button'; cont.className = 'cta-btn cta-btn--ghost start-chosen-continue';
-    cont.setAttribute('data-umami-event', 'onboarding-continue-day1');
-    cont.textContent = t('start_step4_continue');
-    cont.addEventListener('click', function () { showStartStep(5); });
-    box.appendChild(cont);
+    // „Špatná instance? Změň ji" — hned pod registrací (alternativa k aktuální volbě).
+    var change = document.createElement('button');
+    change.type = 'button'; change.className = 'start-chosen-change'; change.textContent = t('start_step4_chosen_change');
+    change.addEventListener('click', function () { startChosenInstance = null; showStartStep(3); });
+    box.appendChild(change);
 
     // Vrstva 2 — uložitelný návratový odkaz; hash obnoví krok 5 + instanci.
     var save = document.createElement('div'); save.className = 'start-savelink';
@@ -1307,10 +1305,13 @@
     slHint.textContent = t('start_step4_savelink_hint'); save.appendChild(slHint);
     box.appendChild(save);
 
-    var change = document.createElement('button');
-    change.type = 'button'; change.className = 'start-chosen-change'; change.textContent = t('start_step4_chosen_change');
-    change.addEventListener('click', function () { startChosenInstance = null; showStartStep(3); });
-    box.appendChild(change);
+    // Vrstva 1 — návrat do flow po registraci; až pod boxem s návratovým URL.
+    var cont = document.createElement('button');
+    cont.type = 'button'; cont.className = 'cta-btn cta-btn--ghost start-chosen-continue';
+    cont.setAttribute('data-umami-event', 'onboarding-continue-day1');
+    cont.textContent = t('start_step4_continue');
+    cont.addEventListener('click', function () { showStartStep(5); });
+    box.appendChild(cont);
   }
 
   // Krok 5, položka „klient": odkaz na Nástroje předfiltrované na klienty zvolené appky.
@@ -1715,7 +1716,22 @@
     }
     return instanceFallback(i);
   }
+  function appLogo(appId) {
+    var a = (window.FEDIK_APPS || []).filter(function (x) { return x.id === appId; })[0];
+    return (a && a.logoUrl) ? a.logoUrl : '';
+  }
   function instanceFallback(i) {
+    // Bez vlastního avataru instance → výchozí logo aplikace (podle appId), teprve pak iniciála.
+    var logo = appLogo(i.appId);
+    if (logo) {
+      var img = document.createElement('img');
+      img.className = 'inst-logo inst-logo-app'; img.src = logo; img.alt = ''; img.loading = 'lazy';
+      img.onerror = function () { img.replaceWith(instanceLetter(i)); };
+      return img;
+    }
+    return instanceLetter(i);
+  }
+  function instanceLetter(i) {
     var s = document.createElement('span');
     s.className = 'inst-logo inst-logo-fb';
     s.textContent = (i.domain || i.host || '?').charAt(0).toUpperCase();
