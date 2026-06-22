@@ -18,5 +18,9 @@ data/tools/upstream-report.json
 *.bak
 node_modules/
 
+# Affinity Photo zdroje (přes git neverzujeme — velké binárky + zámkové soubory)
+*.afphoto
+*.afphoto~lock~
+
 # Claude Code
 .claude/
