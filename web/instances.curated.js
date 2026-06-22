@@ -21,6 +21,7 @@ window.FEDIK_INSTANCES_CURATED = {
   "pixelfed.cz":  { appId: "pixelfed", signupUrl: "https://pixelfed.cz/register", beginnerDefault: true },
   "snac.lab8.cz": { appId: "snac", signupUrl: "https://snac.lab8.cz" },   // registrace zavřená → homepage místo mastodoní /auth/sign_up (404)
   "vhsky.cz":     { appId: "peertube", signupUrl: "https://vhsky.cz/signup", beginnerDefault: true },   // PeerTube (Sloník feed nemá software field → adaptér by dal mastodon + /auth/sign_up 404)
+  "otakuzatoka.cz": { appId: "misskey", signupUrl: "https://otakuzatoka.cz" },   // Misskey: registrace přes homepage (ne /auth/sign_up); appId → správné Misskey logo jako fallback avatar
 
   // Výchozí doporučená instance pro nováčky. Je ve Sloník feedu → adaptér dodá
   // beginnerFriendly (approval), focus (obecna), signupUrl (/auth/sign_up).
