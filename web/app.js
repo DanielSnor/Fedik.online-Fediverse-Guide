@@ -33,6 +33,7 @@
       common_yes: 'Ano', common_no: 'Ne',
       start_picker_label: 'Nebo vyber ze seznamu — i podle toho, co chceš dělat:',
       start_quickpick_label: 'Přicházíš z nějaké sítě? Klikni:',
+      start_quickpick_do_label: 'Nebo co chceš dělat?',
       start_picker_placeholder: 'Vyber z nabídky…',
       start_picker_group_from: 'Přicházím z…',
       start_picker_group_do: 'Chci dělat…',
@@ -335,6 +336,7 @@
       common_yes: 'Yes', common_no: 'No',
       start_picker_label: 'Or pick from the list — also by what you want to do:',
       start_quickpick_label: 'Coming from another network? Tap one:',
+      start_quickpick_do_label: 'Or what do you want to do?',
       start_picker_placeholder: 'Pick one…',
       start_picker_group_from: 'Coming from…',
       start_picker_group_do: 'I want to…',
@@ -986,9 +988,8 @@
   // Vrátí App objekt z taxonomie podle volby v pickeru kroku 2: explicitně vybraná karta
   // (startPickerChosenId), jinak první doporučená. (null, když nic nevybráno.)
   function getPickerSelectedApp() {
-    var sel = document.getElementById('start-picker');
-    if (!sel || !sel.value || !startPickerMap[sel.value]) return null;
-    var appIds = startPickerMap[sel.value].appIds;
+    if (!startPickerSel || !startPickerMap[startPickerSel]) return null;
+    var appIds = startPickerMap[startPickerSel].appIds;
     if (!appIds || !appIds.length) return null;
     var taxApps = startTaxApps();
     if (startPickerChosenId && appIds.indexOf(startPickerChosenId) !== -1 && taxApps[startPickerChosenId]) {
@@ -3095,6 +3096,7 @@
   //   „Chci dělat…"  = contentTypes s neprázdným apps.
   // Volba → App.id[] → plný záznam z apps.js (Pohled 2) → reálná karta (buildAppCard).
   var startPickerMap = {};   // key → { label, appIds, contentTypes }
+  var startPickerSel = '';   // aktuálně vybraný klíč mraku (from:/do:) — nahrazuje bývalý select.value
 
   function startTaxApps() { return (window.FEDIK_TAXONOMY && window.FEDIK_TAXONOMY.apps) || {}; }
   function startContentTypes() { return (window.FEDIK_TAXONOMY && window.FEDIK_TAXONOMY.contentTypes) || []; }
@@ -3118,68 +3120,59 @@
     return order.map(function (eq, i) { return { key: 'from:' + i, label: eq, appIds: byEq[eq] }; });
   }
 
+  // Dva mraky tlačítek nad taxonomií (žádný dropdown):
+  //   #start-quickpick     = „Přicházíš z…"  (centralizedEquivalent)
+  //   #start-quickpick-do  = „Co chceš dělat?" (typy obsahu)
   function buildStartPicker() {
-    var sel = document.getElementById('start-picker');
-    if (!sel) return;
-    var prev = sel.value;
+    var fromOpts = startFromOptions(), doOpts = startDoOptions();
     startPickerMap = {};
-    sel.innerHTML = '';
-    var ph = document.createElement('option');
-    ph.value = ''; ph.textContent = t('start_picker_placeholder');
-    sel.appendChild(ph);
-    [{ label: t('start_picker_group_from'), opts: startFromOptions() },
-     { label: t('start_picker_group_do'), opts: startDoOptions() }].forEach(function (g) {
-      if (!g.opts.length) return;
-      var og = document.createElement('optgroup'); og.label = g.label;
-      g.opts.forEach(function (o) {
-        startPickerMap[o.key] = o;
-        var op = document.createElement('option'); op.value = o.key; op.textContent = o.label;
-        og.appendChild(op);
-      });
-      sel.appendChild(og);
-    });
-    sel.value = (prev && startPickerMap[prev]) ? prev : '';   // přežij relabel při změně jazyka
-    buildStartQuickpick(sel);
+    fromOpts.concat(doOpts).forEach(function (o) { startPickerMap[o.key] = o; });
+    if (startPickerSel && !startPickerMap[startPickerSel]) startPickerSel = '';   // přežij relabel jazyka
+    // Vynucené zalomení na 2 řádky (nezávisle na šířce): sítě za Goodreads, aktivity za „Krátká videa".
+    var fromBreak = (fromOpts.filter(function (o) { return o.appIds.indexOf('bookwyrm') !== -1; })[0] || {}).key;
+    buildChipCloud('start-quickpick', fromOpts, fromBreak);
+    buildChipCloud('start-quickpick-do', doOpts, 'do:shortvideo');
+    syncQuickpickActive(startPickerSel);
     renderStartPickerResults();
   }
 
-  // Rychlá volba (P3) — chipy pro „Přicházím z…" (známé sítě) nad dropdownem.
-  // Dropdown zůstává jako úplný seznam (vč. „Chci dělat…"). Klik = nastav select + render.
-  function buildStartQuickpick(sel) {
-    var qp = document.getElementById('start-quickpick');
-    if (!qp || !sel) return;
-    qp.innerHTML = '';
-    startFromOptions().forEach(function (o) {
+  // Mrak tlačítek (sítě / aktivity) — klik nastaví výběr a vykreslí doporučení.
+  // Aktivní je vždy jen jeden chip napříč oběma mraky (jedno doporučení).
+  function buildChipCloud(containerId, opts, breakAfterKey) {
+    var box = document.getElementById(containerId);
+    if (!box) return;
+    box.innerHTML = '';
+    opts.forEach(function (o) {
       var b = document.createElement('button');
       b.type = 'button'; b.className = 'filter-chip start-quickpick-chip';
       b.setAttribute('data-key', o.key);
       b.setAttribute('data-umami-event', 'onboarding-quickpick');
       b.textContent = o.label;
       b.addEventListener('click', function () {
-        sel.value = o.key; startPickerChosenId = '';
+        startPickerSel = o.key; startPickerChosenId = '';
         renderStartPickerResults(); syncQuickpickActive(o.key);
       });
-      qp.appendChild(b);
+      box.appendChild(b);
+      if (breakAfterKey && o.key === breakAfterKey) {
+        var br = document.createElement('span'); br.className = 'chip-cloud-break'; box.appendChild(br);
+      }
     });
-    syncQuickpickActive(sel.value);
   }
 
   function syncQuickpickActive(key) {
-    document.querySelectorAll('#start-quickpick .start-quickpick-chip').forEach(function (c) {
-      c.classList.toggle('active', c.getAttribute('data-key') === key);
-    });
+    document.querySelectorAll('#start-quickpick .start-quickpick-chip, #start-quickpick-do .start-quickpick-chip')
+      .forEach(function (c) { c.classList.toggle('active', c.getAttribute('data-key') === key); });
   }
 
   // Volba → reálné karty z apps.js (Pohled 2), inline pod selectem.
   function renderStartPickerResults() {
-    var sel = document.getElementById('start-picker');
     var results = document.getElementById('start-picker-results');
-    if (!sel || !results) return;
+    if (!results) return;
     var hint = document.getElementById('start-picker-hint');
     var catalog = document.getElementById('start-picker-catalog');
     var nextBox = document.getElementById('start-picker-next');
     results.innerHTML = '';
-    var opt = startPickerMap[sel.value];
+    var opt = startPickerMap[startPickerSel];
     if (!opt) {   // prázdný stav před výběrem
       if (hint) hint.hidden = false;
       if (nextBox) nextBox.hidden = true;
@@ -3223,8 +3216,6 @@
   }
 
   function bindStartPicker() {
-    var sel = document.getElementById('start-picker');
-    if (sel) sel.addEventListener('change', function () { startPickerChosenId = ''; renderStartPickerResults(); syncQuickpickActive(sel.value); });
     var catalog = document.getElementById('start-picker-catalog');
     if (catalog) catalog.addEventListener('click', function (e) {
       e.preventDefault();

@@ -1019,8 +1019,12 @@ a { color: inherit; text-decoration: none; }
 .start-picker:focus { outline: none; border-color: var(--accent); }
 .start-picker-hint { margin: 24px 0 0; font-size: 14px; line-height: 1.55; color: var(--text-dim); }
 /* P3 — rychlá volba (chipy známých sítí) nad dropdownem; active dědí .filter-chip.active */
-.start-quickpick-label { margin: 6px 0; font-size: 14px; font-weight: 600; color: var(--text); }
-.start-quickpick { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.start-quickpick-label { margin: 14px 0 6px; font-size: 14px; font-weight: 600; color: var(--text); text-align: center; }
+/* Mrak tlačítek — vycentrovaný, max 75 % šířky textové části → zalomí se na 2–3 řádky (ne od kraje ke kraji) */
+.start-quickpick { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 auto 6px; max-width: 75%; }
+.chip-cloud-break { flex-basis: 100%; height: 0; }   /* vynucené zalomení řádku uprostřed mraku */
+.start-quickpick + .start-quickpick-label { margin-top: 28px; }   /* větší mezera před „Nebo co chceš dělat?" */
+@media (max-width: 640px) { .start-quickpick { max-width: 100%; } }
 .start-picker-results { margin-top: 28px; }
 .start-rec-head { grid-column: 1 / -1; margin: 0 0 4px; font-size: 16px; font-weight: 700; color: var(--text-strong); text-align: center; }
 .start-picker-catalog { display: inline-block; margin-top: 14px; color: var(--accent); font-weight: 600; font-size: 14px; }
