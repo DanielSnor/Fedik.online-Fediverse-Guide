@@ -51,7 +51,7 @@
     mbin:        { id: 'mbin',        name: 'Mbin',        contentType: 'forum',      centralizedEquivalent: 'Reddit',               joinUrl: 'https://joinmbin.org' },
     peertube:    { id: 'peertube',    name: 'PeerTube',    contentType: 'video',      centralizedEquivalent: 'YouTube',              joinUrl: 'https://joinpeertube.org', internalUrl: '#view=instance&iapp=peertube', starterInstance: { host: 'vhsky.cz', url: 'https://vhsky.cz' } },
     loops:       { id: 'loops',       name: 'Loops',       contentType: 'shortvideo', centralizedEquivalent: 'TikTok',               joinUrl: 'https://loops.video' },
-    bookwyrm:    { id: 'bookwyrm',    name: 'BookWyrm',    contentType: 'books',      centralizedEquivalent: 'Goodreads',            joinUrl: 'https://join-bookwyrm.com' },
+    bookwyrm:    { id: 'bookwyrm',    name: 'BookWyrm',    contentType: 'books',      centralizedEquivalent: 'Goodreads',            joinUrl: 'https://joinbookwyrm.com' },
     funkwhale:   { id: 'funkwhale',   name: 'Funkwhale',   contentType: 'music',      centralizedEquivalent: 'Spotify / SoundCloud', joinUrl: 'https://funkwhale.audio' },
     mobilizon:   { id: 'mobilizon',   name: 'Mobilizon',   contentType: 'events',     centralizedEquivalent: 'Facebook Events',      joinUrl: 'https://joinmobilizon.org' },
     writefreely: { id: 'writefreely', name: 'WriteFreely', contentType: 'blog',       centralizedEquivalent: 'Medium',               joinUrl: 'https://writefreely.org' },

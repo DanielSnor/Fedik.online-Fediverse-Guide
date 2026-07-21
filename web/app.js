@@ -214,7 +214,7 @@
       fday_4: 'Vybav si základnu klientem — se svou aplikací (sítí) můžeš používat i klientské appky, což je na telefonu pohodlnější.',
       fday_4_cta: 'Zobrazit klienty pro %s',
       fday_4_webonly: 'Pro %s se většinou používá web — žádný extra klient nepotřebuješ.',
-      fday_5: 'Najdi, koho sledovat — začni Sloníkem a katalogem Zprávobota výše.',
+      fday_5: 'Najdi, koho sledovat — začni Sloníkem a katalogem Zprávobota.',
       fday_6: 'Mrkni na <button class="glossary-term" data-glossary="casove-osy">tři osy</button>: Domácí (koho sleduješ), Lokální (tvůj server) a <button class="glossary-term" data-glossary="federace">Federovaná</button> (širý Fediverse).',
       norms_head: 'Pět věcí, co tu chodí jinak',
       norms_intro: 'Žádná pravidla na krev, jen drobné zvyky, díky kterým tě komunita líp přijme.',
@@ -750,7 +750,7 @@
       fday_4: 'Kit out your base with a client — your app (network) also works through client apps, handier on a phone.',
       fday_4_cta: 'Show clients for %s',
       fday_4_webonly: 'For %s the web is the usual way — you don’t need a separate client.',
-      fday_5: 'Find people to follow — start with Sloník and the Zprávobot catalog above.',
+      fday_5: 'Find people to follow — start with Sloník and the Zprávobot catalog.',
       fday_6: 'Check the <button class="glossary-term" data-glossary="casove-osy">three timelines</button>: Home (who you follow), Local (your server) and <button class="glossary-term" data-glossary="federace">Federated</button> (the wider Fediverse).',
       norms_head: 'Five things that work differently here',
       norms_intro: 'No strict rules — just small habits that help the community welcome you.',
@@ -1586,6 +1586,10 @@
     var nm = document.createElement('strong'); nm.textContent = i.name || i.domain; top.appendChild(nm);
     var host = document.createElement('span'); host.className = 'start-inst-item__host'; host.textContent = i.domain; top.appendChild(host);
     body.appendChild(top);
+    if (i.description) {
+      var desc = document.createElement('p'); desc.className = 'start-inst-item__desc';
+      desc.textContent = i.description; body.appendChild(desc);
+    }
     var meta = document.createElement('div'); meta.className = 'start-inst-item__meta';
     var reg = document.createElement('span');
     reg.className = 'inst-reg inst-reg-' + i.registration; reg.textContent = t('instance_reg_' + i.registration);

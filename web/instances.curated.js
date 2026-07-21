@@ -28,7 +28,10 @@ window.FEDIK_INSTANCES_CURATED = {
   // beginnerDefault = zobrazit ji jako doporučení v kroku 3 onboardingu.
   "mamutovo.cz":  { beginnerDefault: true },
 
+  // Sloníkova AI klasifikace jí dala "regional", což je proti jejímu vlastnímu
+  // popisu ("Mastodon pro českou komunitu" — celostátní, ne místně vázané).
+  "mastodonczech.cz": { focus: ["obecna"] },
+
   // Příklad dalšího přepisu (odkomentuj/uprav podle reálných domén ze Sloníka):
-  // "mastodonczech.cz": { beginnerFriendly: true,  focus: ["obecna", "region"] },
   // "vutbr.social":     { beginnerFriendly: false, focus: ["akademicka"] },
 };
