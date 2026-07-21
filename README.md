@@ -1,5 +1,7 @@
 # Fedík — průvodce Fediverse
 
+![Maskot Fedík.online](https://github.com/DanielSnor/Fedik.online-Fediverse-Guide/blob/master/web/img/header.png 'Maskot Fedík.online')
+
 Statický průvodce světem Fediverse pro česky mluvící uživatele. Publikováno na **fedik.online**.
 
 Pomáhá nováčkům zorientovat se: co je Fediverse, kde si otevřít účet, jaké platformy a klienty použít. Data o aplikacích jsou kurátorsky spravovaná, živé statistiky instancí se tahají z [FediDB](https://fedidb.org/).
