@@ -24,7 +24,7 @@ IMG_FILES = Dir[File.join(Paths::WEB_DIR, "img", "**", "*")]
               .select { |f| File.file?(f) }
               .map { |f| f.delete_prefix(Paths::WEB_DIR + "/") }
               .sort.freeze
-ASSETS = (%w[index.html app.js app.css links.js taxonomy.js apps.js instances.manual.js instances.curated.js glossary.js tools.js] + IMG_FILES).freeze
+ASSETS = (%w[index.html favicon.ico app.js app.css links.js taxonomy.js apps.js instances.manual.js instances.curated.js glossary.js tools.js] + IMG_FILES).freeze
 DATA   = %w[data/slonik-instances.json data/status.json data/app-stats.json data/stat-snapshots.json data/czsk-stats.json].freeze
 
 files =
