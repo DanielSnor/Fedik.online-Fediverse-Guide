@@ -16,9 +16,9 @@
   <meta property="og:title" content="Fedík.online — Český Průvodce Fediverse">
   <meta property="og:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, nástroje, slovníček, statistiky, odkazy, vyhledávání.">
   <meta property="og:url" content="https://fedik.online/">
-  <meta property="og:image" content="https://fedik.online/img/header.png">
-  <meta property="og:image:width" content="1536">
-  <meta property="og:image:height" content="1024">
+  <meta property="og:image" content="https://fedik.online/img/header-og.jpg">
+  <meta property="og:image:width" content="1512">
+  <meta property="og:image:height" content="1040">
   <meta property="og:image:alt" content="Fedík.online — Český Průvodce Fediverse">
   <meta property="og:locale" content="cs_CZ">
 
@@ -26,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fedík.online — Průvodce Fediverse">
   <meta name="twitter:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, nástroje, slovníček, statistiky, odkazy, vyhledávání.">
-  <meta name="twitter:image" content="https://fedik.online/img/header.png">
+  <meta name="twitter:image" content="https://fedik.online/img/header-og.jpg">
 
   <link rel="stylesheet" href="app.css?v=20260925e">
 
@@ -37,7 +37,7 @@
   <header class="site-header">
     <div class="hero">
       <button class="hero-link" id="hero-home" type="button" aria-label="Zpět na začátek">
-        <img class="hero-img" src="img/header.png" width="1536" height="1024"
+        <img class="hero-img" fetchpriority="high" src="img/header.webp" width="1489" height="1024"
              alt="Fedík.online — průvodce Fediverse">
       </button>
       <div class="hero-overlay hero-overlay-tl">
@@ -426,8 +426,8 @@
                 minutes.</p>
             </div>
           </div>
-          <img class="start-fig start-fig--step" src="img/fedik-na-tohle-se-podivej-dolu.png"
-               alt="Fedík: na tohle se podívej" width="1254" height="1254" loading="lazy">
+          <img class="start-fig start-fig--step" src="img/fedik-na-tohle-se-podivej-dolu.webp"
+               alt="Fedík: na tohle se podívej" width="800" height="800" loading="lazy">
         </div>
         <!-- Jeden iframe, mimo jazykové bloky. src se nastaví lazy (až je pohled viditelný),
              jinak PeerTube player nastartuje při nulové šířce → „Invalid width". -->
@@ -453,8 +453,8 @@
             <p data-i18n="fork_new_desc">Ještě se rozkoukáváš nebo nemáš účet? Provedu tě krok za krokem — od výběru aplikace až po tvůj první příspěvek.</p>
             <button type="button" class="cta-btn" data-start-next="2" data-umami-event="fork-start-guide" data-i18n="fork_new_cta">Začít s průvodcem</button>
           </div>
-          <img class="start-fork-mascot" src="img/fedik-nevim-co-dal.png"
-               alt="Fedík: nevím co dál" aria-hidden="true" width="1254" height="1254" loading="lazy">
+          <img class="start-fork-mascot" src="img/fedik-nevim-co-dal.webp"
+               alt="Fedík: nevím co dál" aria-hidden="true" width="509" height="800" loading="lazy">
           <div class="start-fork-card">
             <strong class="start-card-title" data-i18n="fork_known_title">Máš tu už účet?</strong>
             <p data-i18n="fork_known_desc">Žiješ už ve Fediverse a jen chceš objevovat? Skoč rovnou do katalogu aplikací, instancí a nástrojů.</p>
@@ -468,8 +468,8 @@
         <div data-lang-block="cs"><h2>Nemusíš se bát</h2></div>
         <div data-lang-block="en" hidden><h2>Nothing to be afraid of</h2></div>
         <div class="start-figrow start-figrow--left">
-        <img class="start-fig" src="img/fedik-nemusis-se-bat.png"
-             alt="Fedík: nemusíš se bát" width="1254" height="1254" loading="lazy">
+        <img class="start-fig" src="img/fedik-nemusis-se-bat.webp"
+             alt="Fedík: nemusíš se bát" width="800" height="800" loading="lazy">
         <div class="start-figrow__text">
         <div data-lang-block="cs">
           <div class="cards-grid start-cards">
@@ -528,8 +528,8 @@
           <p data-i18n-html="step2_p1">An app is the network you’ll live in — your ship in the Fediverse. Mastodon is like Twitter/X, Pixelfed like Instagram, PeerTube like YouTube; they all talk to each other because they share the same foundation.</p>
           <p data-i18n="step2_p2">Pick a network you know, or a type of content — I’ll suggest the matching ship. “Start” takes you onward: for the main apps straight to picking a planet (instance), for the rest to their official page. Want to browse yourself? Open the full Apps catalog.</p>
         </div>
-        <img class="start-fig start-fig--big" src="img/fedik-kterou-raketu.png"
-             alt="Fedík: kterou raketu?" width="1254" height="1254" loading="lazy">
+        <img class="start-fig start-fig--big" src="img/fedik-kterou-raketu.webp"
+             alt="Fedík: kterou raketu?" width="791" height="800" loading="lazy">
         <p class="start-quickpick-label" data-i18n="start_quickpick_label">Přicházíš z nějaké sítě? Klikni:</p>
         <div class="start-quickpick" id="start-quickpick" aria-label="Rychlá volba podle sítě"></div>
         <p class="start-quickpick-label" data-i18n="start_quickpick_do_label">Nebo co chceš dělat?</p>
@@ -550,8 +550,8 @@
       <!-- ═══ Krok 3: Vyber instanci ═══ -->
       <div id="start-step-3" class="onboarding-step">
       <article class="about-content start-block">
-        <img class="start-fig start-fig--float" src="img/fedik-odkud-prichazis.png"
-             alt="Fedík: odkud přicházíš?" width="1254" height="1254" loading="lazy">
+        <img class="start-fig start-fig--float" src="img/fedik-odkud-prichazis.webp"
+             alt="Fedík: odkud přicházíš?" width="800" height="800" loading="lazy">
         <div data-lang-block="cs">
           <h2 data-i18n="step3_label">Najdi svou planetu (instanci)</h2>
           <p class="step3-when-catalog" data-i18n-html="step3_p1">Planeta (instance) je tvůj domovský server — místo, kde budeš přihlášený a které ti dá adresu ve tvaru @jmeno@server. Ať přistaneš kdekoli, sledovat a povídat si můžeš s kýmkoli v celém Fediverse; planeta není klec.</p>
@@ -591,8 +591,8 @@
       <!-- ═══ Krok 4: Založ si účet ═══ -->
       <div id="start-step-4" class="onboarding-step">
       <article class="about-content start-block">
-        <img class="start-fig start-fig--float" src="img/fedik-stavi-zakladnu.png"
-             alt="Fedík staví základnu" width="1254" height="1254" loading="lazy">
+        <img class="start-fig start-fig--float" src="img/fedik-stavi-zakladnu.webp"
+             alt="Fedík staví základnu" width="796" height="800" loading="lazy">
         <div data-lang-block="cs">
           <h2 data-i18n="step4_label">Postav si základnu (založ účet)</h2>
           <h3 data-i18n="reg_head">Co tě při registraci čeká</h3>
@@ -618,8 +618,8 @@
       <!-- ═══ Krok 5: První den (placeholder → P3) ═══ -->
       <div id="start-step-5" class="onboarding-step">
       <article class="about-content start-block">
-        <img class="start-fig start-fig--float" src="img/fedik-tabule-ukolu.png"
-             alt="Fedík u tabule úkolů" width="1254" height="1254" loading="lazy">
+        <img class="start-fig start-fig--float" src="img/fedik-tabule-ukolu.webp"
+             alt="Fedík u tabule úkolů" width="800" height="764" loading="lazy">
         <div data-lang-block="cs">
           <h2 data-i18n="step5_label">První den na základně</h2>
           <h3 data-i18n="fday_head">Hotovo, máš účet — prvních šest kroků</h3>
@@ -682,8 +682,8 @@
       <!-- ═══ Krok 6: Najdi lidi (placeholder → P2) ═══ -->
       <div id="start-step-6" class="onboarding-step">
       <article class="about-content start-block">
-        <img class="start-fig start-fig--float" src="img/fedik-posadka-pro-zakladnu.png"
-             alt="Fedík sestavuje posádku pro základnu" width="1254" height="1254" loading="lazy">
+        <img class="start-fig start-fig--float" src="img/fedik-posadka-pro-zakladnu.webp"
+             alt="Fedík sestavuje posádku pro základnu" width="800" height="750" loading="lazy">
         <div data-lang-block="cs">
           <h2 data-i18n="step6_label">Sestav posádku (najdi lidi)</h2>
           <h3 data-i18n="follow_head">Ať doma není prázdno: koho sledovat</h3>
@@ -728,7 +728,7 @@
     <!-- ===================== POHLED: APLIKACE ===================== -->
     <section class="apps-view" id="apps-view" hidden>
       <article class="about-content start-block view-intro">
-        <img class="start-fig start-fig--float" src="img/fedik-kterou-raketu.png" alt="Fedík: kterou loď?" width="1016" height="1028" loading="lazy">
+        <img class="start-fig start-fig--float" src="img/fedik-kterou-raketu.webp" alt="Fedík: kterou loď?" width="791" height="800" loading="lazy">
         <h2 data-i18n="cat_apps_head">Aplikace — vyber si loď</h2>
         <p data-i18n="cat_apps_p1">Aplikace jsou lodě Fediverse — software, kterým do něj vstoupíš. Každá se hodí na něco jiného: mikroblog, fotky, video, fórum, blog. Všechny si ale spolu umí povídat, takže ať si vybereš kteroukoliv, pořád jsi na jedné síti.</p>
         <p data-i18n="cat_apps_p2">Najdeš tu přehled aplikací s informací o tom, čemu se podobají v běžných sítích, s počtem uživatelů a instancí a zda mají české rozhraní. Údaje o velikosti jsou orientační z FediDB. Filtruj podle typu obsahu, obdoby známé sítě nebo češtiny v rozhraní.</p>
@@ -743,8 +743,8 @@
         <div data-lang-block="cs"><h2>Vybral sis loď? Tak kam s ní zamíříš?</h2><p class="view-next-intro"> <br></p></div>
         <div data-lang-block="en" hidden><h2>Picked your ship? So where will you steer it?</h2><p class="view-next-intro"> <br></p></div>
         <div class="start-figrow start-figrow--left">
-        <img class="start-fig" src="img/fedik-nevim-co-dal.png"
-             alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
+        <img class="start-fig" src="img/fedik-nevim-co-dal.webp"
+             alt="Fedík: nevím, co dál" width="509" height="800" loading="lazy">
         <div class="start-figrow__text">
         <div data-lang-block="cs">
           <div class="cards-grid start-cards">
@@ -794,7 +794,7 @@
     <!-- ===================== POHLED: INSTANCE ===================== -->
     <section class="instance-view" id="instance-view" hidden>
       <article class="about-content start-block view-intro">
-        <img class="start-fig start-fig--float" src="img/fedik-odkud-prichazis.png" alt="Fedík: odkud přicházíš?" width="1254" height="1254" loading="lazy">
+        <img class="start-fig start-fig--float" src="img/fedik-odkud-prichazis.webp" alt="Fedík: odkud přicházíš?" width="800" height="800" loading="lazy">
         <h2 data-i18n="cat_instances_head">Instance — najdi si planetu</h2>
         <p data-i18n="cat_instances_p1">Instance jsou planety, na kterých můžeš přistát — servery, kde si založíš účet. Liší se velikostí, zaměřením i náladou, ale všechny patří do jednoho Fediverse, takže odkudkoli dosáhneš na kohokoli.</p>
         <p data-i18n="cat_instances_p2">Najdeš tu české a slovenské instance z katalogu Sloník.online — u každé velikost, aktivitu, stav registrace a počet účtů, které jsou v katalogu. Instance jsou seřazeny podle počtu aktivních uživatelů. Můžeš filtrovat podle aplikace, regionu a zaměření. Filtr "Pro začátečníky" zobrazí prověřené instance.</p>
@@ -806,8 +806,8 @@
         <div data-lang-block="cs"><h2>Přistál jsi na planetě? Co dál na palubě?</h2><p class="view-next-intro"> <br></p></div>
         <div data-lang-block="en" hidden><h2>Landed on your planet? What now aboard?</h2><p class="view-next-intro"> <br></p></div>
         <div class="start-figrow start-figrow--left">
-        <img class="start-fig" src="img/fedik-nevim-co-dal.png"
-             alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
+        <img class="start-fig" src="img/fedik-nevim-co-dal.webp"
+             alt="Fedík: nevím, co dál" width="509" height="800" loading="lazy">
         <div class="start-figrow__text">
         <div data-lang-block="cs">
           <div class="cards-grid start-cards">
@@ -857,7 +857,7 @@
     <!-- ===================== POHLED: NÁSTROJE ===================== -->
     <section class="apps-view" id="tools-view" hidden>
       <article class="about-content start-block view-intro">
-        <img class="start-fig start-fig--float" src="img/fedik-tools.png" alt="Fedík: aplikace" width="1254" height="1254" loading="lazy">
+        <img class="start-fig start-fig--float" src="img/fedik-tools.webp" alt="Fedík: aplikace" width="697" height="800" loading="lazy">
         <h2 data-i18n="cat_tools_head">Nástroje — vybav si základnu</h2>
         <p data-i18n="cat_tools_p1">Nástroje jsou palubní vybavení fedinauta — klienti do telefonu, mosty mezi sítěmi, objevovače účtů, crosspostery a další pomocníci, kteří ti cestu zpříjemní. Tvoje aplikace funguje i bez nich, ale s nimi je pohodlnější.</p>
         <p data-i18n="cat_tools_p2">Klienti jsou z FediDB, zbytek je pečlivě připravený výběr živých nástrojů. Můžeš filtrovat podle kategorie (klient, most, migrace, RSS, …), platformy (Android, iOS, web, desktop), ceny, ale hlavně podle aplikace — ať vidíš jen to, co se hodí k tvé síti.</p>
@@ -872,8 +872,8 @@
         <div data-lang-block="cs"><h2>Vybavil ses na cesty? Tak kam vyrazíš?</h2><p class="view-next-intro"> <br></p></div>
         <div data-lang-block="en" hidden><h2>You’re kitted out for the trip, so where to head?</h2><p class="view-next-intro"> <br></p></div>
         <div class="start-figrow start-figrow--left">
-        <img class="start-fig" src="img/fedik-nevim-co-dal.png"
-             alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
+        <img class="start-fig" src="img/fedik-nevim-co-dal.webp"
+             alt="Fedík: nevím, co dál" width="509" height="800" loading="lazy">
         <div class="start-figrow__text">
         <div data-lang-block="cs">
           <div class="cards-grid start-cards">
@@ -923,7 +923,7 @@
     <!-- ===================== POHLED: SLOVNÍČEK ===================== -->
       <section class="glossary-view" id="glossary-view" hidden>
         <article class="about-content start-block view-intro">
-          <img class="start-fig start-fig--float" src="img/fedik-se-slovnikem.png" alt="Fedík se slovníkem" width="812" height="1142" loading="lazy">
+          <img class="start-fig start-fig--float" src="img/fedik-se-slovnikem.webp" alt="Fedík se slovníkem" width="569" height="800" loading="lazy">
           <h2 data-i18n="cat_glossary_head">Slovníček — palubní příručka</h2>
           <p data-i18n="cat_glossary_p1">Slovníček je palubní příručka — Fediverse má vlastní nářečí (instance, federace, boost, CW…) a první týden v něm zní leccos cize. Tady si kterýkoli výraz v klidu dohledáš.</p>
           <p data-i18n="cat_glossary_p2">Najdeš tu hesla od základních pojmů až po praktické postupy vysvětlená česky a bez žargonu. Hledej podle názvu, nebo proklikni některý z výrazů v průvodci, který na Slovníček odkazuje.</p>
@@ -938,8 +938,8 @@
           <div data-lang-block="cs"><h2>Ovládáš nářečí Fediverse? Kam nastavíš kurz?</h2><p class="view-next-intro"> <br></p></div>
           <div data-lang-block="en" hidden><h2>Speak the Fediverse dialect? Set course for what?</h2><p class="view-next-intro"> <br></p></div>
           <div class="start-figrow start-figrow--left">
-          <img class="start-fig" src="img/fedik-nevim-co-dal.png"
-               alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
+          <img class="start-fig" src="img/fedik-nevim-co-dal.webp"
+               alt="Fedík: nevím, co dál" width="509" height="800" loading="lazy">
           <div class="start-figrow__text">
           <div data-lang-block="cs">
             <div class="cards-grid start-cards">
@@ -990,7 +990,7 @@
     <!-- Vše v jedné sekci (jako „Začínáme → Odkud přicházíš"): intro + maskot + boxy/grafy. -->
     <section class="stats-view" id="stats-view" hidden>
       <article class="about-content start-block view-intro">
-        <img class="start-fig start-fig--float" src="img/fedik-grafy.png" alt="Fedík: grafy" width="937" height="1058" loading="lazy">
+        <img class="start-fig start-fig--float" src="img/fedik-grafy.webp" alt="Fedík: grafy" width="709" height="800" loading="lazy">
         <h2 data-i18n="cat_stats_head">Statistiky — pohled z oběžné dráhy</h2>
         <p data-i18n="cat_stats_p1">Statistiky jsou pohled z oběžné dráhy — Fediverse i tenhle katalog v číslech. Kolik je aplikací, instancí a nástrojů a jak se v čase proměňují.</p>
         <p data-i18n="cat_stats_p2">Čísla vycházejí z dat, na kterých Fedík stojí (FediDB, Sloník.online a kurátorské seznamy), s datem poslední aktualizace u každé sady. Berou se orientačně — Fediverse se mění každý den.</p>
@@ -1002,8 +1002,8 @@
         <div data-lang-block="cs"><h2>Viděl jsi vesmír z oběžné dráhy? A kam teď?</h2><p class="view-next-intro"> <br></p></div>
         <div data-lang-block="en" hidden><h2>Seen the universe from orbit? And where now?</h2><p class="view-next-intro"> <br></p></div>
         <div class="start-figrow start-figrow--left">
-        <img class="start-fig" src="img/fedik-nevim-co-dal.png"
-             alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
+        <img class="start-fig" src="img/fedik-nevim-co-dal.webp"
+             alt="Fedík: nevím, co dál" width="509" height="800" loading="lazy">
         <div class="start-figrow__text">
         <div data-lang-block="cs">
           <div class="cards-grid start-cards">
@@ -1053,7 +1053,7 @@
     <!-- ===================== POHLED: ODKAZY ===================== -->
     <section class="instance-view" id="links-view" hidden>
       <article class="about-content start-block view-intro">
-        <img class="start-fig start-fig--float" src="img/fedik-majak.png" alt="Fedík: maják" width="1254" height="1254" loading="lazy">
+        <img class="start-fig start-fig--float" src="img/fedik-majak.webp" alt="Fedík: maják" width="800" height="800" loading="lazy">
         <h2 data-i18n="cat_links_head">Odkazy — majáky z hlubokého vesmíru</h2>
         <p data-i18n="cat_links_p1">Odkazy jsou majáky z hlubokého vesmíru — když ti Fedík nestačí a chceš číst, sledovat dění nebo se hlouběji zapojit. Rozcestník ven za hranice tohohle průvodce.</p>
         <p data-i18n="cat_links_p2">Pečlivě vybraný přehled českých a zahraničních zdrojů o Fediversu: weby, blogy, komunity a další průvodci. Vybíráme jen živé a smysluplné odkazy, ne všechno, co existuje.</p>
@@ -1065,8 +1065,8 @@
         <div data-lang-block="cs"><h2>Majáky svítí? Kterým směrem se vydáš?</h2><p class="view-next-intro"> <br></p></div>
         <div data-lang-block="en" hidden><h2>Beacons lit? Which way will you go?</h2><p class="view-next-intro"> <br></p></div>
         <div class="start-figrow start-figrow--left">
-        <img class="start-fig" src="img/fedik-nevim-co-dal.png"
-             alt="Fedík: nevím, co dál" width="1254" height="1254" loading="lazy">
+        <img class="start-fig" src="img/fedik-nevim-co-dal.webp"
+             alt="Fedík: nevím, co dál" width="509" height="800" loading="lazy">
         <div class="start-figrow__text">
         <div data-lang-block="cs">
           <div class="cards-grid start-cards">
@@ -1117,7 +1117,7 @@
     <section class="search-view" id="search-view" hidden>
       <div class="search-hero">
         <span class="search-wordmark search-wordmark-l">Fedík</span>
-        <img class="search-logo" src="img/fedik-s-dalekohledem.png" alt="Fedík s dalekohledem" width="887" height="1071" loading="lazy">
+        <img class="search-logo" src="img/fedik-s-dalekohledem.webp" alt="Fedík s dalekohledem" width="663" height="800" loading="lazy">
         <span class="search-wordmark search-wordmark-r">online</span>
       </div>
       <div class="search-bar">
@@ -1147,7 +1147,7 @@ slovo vylučíš mínusem (-slovo).</p>
             úplných nováčků až po lidi, kteří hledají konkrétní aplikaci, server nebo nástroj.
             Všechno bez přihlášení a bez sledování.</p>
           <figure class="about-figure about-figure--header">
-              <img src="img/header.png" alt="Fedík.online" width="1512" height="1040" loading="lazy">
+              <img src="img/header.webp" alt="Fedík.online" width="1489" height="1024" loading="lazy">
             </figure>
           <p>Fedík nabízí tyto pohledy:</p>
           <ul>
@@ -1174,7 +1174,7 @@ slovo vylučíš mínusem (-slovo).</p>
             It isn't a social network or an account; it's a <strong>guide</strong> that explains
             the Fediverse and helps you take the first step.</p>
           <figure class="about-figure about-figure--header">
-            <img src="img/header.png" alt="Fedík.online" width="1512" height="1040" loading="lazy">
+            <img src="img/header.webp" alt="Fedík.online" width="1489" height="1024" loading="lazy">
           </figure>
           <p>It's <strong>for anyone</strong> who has heard of the Fediverse and doesn't know
             where to start — from complete newcomers to people looking for a specific app,
@@ -1210,7 +1210,7 @@ slovo vylučíš mínusem (-slovo).</p>
             Slovníček, Odkazy</strong> — a zobrazené jako plné karty, stejné jako v příslušných pohledech.
             Záložkami nahoře (Vše / Aplikace / Instance / …) si necháš zobrazit jen jeden typ.</p>
           <figure class="about-figure">
-            <img src="img/search-results.png" alt="Náhled výsledků vyhledávání" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/search-results.webp" alt="Náhled výsledků vyhledávání" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Jak hledat</h3>
           <p>Víc slov = musí se objevit <strong>všechna</strong> (logické „a zároveň"). Přesnou frázi
@@ -1228,7 +1228,7 @@ slovo vylučíš mínusem (-slovo).</p>
             Links</strong> — shown as full cards, the same as in the respective views. The tabs on top
             (All / Apps / Instances / …) let you show just one type.</p>
           <figure class="about-figure">
-            <img src="img/search-results.png" alt="Search results preview" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/search-results.webp" alt="Search results preview" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>How to search</h3>
           <p>Multiple words = <strong>all</strong> must appear (logical AND). Wrap an exact phrase in
@@ -1249,7 +1249,7 @@ slovo vylučíš mínusem (-slovo).</p>
             odznak <strong>češtiny v rozhraní</strong> (ano / částečně / ne), živá čísla (uživatelé
             a instance z FediDB), protokol a stav vývoje. Odkazy vedou na registraci, web a zdroják.</p>
           <figure class="about-figure">
-            <img src="img/card-applications.png" alt="Náhled karty aplikace" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/card-applications.webp" alt="Náhled karty aplikace" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Filtry (levý panel)</h3>
           <ul>
@@ -1275,7 +1275,7 @@ slovo vylučíš mínusem (-slovo).</p>
             (users and instances from FediDB), protocol and development status. Links go to sign-up,
             the website and the source code.</p>
           <figure class="about-figure">
-            <img src="img/card-applications.png" alt="App card preview" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/card-applications.webp" alt="App card preview" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Filters (left panel)</h3>
           <ul>
@@ -1304,7 +1304,7 @@ slovo vylučíš mínusem (-slovo).</p>
             doporučené). Odkaz <strong>Otevřít</strong> u jednoplatformních appek vede přímo do
             <strong>App Store / Google Play / F-Droidu</strong>; „Zdroják" na repozitář.</p>
           <figure class="about-figure">
-            <img src="img/card-tools.png" alt="Náhled karty nástroje" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/card-tools.webp" alt="Náhled karty nástroje" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Filtry a žebříčky</h3>
           <ul>
@@ -1322,7 +1322,7 @@ slovo vylučíš mínusem (-slovo).</p>
             featured). For single-platform apps the <strong>Open</strong> link goes straight to the
             <strong>App Store / Google Play / F-Droid</strong>; “Source” to the repository.</p>
           <figure class="about-figure">
-            <img src="img/card-tools.png" alt="Tool card preview" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/card-tools.webp" alt="Tool card preview" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Filters and rankings</h3>
           <ul>
@@ -1344,7 +1344,7 @@ slovo vylučíš mínusem (-slovo).</p>
             příspěvků a stav registrací. Tlačítko <em>Založit účet</em> vede přímo na
             registraci dané instance.</p>
           <figure class="about-figure">
-            <img src="img/card-instance.png" alt="Náhled karty instance" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/card-instance.webp" alt="Náhled karty instance" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Žebříčky</h3>
           <p>Nahoře přepínáš mezi <strong>Vše</strong>, <strong>Pro začátečníky</strong>
@@ -1363,7 +1363,7 @@ slovo vylučíš mínusem (-slovo).</p>
             count and registration status. The <em>Create account</em> button goes straight
             to that instance's sign-up.</p>
           <figure class="about-figure">
-            <img src="img/card-instance.png" alt="Instance card preview" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/card-instance.webp" alt="Instance card preview" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Rankings</h3>
           <p>At the top you switch between <strong>All</strong>, <strong>For beginners</strong>
@@ -1382,7 +1382,7 @@ slovo vylučíš mínusem (-slovo).</p>
             a návodů o Mastodonu a fediverse — česky i anglicky. Karty jsou seskupené
             podle typu.</p>
           <figure class="about-figure">
-            <img src="img/card-links.png" alt="Náhled karty odkazu" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/card-links.webp" alt="Náhled karty odkazu" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Filtry (levý panel / menu)</h3>
           <ul>
@@ -1400,7 +1400,7 @@ slovo vylučíš mínusem (-slovo).</p>
           <p>The <strong>Links</strong> view is a curated set of quality articles and guides
             about Mastodon and the fediverse — Czech and English. Cards are grouped by type.</p>
           <figure class="about-figure">
-            <img src="img/card-links.png" alt="Link card preview" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/card-links.webp" alt="Link card preview" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Filters (left panel / menu)</h3>
           <ul>
@@ -1423,7 +1423,7 @@ slovo vylučíš mínusem (-slovo).</p>
             kolik je aplikací, instancí, nástrojů a uživatelů a jak se v čase proměňují. Slouží
             k přehledu, ne k přesnému měření.</p>
           <figure class="about-figure">
-              <img src="img/card-statistics.png" alt="Statistics card preview" loading="lazy" onerror="this.closest('figure').remove()">
+              <img src="img/card-statistics.webp" alt="Statistics card preview" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
           <h3>Záložky</h3>
           <ul>
@@ -1495,7 +1495,7 @@ slovo vylučíš mínusem (-slovo).</p>
             <li>💳 <a href="https://revolut.me/zpravobot" target="_blank" rel="noopener">revolut.me/zpravobot</a></li>
           </ul>
           <figure class="about-figure qr">
-            <img src="img/qr.jpg" alt="QR kód pro platbu" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/qr.webp" alt="QR kód pro platbu" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
         </div>
         <div data-lang-block="en" hidden>
@@ -1525,7 +1525,7 @@ slovo vylučíš mínusem (-slovo).</p>
             <li>💳 <a href="https://revolut.me/zpravobot" target="_blank" rel="noopener">revolut.me/zpravobot</a></li>
           </ul>
           <figure class="about-figure qr">
-            <img src="img/qr.jpg" alt="Payment QR code" loading="lazy" onerror="this.closest('figure').remove()">
+            <img src="img/qr.webp" alt="Payment QR code" loading="lazy" onerror="this.closest('figure').remove()">
           </figure>
         </div>
       </article>
@@ -1648,7 +1648,7 @@ slovo vylučíš mínusem (-slovo).</p>
       <article class="about-content" data-about-section="author" hidden>
         <div data-lang-block="cs">
           <h2>O autorovi</h2>
-          <img class="author-photo" src="img/daniel.jpg" alt="Daniel Šnor" loading="lazy" onerror="this.style.display='none'">
+          <img class="author-photo" src="img/daniel.webp" alt="Daniel Šnor" loading="lazy" onerror="this.style.display='none'">
           <p>Za Fedíkem stojí <strong>Daniel Šnor</strong> — nadšenec do Mastodonu a celé
             sítě Fediverse z českého prostředí.</p>
           <p>Provozuje projekt <a href="https://zpravobot.news" target="_blank" rel="noopener">Zprávobot.news</a> —
@@ -1667,7 +1667,7 @@ slovo vylučíš mínusem (-slovo).</p>
         </div>
         <div data-lang-block="en" hidden>
           <h2>About the author</h2>
-          <img class="author-photo" src="img/daniel.jpg" alt="Daniel Šnor" loading="lazy" onerror="this.style.display='none'">
+          <img class="author-photo" src="img/daniel.webp" alt="Daniel Šnor" loading="lazy" onerror="this.style.display='none'">
           <p>Fedík is made by <strong>Daniel Šnor</strong> — a Czech enthusiast of Mastodon
             and the wider Fediverse.</p>
           <p>He runs the <a href="https://zpravobot.news" target="_blank" rel="noopener">Zprávobot.news</a>

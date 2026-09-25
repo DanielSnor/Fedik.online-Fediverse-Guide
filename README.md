@@ -1,6 +1,6 @@
 # Fedík — průvodce Fediverse
 
-![Maskot Fedík.online](https://github.com/DanielSnor/Fedik.online-Fediverse-Guide/blob/master/web/img/header.png 'Maskot Fedík.online')
+![Maskot Fedík.online](https://github.com/DanielSnor/Fedik.online-Fediverse-Guide/blob/master/web/img/header-og.jpg 'Maskot Fedík.online')
 
 Statický průvodce světem Fediverse pro česky mluvící uživatele. Publikováno na **fedik.online**.
 
