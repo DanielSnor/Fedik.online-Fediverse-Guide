@@ -170,15 +170,16 @@
       start_cta_external: 'Otevřít oficiální stránku →',
       // ─── Začínáme — krok 3 (výběr instance) ───
       step3_p1: 'Planeta (<button class="glossary-term" data-glossary="instance">instance</button>) je tvůj domovský server — místo, kde budeš přihlášený a které ti dá adresu (<button class="glossary-term" data-glossary="handle">handle</button>) ve tvaru @jmeno@server. Ať přistaneš kdekoli, sledovat a povídat si můžeš s kýmkoli v celém Fediverse; planeta není klec.',
-      step3_p2: 'Níže ukazujeme jen planety s otevřenou registrací nebo registrací po schválení, vyfiltrované pro tvou aplikaci. Dej „Vybrat tuhle“ a posuneme tě na krok 4. Nevíš, kam? Použij náš výchozí bod, nebo otevři celý katalog Instancí.',
+      step3_p2: 'Níže ukazujeme jen planety, kde se dá založit účet — otevřeně, po schválení, nebo na pozvánku — vyfiltrované pro tvou aplikaci. Dej „Vybrat tuhle“ a posuneme tě na krok 4. Nevíš, kam? Použij náš výchozí bod, nebo otevři celý katalog Instancí.',
       start_starter_lead: 'Česká instance pro %s:',
       start_starter_note: 'Vyber ji a posuneme tě na krok 4.',
       start_cta_starter: 'Vybrat %s',
-      start_inst_heading: 'Vyber si instanci — ukazujeme jen ty z CZ/SK kvadrantu s otevřenou registrací nebo se schválením:',
-      start_inst_heading_global: 'V CZ/SK kvadrantu zatím žádná není — nabízíme prověřené globální (s otevřenou registrací nebo se schválením):',
+      start_inst_heading: 'Vyber si instanci — ukazujeme jen ty z CZ/SK kvadrantu, kde se dá založit účet (otevřeně, po schválení, nebo na pozvánku):',
+      start_inst_heading_global: 'V CZ/SK kvadrantu zatím žádná není — nabízíme prověřené globální, kde se dá založit účet:',
       start_inst_choose: 'Vybrat tuhle →',
       start_inst_more: 'Zobrazit všechny instance v katalogu →',
-      start_inst_empty: 'Pro tuhle aplikaci zatím nemáme českou ani slovenskou instanci s otevřenou registrací. Zkus oficiální katalog:',
+      start_inst_empty: 'Pro tuhle aplikaci zatím nemáme českou ani slovenskou instanci, kde by se dal založit účet. Zkus oficiální katalog:',
+      instance_invite_contact: 'napsat správci ↗',
       start_inst_hint_pick: 'Vyber instanci výše a posuneme tě na krok 4 ↑',
       start_inst_hint_external: 'Až si vybereš a založíš účet, vrať se sem a pokračuj krokem 4 ↓',
       start_default_q: 'Nevíš, kam?',
@@ -188,6 +189,7 @@
       // ─── Začínáme — krok 4 (registrace + zpětný oblouk) ───
       start_step4_chosen_lead: 'Zakládáš účet na instanci %s:',
       start_step4_chosen_cta: 'Otevřít registraci na %s →',
+      start_step4_invite_cta: 'Napsat správci %s o účet →',
       start_step4_chosen_change: 'Změnit instanci',
       start_step4_continue: 'Hotovo? Pokračuj na první den →',
       start_step4_savelink_label: 'Ulož si návratové URL (pro pozdější dokončení):',
@@ -195,9 +197,12 @@
       start_step4_savelink_copied: 'Zkopírováno ✓',
       start_step4_savelink_hint: 'Přidej do záložek (Cmd/Ctrl+D), ať se sem vrátíš i po zavření prohlížeče.',
       reg_open_note: 'Tahle instance má otevřenou registraci — dostaneš se dovnitř hned. Registrace se otevře v nové záložce; po dokončení se vrať sem a klikni na „Pokračovat na první den".',
-      reg_approval_note: 'Registrace je „po schválení" — po odeslání ti přijde potvrzovací e-mail a správce tě ručně ověří (klidně až za pár hodin). Než tě schválí, ulož si návratové URL (odkaz níže). Až budeš mít funkční účet, vrať se sem a dokonči onboarding.',
+      reg_approval_note: 'Tahle instance registrace schvaluje — po odeslání ti přijde potvrzovací e-mail a správce tě ručně pustí dovnitř, obvykle do pár hodin, někdy do druhého dne. Než tě schválí, ulož si návratové URL (odkaz níže). Až budeš mít funkční účet, vrať se sem a dokonči onboarding.',
+      reg_invite_note: 'Tahle instance je na pozvánku — registrační formulář je vypnutý a účet ti založí správce. Napiš mu krátkou zprávu (tlačítko níže), počkej na odpověď a ulož si návratové URL (odkaz níže). Až budeš mít funkční účet, vrať se sem a dokonči onboarding.',
+      reg_bots_intro: 'Skoro všechny instance dnes čelí náporu botů, kteří zakládají účty po tisících. Proto většina správců žádosti schvaluje ručně, nebo pouští lidi jen na pozvánku. Není to nedůvěra k tobě, jen síto.',
+      reg_request_tips: 'Co napsat do žádosti nebo do zprávy správci: dvě tři věty o sobě, co tě na Fediverse zajímá a jak ses o instanci dozvěděl. Prázdné žádosti správci kvůli botům zahazují — pár slov od člověka stačí.',
       reg_head: 'Co tě při registraci čeká',
-      reg_body: 'Vyplníš uživatelské jméno, e-mail a heslo. Přijde ti potvrzovací e-mail — klikni na odkaz v něm. U serverů „po schválení“ chvíli počkej, než tě správce pustí dovnitř (většinou pár hodin). A jsi uvnitř.',
+      reg_body: 'Vyplníš uživatelské jméno, e-mail a heslo. Přijde ti potvrzovací e-mail — klikni na odkaz v něm. Většina serverů dnes žádosti ručně schvaluje, nebo pouští lidi jen na pozvánku (brání se botům), takže počítej s čekáním od pár hodin do dne. A jsi uvnitř.',
       reg_username: 'Pozor na uživatelské jméno: smí obsahovat jen písmena bez diakritiky (a–z), číslice a podtržítko (_). Žádné tečky, pomlčky, mezery ani háčky a čárky — místo tečky použij podtržítko (např. jan_novak místo jan.novák). Délka bývá omezená, zhruba na 30 znaků. Jméno je natrvalo, e-mail a heslo změníš, jméno ne — vyber rozumně.',
       reg_return: 'Až budeš mít účet, vrať se sem na Fedíka — dokončíme onboarding: projdeme první den (krok 5) a sestavíme ti posádku, koho sledovat (krok 6).',
       // ─── Začínáme — resume banner ───
@@ -308,6 +313,7 @@
       instance_reg_closed: 'Registrace zavřené',
       instance_reg_invite: 'Na pozvánku',
       instance_join: 'Založit účet',
+      instance_invite_ask: 'Požádat o pozvánku',
       instance_open: 'otevřít',
       instance_users: 'uživatelů',
       instance_sec_czsk: 'České a slovenské instance',
@@ -706,15 +712,16 @@
       start_cta_external: 'Open the official site →',
       // ─── Začínáme — krok 3 (výběr instance) ───
       step3_p1: 'A planet (<button class="glossary-term" data-glossary="instance">instance</button>) is your home server — where you’ll be signed in and which gives you an address (<button class="glossary-term" data-glossary="handle">handle</button>) like @name@server. Wherever you land, you can follow and talk to anyone across the whole Fediverse; a planet isn’t a cage.',
-      step3_p2: 'Below we show only planets with open or approval-based sign-up, filtered for your app. Hit “Choose this one” and we’ll move you to step 4. Not sure where? Use our default, or open the full Instances catalog.',
+      step3_p2: 'Below we show only planets where you can actually get an account — open, approval-based or invite-only — filtered for your app. Hit “Choose this one” and we’ll move you to step 4. Not sure where? Use our default, or open the full Instances catalog.',
       start_starter_lead: 'A Czech instance for %s:',
       start_starter_note: 'Choose it and we’ll move you to step 4.',
       start_cta_starter: 'Choose %s',
-      start_inst_heading: 'Pick an instance — we only show ones in the CZ/SK quadrant with open or approval-based registration:',
-      start_inst_heading_global: 'Nothing in the CZ/SK quadrant yet — here are vetted global ones (open or approval-based sign-up):',
+      start_inst_heading: 'Pick an instance — we only show ones in the CZ/SK quadrant where you can get an account (open, approval-based or invite-only):',
+      start_inst_heading_global: 'Nothing in the CZ/SK quadrant yet — here are vetted global ones where you can get an account:',
       start_inst_choose: 'Choose this →',
       start_inst_more: 'See all instances in the catalog →',
-      start_inst_empty: 'We don’t have a Czech or Slovak instance with open registration for this app yet. Try the official catalog:',
+      start_inst_empty: 'We don’t have a Czech or Slovak instance for this app where you could get an account yet. Try the official catalog:',
+      instance_invite_contact: 'contact the admin ↗',
       start_inst_hint_pick: 'Pick an instance above and we’ll move you to step 4 ↑',
       start_inst_hint_external: 'Once you’ve chosen and created your account, come back here and continue with step 4 ↓',
       start_default_q: 'Not sure where?',
@@ -724,6 +731,7 @@
       // ─── Začínáme — krok 4 (registrace + zpětný oblouk) ───
       start_step4_chosen_lead: 'You’re creating your account on %s:',
       start_step4_chosen_cta: 'Open registration on %s →',
+      start_step4_invite_cta: 'Ask the %s admin for an account →',
       start_step4_chosen_change: 'Change instance',
       start_step4_continue: 'Done? Continue to day one →',
       start_step4_savelink_label: 'Save your return URL (to finish later):',
@@ -731,9 +739,12 @@
       start_step4_savelink_copied: 'Copied ✓',
       start_step4_savelink_hint: 'Bookmark it (Cmd/Ctrl+D) so you can return even after closing the browser.',
       reg_open_note: 'This instance has open registration — you’ll get in right away. Sign-up opens in a new tab; once done, come back here and hit “Continue to day one”.',
-      reg_approval_note: 'Sign-up is approval-based — after you submit, a confirmation email arrives and an admin verifies you by hand (possibly a few hours later). Until they approve you, save your return URL (link below). Once your account is working, return here to finish onboarding.',
+      reg_approval_note: 'This instance approves sign-ups — after you submit, a confirmation email arrives and an admin lets you in by hand, usually within a few hours, sometimes by the next day. Until they approve you, save your return URL (link below). Once your account is working, return here to finish onboarding.',
+      reg_invite_note: 'This instance is invite-only — the sign-up form is off and the admin creates your account. Send them a short message (button below), wait for a reply and save your return URL (link below). Once your account is working, return here to finish onboarding.',
+      reg_bots_intro: 'Nearly every instance is under a constant flood of bots creating accounts by the thousands. That’s why most admins now approve requests by hand or let people in by invitation only. It’s not distrust of you — just a sieve.',
+      reg_request_tips: 'What to write in the request or the message to the admin: two or three sentences about yourself, what interests you on the Fediverse and how you found the instance. Admins discard empty requests because of bots — a few words from a human are enough.',
       reg_head: 'What to expect when you sign up',
-      reg_body: 'You’ll fill in a username, email and password. A confirmation email arrives — click the link in it. On “approval” servers, wait a moment for the admin to let you in (usually a few hours). And you’re in.',
+      reg_body: 'You’ll fill in a username, email and password. A confirmation email arrives — click the link in it. Most servers now approve requests by hand or let people in by invitation only (to fend off bots), so expect a wait of a few hours up to a day. And you’re in.',
       reg_username: 'Mind your username: it can only contain plain letters (a–z), numbers and an underscore (_). No dots, hyphens, spaces or accents — use an underscore instead of a dot (e.g. jan_novak, not jan.novák). Length is usually capped at about 30 characters. The username is permanent — you can change your email and password, but not the username, so pick wisely.',
       reg_return: 'Once your account is ready, come back here to Fedík — we’ll finish onboarding: walk through your first day (step 5) and assemble your crew to follow (step 6).',
       // ─── Začínáme — resume banner ───
@@ -844,6 +855,7 @@
       instance_reg_closed: 'Registrations closed',
       instance_reg_invite: 'Invite only',
       instance_join: 'Create account',
+      instance_invite_ask: 'Ask for an invite',
       instance_open: 'open',
       instance_users: 'users',
       instance_sec_czsk: 'Czech & Slovak instances',
@@ -1480,10 +1492,12 @@
     document.querySelectorAll('#start-step-3 .step3-when-catalog').forEach(function (p) { p.hidden = !inApp; });
     document.querySelectorAll('#start-step-3 .step3-when-external').forEach(function (p) { p.hidden = inApp; });
 
-    // Starter-instance box (např. PeerTube → vhsky.cz) — doporučení + tlačítko „Vybrat",
-    // které se chová stejně jako „Vybrat tuhle" v seznamu (vybere → krok 4). Vyplň podle jazyka bloku.
+    // Starter-instance box — doporučení + tlačítko „Vybrat", které se chová stejně jako
+    // „Vybrat tuhle" v seznamu (vybere → krok 4). Jen pro appku BEZ katalogu: má-li appka
+    // katalog, je starter v seznamu níže (beginnerDefault ho řadí první) a box by se s ním
+    // hádal (PeerTube: box „Vybrat vhsky.cz" nad hláškou „žádnou instanci nemáme").
     document.querySelectorAll('#start-step-3 .start-starter-box').forEach(function (box) {
-      if (!starter) { box.hidden = true; box.innerHTML = ''; return; }
+      if (!starter || hasCatalog) { box.hidden = true; box.innerHTML = ''; return; }
       box.hidden = false; box.innerHTML = '';
       var p = document.createElement('p');
       p.innerHTML = t('start_starter_lead').replace('%s', '<strong>' + app.name + '</strong>') +
@@ -1533,7 +1547,7 @@
     ensureInstancesLoaded().then(function () {
       // Jiná appka se mezitím mohla vybrat — nevykresluj zastaralý seznam.
       if (startStep !== 3 || ((startPickedApp && startPickedApp.id) || 'mastodon') !== appId) return;
-      var regOk = function (i) { return i.registration === 'open' || i.registration === 'approval'; };
+      var regOk = regJoinable;   // open / approval / invite — pozvánka je dnes běžná cesta, ne důvod k vyřazení
       // Dvoustupňový fallback: nejdřív CZ/SK kvadrant, při prázdnu prověřené globální.
       var list = instanceList.filter(function (i) {
         return i.appId === appId && (i.region === 'cz' || i.region === 'sk') && regOk(i);
@@ -1543,11 +1557,12 @@
         list = instanceList.filter(function (i) { return i.appId === appId && i.region === 'global' && regOk(i); });
         usingGlobal = true;
       }
-      // Pořadí: výchozí doporučení → pro začátečníky → otevřená registrace → víc uživatelů.
+      // Pořadí: výchozí doporučení → pro začátečníky → víc uživatelů. Typ registrace už
+      // neřadí: skoro každá instance dnes schvaluje nebo zve kvůli botům, otevřený formulář
+      // není známka kvality a odsunutí pozvánek by vytlačilo mastodon.sk z osmi zobrazených.
       list.sort(function (a, b) {
         return (b.beginnerDefault ? 1 : 0) - (a.beginnerDefault ? 1 : 0) ||
                (b.beginnerFriendly ? 1 : 0) - (a.beginnerFriendly ? 1 : 0) ||
-               (a.registration === 'open' ? 0 : 1) - (b.registration === 'open' ? 0 : 1) ||
                (b.users || 0) - (a.users || 0);
       });
       listEl.innerHTML = '';
@@ -1594,6 +1609,11 @@
     var reg = document.createElement('span');
     reg.className = 'inst-reg inst-reg-' + i.registration; reg.textContent = t('instance_reg_' + i.registration);
     meta.appendChild(reg);
+    if (i.registration === 'invite') {   // účet zakládá správce → rovnou odkaz, kam mu napsat
+      var ct = document.createElement('a'); ct.className = 'start-inst-item__contact';
+      ct.href = instanceContactUrl(i); ct.target = '_blank'; ct.rel = 'noopener noreferrer';
+      ct.textContent = t('instance_invite_contact'); meta.appendChild(ct);
+    }
     if (i.users != null) {
       var u = document.createElement('span'); u.className = 'start-inst-item__users';
       u.textContent = appNum(i.users) + ' ' + t('instance_users'); meta.appendChild(u);
@@ -1728,16 +1748,34 @@
     lead.innerHTML = t('start_step4_chosen_lead').replace('%s', '<strong>' + (i.name || i.domain) + '</strong> (' + i.domain + ')');
     box.appendChild(lead);
 
-    // Větvený copy podle typu registrace: open = jdeš dovnitř hned; jinak = po schválení (gap).
+    // Větvený copy podle typu registrace: open = jdeš dovnitř hned; approval = formulář +
+    // ruční schválení; invite = formulář vypnutý, účet zakládá správce na základě zprávy.
+    // Schválení a pozvánka jsou dnes norma (obrana proti botům) → nejdřív proč, pak větev,
+    // pak co do žádosti napsat (prázdné žádosti správci zahazují).
+    var isInvite = i.registration === 'invite';
+    if (i.registration !== 'open') {
+      var why = document.createElement('p'); why.className = 'start-chosen-note';
+      why.textContent = t('reg_bots_intro'); box.appendChild(why);
+    }
     var note = document.createElement('p'); note.className = 'start-chosen-note';
-    note.textContent = (i.registration === 'open') ? t('reg_open_note') : t('reg_approval_note');
+    note.textContent = t(i.registration === 'open' ? 'reg_open_note' : (isInvite ? 'reg_invite_note' : 'reg_approval_note'));
     box.appendChild(note);
+    if (i.registration !== 'open') {
+      var tips = document.createElement('p'); tips.className = 'start-chosen-note start-chosen-tips';
+      tips.textContent = t('reg_request_tips'); box.appendChild(tips);
+    }
 
     var cta = document.createElement('a');
-    cta.className = 'cta-btn'; cta.href = i.signupUrl || ('https://' + i.domain);
-    cta.target = '_blank'; cta.rel = 'noopener noreferrer';
+    cta.className = 'cta-btn';
+    if (isInvite) {   // žádný formulář → zpráva správci (mailto nebo stránka O instanci)
+      cta.href = instanceContactUrl(i);
+      cta.textContent = t('start_step4_invite_cta').replace('%s', i.domain);
+    } else {
+      cta.href = i.signupUrl || ('https://' + i.domain);
+      cta.textContent = t('start_step4_chosen_cta').replace('%s', i.domain);
+    }
+    if (cta.href.indexOf('mailto:') !== 0) { cta.target = '_blank'; cta.rel = 'noopener noreferrer'; }
     cta.setAttribute('data-umami-event', 'signup-' + i.domain);
-    cta.textContent = t('start_step4_chosen_cta').replace('%s', i.domain);
     // Odešel registrovat → ulož drobenku (resume banner ho vrátí i po zavření prohlížeče).
     cta.addEventListener('click', function () { saveOnboardingCrumb(i.domain); });
     box.appendChild(cta);
@@ -2106,6 +2144,12 @@
   // CZ/SK kategorie Sloníka → naše zaměření (focus). Prázdné → ['obecna'].
   var INSTANCE_FOCUS_MAP = { general: 'obecna', tech: 'tech', art: 'umeni', regional: 'region', journalism: 'obecna' };
   var INSTANCE_REG_OK = { open: 1, approval: 1, invite: 1, closed: 1 };
+  // Kde se dá reálně získat účet. Pozvánka je dnes běžná cesta (obrana proti botům),
+  // ne výjimka — průvodce ji nabízí stejně jako otevřenou registraci a schválení.
+  var REG_JOINABLE = { open: 1, approval: 1, invite: 1 };
+  function regJoinable(i) { return !!(i && REG_JOINABLE[i.registration]); }
+  // Kam napsat o účet u instance na pozvánku: kurátorský contact (mailto/URL), jinak /about.
+  function instanceContactUrl(i) { return i.contact || ('https://' + i.domain + '/about'); }
   var INSTANCE_REGION_ORDER = ['cz', 'sk', 'global'];   // CZ a SK nahoře
   var INSTANCE_FOCUS_ORDER = ['obecna', 'tech', 'umeni', 'akademicka', 'hry', 'region', 'lgbtq'];
   var INSTANCE_REG_ORDER = ['open', 'approval', 'invite', 'closed'];
@@ -2123,17 +2167,20 @@
     });
     if (!focus.length) focus = ['obecna'];
     var reg = INSTANCE_REG_OK[r.registrations] ? r.registrations : 'closed';
+    var ov = (window.FEDIK_INSTANCES_CURATED || {})[host];   // CZ/SK kurátorský overlay přebije
+    // API neumí rozlišit „na pozvánku" od „zavřeno" (Mastodon hlásí obojí jako closed) → overlay.
+    if (ov && ov.registration && INSTANCE_REG_OK[ov.registration]) reg = ov.registration;
     var inst = {
       id: host, domain: host, name: r.title || host, appId: 'mastodon',
       region: region, focus: focus, registration: reg,
       users: (r.users != null ? r.users : undefined),
-      beginnerFriendly: (reg === 'open' || reg === 'approval'),
+      beginnerFriendly: !!REG_JOINABLE[reg],
       description: r.description || '', thumbnail: r.thumbnail || '',
       signupUrl: 'https://' + host + '/auth/sign_up', source: 'slonik'
     };
-    var ov = (window.FEDIK_INSTANCES_CURATED || {})[host];   // CZ/SK kurátorský overlay přebije
     if (ov) {
       if (ov.beginnerFriendly != null) inst.beginnerFriendly = ov.beginnerFriendly;
+      if (ov.contact) inst.contact = ov.contact;
       if (ov.focus && ov.focus.length) inst.focus = ov.focus;
       if (ov.appId) inst.appId = ov.appId;
       // Ne-Mastodon instance mají jinou cestu k registraci než /auth/sign_up.
@@ -2145,7 +2192,7 @@
   function normalizeManualInstance(m) {
     var inst = {}; for (var k in m) inst[k] = m[k];
     if (!inst.focus || !inst.focus.length) inst.focus = ['obecna'];
-    if (inst.beginnerFriendly == null) inst.beginnerFriendly = (inst.registration === 'open' || inst.registration === 'approval');
+    if (inst.beginnerFriendly == null) inst.beginnerFriendly = !!REG_JOINABLE[inst.registration];
     if (!inst.region) inst.region = 'global';
     if (!inst.id) inst.id = inst.domain;
     if (!inst.source) inst.source = 'manual';
@@ -2268,7 +2315,11 @@
     foot.appendChild(rg);
     var link = document.createElement('a');
     link.target = '_blank'; link.rel = 'noopener'; link.style.marginLeft = 'auto';
-    if (i.registration === 'open' || i.registration === 'approval') {
+    if (i.registration === 'invite') {   // formulář vypnutý → kam napsat o účet
+      link.className = 'inst-join';
+      link.href = instanceContactUrl(i);
+      link.textContent = t('instance_invite_ask');
+    } else if (i.registration === 'open' || i.registration === 'approval') {
       link.className = 'inst-join';
       link.href = i.signupUrl || ('https://' + i.domain);
       link.textContent = t('instance_join');

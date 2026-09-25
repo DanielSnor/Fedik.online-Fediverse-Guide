@@ -28,7 +28,7 @@
   <meta name="twitter:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, nástroje, slovníček, statistiky, odkazy, vyhledávání.">
   <meta name="twitter:image" content="https://fedik.online/img/header.png">
 
-  <link rel="stylesheet" href="app.css?v=20260621o">
+  <link rel="stylesheet" href="app.css?v=20260925">
 
   <!-- Anonymní návštěvnost (Umami, self-hosted na OSCLOUD; bez cookies, bez osobních dat) -->
   <script defer src="https://analytics.oscloud.cz/script.js" data-website-id="cfcb21b6-e303-4a49-b25f-264ec4021e62"></script>
@@ -682,7 +682,7 @@
         <div data-lang-block="cs">
           <h2 data-i18n="step3_label">Najdi svou planetu (instanci)</h2>
           <p class="step3-when-catalog" data-i18n-html="step3_p1">Planeta (instance) je tvůj domovský server — místo, kde budeš přihlášený a které ti dá adresu ve tvaru @jmeno@server. Ať přistaneš kdekoli, sledovat a povídat si můžeš s kýmkoli v celém Fediverse; planeta není klec.</p>
-          <p class="step3-when-catalog" data-i18n="step3_p2">Níže ukazujeme jen planety s otevřenou registrací nebo registrací po schválení, vyfiltrované pro tvou aplikaci. Dej „Vybrat tuhle“ a posuneme tě na krok 4. Nevíš, kam? Použij náš výchozí bod, nebo otevři celý katalog Instancí.</p>
+          <p class="step3-when-catalog" data-i18n="step3_p2">Níže ukazujeme jen planety, kde se dá založit účet — otevřeně, po schválení, nebo na pozvánku — vyfiltrované pro tvou aplikaci. Dej „Vybrat tuhle“ a posuneme tě na krok 4. Nevíš, kam? Použij náš výchozí bod, nebo otevři celý katalog Instancí.</p>
           <p class="step3-when-external" hidden>Pro tuhle aplikaci zatím nemáme český katalog instancí. Tlačítko níže tě vezme na oficiální stránku, kde si vybereš server a založíš účet. Pak se vrať sem na krok 4.</p>
           <div class="start-default-box">
             <p><strong data-i18n="start_default_q">Nevíš, kam?</strong> <span data-i18n="start_default_rec">Začni třeba na mamutovo.cz — dobře udržovaný český server s rozšířeným limitem 2500 znaků na příspěvek.</span></p>
@@ -694,7 +694,7 @@
         <div data-lang-block="en" hidden>
           <h2 data-i18n="step3_label">Find Your Planet (an instance)</h2>
           <p class="step3-when-catalog" data-i18n-html="step3_p1">A planet (instance) is your home server — where you’ll be signed in and which gives you an address like @name@server. Wherever you land, you can follow and talk to anyone across the whole Fediverse; a planet isn’t a cage.</p>
-          <p class="step3-when-catalog" data-i18n="step3_p2">Below we show only planets with open or approval-based sign-up, filtered for your app. Hit “Choose this one” and we’ll move you to step 4. Not sure where? Use our default, or open the full Instances catalog.</p>
+          <p class="step3-when-catalog" data-i18n="step3_p2">Below we show only planets where you can actually get an account — open, approval-based or invite-only — filtered for your app. Hit “Choose this one” and we’ll move you to step 4. Not sure where? Use our default, or open the full Instances catalog.</p>
           <p class="step3-when-external" hidden>We don’t have a Czech instance catalog for this app yet. The button below takes you to the official site, where you pick a server and create your account. Then come back here for step 4.</p>
           <div class="start-default-box">
             <p><strong data-i18n="start_default_q">Not sure where?</strong> <span data-i18n="start_default_rec">You could start on mamutovo.cz — a well-maintained Czech server with an extended 2500-character post limit.</span></p>
@@ -723,14 +723,14 @@
         <div data-lang-block="cs">
           <h2 data-i18n="step4_label">Postav si základnu (založ účet)</h2>
           <h3 data-i18n="reg_head">Co tě při registraci čeká</h3>
-          <p data-i18n="reg_body">Vyplníš uživatelské jméno, e-mail a heslo. Přijde ti potvrzovací e-mail — klikni na odkaz v něm. U serverů „po schválení“ chvíli počkej, než tě správce pustí dovnitř (většinou pár hodin). A jsi uvnitř.</p>
+          <p data-i18n="reg_body">Vyplníš uživatelské jméno, e-mail a heslo. Přijde ti potvrzovací e-mail — klikni na odkaz v něm. Většina serverů dnes žádosti ručně schvaluje, nebo pouští lidi jen na pozvánku (brání se botům), takže počítej s čekáním od pár hodin do dne. A jsi uvnitř.</p>
           <p data-i18n="reg_username">Pozor na uživatelské jméno: smí obsahovat jen písmena bez diakritiky (a–z), číslice a podtržítko (_). Žádné tečky, pomlčky, mezery ani háčky a čárky — místo tečky použij podtržítko (např. jan_novak místo jan.novák). Délka bývá omezená, zhruba na 30 znaků. Jméno je natrvalo, e-mail a heslo změníš, jméno ne — vyber rozumně.</p>
           <div class="caveat-box"><p data-i18n="reg_return">Až budeš mít účet, vrať se sem na Fedíka — dokončíme onboarding: projdeme první den (krok 5) a sestavíme ti posádku, koho sledovat (krok 6).</p></div>
         </div>
         <div data-lang-block="en" hidden>
           <h2 data-i18n="step4_label">Build your base (create an account)</h2>
           <h3 data-i18n="reg_head">What to expect when you sign up</h3>
-          <p data-i18n="reg_body">You’ll fill in a username, email and password. A confirmation email arrives — click the link in it. On “approval” servers, wait a moment for the admin to let you in (usually a few hours). And you’re in.</p>
+          <p data-i18n="reg_body">You’ll fill in a username, email and password. A confirmation email arrives — click the link in it. Most servers now approve requests by hand or let people in by invitation only (to fend off bots), so expect a wait of a few hours up to a day. And you’re in.</p>
           <p data-i18n="reg_username">Mind your username: it can only contain plain letters (a–z), numbers and an underscore (_). No dots, hyphens, spaces or accents — use an underscore instead of a dot (e.g. jan_novak, not jan.novák). Length is usually capped at about 30 characters. The username is permanent — you can change your email and password, but not the username, so pick wisely.</p>
           <div class="caveat-box"><p data-i18n="reg_return">Once your account is ready, come back here to Fedík — we’ll finish onboarding: walk through your first day (step 5) and assemble your crew to follow (step 6).</p></div>
         </div>
@@ -1844,13 +1844,13 @@ slovo vylučíš mínusem (-slovo).</p>
 
   <dialog id="detail-modal" class="detail-modal" aria-label="Detail zdroje"></dialog>
 
-  <script src="links.js?v=20260621o"></script>
-  <script src="taxonomy.js?v=20260621o"></script>
-  <script src="apps.js?v=20260621o"></script>
-  <script src="instances.manual.js?v=20260621o"></script>
-  <script src="instances.curated.js?v=20260621o"></script>
-  <script src="glossary.js?v=20260621o"></script>
-  <script src="tools.js?v=20260621o"></script>
-  <script src="app.js?v=20260621o"></script>
+  <script src="links.js?v=20260925"></script>
+  <script src="taxonomy.js?v=20260925"></script>
+  <script src="apps.js?v=20260925"></script>
+  <script src="instances.manual.js?v=20260925"></script>
+  <script src="instances.curated.js?v=20260925"></script>
+  <script src="glossary.js?v=20260925"></script>
+  <script src="tools.js?v=20260925"></script>
+  <script src="app.js?v=20260925"></script>
 </body>
 </html>
