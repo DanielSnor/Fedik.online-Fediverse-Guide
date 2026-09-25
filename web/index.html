@@ -28,7 +28,7 @@
   <meta name="twitter:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, nástroje, slovníček, statistiky, odkazy, vyhledávání.">
   <meta name="twitter:image" content="https://fedik.online/img/header.png">
 
-  <link rel="stylesheet" href="app.css?v=20260925d">
+  <link rel="stylesheet" href="app.css?v=20260925e">
 
   <!-- Anonymní návštěvnost (Umami, self-hosted na OSCLOUD; bez cookies, bez osobních dat) -->
   <script defer src="https://analytics.oscloud.cz/script.js" data-website-id="cfcb21b6-e303-4a49-b25f-264ec4021e62"></script>
@@ -36,7 +36,7 @@
 <body data-updated="2026-05-31">
   <header class="site-header">
     <div class="hero">
-      <button class="hero-link" id="hero-home" type="button" aria-label="Zobrazit všechny zdroje">
+      <button class="hero-link" id="hero-home" type="button" aria-label="Zpět na začátek">
         <img class="hero-img" src="img/header.png" width="1536" height="1024"
              alt="Fedík.online — průvodce Fediverse">
       </button>
@@ -74,21 +74,6 @@
         <button type="button" data-lang="en">EN</button>
       </div>
     </div>
-  </nav>
-
-  <nav class="tabs" id="tabs" aria-label="Řezy katalogu">
-    <button class="tab is-active" data-slice="all" data-i18n="nav_all">Vše</button>
-    <span class="tab-sep" data-i18n="nav_charts">Žebříčky</span>
-    <button class="tab" data-slice="top:followers:10" data-i18n="nav_top10_foll">Top 10 sledovaných</button>
-    <button class="tab" data-slice="top:active:10" data-i18n="nav_top10_active">Top 10 aktivních</button>
-    <button class="tab" data-slice="top:followers:50" data-i18n="nav_top50_foll">Top 50 sledovaných</button>
-    <button class="tab" data-slice="top:active:50" data-i18n="nav_top50_active">Top 50 aktivních</button>
-    <span class="tab-sep" data-i18n="nav_risers">Skokani týdne</span>
-    <button class="tab" data-slice="top:gain_followers:10" data-i18n="nav_risers_foll">V sledujících</button>
-    <button class="tab" data-slice="top:gain_activity:10" data-i18n="nav_risers_active">V aktivitě</button>
-    <span class="tab-sep" data-i18n="nav_new">Novinky</span>
-    <button class="tab" data-slice="recent" data-i18n="nav_recent">Nedávno přidané</button>
-    <p class="tabs-count"><strong id="visible-count">538</strong> <span data-i18n="count_of">z</span> <span id="total-count">538</span> <span data-i18n="count_sources">zdrojů</span></p>
   </nav>
 
   <nav class="tabs" id="instance-tabs" aria-label="Žebříčky instancí" hidden>
@@ -156,20 +141,14 @@
             <button type="button" class="filter-chip view-link" data-view="statistiky" data-i18n="view_stats">Statistiky</button>
             <button type="button" class="filter-chip view-link" data-view="odkazy" data-i18n="view_links">Odkazy</button>
             <button type="button" class="filter-chip view-link" data-view="about" data-i18n="view_about">O Fedíku</button>
-            <!-- SKRYTO (zděděné ze Sloníka, nepoužíváme — funkční přes #view=…): Vyhledávání, Účty
+            <!-- SKRYTO (zděděné ze Sloníka, nepoužíváme — funkční přes #view=…): Vyhledávání
             <button type="button" class="filter-chip view-link" data-view="search" data-i18n="view_search">Vyhledávání</button>
-            <button type="button" class="filter-chip view-link" data-view="ucty" data-i18n="view_accounts">Účty</button>
             -->
           </div>
         </nav>
         <div class="filter-group slices-heading" id="slices-heading">
           <h2 data-i18n="nav_slices">Žebříčky</h2>
         </div>
-        <section class="filter-group search-nav" id="accounts-nav" hidden aria-label="Účty">
-          <h2 data-i18n="accounts_nav_title">Účty</h2>
-          <p class="search-nav-desc" data-i18n="accounts_nav_desc">Katalog českých a slovenských účtů na Mastodonu. Filtruj podle oblasti, typu, jazyka a tagů, vyhledávej podle jména nebo handle a řaď podle počtu sledujících či aktivity. Kliknutím na účet zobrazíš detail.</p>
-        </section>
-
         <section class="filter-group search-nav" id="search-nav" hidden aria-label="Vyhledávání">
           <h2 data-i18n="view_search">Vyhledávání</h2>
           <p class="search-nav-desc" data-i18n="search_nav_desc">Hledá v obsahu Fedíka — aplikace, instance, nástroje, slovníček a odkazy. Nezáleží na velikosti písmen ani diakritice (napíšeš „mastodon", najde „Mastodon"). Výsledky jsou rozdělené podle typu.</p>
@@ -377,21 +356,6 @@
           </div>
         </nav>
 
-        <div class="filter-search">
-          <label for="search" data-i18n="search_label">Vyhledat</label>
-          <input type="search" id="search" placeholder="Jméno nebo handle…" data-i18n-ph="search_ph" autocomplete="off">
-        </div>
-
-        <div class="filter-sort">
-          <label for="sort" data-i18n="sort_label">Řadit</label>
-          <select id="sort">
-            <option value="name" data-i18n="sort_name">Abecedně</option>
-            <option value="followers" data-i18n="sort_followers">Nejvíc sledujících</option>
-            <option value="posts" data-i18n="sort_posts">Nejaktivnější</option>
-            <option value="added" data-i18n="sort_added">Nejnověji přidané</option>
-          </select>
-        </div>
-
         <div class="filter-search filter-search-instance" id="instance-search-wrap" hidden>
           <label for="instance-search" data-i18n="search_label">Vyhledat</label>
           <input type="search" id="instance-search" placeholder="Název nebo doména…" data-i18n-ph="instance_search_ph" autocomplete="off">
@@ -426,52 +390,6 @@
           <div id="inst-size-chips" class="filter-buttons"></div>
         </details>
 
-        <section class="filter-group" data-filter="family">
-          <h2 data-i18n="head_topic">Oblast</h2>
-          <div class="filter-buttons">
-            <button class="filter-btn fam-business" data-value="business" data-i18n="fam_business">Byznys</button>
-            <button class="filter-btn fam-humor" data-value="humor" data-i18n="fam_humor">Humor</button>
-            <button class="filter-btn fam-culture" data-value="culture" data-i18n="fam_culture">Kultura</button>
-            <button class="filter-btn fam-sport" data-value="sport" data-i18n="fam_sport">Sport</button>
-            <button class="filter-btn fam-government" data-value="government" data-i18n="fam_government">Stát</button>
-            <button class="filter-btn fam-science_tech" data-value="science_tech" data-i18n="fam_science_tech">Věda &amp; technika</button>
-            <button class="filter-btn fam-news" data-value="news" data-i18n="fam_news">Zprávy</button>
-            <button class="filter-btn fam-lifestyle" data-value="lifestyle" data-i18n="fam_lifestyle">Životní styl</button>
-          </div>
-        </section>
-
-        <section class="filter-group" data-filter="type">
-          <h2 data-i18n="head_type">Typ účtu</h2>
-          <div class="filter-buttons">
-            <button class="filter-chip" data-value="institution">Instituce/Organizace</button>
-            <button class="filter-chip" data-value="media" data-i18n="type_media">Médium</button>
-            <button class="filter-chip" data-value="person" data-i18n="type_person">Osoba</button>
-            <button class="filter-chip" data-value="other" data-i18n="type_other">Ostatní</button>
-            <button class="filter-chip" data-value="team" data-i18n="type_team">Tým</button>
-          </div>
-        </section>
-
-        <section class="filter-group" data-filter="language">
-          <h2 data-i18n="head_language">Jazyk</h2>
-          <div class="filter-buttons">
-            <button class="filter-chip" data-value="cs" data-i18n="lang_cs">Čeština</button>
-            <button class="filter-chip" data-value="sk" data-i18n="lang_sk">Slovenčina</button>
-            <button class="filter-chip" data-value="en" data-i18n="lang_en">English</button>
-          </div>
-        </section>
-
-        <section class="filter-group filter-tags" data-filter="tag">
-          <h2 data-i18n="head_tag">Tag</h2>
-          <div id="tag-selected" class="tag-selected"></div>
-          <div class="tag-autocomplete">
-            <input type="text" id="tag-input" placeholder="Filtr podle tagu…" data-i18n-ph="tag_ph" autocomplete="off"
-                   role="combobox" aria-expanded="false" aria-controls="tag-suggestions" aria-autocomplete="list">
-            <ul id="tag-suggestions" class="tag-suggestions" role="listbox" hidden></ul>
-          </div>
-          <div id="tag-chips" class="tag-chips"></div>
-        </section>
-
-        <button id="reset-filters" class="reset-btn" data-i18n="reset" hidden>Zrušit filtry</button>
       </div>
     </aside>
 
@@ -805,23 +723,6 @@
       </article>
       </div><!-- /step-6 -->
 
-    </section>
-
-    <section class="catalog">
-      <p id="slice-note" class="slice-note" hidden></p>
-
-      <div id="loading-state" class="loading-state">
-        <span class="spinner" aria-hidden="true"></span> <span data-i18n="loading">Načítám katalog…</span>
-      </div>
-
-      <div id="cards" class="cards-grid" aria-live="polite"></div>
-      <div id="cards-sentinel" aria-hidden="true"></div>
-
-      <div id="empty-state" class="empty-state" hidden>
-        <p data-i18n="empty_title">Žádný zdroj neodpovídá filtrům.</p>
-        <p class="empty-hint" data-i18n="empty_hint">Zkus uvolnit některý z filtrů.</p>
-        <button id="empty-reset" class="reset-btn" data-i18n="empty_reset">Reset filtrů</button>
-      </div>
     </section>
 
     <!-- ===================== POHLED: APLIKACE ===================== -->
@@ -1797,7 +1698,7 @@ slovo vylučíš mínusem (-slovo).</p>
     </div>
   </footer>
 
-  <dialog id="detail-modal" class="detail-modal" aria-label="Detail zdroje"></dialog>
+  <dialog id="detail-modal" class="detail-modal" aria-label="Detail hesla"></dialog>
 
   <script src="links.js?v=20260925"></script>
   <script src="taxonomy.js?v=20260925c"></script>
@@ -1806,6 +1707,6 @@ slovo vylučíš mínusem (-slovo).</p>
   <script src="instances.curated.js?v=20260925"></script>
   <script src="glossary.js?v=20260925"></script>
   <script src="tools.js?v=20260925"></script>
-  <script src="app.js?v=20260925d"></script>
+  <script src="app.js?v=20260925e"></script>
 </body>
 </html>
