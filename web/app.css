@@ -901,97 +901,12 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 
 /* Karta postu — vychází z .card, ale je vertikální (sloupec) */
-.post-card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 14px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: border-color .12s, transform .12s, box-shadow .12s;
-}
-.post-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(99, 100, 255, 0.10);
-}
-.post-head { display: flex; gap: 10px; align-items: center; }
-.post-avatar-link { flex: 0 0 40px; display: block; line-height: 0; border-radius: 10px; }
-.post-avatar-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.post-head .card-avatar { flex: 0 0 40px; width: 40px; height: 40px; border-radius: 10px; }
-.post-head-body { min-width: 0; flex: 1; }
-.post-author { display: block; font-weight: 700; font-size: 14px; color: var(--text-strong);
-  text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.post-author:hover { text-decoration: underline; }
-.post-handle { color: var(--text-dim); font-size: 12px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.post-head .label-family { flex: 0 0 auto; align-self: flex-start; }
 
-.post-text {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--text);
-  white-space: pre-wrap;
-  word-break: break-word;
-  margin: 0;
-}
-.post-text.is-empty { color: var(--text-dim); font-style: italic; }
 /* Zkrácení dlouhého postu (klamp na ~6 řádků), tlačítko sundá clamp. */
-.post-text.is-clamped {
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
 /* Inline odkazy v textu postu */
-.post-inline-hashtag, .post-inline-mention { color: var(--accent); font-weight: 600; text-decoration: none; cursor: pointer; }
-.post-inline-link { color: var(--accent); text-decoration: none; word-break: break-all; }
-.post-inline-hashtag:hover, .post-inline-mention:hover, .post-inline-link:hover { text-decoration: underline; }
 /* Mastodon zkrácené URL: skrytý protokol/ocásek (https://, www, …) */
-.post-text .invisible {
-  position: absolute; width: 1px; height: 1px; overflow: hidden;
-  clip: rect(0 0 0 0); white-space: nowrap;
-}
-.post-text .ellipsis::after { content: '…'; }
-.post-more {
-  background: none; border: none; padding: 0; cursor: pointer;
-  color: var(--accent); font-size: 13px; font-weight: 600;
-  align-self: flex-start; margin-top: -4px;
-}
-.post-media-badge {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 12px; color: var(--text-dim);
-  background: var(--bg-panel); border: 1px solid var(--border);
-  padding: 3px 9px; border-radius: 999px; align-self: flex-start;
-}
-.post-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-.post-tag {
-  font-size: 11px; color: var(--text-dim);
-  background: var(--bg-panel); border: 1px solid var(--border);
-  padding: 2px 8px; border-radius: 999px;
-}
-
-.hashtags-empty { font-size: 12px; color: var(--text-dim); margin: 2px 0 0; }
-.post-foot {
-  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-  font-size: 12px; color: var(--text-dim);
-  border-top: 1px solid var(--border); padding-top: 10px; margin-top: auto;
-}
-.post-foot .post-stat { display: inline-flex; align-items: center; gap: 4px; }
-.post-foot .post-stat strong { color: var(--text); font-weight: 700; }
-.post-open {
-  margin-left: auto; color: var(--accent); font-weight: 600;
-  text-decoration: none; white-space: nowrap;
-}
-.post-open:hover { text-decoration: underline; }
-.post-riser-badge {
-  font-size: 11px; font-weight: 700; color: var(--on-accent);
-  background: var(--accent); padding: 2px 8px; border-radius: 999px;
-}
 
 /* posts grid sdílí auto-fill, ale karty jsou trochu širší pro text */
-.posts-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 
 /* ---------- Pohled: Začni tady ---------- */
 /* Skládá se z .about-content bloků (stejná typografie/karta jako „O Fedíku"). */

@@ -31,7 +31,6 @@
       view_search: 'Vyhledávání',
       view_about: 'O Fedíku',
       view_accounts: 'Účty',
-      view_posts: 'Posty',
       // ─── Navigace, menu, žebříčky (sdílené) ───
       nav_views: 'Pohledy',
       nav_slices: 'Žebříčky',
@@ -464,7 +463,6 @@
       lfresh_current: 'průběžně aktualizováno',
       links_zero: 'Žádný odkaz neodpovídá filtrům.',
       // ─── Pohled: Vyhledávání ───
-      ssort_relevance: 'Podle shody',
       search_tagline: 'Prohledá aplikace, instance, nástroje, slovníček a odkazy — bez ohledu na diakritiku.',
       search_tip: 'Tip: víc slov = musí být všechna;\npřesnou frázi dej do uvozovek („…");\nslovo vylučíš mínusem (-slovo).',
       search_ph_view: 'Hledat v obsahu Fedíka…',
@@ -483,29 +481,9 @@
       search_nav_title: 'Vyhledávání',
       search_nav_desc: 'Hledá v obsahu Fedíka — aplikace, instance, nástroje, slovníček a odkazy. Nezáleží na velikosti písmen ani diakritice (napíšeš „mastodon", najde „Mastodon"). Výsledky jsou rozdělené podle typu.',
       // ─── Pohledy: Účty + Posty (zděděné ze Sloníka) ───
-      head_hashtags: 'Hashtagy',
       hashtags_empty: 'Žádné hashtagy v zobrazených postech.',
       accounts_nav_title: 'Účty',
       accounts_nav_desc: 'Katalog českých a slovenských účtů na Mastodonu. Filtruj podle oblasti, typu, jazyka a tagů, vyhledávej podle jména nebo handle a řaď podle počtu sledujících či aktivity. Kliknutím na účet zobrazíš detail.',
-      posts_nav_title: 'Posty',
-      posts_nav_desc: 'Nejlepší příspěvky českých a slovenských účtů za poslední týden. Přepínej žebříčky (Top 10/50, skokani týdne), filtruj podle oblasti, textu a hashtagů a řaď podle boostů, oblíbených nebo data.',
-      prisers_ratio: 'Poměrem',
-      prisers_abs: 'Dosahem',
-      psort_engagement: 'Nejvíce boostů + favů',
-      psort_reblogs: 'Nejvíce boostů',
-      psort_favourites: 'Nejvíce favů',
-      psort_date: 'Nejnovější',
-      psort_date_asc: 'Od nejstaršího',
-      posts_loading: 'Načítám posty…',
-      posts_empty: 'Žádný post neodpovídá filtrům.',
-      posts_unavailable: 'Posty jsou dostupné každý týden v pondělí ráno.',
-      posts_week: 'týden',
-      posts_count: 'postů',
-      post_media: 'Příloha',
-      post_media_only: '[Příspěvek s médiem]',
-      post_open: 'Otevřít na Mastodonu',
-      post_more: 'zobrazit více',
-      post_riser: 'Skokan',
       // ─── Pohled: O Fedíku ───
       about_title: 'O Fedíku',
       about_menu_about: 'O Fedíku',
@@ -573,7 +551,6 @@
       view_search: 'Search',
       view_about: 'About Fedík',
       view_accounts: 'Accounts',
-      view_posts: 'Posts',
       // ─── Navigace, menu, žebříčky (sdílené) ───
       nav_views: 'Sections',
       nav_slices: 'Charts',
@@ -1006,7 +983,6 @@
       lfresh_current: 'kept current',
       links_zero: 'No link matches the filters.',
       // ─── Pohled: Vyhledávání ───
-      ssort_relevance: 'By relevance',
       search_tagline: 'Searches apps, instances, tools, the glossary and links — diacritics-insensitive.',
       search_tip: 'Tip: multiple words must all appear;\nwrap an exact phrase in quotes ("…");\nexclude a word with a minus (-word).',
       search_ph_view: 'Search Fedík’s content…',
@@ -1025,29 +1001,9 @@
       search_nav_title: 'Search',
       search_nav_desc: 'Searches Fedík’s content — apps, instances, tools, the glossary and links. Case- and diacritics-insensitive (type “mastodon”, finds “Mastodon”). Results are grouped by type.',
       // ─── Pohledy: Účty + Posty (zděděné ze Sloníka) ───
-      head_hashtags: 'Hashtags',
       hashtags_empty: 'No hashtags in shown posts.',
       accounts_nav_title: 'Accounts',
       accounts_nav_desc: 'A catalog of Czech and Slovak accounts on Mastodon. Filter by topic, type, language and tags, search by name or handle, and sort by followers or activity. Click an account for details.',
-      posts_nav_title: 'Posts',
-      posts_nav_desc: 'The best posts from Czech and Slovak accounts over the past week. Switch charts (Top 10/50, weekly risers), filter by topic, text and hashtags, and sort by boosts, favourites or date.',
-      prisers_ratio: 'By ratio',
-      prisers_abs: 'By reach',
-      psort_engagement: 'Most boosts + favs',
-      psort_reblogs: 'Most boosts',
-      psort_favourites: 'Most favs',
-      psort_date: 'Newest',
-      psort_date_asc: 'Oldest first',
-      posts_loading: 'Loading posts…',
-      posts_empty: 'No post matches the filters.',
-      posts_unavailable: 'Posts are available every week on Monday morning.',
-      posts_week: 'Week',
-      posts_count: 'posts',
-      post_media: 'Attachment',
-      post_media_only: '[Post with media]',
-      post_open: 'Open on Mastodon',
-      post_more: 'show more',
-      post_riser: 'Riser',
       // ─── Pohled: O Fedíku ───
       about_title: 'About Fedík',
       about_menu_about: 'About Fedík',
@@ -1316,9 +1272,8 @@
     writeHash();
   }
 
-  // Promítne aktuální `view` do DOM (skryje/zobrazí sekce, načte posty/search lazy).
+  // Promítne aktuální `view` do DOM (skryje/zobrazí sekce, hledání lazy).
   function applyView() {
-    var isPosts = view === 'posty';
     var isAbout = view === 'about';
     var isSearch = view === 'search';
     var isInstance = view === 'instance';
@@ -1336,19 +1291,16 @@
     if (statsViewEl) statsViewEl.hidden = !isStats;
     if (startViewEl) startViewEl.hidden = !isStart;
     if (accountsViewEl) accountsViewEl.hidden = !isAccounts;
-    if (postsViewEl) postsViewEl.hidden = !isPosts;
     if (aboutViewEl) aboutViewEl.hidden = !isAbout;
     if (searchViewEl) searchViewEl.hidden = !isSearch;
     if (instanceViewEl) instanceViewEl.hidden = !isInstance;
     if (linksViewEl) linksViewEl.hidden = !isLinks;
     if (sidebarEl) sidebarEl.hidden = false;   // sidebar zůstává ve všech pohledech
-    document.body.classList.toggle('view-posts', isPosts);
     document.body.classList.toggle('view-about', isAbout);
     document.body.classList.toggle('view-search', isSearch);
     document.body.classList.toggle('view-instance', isInstance);
     document.body.classList.toggle('view-start', isStart);
     if (tabsEl) tabsEl.hidden = !isAccounts;        // řezy účtů jen v Účtech
-    if (postsTabsEl) postsTabsEl.hidden = !isPosts; // řezy postů (Vše/Top10/Top50/Skokani)
     if (instanceTabsEl) instanceTabsEl.hidden = !isInstance; // řezy instancí
     if (searchTabsEl) searchTabsEl.hidden = !isSearch;       // řezy výsledků hledání
     if (linksTabsEl) linksTabsEl.hidden = !isLinks;          // lišta s počtem odkazů
@@ -1359,22 +1311,18 @@
     // Účtové filtry (typ/jazyk/tag/řazení) jen v Účtech.
     document.querySelectorAll(
       '.filter-group[data-filter="type"], .filter-group[data-filter="language"],' +
-      '.filter-group[data-filter="tag"], .filter-sort:not(.filter-sort-posts):not(.filter-sort-instance):not(.filter-sort-search):not(.filter-sort-apps):not(.filter-sort-links)'
+      '.filter-group[data-filter="tag"], .filter-sort:not(.filter-sort-instance):not(.filter-sort-search):not(.filter-sort-apps):not(.filter-sort-links)'
     ).forEach(function (el) { el.hidden = !isAccounts; });
-    // Fulltext (malé pole) + reset: jen v Účtech a Postech.
+    // Fulltext (malé pole) + reset: jen v Účtech.
     document.querySelectorAll(
       '.filter-search:not(.filter-search-instance), #reset-filters'
-    ).forEach(function (el) { el.hidden = !(isAccounts || isPosts); });
-    // Oblast (rodina) + Hashtagy: Účty, Posty i Vyhledávání.
+    ).forEach(function (el) { el.hidden = !isAccounts; });
+    // Oblast (rodina): jen Účty.
     document.querySelectorAll('.filter-group[data-filter="family"]')
-      .forEach(function (el) { el.hidden = !(isAccounts || isPosts); });
-    if (postsSortWrapEl) postsSortWrapEl.hidden = !isPosts;
-    if (postHashtagsGroupEl) postHashtagsGroupEl.hidden = !isPosts;
+      .forEach(function (el) { el.hidden = !isAccounts; });
     // Instanční filtry (Vyhledat / Řadit / fasety) jen v Instancích.
     [instanceSearchWrapEl, instanceSortWrapEl].forEach(function (el) { if (el) el.hidden = !isInstance; });
     document.querySelectorAll('.filter-group-instance').forEach(function (el) { el.hidden = !isInstance; });
-    // Sloníkovské řazení postů ve Fedíku nepoužíváme.
-    if (searchSortWrapEl) searchSortWrapEl.hidden = true;
     // Filtry Odkazů (Typ / Jazyk / Téma) + řazení jen v Odkazech.
     document.querySelectorAll('.filter-group-links').forEach(function (el) { el.hidden = !isLinks; });
     if (linksSortWrapEl) linksSortWrapEl.hidden = !isLinks;
@@ -1389,7 +1337,6 @@
     // Ovládací prvky Statistik jen ve Statistikách (a jen v záložce Růst — řeší renderStats).
     document.querySelectorAll('.filter-group-stats').forEach(function (el) { el.hidden = !(isStats && statsTab === 'growth'); });
     if (accountsNavEl) accountsNavEl.hidden = !isAccounts; // levý panel Účty
-    if (postsNavEl) postsNavEl.hidden = !isPosts;          // levý panel Posty
     if (startNavEl) startNavEl.hidden = !isStart;   // levý panel Začínáme
     if (aboutNavEl) aboutNavEl.hidden = !isAbout;
     if (searchNavEl) searchNavEl.hidden = !isSearch;      // levý panel Vyhledávání (popis, co hledá)
@@ -1404,11 +1351,6 @@
     updateViewSwitchUI();
     updateFamilyHeading();
     if (isAbout) applyAboutSection();
-    if (isPosts) {
-      updatePostsTabsUI();
-      ensurePostsLoaded();
-      renderPosts();
-    }
     if (isSearch) {
       updateSearchTabsUI();
       // Index (~MB) NEnačítáme na landing — až při dotazu/focusu (viz bindSearchView).
@@ -1897,7 +1839,7 @@
   }
 
   // ========================================================
-  // Vyhledávání (účty + posty) — index search.json / users.json
+  // Vyhledávání v obsahu Fedíka (aplikace, instance, nástroje, slovníček, odkazy)
   // ========================================================
   function fold(s) { return (s || '').normalize('NFKD').replace(/\p{Mn}/gu, '').toLowerCase().replace(/\s+/g, ' ').trim(); }
 
@@ -1931,63 +1873,6 @@
     ensureGlossaryIndexed();
   }
 
-  // HTML → čistý text (rychlý regex, ne DOMParser) pro hledání/zkrácení. Pro
-  // ZOBRAZENÍ se používá content_html (sanitizePostHtml), tohle stačí na fold + délku.
-  function htmlToText(h) {
-    return (h || '')
-      .replace(/<br\s*\/?>/gi, ' ').replace(/<\/(p|div|li)>/gi, ' ')
-      .replace(/<[^>]+>/g, '')
-      .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/&nbsp;/g, ' ')
-      .replace(/\s+/g, ' ').trim();
-  }
-
-  // Index drží jen content_html (menší). Tady dopočítáme to, co frontend potřebuje:
-  // content_plain (zobrazení/zkrácení), content_folded (hledání), engagement.
-  function hydrateSearchPosts() {
-    // Slim index: účtová pole nejsou v každém postu (redundance). Username/instance
-    // odvodíme z account_acct, jméno/avatar dotáhneme z users.json (join dle acct).
-    var usersByAcct = {};
-    searchUsers.forEach(function (u) { usersByAcct[u.a] = u; });
-    searchPosts.forEach(function (p) {
-      var a = p.account_acct || '';
-      if (p.account_username == null) p.account_username = a.split('@')[0];
-      if (p.account_instance == null) { var at = a.indexOf('@'); p.account_instance = at >= 0 ? a.slice(at + 1) : ''; }
-      var u = usersByAcct[a];
-      if (u) {
-        if (p.account_display_name == null) p.account_display_name = u.n;
-        if (p.account_avatar == null) p.account_avatar = u.av;
-      }
-      if (p.content_html) {                              // slim index → odvoď z HTML
-        p.content_plain = htmlToText(p.content_html);
-        p.content_folded = fold(p.content_plain + ' ' + (p.account_acct || '') + ' ' + (p.account_display_name || ''));
-      } else {                                           // starý/přechodný záznam → ponech, co přišlo
-        if (p.content_plain == null) p.content_plain = '';
-        if (p.content_folded == null) {
-          p.content_folded = fold(p.content_plain + ' ' + (p.account_acct || '') + ' ' + (p.account_display_name || ''));
-        }
-      }
-      if (p.engagement == null) p.engagement = (p.reblogs_count || 0) + (p.favourites_count || 0);
-    });
-  }
-
-  // Skokani pro vyhledávání — stejná definice jako týdenní risers v Postech:
-  // riser_score = engagement − průměr účtu; riser_ratio = engagement / průměr;
-  // účty s < 3 posty v indexu vyřazeny. Počítá se z celého search indexu (jednou).
-  function computeSearchRisers() {
-    var sum = {}, cnt = {};
-    searchPosts.forEach(function (p) {
-      var a = p.account_acct; sum[a] = (sum[a] || 0) + (p.engagement || 0); cnt[a] = (cnt[a] || 0) + 1;
-    });
-    searchPosts.forEach(function (p) {
-      var a = p.account_acct, n = cnt[a] || 0, avg = n ? sum[a] / n : 0;
-      if (n >= 3 && avg > 0) {
-        p.riser_ratio = (p.engagement || 0) / avg;
-        p.riser_score = (p.engagement || 0) - avg;
-      } else { p.riser_ratio = null; p.riser_score = null; }
-    });
-  }
-
   // Rozparsuje dotaz na tokeny: text v "uvozovkách" = jedna fráze (i s mezerami),
   // ostatní slova zvlášť, „-slovo" / -"fráze" = vyloučení (neg). Vše složené
   // (NFKD, bez diakritiky, lowercase). Vrací [{ t, neg }].
@@ -2019,20 +1904,6 @@
       if (ok) hits.push({ x: list[i], m: pos.length });
     }
     return hits;
-  }
-
-  // Účet z users.json → karta. Když je v katalogu, použij plný záznam (modal
-  // funguje stejně jako v Účtech); jinak minimální „externí" záznam.
-  function searchAccountCard(u) {
-    // Katalogový účet (i neaktivní) → plná karta + detail (modal). Jinak autor
-    // mimo katalog → minimální karta s odkazem na profil.
-    var full = catalogById[u.a];
-    if (full) return buildCard(full);
-    return buildCard({
-      id: u.a, display_name: u.n || u.a, avatar: u.av,
-      followers: u.fo || 0, posts_week: null,
-      profile_url: 'https://' + u.i + '/@' + u.a.split('@')[0], _external: true
-    });
   }
 
   function searchSection(label, total, shown) {
@@ -2086,18 +1957,6 @@
     }
   }
 
-  // Řazení postů ve výsledcích hledání podle volby v levém menu.
-  function sortSearchPosts(pHits) {
-    if (searchSort === 'date') {
-      pHits.sort(function (a, b) { return (b.x.created_at || '').localeCompare(a.x.created_at || ''); });
-    } else if (searchSort === 'engagement' || searchSort === 'reblogs' || searchSort === 'favourites') {
-      var key = searchSort === 'engagement' ? 'engagement' : searchSort === 'reblogs' ? 'reblogs_count' : 'favourites_count';
-      pHits.sort(function (a, b) { return (b.x[key] || 0) - (a.x[key] || 0); });
-    } else { // relevance (default): shoda, pak datum
-      pHits.sort(function (a, b) { return b.m !== a.m ? b.m - a.m : (b.x.created_at || '').localeCompare(a.x.created_at || ''); });
-    }
-  }
-
   function updateSearchTabsUI() {
     if (!searchTabsEl) return;
     searchTabsEl.querySelectorAll('.tab[data-stab]').forEach(function (tab) {
@@ -2128,12 +1987,6 @@
           renderSearch();
           writeHash();
         });
-      });
-    }
-    if (searchSortEl) {
-      searchSortEl.addEventListener('change', function () {
-        searchSort = searchSortEl.value;
-        renderSearch();
       });
     }
   }
@@ -3780,376 +3633,23 @@
     });
   }
 
-  function updatePostsTabsUI() {
-    if (!postsTabsEl) return;
-    postsTabsEl.querySelectorAll('.tab[data-ptab]').forEach(function (tab) {
-      tab.classList.toggle('is-active', tab.getAttribute('data-ptab') === postsTab);
-    });
-  }
-
   function updateViewSwitchUI() {
     document.querySelectorAll('[data-view]').forEach(function (btn) {
       btn.classList.toggle('is-active', btn.getAttribute('data-view') === view);
     });
   }
 
-  // Nadpis filtru Oblast: u Postů/Vyhledávání je téma dle ÚČTU (ne postu) → upřesnit.
+  // Nadpis filtru Oblast: u Vyhledávání je téma dle ÚČTU → upřesnit.
   function updateFamilyHeading() {
     var h = document.querySelector('.filter-group[data-filter="family"] h2');
     if (!h) return;
-    h.textContent = (view === 'posty' || view === 'search') ? t('head_topic_byaccount') : t('head_topic');
-  }
-
-  function bindPostsControls() {
-    if (postsSortEl) {
-      postsSortEl.addEventListener('change', function () {
-        postsSort = postsSortEl.value;
-        renderPosts();
-        writeHash();
-      });
-    }
-    if (postsTabsEl) {
-      postsTabsEl.querySelectorAll('.tab[data-ptab]').forEach(function (tab) {
-        tab.addEventListener('click', function () {
-          postsTab = tab.getAttribute('data-ptab');
-          updatePostsTabsUI();
-          renderPosts();
-          writeHash();
-        });
-      });
-    }
-  }
-
-  // Pohled Posty je ve Fedíku zrušený — funkce zůstává jako no-op (mrtvý kód).
-  function ensurePostsLoaded() {
-    return;   // posts.json už neexistuje; pohled Posty není v navigaci ani v hashi
-    /* eslint-disable no-unreachable */
-    if (postsLoadState === 'loaded' || postsLoadState === 'loading') return;
-    postsLoadState = 'loading';
-    postsLoadingEl.hidden = false;
-    postsUnavailableEl.hidden = true;
-    postsEmptyEl.hidden = true;
-    fetch('posts.json', { cache: 'no-cache' })
-      .then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .then(function (data) {
-        postsData = data;
-        postsLoadState = 'loaded';
-        postsLoadingEl.hidden = true;
-        renderPosts();
-      })
-      .catch(function (err) {
-        postsLoadState = 'error';
-        postsLoadingEl.hidden = true;
-        // posts.json vzniká vždy v pondělí v 03:00 — chybějící soubor = fallback hláška.
-        if (view === 'posty') {
-          postsGridEl.innerHTML = '';
-          postsUnavailableEl.hidden = false;
-        }
-        console.warn('posts.json load failed:', err);
-      });
-  }
-
-  // Sekce posts.json → klíč podle aktuálního řazení (žebříčky).
-  var POSTS_SECTION = {
-    engagement: 'top_by_engagement', reblogs: 'top_by_reblogs',
-    favourites: 'top_by_favourites', date: 'top_by_date', date_asc: 'top_by_date'
-  };
-
-  function isRiserTab() {
-    return postsTab === 'risers_ratio' || postsTab === 'risers_abs';
-  }
-
-  // Aktivní režim Skokanů podle pohledu (Posty i Vyhledávání sdílí buildPostCard).
-  function activeRiserMode() {
-    var tab = (view === 'search') ? searchTab : (view === 'posty') ? postsTab : null;
-    return tab === 'risers_ratio' ? 'ratio' : tab === 'risers_abs' ? 'abs' : null;
-  }
-
-  // Vrátí výchozí pole postů podle aktuálního řezu/řazení (před filtry).
-  function postsBaseList() {
-    if (isRiserTab()) {
-      var key = (postsTab === 'risers_ratio') ? 'risers_ratio' : 'risers_absolute';
-      var arr = postsData[key] || postsData.risers || []; // fallback na starý klíč
-      return arr.slice();
-    }
-    var section = POSTS_SECTION[postsSort] || 'top_by_engagement';
-    var arr2 = (postsData[section] || []).slice();
-    if (postsSort === 'date_asc') arr2.reverse(); // top_by_date je sestupně → otoč
-    var limit = (postsTab === '10') ? 10 : (postsTab === '50') ? 50 : Infinity;
-    return arr2.slice(0, limit);
-  }
-
-  function renderPosts() {
-    if (view !== 'posty') return;
-    if (postsLoadState === 'loading') { postsLoadingEl.hidden = false; return; }
-    if (postsLoadState !== 'loaded' || !postsData) {
-      if (postsLoadState === 'error') postsUnavailableEl.hidden = false;
-      return;
-    }
-    postsLoadingEl.hidden = true;
-    postsUnavailableEl.hidden = true;
-    // V režimu Skokani je řazení dané metrikou → schovej výběr řazení.
-    if (postsSortWrapEl) postsSortWrapEl.hidden = isRiserTab();
-
-    var base = postsBaseList();
-
-    // `base` = sekce + Top N. Hashtag chips počítáme z postů, které projdou
-    // rodinou + fulltextem (ale BEZ hashtag filtru), ať nabídka zůstane stabilní.
-    var beforeHashtag = base.filter(function (p) { return postMatchesFilters(p, true); });
-    renderPostHashtagUI(beforeHashtag);
-
-    // Finální seznam = navíc hashtag filtr.
-    var list = beforeHashtag.filter(matchesPostHashtag);
-
-    postsMetaEl.textContent = postsMetaText();
-
-    postsGridEl.innerHTML = '';
-    if (list.length === 0) {
-      postsEmptyEl.hidden = false;
-      return;
-    }
-    postsEmptyEl.hidden = true;
-    var frag = document.createDocumentFragment();
-    list.forEach(function (p) { frag.appendChild(buildPostCard(p)); });
-    postsGridEl.appendChild(frag);
-  }
-
-  // skipHashtag=true → vynechá hashtag filtr (pro výpočet nabídky chips).
-  function postMatchesFilters(p, skipHashtag) {
-    if (filters.family.size && !filters.family.has(p.account_family)) return false;
-    if (searchQuery) {
-      var hay = ((p.content_plain || '') + ' ' + (p.account_display_name || '') + ' ' +
-                 (p.account_username || '')).toLowerCase();
-      if (hay.indexOf(searchQuery) === -1) return false;
-    }
-    if (!skipHashtag && !matchesPostHashtag(p)) return false;
-    return true;
-  }
-
-  // AND přes vybrané hashtagy (post musí mít všechny zvolené).
-  function matchesPostHashtag(p) {
-    if (!postHashtags.size) return true;
-    var hs = p.hashtags || [];
-    var ok = true;
-    postHashtags.forEach(function (h) { if (hs.indexOf(h) === -1) ok = false; });
-    return ok;
+    h.textContent = (view === 'search') ? t('head_topic_byaccount') : t('head_topic');
   }
 
   var HASHTAG_CHIP_MAX = 30;  // kolik nejčastějších hashtagů nabídnout
 
-  // Vykreslí vybrané hashtagy (nahoře) + nabídku chips (četnost z `posts`).
-  function renderPostHashtagUI(posts) {
-    if (!postHashtagChipsEl) return;
-    var counts = {};
-    posts.forEach(function (p) {
-      (p.hashtags || []).forEach(function (h) { counts[h] = (counts[h] || 0) + 1; });
-    });
-
-    // Vybrané hashtagy (i ty s 0 výskyty v aktuální nabídce zůstanou zrušitelné).
-    postHashtagSelectedEl.innerHTML = '';
-    postHashtags.forEach(function (h) {
-      var chip = document.createElement('button');
-      chip.className = 'tag-chip tag-chip-selected';
-      chip.appendChild(document.createTextNode('#' + h + ' '));
-      var x = document.createElement('span');
-      x.className = 'tag-x';
-      x.textContent = '×';
-      chip.appendChild(x);
-      chip.setAttribute('aria-label', 'Odebrat hashtag ' + h);
-      chip.addEventListener('click', function () { togglePostHashtag(h); });
-      postHashtagSelectedEl.appendChild(chip);
-    });
-
-    // Nabídka — nejčastější hashtagy, které ještě nejsou vybrané.
-    postHashtagChipsEl.innerHTML = '';
-    var entries = Object.keys(counts)
-      .filter(function (h) { return !postHashtags.has(h); })
-      .sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b); })
-      .slice(0, HASHTAG_CHIP_MAX);
-
-    if (entries.length === 0 && postHashtags.size === 0) {
-      var empty = document.createElement('p');
-      empty.className = 'hashtags-empty';
-      empty.textContent = t('hashtags_empty');
-      postHashtagChipsEl.appendChild(empty);
-      return;
-    }
-    entries.forEach(function (h) {
-      var chip = document.createElement('button');
-      chip.className = 'tag-chip';
-      chip.appendChild(document.createTextNode('#' + h + ' '));
-      var c = document.createElement('span');
-      c.className = 'tag-count';
-      c.textContent = counts[h];
-      chip.appendChild(c);
-      chip.addEventListener('click', function () { togglePostHashtag(h); });
-      postHashtagChipsEl.appendChild(chip);
-    });
-  }
-
-  function togglePostHashtag(h) {
-    if (postHashtags.has(h)) postHashtags.delete(h); else postHashtags.add(h);
-    if (view === 'search') renderSearch(); else renderPosts();
-    writeHash();
-  }
-
-  function postsMetaText() {
-    if (!postsData) return '';
-    var wk = formatWeek(postsData.week);
-    var cnt = postsData.total_posts != null
-      ? (postsData.total_posts + ' ' + t('posts_count')) : '';
-    return [wk, cnt].filter(Boolean).join(' · ');
-  }
-
-  // "2026-W22" → cs "22. týden 2026", en "week 22, 2026"
-  function formatWeek(week) {
-    if (!week) return '';
-    var m = String(week).match(/^(\d{4})-W(\d{2})$/);
-    if (!m) return week;
-    var year = m[1], num = parseInt(m[2], 10);
-    return lang === 'en' ? ('week ' + num + ', ' + year)
-                         : (num + '. ' + t('posts_week') + ' ' + year);
-  }
-
   // ---------- Karta postu ----------
   var POST_TEXT_LIMIT = 280;
-
-  function buildPostCard(p) {
-    var card = document.createElement('article');
-    card.className = 'post-card';
-
-    // --- Hlavička: avatar + jméno/handle (prolink na profil) + rodina ---
-    var head = document.createElement('div');
-    head.className = 'post-head';
-    var profileUrl = 'https://' + p.account_instance + '/@' + p.account_username;
-
-    var avatarLink = document.createElement('a');
-    avatarLink.className = 'post-avatar-link';
-    avatarLink.href = profileUrl;
-    avatarLink.target = '_blank';
-    avatarLink.rel = 'noopener';
-    avatarLink.title = t('profile_title');
-    avatarLink.appendChild(buildAvatar({ avatar: p.account_avatar }, 'card-avatar'));
-    head.appendChild(avatarLink);
-
-    var hbody = document.createElement('div');
-    hbody.className = 'post-head-body';
-    var author = document.createElement('a');
-    author.className = 'post-author';
-    author.href = profileUrl;
-    author.target = '_blank';
-    author.rel = 'noopener';
-    author.title = t('profile_title');
-    author.textContent = cleanName(p.account_display_name) || p.account_username;
-    var handle = document.createElement('div');
-    handle.className = 'post-handle';
-    handle.textContent = '@' + p.account_username + '@' + p.account_instance;
-    hbody.appendChild(author);
-    hbody.appendChild(handle);
-    head.appendChild(hbody);
-    // Oblast (rodina) se na kartě postu nezobrazuje — mátlo to (zůstává jen ve filtru).
-    card.appendChild(head);
-
-    // --- Text postu (klikatelné odkazy z content_html; „zobrazit více") ---
-    var plain = (p.content_plain || '').trim();
-    if (plain === '') {
-      var empty = document.createElement('p');
-      empty.className = 'post-text is-empty';
-      empty.textContent = t('post_media_only');
-      card.appendChild(empty);
-    } else {
-      var text = document.createElement('p');
-      text.className = 'post-text';
-      // Klikatelný obsah ze sanitizovaného HTML (fallback na plain text).
-      if (p.content_html) {
-        text.appendChild(sanitizePostHtml(p.content_html));
-      } else {
-        text.textContent = plain;
-      }
-      // Dlouhý post → zkrátit přes CSS clamp + tlačítko „zobrazit více".
-      if (plain.length > POST_TEXT_LIMIT) {
-        text.classList.add('is-clamped');
-        var more = document.createElement('button');
-        more.type = 'button';
-        more.className = 'post-more';
-        more.textContent = t('post_more');
-        more.addEventListener('click', function () {
-          text.classList.remove('is-clamped');
-          more.remove();
-        });
-        card.appendChild(text);
-        card.appendChild(more);
-      } else {
-        card.appendChild(text);
-      }
-    }
-
-    // --- Příloha (jen badge, ne náhled) ---
-    if (p.has_media) {
-      var media = document.createElement('span');
-      media.className = 'post-media-badge';
-      media.textContent = '📷 ' + t('post_media');
-      card.appendChild(media);
-    }
-
-    // Hashtagy postu jsou klikatelné přímo v textu (sanitizePostHtml) — žádná
-    // duplicitní řada chips pod textem. Tagy účtu se na kartě postu nezobrazují
-    // (mátlo to uživatele) — zůstávají jen jako filtr v menu.
-
-    // --- Patička: stats + odkaz ---
-    var foot = document.createElement('div');
-    foot.className = 'post-foot';
-    foot.appendChild(postStat('🔁', formatNumber(p.reblogs_count || 0)));
-    foot.appendChild(postStat('⭐', formatNumber(p.favourites_count || 0)));
-    foot.appendChild(postStat('📅', formatPostDate(p.created_at)));
-    // Skokan badge — podle aktivní metriky: poměrem (×N) nebo dosahem (+N).
-    var riserMode = activeRiserMode();
-    if (riserMode === 'ratio' && p.riser_ratio != null) {
-      var riserR = document.createElement('span');
-      riserR.className = 'post-riser-badge';
-      riserR.textContent = '🚀 ' + t('post_riser') + ' ×' + p.riser_ratio.toFixed(1);
-      foot.appendChild(riserR);
-    } else if (riserMode === 'abs' && p.riser_score != null) {
-      var riserA = document.createElement('span');
-      riserA.className = 'post-riser-badge';
-      riserA.textContent = '🚀 ' + t('post_riser') + ' +' + Math.round(p.riser_score);
-      foot.appendChild(riserA);
-    }
-    if (p.url) {
-      var open = document.createElement('a');
-      open.className = 'post-open';
-      open.href = p.url;
-      open.target = '_blank';
-      open.rel = 'noopener';
-      open.textContent = '↗ ' + t('post_open');
-      foot.appendChild(open);
-    }
-    card.appendChild(foot);
-
-    return card;
-  }
-
-  function postStat(icon, value) {
-    var s = document.createElement('span');
-    s.className = 'post-stat';
-    var v = document.createElement('strong');
-    v.textContent = value;
-    s.appendChild(document.createTextNode(icon + ' '));
-    s.appendChild(v);
-    return s;
-  }
-
-  function formatPostDate(iso) {
-    var d = new Date(iso);
-    if (isNaN(d.getTime())) return '';
-    if (lang === 'en') {
-      return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-    }
-    return d.getDate() + '. ' + (d.getMonth() + 1) + '. ' + d.getFullYear();
-  }
 
   // ---------- Konstanty chování ----------
   var RECENT_DAYS = 90;     // okno pro řez "Nedávno přidané"
@@ -4170,18 +3670,13 @@
 
   // ---------- Stav ----------
   var records = [];           // aktivní účty (Účty tab)
-  var catalogById = {};       // CELÝ katalog (i neaktivní) — pro vyhledávání
   var filters = { family: new Set(), type: new Set(), language: new Set(), tag: new Set() };
   var searchQuery = '';
   var sortKey = 'name';
   var slice = { kind: 'all' };   // all | platform:<p> | top:<metric>:<n> | recent
 
-  // ---------- Stav pohledu na posty ----------
+  // ---------- Stav pohledu ----------
   var view = 'start';            // výchozí pohled při načtení (bez #hash) — landing „Začínáme"
-  var postsData = null;          // načtený posts.json (null = ještě nenačteno)
-  var postsLoadState = 'idle';   // idle | loading | loaded | error
-  var postsSort = 'engagement';  // engagement | reblogs | favourites | date | date_asc
-  var postsTab = 'all';          // 'all' | '10' | '50' | 'risers_ratio' | 'risers_abs'
   var aboutSection = 'about';    // 'about' | 'accounts' | 'posts'
   var startSection = 'intro';    // pohled „Začínáme": 'intro' | 'apps' (volatilní, bude se měnit)
   var startStep = 1;             // aktivní krok onboardingu (persistuje při přechodu mezi pohledy)
@@ -4213,14 +3708,10 @@
   var appStatsState = 'idle';    // idle | loading | loaded | error
   var appStatsDate = '';         // datum z app-stats.json (updatedAt)
   var appStatsPromise = null;
-  var postHashtags = new Set();  // vybrané hashtagy (AND filtr v posts view)
   // ---------- Stav vyhledávání ----------
   var searchState = 'idle';      // idle | loading | loaded | error
   var searchPromise = null;
-  var searchPosts = [];          // search.json posts
-  var searchUsers = [];          // users.json users
-  var searchTab = 'all';         // 'all' | '10' | '50' | 'risers_ratio' | 'risers_abs'
-  var searchSort = 'relevance';  // relevance | date | engagement | reblogs | favourites
+  var searchTab = 'all';         // 'all' | 'aplikace' | 'instance' | 'nastroje' | 'slovnicek' | 'odkazy'
   // ---------- Stav instancí ----------
   var instanceState = 'idle';
   var instancePromise = null;
@@ -4240,12 +3731,9 @@
       visibleCountEl, totalCountEl, sortEl, sliceNoteEl, tabsEl,
       tagInputEl, tagSuggestEl, tagSelectedEl, tagChipsEl,
       sidebarEl, sidebarToggleEl, modalEl, hoverEl, institutionBtnEl,
-      accountsViewEl, postsViewEl, aboutViewEl, postsGridEl, postsLoadingEl, postsEmptyEl,
-      postsUnavailableEl, postsSortEl, postsSortWrapEl, postsTabsEl, postsMetaEl,
-      postHashtagsGroupEl, postHashtagChipsEl, postHashtagSelectedEl, aboutNavEl,
+      accountsViewEl, aboutViewEl, aboutNavEl,
       cardsSentinelEl, searchViewEl, searchQEl, searchMetaEl, searchResultsEl, searchNavEl,
-      accountsNavEl, postsNavEl,
-      searchTabsEl, searchSortEl, searchSortWrapEl,
+      accountsNavEl, searchTabsEl,
       instanceViewEl, instanceNavEl, instanceMetaEl, instanceResultsEl,
       instanceTabsEl, instanceSearchEl, instanceSearchWrapEl, instanceSortEl,
       instanceSortWrapEl, instanceRegionGroupEl, instanceCatChipsEl,
@@ -4292,16 +3780,12 @@
     hoverEl        = buildHoverEl();
 
     accountsViewEl     = document.querySelector('.catalog:not(.posts-view)');
-    postsViewEl        = document.getElementById('posts-view');
     aboutViewEl        = document.getElementById('about-view');
     aboutNavEl         = document.getElementById('about-nav');
     searchViewEl       = document.getElementById('search-view');
     searchNavEl        = document.getElementById('search-nav');
     accountsNavEl      = document.getElementById('accounts-nav');
-    postsNavEl         = document.getElementById('posts-nav');
     searchTabsEl       = document.getElementById('search-tabs');
-    searchSortEl       = document.getElementById('search-sort-select');
-    searchSortWrapEl   = document.getElementById('search-sort-wrap');
     searchQEl          = document.getElementById('search-q');
     searchMetaEl       = document.getElementById('search-meta');
     searchResultsEl    = document.getElementById('search-results');
@@ -4349,23 +3833,11 @@
     statsNavEl         = document.getElementById('stats-nav');
     statsTabsEl        = document.getElementById('stats-tabs');
     statsResultsEl     = document.getElementById('stats-results');
-    postsGridEl        = document.getElementById('posts-grid');
-    postsLoadingEl     = document.getElementById('posts-loading');
-    postsEmptyEl       = document.getElementById('posts-empty');
-    postsUnavailableEl = document.getElementById('posts-unavailable');
-    postsSortEl        = document.getElementById('posts-sort-select');
-    postsSortWrapEl    = document.getElementById('posts-sort-wrap');
-    postsTabsEl        = document.getElementById('posts-tabs');
-    postsMetaEl        = document.getElementById('posts-meta');
-    postHashtagsGroupEl    = document.getElementById('post-hashtags-group');
-    postHashtagChipsEl     = document.getElementById('post-hashtag-chips');
-    postHashtagSelectedEl  = document.getElementById('post-hashtag-selected');
 
     initLang();
     applyI18n();
     bindLangSwitch();
     bindViewSwitch();
-    bindPostsControls();
     bindInstanceControls();
     bindLinksControls();
     bindAppsControls();
@@ -4466,7 +3938,7 @@
   // Na mobilu je přesuneme DO draweru za „Pohledy" (POHLEDY → řezy → filtry);
   // na desktopu zpět pod navbar (horizontální lišta). Volá se i při změně šířky.
   function placeSliceTabs() {
-    var slices = [tabsEl, postsTabsEl, searchTabsEl, instanceTabsEl, linksTabsEl].filter(Boolean);
+    var slices = [tabsEl, searchTabsEl, instanceTabsEl, linksTabsEl].filter(Boolean);
     if (!slices.length) return;
     var mobile = window.matchMedia('(max-width: 760px)').matches;
     if (mobile) {
@@ -4787,8 +4259,7 @@
       maybeRenderMoreCards();   // dorenderuj, dokud sentinel není pod foldem
     }
 
-    // Sdílené filtry (Oblast/Hashtagy) ovlivňují i Posty a Vyhledávání.
-    if (view === 'posty') renderPosts();
+    // Sdílené filtry (Oblast) ovlivňují i Vyhledávání.
     if (view === 'search') renderSearch();
 
     writeHash();
@@ -5202,62 +4673,6 @@
     });
   }
 
-  // Sanitizace obsahu postu (Mastodon `content`): whitelist a/br/p/span.
-  // Hashtagy (a.hashtag) → interní filtr; mentions (a.mention) a běžné odkazy
-  // → externí (target=_blank). `.invisible`/`.ellipsis` třídy zachováme kvůli
-  // zkracování URL, jak to dělá Mastodon.
-  function sanitizePostHtml(html) {
-    var doc = new DOMParser().parseFromString(String(html), 'text/html');
-    var frag = document.createDocumentFragment();
-    walkPostNodes(doc.body, frag);
-    return frag;
-  }
-
-  function walkPostNodes(src, dest) {
-    var allowed = { A: 1, BR: 1, P: 1, SPAN: 1 };
-    Array.prototype.forEach.call(src.childNodes, function (node) {
-      if (node.nodeType === 3) {
-        dest.appendChild(document.createTextNode(node.nodeValue));
-        return;
-      }
-      if (node.nodeType !== 1) return;
-      var tag = node.tagName;
-      if (!allowed[tag]) { walkPostNodes(node, dest); return; }
-      var el = document.createElement(tag.toLowerCase());
-
-      if (tag === 'SPAN') {
-        // Zachovat Mastodon třídy pro zkrácené URL (invisible/ellipsis).
-        var cls = node.getAttribute('class') || '';
-        if (/\b(invisible|ellipsis)\b/.test(cls)) el.className = cls;
-      }
-
-      if (tag === 'A') {
-        var href = node.getAttribute('href') || '';
-        var aClass = node.getAttribute('class') || '';
-        var isHashtag = /\bhashtag\b/.test(aClass) ||
-                        /\/tags\//.test(href);
-        if (isHashtag) {
-          // Hashtag → interní filtr (ne odkaz pryč).
-          var tagName = node.textContent.replace(/^#/, '').trim().toLowerCase();
-          el.className = 'post-inline-hashtag';
-          el.setAttribute('href', '#');
-          el.setAttribute('role', 'button');
-          el.addEventListener('click', function (ev) {
-            ev.preventDefault();
-            togglePostHashtag(tagName);
-          });
-        } else if (/^https?:\/\//i.test(href)) {
-          el.className = /\bmention\b/.test(aClass) ? 'post-inline-mention' : 'post-inline-link';
-          el.setAttribute('href', href);
-          el.target = '_blank';
-          el.rel = 'noopener noreferrer';
-        }
-      }
-      walkPostNodes(node, el);
-      dest.appendChild(el);
-    });
-  }
-
   // ========================================================
   // URL hash state
   // ========================================================
@@ -5291,7 +4706,6 @@
       parts.push('view=search');
       if (searchQEl && searchQEl.value.trim()) parts.push('sq=' + enc(searchQEl.value.trim()));
       if (searchTab !== 'all') parts.push('stab=' + searchTab);
-      if (postHashtags.size) parts.push('phash=' + enc(setList(postHashtags)));
     } else if (view === 'instance') {
       parts.push('view=instance');
       if (instanceTab !== 'all') parts.push('itab=' + instanceTab);
@@ -5307,11 +4721,6 @@
       if (linkLangs.size) parts.push('llang=' + enc(setList(linkLangs)));
       if (linkThemes.size) parts.push('lth=' + enc(setList(linkThemes)));
       if (linksSort !== 'recommended') parts.push('lsort=' + linksSort);
-    } else if (view === 'posty') {
-      parts.push('view=posty');
-      if (postsSort !== 'engagement') parts.push('psort=' + enc(postsSort));
-      if (postsTab !== 'all') parts.push('ptab=' + postsTab);
-      if (postHashtags.size) parts.push('phash=' + enc(setList(postHashtags)));
     } else if (view === 'slovnicek') {
       parts.push('view=slovnicek');
       if (glossarySort !== 'order') parts.push('gsort=' + glossarySort);
@@ -5350,7 +4759,7 @@
     filters.family.clear(); filters.type.clear();
     filters.language.clear(); filters.tag.clear();
     searchQuery = ''; sortKey = 'name'; slice = { kind: 'all' };
-    view = 'start'; postsSort = 'engagement'; postsTab = 'all'; aboutSection = 'about'; startSection = 'intro'; startStep = 1; pendingChosenInstHost = ''; postHashtags.clear();
+    view = 'start'; aboutSection = 'about'; startSection = 'intro'; startStep = 1; pendingChosenInstHost = '';
     appsSort = 'users'; appsTab = 'all'; appsFacets.type.clear(); appsFacets.equiv.clear(); appsFacets.czech.clear(); appsFacets.managed.clear(); appsFacets.dev.clear();
     instanceTab = 'all'; searchTab = 'all'; instanceSort = 'users'; pendingSearchQ = '';
     instanceFacets.region.clear(); instanceFacets.app.clear(); instanceFacets.focus.clear(); instanceFacets.reg.clear(); instanceFacets.size.clear();
@@ -5378,8 +4787,6 @@
         case 'account': pendingAccountId = val; break;
         case 'view': if (/^(start|about|search|instance|odkazy|aplikace|slovnicek|nastroje|statistiky)$/.test(val)) view = val; break;
         case 'sq': pendingSearchQ = val; break;
-        case 'psort': if (/^(engagement|reblogs|favourites|date|date_asc)$/.test(val)) postsSort = val; break;
-        case 'ptab': if (/^(all|10|50|risers_ratio|risers_abs)$/.test(val)) postsTab = val; break;
         case 'itab': if (/^(all|beginner|users)$/.test(val)) instanceTab = val; break;
         case 'isort': if (/^(name|users|registration)$/.test(val)) instanceSort = val; break;
         case 'irg': splitList(val).forEach(function (v) { instanceFacets.region.add(v); }); break;
@@ -5391,7 +4798,7 @@
         case 'llang': splitList(val).forEach(function (v) { linkLangs.add(v); }); break;
         case 'lth': splitList(val).forEach(function (v) { linkThemes.add(v); }); break;
         case 'lsort': if (/^(recommended|alpha|lang)$/.test(val)) linksSort = val; break;
-        case 'stab': if (/^(all|10|50|risers_ratio|risers_abs)$/.test(val)) searchTab = val; break;
+        case 'stab': if (/^(all|aplikace|instance|nastroje|slovnicek|odkazy)$/.test(val)) searchTab = val; break;
         case 'asec': if (/^(about|search|instance|apps|tools|links|stats|tech|author|faq|faq-novacci)$/.test(val)) aboutSection = val; break;
         case 'ssec': if (/^[a-z0-9_]+$/.test(val)) startSection = val; break;
         case 'step': if (/^[1-6]$/.test(val)) startStep = Number(val); break;
@@ -5417,7 +4824,6 @@
         case 'sper': if (/^(365|730|all)$/.test(val)) statsPeriod = val; break;
         case 'sreg': if (/^(global|czsk)$/.test(val)) statsRegion = val; break;
         case 'sser': splitList(val).forEach(function (v) { statsSeries.add(v); }); break;
-        case 'phash': splitList(val).forEach(function (v) { postHashtags.add(v); }); break;
       }
     });
   }
@@ -5460,9 +4866,8 @@
     if (linksSortEl) linksSortEl.value = linksSort;
     searchEl.value = searchQuery;
     sortEl.value = sortKey;
-    if (postsSortEl) postsSortEl.value = postsSort;
     if (searchQEl) searchQEl.value = pendingSearchQ || '';
-    applyView();  // applyView volá updatePostsTabsUI() / renderSearch()
+    applyView();  // applyView volá renderSearch()
   }
 
   // ========================================================

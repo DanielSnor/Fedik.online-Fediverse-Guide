@@ -28,7 +28,7 @@
   <meta name="twitter:description" content="Jak začít na Mastodonu a ve Fediverse — česky. Aplikace, instance, nástroje, slovníček, statistiky, odkazy, vyhledávání.">
   <meta name="twitter:image" content="https://fedik.online/img/header.png">
 
-  <link rel="stylesheet" href="app.css?v=20260925">
+  <link rel="stylesheet" href="app.css?v=20260925d">
 
   <!-- Anonymní návštěvnost (Umami, self-hosted na OSCLOUD; bez cookies, bez osobních dat) -->
   <script defer src="https://analytics.oscloud.cz/script.js" data-website-id="cfcb21b6-e303-4a49-b25f-264ec4021e62"></script>
@@ -89,17 +89,6 @@
     <span class="tab-sep" data-i18n="nav_new">Novinky</span>
     <button class="tab" data-slice="recent" data-i18n="nav_recent">Nedávno přidané</button>
     <p class="tabs-count"><strong id="visible-count">538</strong> <span data-i18n="count_of">z</span> <span id="total-count">538</span> <span data-i18n="count_sources">zdrojů</span></p>
-  </nav>
-
-  <nav class="tabs" id="posts-tabs" aria-label="Řezy postů" hidden>
-    <button class="tab is-active" data-ptab="all" data-i18n="nav_all">Vše</button>
-    <span class="tab-sep" data-i18n="nav_charts">Žebříčky</span>
-    <button class="tab" data-ptab="10">Top 10</button>
-    <button class="tab" data-ptab="50">Top 50</button>
-    <span class="tab-sep" data-i18n="nav_risers">Skokani týdne</span>
-    <button class="tab" data-ptab="risers_ratio" data-i18n="prisers_ratio">Poměrem</button>
-    <button class="tab" data-ptab="risers_abs" data-i18n="prisers_abs">Dosahem</button>
-    <p class="tabs-count" id="posts-meta"></p>
   </nav>
 
   <nav class="tabs" id="instance-tabs" aria-label="Žebříčky instancí" hidden>
@@ -167,10 +156,9 @@
             <button type="button" class="filter-chip view-link" data-view="statistiky" data-i18n="view_stats">Statistiky</button>
             <button type="button" class="filter-chip view-link" data-view="odkazy" data-i18n="view_links">Odkazy</button>
             <button type="button" class="filter-chip view-link" data-view="about" data-i18n="view_about">O Fedíku</button>
-            <!-- SKRYTO (zděděné ze Sloníka, nepoužíváme — funkční přes #view=…): Vyhledávání, Účty, Posty
+            <!-- SKRYTO (zděděné ze Sloníka, nepoužíváme — funkční přes #view=…): Vyhledávání, Účty
             <button type="button" class="filter-chip view-link" data-view="search" data-i18n="view_search">Vyhledávání</button>
             <button type="button" class="filter-chip view-link" data-view="ucty" data-i18n="view_accounts">Účty</button>
-            <button type="button" class="filter-chip view-link" data-view="posty" data-i18n="view_posts">Posty</button>
             -->
           </div>
         </nav>
@@ -180,11 +168,6 @@
         <section class="filter-group search-nav" id="accounts-nav" hidden aria-label="Účty">
           <h2 data-i18n="accounts_nav_title">Účty</h2>
           <p class="search-nav-desc" data-i18n="accounts_nav_desc">Katalog českých a slovenských účtů na Mastodonu. Filtruj podle oblasti, typu, jazyka a tagů, vyhledávej podle jména nebo handle a řaď podle počtu sledujících či aktivity. Kliknutím na účet zobrazíš detail.</p>
-        </section>
-
-        <section class="filter-group search-nav" id="posts-nav" hidden aria-label="Posty">
-          <h2 data-i18n="posts_nav_title">Posty</h2>
-          <p class="search-nav-desc" data-i18n="posts_nav_desc">Nejlepší příspěvky českých a slovenských účtů za poslední týden. Přepínej žebříčky (Top 10/50, skokani týdne), filtruj podle oblasti, textu a hashtagů a řaď podle boostů, oblíbených nebo data.</p>
         </section>
 
         <section class="filter-group search-nav" id="search-nav" hidden aria-label="Vyhledávání">
@@ -409,17 +392,6 @@
           </select>
         </div>
 
-        <div class="filter-sort filter-sort-posts" id="posts-sort-wrap" hidden>
-          <label for="posts-sort-select" data-i18n="sort_label">Řadit</label>
-          <select id="posts-sort-select">
-            <option value="date_asc" data-i18n="psort_date_asc">Od nejstaršího</option>
-            <option value="date" data-i18n="psort_date">Nejnovější</option>
-            <option value="engagement" data-i18n="psort_engagement">Nejvíce boostů + favů</option>
-            <option value="reblogs" data-i18n="psort_reblogs">Nejvíce boostů</option>
-            <option value="favourites" data-i18n="psort_favourites">Nejvíce favů</option>
-          </select>
-        </div>
-
         <div class="filter-search filter-search-instance" id="instance-search-wrap" hidden>
           <label for="instance-search" data-i18n="search_label">Vyhledat</label>
           <input type="search" id="instance-search" placeholder="Název nebo doména…" data-i18n-ph="instance_search_ph" autocomplete="off">
@@ -454,17 +426,6 @@
           <div id="inst-size-chips" class="filter-buttons"></div>
         </details>
 
-        <div class="filter-sort filter-sort-search" id="search-sort-wrap" hidden>
-          <label for="search-sort-select" data-i18n="sort_label">Řadit</label>
-          <select id="search-sort-select">
-            <option value="relevance" data-i18n="ssort_relevance">Podle shody</option>
-            <option value="date" data-i18n="psort_date">Nejnovější</option>
-            <option value="engagement" data-i18n="psort_engagement">Nejvíce boostů + favů</option>
-            <option value="reblogs" data-i18n="psort_reblogs">Nejvíce boostů</option>
-            <option value="favourites" data-i18n="psort_favourites">Nejvíce favů</option>
-          </select>
-        </div>
-
         <section class="filter-group" data-filter="family">
           <h2 data-i18n="head_topic">Oblast</h2>
           <div class="filter-buttons">
@@ -477,12 +438,6 @@
             <button class="filter-btn fam-news" data-value="news" data-i18n="fam_news">Zprávy</button>
             <button class="filter-btn fam-lifestyle" data-value="lifestyle" data-i18n="fam_lifestyle">Životní styl</button>
           </div>
-        </section>
-
-        <section class="filter-group filter-hashtags" id="post-hashtags-group" data-filter="hashtag" hidden>
-          <h2 data-i18n="head_hashtags">Hashtagy</h2>
-          <div id="post-hashtag-selected" class="tag-selected"></div>
-          <div id="post-hashtag-chips" class="tag-chips"></div>
         </section>
 
         <section class="filter-group" data-filter="type">
@@ -1851,6 +1806,6 @@ slovo vylučíš mínusem (-slovo).</p>
   <script src="instances.curated.js?v=20260925"></script>
   <script src="glossary.js?v=20260925"></script>
   <script src="tools.js?v=20260925"></script>
-  <script src="app.js?v=20260925"></script>
+  <script src="app.js?v=20260925d"></script>
 </body>
 </html>
