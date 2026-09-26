@@ -11,7 +11,7 @@
 # Cestu ke configu lze přepsat přes ENV CONFIG_PATH. Pokud soubor neexistuje,
 # loader tiše nic neudělá (skripty fungují i čistě z ENV).
 #
-# BEZPEČNOST: config.env obsahuje tajemství (SURFER_TOKEN, …) → patří do
+# BEZPEČNOST: config.env obsahuje tajemství (SURFER_PASSWORD, SURFER_TOKEN, …) → patří do
 # .gitignore, NIKDY se necommituje. Šablona je config.env.example.
 
 require "net/http"
@@ -59,11 +59,15 @@ end
 # ---------------------------------------------------------------------------
 # Sdílený upload na Surfer (Cloudron Files API) — používá consolidate i update.
 #
-#   POST /api/files/<remote>?access_token=TOKEN&newFilePath=<remote>
+#   POST /api/files/<remote>
 #   Content-Type: multipart/form-data, pole "file". Úspěch = HTTP 2xx (typicky 201).
 #
 # Konfigurace (config.env / ENV):
-#   SURFER_URL, SURFER_TOKEN, SURFER_REMOTE_DIR (prázdné = root).
+#   SURFER_URL, SURFER_REMOTE_DIR (prázdné = root) a přihlášení:
+#   SURFER_USERNAME + SURFER_PASSWORD -- Surfer 7 (od 26. 9. 2026 všechny naše):
+#     jméno z Cloudronu a heslo pro aplikace, posílá se jako HTTP Basic;
+#   SURFER_TOKEN -- Surfer 6 a starší (?access_token=); Surfer 7 ho odmítne 401.
+#   Jsou-li vyplněné obě, platí heslo.
 #
 # Vrací :ok / :skipped / :failed. Logování přes blok (volitelný), aby si každý
 # skript mohl použít svůj log().
@@ -71,7 +75,35 @@ module Surfer
   module_function
 
   def configured?
-    !ENV["SURFER_URL"].to_s.empty? && !ENV["SURFER_TOKEN"].to_s.empty?
+    !ENV["SURFER_URL"].to_s.empty? && (password? || !ENV["SURFER_TOKEN"].to_s.empty?)
+  end
+
+  def password?
+    !ENV["SURFER_USERNAME"].to_s.empty? && !ENV["SURFER_PASSWORD"].to_s.empty?
+  end
+
+  # Vzdálená cesta: SURFER_REMOTE_DIR / jméno (jméno smí nést podadresář).
+  def remote_path(name)
+    dir = ENV["SURFER_REMOTE_DIR"].to_s.gsub(%r{\A/+|/+\z}, "")
+    rel = name.to_s.gsub(%r{\A/+}, "")
+    dir.empty? ? rel : "#{dir}/#{rel}"
+  end
+
+  def encode_remote(remote)
+    remote.split("/").map { |s| URI.encode_www_form_component(s) }.join("/")
+  end
+
+  # Adresa API pro vzdálenou cestu; token jen tam, kde se nepřihlašuje heslem.
+  def api_uri(remote, extra = {})
+    params = password? ? {} : { "access_token" => ENV["SURFER_TOKEN"].to_s }
+    params = params.merge(extra)
+    query = params.empty? ? "" : "?#{URI.encode_www_form(params)}"
+    URI("#{ENV["SURFER_URL"].to_s.chomp("/")}/api/files/#{encode_remote(remote)}#{query}")
+  end
+
+  def authorize(req)
+    req.basic_auth(ENV["SURFER_USERNAME"].to_s, ENV["SURFER_PASSWORD"].to_s) if password?
+    req
   end
 
   # Nahraje lokální soubor `path` na Surfer pod jeho basename (+ SURFER_REMOTE_DIR).
@@ -79,22 +111,15 @@ module Surfer
   def upload(path, logger: nil, remote_name: nil)
     say = ->(m) { logger&.call(m) }
     unless configured?
-      say.call("  ℹ️  SURFER_URL/SURFER_TOKEN nenastaveny → upload přeskočen (#{path})")
+      say.call("  ℹ️  SURFER_URL nebo přihlášení (SURFER_USERNAME + SURFER_PASSWORD) nenastaveno → upload přeskočen (#{path})")
       return :skipped
     end
 
     base  = ENV["SURFER_URL"].to_s.chomp("/")
-    token = ENV["SURFER_TOKEN"].to_s
-    dir   = ENV["SURFER_REMOTE_DIR"].to_s.gsub(%r{\A/+|/+\z}, "")
     # remote_name umožní zachovat podadresář (např. "data/app-stats.json");
     # bez něj výchozí basename (zpětně kompatibilní pro všechna dosavadní volání).
-    rel = (remote_name && !remote_name.empty?) ? remote_name.gsub(%r{\A/+}, "") : File.basename(path)
-    remote = dir.empty? ? rel : "#{dir}/#{rel}"
-    remote_enc = remote.split("/").map { |s| URI.encode_www_form_component(s) }.join("/")
-
-    uri = URI("#{base}/api/files/#{remote_enc}" \
-              "?access_token=#{URI.encode_www_form_component(token)}" \
-              "&newFilePath=#{URI.encode_www_form_component(remote)}")
+    remote = remote_path((remote_name && !remote_name.empty?) ? remote_name : File.basename(path))
+    uri = api_uri(remote, "newFilePath" => remote)
 
     boundary = "----Fedik#{rand(10**16)}"
     body = +""
@@ -104,7 +129,7 @@ module Surfer
     body << File.binread(path)
     body << "\r\n--#{boundary}--\r\n"
 
-    req = Net::HTTP::Post.new(uri)
+    req = authorize(Net::HTTP::Post.new(uri))
     req["Content-Type"] = "multipart/form-data; boundary=#{boundary}"
     req["User-Agent"] = "fedik-upload/1.0"
     req.body = body
