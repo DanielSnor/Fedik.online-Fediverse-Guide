@@ -91,7 +91,7 @@ puts "   ✅ zápis OK (HTTP #{resp.code})"
 # --- 2) GET veřejné URL ---
 resp = http_for(public_url).request(Net::HTTP::Get.new(public_url))
 puts "2) GET  → HTTP #{resp.code}  (#{public_url})"
-if resp.code.to_i.between?(200, 299) && resp.body.to_s.include?("Fedík Surfer test")
+if resp.code.to_i.between?(200, 299) && resp.body.to_s.dup.force_encoding(Encoding::UTF_8).include?("Fedík Surfer test")
   puts "   ✅ čtení OK (soubor je veřejně dostupný, obsah sedí)"
 else
   puts "   ⚠️  zápis prošel, ale veřejné čtení neověřeno (HTTP #{resp.code}) — zkontroluj cestu/REMOTE_DIR"
